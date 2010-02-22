@@ -1,0 +1,156 @@
+---
+layout: post
+title:  Beginning Factor &#8211; Introduction
+---
+I've been involved in the "Factor programming language":http://factorcode.org/ community for about a year now, and am constantly amazed with how productive its contributors are. Large improvements to the language and its libraries are made on a weekly (if not daily) basis, and it's finally starting to attract some much-deserved attention from the programming community.
+
+The problem is, the language is a huge departure from the norm for most developers and it can be overwhelming to someone just getting started. I would like to help ease that transition by posting on various topics that I know have been confusing to me over the past year.
+
+Note that many topics are covered in "the official FAQ":http://concatenative.org/wiki/view/Factor/FAQ -- which is well worth a read -- and I won't spend time covering how to install Factor on the 14 or so platforms it supports, but beyond that, I'll try to give enough information (from basic to advanced) to get you going.
+
+h2(#basics). The Basics of the Basics
+
+First of all, Factor is a stack-based language, which means that it uses a "stack":http://en.wikipedia.org/wiki/Stack_(data_structure) to store all arguments and returned values from functions (called "words" in Factor). To put that another way, Factor words don't receive arguments in the traditional manner; all input values that your word needs are expected to already exist on the top of the stack.
+
+h3(#what-stack). What is a Stack?
+
+If you're unfamiliar with the data structure called a stack, the concept is fairly simple. It centers around the idea of "Last In First Out" (LIFO), meaning the last item placed onto the stack is the first item that will you will get when you remove an item from the stack. You cannot get to the lower items until the all of the items above it have been removed.
+
+I like to picture a stack like a tower of LEGOs. The only thing you can do with it are add another brick to the top ("push" an item onto the stack), or take the top brick off to use it for something else ("pop" an item off the stack). That's all there is to stacks!
+
+<img src="/images/2008/11/stack-push.png" alt="Pushing an Item onto a Stack" width="554" height="257" />
+
+h3(#use-stack). How to Use the Stack
+
+So, now we know that Factor manages its input and output with a stack, but how do we actually use it? Well, when entering data into Factor's listener, one of two things is happening:
+
+# You are pushing a literal onto the stack
+  *OR*
+# You are calling a word which will consume literals from the stack
+
+Things do get slightly more complicated than that, but for the most part those two rules hold true. The most simple example of this behavior is the ubiquitous hello world program, shown entered directly into Factor's interactive listener environment:
+
+notextile. <pre><code>(scratchpad) <strong>"Hello world!" print</strong>
+Hello world!</code></pre>
+
+To understand what is happening, you can just type the string first, and then execute the @print@ word later:
+
+notextile.. <pre><code>(scratchpad) <strong>"Hello world!"</strong>
+
+--- Data stack:
+"Hello world!"
+(scratchpad) <strong>print</strong>
+Hello world!</code></pre>
+
+p. In this particular case, typing the literal string @"Hello world!"@ will push that value onto the stack; then the word @print@, takes a single string off the stack and writes it to the output stream.
+
+The same idea can be applied to simple arithmetic. Like strings, numbers are also literals, so you just have to type them in (separated by spaces) for them to be pushed onto the stack:
+
+notextile.. <pre><code>(scratchpad) <strong>2 3</strong>
+
+--- Data stack:
+2
+3</code></pre>
+
+p. __NOTE: the stack is displayed in the listener upside-down from the way you'd think, so the bottom number is actually the top of the stack.__
+
+...and if you want to add the top two numbers together, the @+@ word will simply pop two numbers off the stack, add them together, and push the result back onto the stack:
+
+notextile.. <pre><code>--- Data stack:
+2
+3
+(scratchpad) <strong>+</strong>
+
+--- Data stack:
+5</code></pre>
+
+h3(#words). A Few More Words
+
+If you start messing around in the listener, odds are your stack is going to grow pretty quickly and become unmanageable. There are a few words that are essential to know in order to keep things under control:
+
+<dl>
+	<dt>@drop@ __( x &#45;&#45; )__</dt>
+	<dd>removes the top item from the stack and discards it</dd>
+
+	<dt>@.@ __( obj &#45;&#45; )__</dt>
+	<dd>takes the top item from the stack and prettyprints it</dd>
+
+	<dt>@clear@ __( &#45;&#45; )__</dt>
+	<dd>removes all items from the stack</dd>
+</dl>
+
+notextile.. <pre><code>(scratchpad) <strong>2 3 -</strong>
+
+--- Data stack:
+-1
+(scratchpad) <strong>drop</strong>
+
+(scratchpad) <strong>20 5 / .</strong>
+4
+(scratchpad) <strong>2 3 + 6 7</strong>
+
+--- Data stack:
+5
+6
+7
+(scratchpad) <strong>clear</strong>
+(scratchpad)</code></pre>
+
+h3(#stack-ramifications). Ramifications of Stack-Based Design
+
+From these simple examples, we can observe a couple of important things about Factor:
+
+<ol>
+	<li>
+		*Postfix Notation*
+		<p>When using a stack, passing data becomes implicit and we can assume that all input needed by words already exists on the stack. This naturally lends itself to using "postfix notation":http://en.wikipedia.org/wiki/Reverse_Polish_notation because you have to push your data onto the stack before you can use it.</p>
+
+		<p>This also makes words more concise and unambiguous when compared to _infix_ notation and eliminates the need for copious amounts of parentheses used by _prefix_ notation languages, like Lisp or Scheme.</p>
+
+<pre><code>POSTFIX:  6 5 4 * +
+INFIX:    6 + 5 * 4 =
+PREFIX:   (+ (* 4 5) 6)</code></pre>
+
+		<p>With the infix example above, you'd have to know "order of operations rules":http://en.wikipedia.org/wiki/Order_of_operations in order to get the correct answer (or use parentheses to force the matter). When using postfix notation, the fact that multiplication is done first becomes explicit. Prefix notation also gets rid of that ambiguity, but becomes messier and harder to type with the more nesting you add.</p>
+	</li>
+
+	<li>
+		*Calling Words is Implicit*
+		<p>You don't have to specify that you're calling a word, you simply use the word. This, combined with postfix syntax, means that you can easily nest words or cut and paste parts of definitions into new words without disrupting the flow of data. This lends to keeping code modular, short, easily testable, and readable.</p>
+	</li>
+</ol>
+
+h2(#first-word). Your First Word
+
+If you've typed in the examples from above and messed around in the listener, then you might want to know how to write your own word rather than just using ones that are predefined. Drawing on what we already know, here's how to write your first word:
+
+<pre><code>: plus-two ( x -- y )
+    2 + ;</code></pre>
+
+If you copy and paste that into your listener, than you can use the word <code>plus-two</code> anywhere you would like to add two to a number on the top of the stack:
+
+notextile. <pre><code>(scratchpad) <strong>15 plus-two .</strong>
+17</code></pre>
+
+Not very exciting, but it gives us a couple more things to talk about...
+
+h3(#syntax). Syntax Specifics
+
+If you study the word definition, you'll see that it's made up of a few elements:
+
+bc. : plus-two ( x -- y )
+    2 + ;
+
+# A *colon* (@:@) is used to start the definition of a word. This is required and must have a space after it.
+# Right after the opening colon is the *name* of your word, also required.
+# Following the name of your word is its *stack effect declaration*, which is a list of the word's inputs and outputs separated by @--@ and surrounded by parentheses. All words must have a stack effect declaration unless it only pushes literals on the stack. The names of elements in the stack effect declaration don't make a difference, only the number of elements. That means that @( elt elt -- seq )@ and @( x y -- z )@ are the same thing. There _are_ some common conventions for these names, but don't get caught up by it as I'll talk more about them in a later article and it won't change how your program runs.
+# Next comes the *word definition* itself, in this case @2 +@.
+# And the last item is a *semicolon* (@;@), used to end the word definition. This is required and must have a space before it.
+
+The reason that everything must be surrounded by spaces is that there aren't any syntax-only elements to Factor...everything is a word! The colon/semicolon, the parentheses, etc. are all just parsing words working together in order to create the syntax.
+
+h2(#next). Next Time
+
+Next time we'll talk more about stack shufflers, quotations & combinators, details about more datatypes, and more...
+
+If something is unclear or if you're having any trouble, let me know and I'll try to help out!
