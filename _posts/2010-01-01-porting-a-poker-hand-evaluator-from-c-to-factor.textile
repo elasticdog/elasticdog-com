@@ -1,0 +1,8 @@
+---
+layout:    post
+published: false
+title:     Porting a Poker Hand Evaluator from C to Factor
+---
+Todo
+
+I'd like to clean up and add to the API for using this vocab by introducing a deck object. This will allow me to recreate the testing

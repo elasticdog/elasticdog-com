@@ -1,0 +1,105 @@
+---
+layout:    post
+published: false
+title:     HOWTO: Align SSD Partitions for Linux Using GPT and LVM
+---
+http://blog.aloisiojr.com/?p=28
+http://thunk.org/tytso/blog/2009/02/20/aligning-filesystems-to-an-ssds-erase-block-size/
+
+What I've got should be the same as OCZ Vertex Turbo, OCZ Agility, Patriot Torqx, G.Skill Falcon, and Super Talent UltraDrive GX (the Super Talent drive uses a slightly different PCB design).
+
+Newer drives don't suffer from the earlier write amplification effect where a 4k write might cause a 128k region of the SSD to be erased and rewritten.
+
+$ sudo dd if=btrfs-live-2.6.30-1-x86_64.img of=/dev/disk2 bs=1m
+
+Erase Block Size for these drives is: 512KB (other drives use 128KB, so research to find out which one yours is)
+
+can't use fdisk because I want GUI Partition Table (GPT), so GNU Parted is the tool of choice. From the Parted FAQ, starting from 1.7, Parted will automatically align partitions to the physical sector size reported by an ATAPI-compliant drive.
+
+/boot 1GB (ext4 no journal)
+LVM rest (ext4 with journal)
+
+LVM on second drive (ext4 with journal)
+
+# dev=/dev/sda
+# k=1024
+# m=$((k*k))
+# g=$((k*m))
+# ebs=$((512*k))
+# echo $dev $k $m $g $ebs
+/dev/sda 1024 1048576 1073741824 524288
+
+This creates a first partition of 256 MB, with the second taking up the remainder of the space on the drive, and also using a size that's a multiple of 512KB:
+
+# parted -s $dev mklabel msdos
+# parted -s $dev unit B mkpart primary $ebs $(($ebs + 256*$m - 1))
+# parted -s $dev unit B mkpart primary $(($ebs + 256*$m)) $((128035676160 / $ebs * $ebs - 1))
+# parted -s $dev toggle 1 boot
+# parted -s $dev unit B print
+
+That one takes some explaining...BASH does integer division by default, so I'm dividing the total bytes available on the drive by 512KB, which is actually not evenly divisible, but since BASH only deals with integer division and not floating point division, all of the numbers after the decimal point get dropped. Then I multiply that integer by 512KB (and then minus one byte) to get where the final end boundry should be.
+
+
+# pvcreate --dataalignment 512k ${dev}2
+
+verify that the first physical extent is starting on a multiple of the requested data alignment value
+
+# pvs ${dev}2 -o+pe_start
+
+ONLY USING LVM1 there is a limit of 65,536 physical extents (PE) per logical volume (LV). Hence, the LVM PE size will directly determine the maximum size of a logical volume and this volume group can be expanded and shrunk in 4 MB increments by default. That said if you're using lvm2 format, there are no restrictions, bt a large number of extents will slow down the tools (but have no impact on I/O performance to the logical volume). That said, I'm going to make the physical extent size 16MB.
+
+# vgcreate --physicalextentsize 16M system_vg  ${dev}2
+
+Note that in my case, the partition won't fit an exact multiple of the physical extent size, so there's a small amount of space lost again.
+
+lvcreate --readahead ???
+
+# lvcreate --contiguous y --size 2G --name swap_lv system_vg
+# lvcreate --size 12G --name var_lv system_vg
+# lvcreate --size 64G --name root_lv system_vg
+
+The '--contiguous y' is used to create a contiguous partition, that means that your swap space doesn't get partitioned over one or more disks nor over non-contiguous physical extents.
+
+This leaves 40.98G free for expansion later...in the future I might want swap to be >=RAM in order to hibernate, I might want to use LVM snapshots for backup purposes, or I might want to use a more complex partitioning scheme.
+
+Now let's take care of the data drive
+
+# dev=/dev/sdb
+# parted -s $dev mklabel gpt
+# parted $dev unit B mkpart primary 0 1000204886015
+The closes location we can manage is 17408B to 1000204868608B.  Is this still
+acceptable to you?
+Yes/No? yes
+Information: You may need to update /etc/fstab.
+
+# pvcreate /dev/sdb1
+
+# vgcreate --physicalextentsize 64M data_vg /dev/sdb1
+# lvcreate --size 500G --name home_lv data_vg
+
+Let's see what we've done...
+
+# pvs
+# vgs
+# lvs
+***OUTPUT***
+
+you can get more detailed information with pvdisplay, vgdisplay, and lvdisplay
+
+
+let's create our filesystems
+
+# mke2fs -t ext4 -L boot -E stripe-width=128 -O ^has_journal /dev/sda1
+# mkswap -L swap /dev/mapper/system_vg-swap_lv
+# mke2fs -t ext4 -L root -E stripe-width=128 -m 2 /dev/mapper/system_vg-root_lv
+# mke2fs -t ext4 -L var -E stripe-width=128 -m 2 /dev/mapper/system_vg-var_lv
+# mke2fs -t ext4 -L home -m 1 /dev/mapper/data_vg-home_lv
+
+-m changes the reserved blocks percentage
+
+
+
+# hdparm -t /dev/sda
+ Timing buffered disk reads:  692 MB in  3.01 seconds = 230.05 MB/sec
+# hdparm -t --direct /dev/sda
+ Timing buffered disk reads:  742 MB in  3.00 seconds = 247.08 MB/sec

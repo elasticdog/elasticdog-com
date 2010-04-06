@@ -1,0 +1,130 @@
+---
+layout:    post
+published: false
+title:     Faking Multiple Templates in WordPress
+---
+One of the things that surprised me when I first switched from <a href="http://www.movabletype.org/">Movable Type</a> to <a href="http://wordpress.org/">WordPress</a> was its lack of multiple templates.  In <abbr title="Movable Type">MT</abbr> you create numerous templates which allow you to change the look of different pages on your site (i.e., the homepage, archive pages, individual entries, etc.).  If you want a list of your favorite links to appear on the homepage, but not on the page for an individual entry, you just delete that section of code from the appropriate template.
+
+WordPress handles its pages a bit differently.  Everything is based off of a single template, and through the magic of database queries and dynamic page generation, the right content is always shown according to which type of page you're looking at.
+
+<h3 id="the-problem">The Problem</h3>
+
+By using a single template, the default installation of <abbr title="WordPress">WP</abbr> will show the exact same sidebar on every page, and likewise, whenever you view an entry listing, it will always look the same.  This one-template structure is viewed as a blessing to some, but an over-simplification to others.
+
+What if you want to show a list of just the entry titles on your archive pages, rather than the entire entry itself?  What if you want to hide the sidebar's calendar on your individual entry pages?  There are countless scenarios like these that require a little more flexibility than the default <kbd>index.php</kbd> file can give you.
+
+This issue has been discussed many times on the <a href="http://wordpress.org/support/">WordPress support forums</a>, but I've found most of the proposed solutions to be less than ideal.  It's rumored that the functionality to control these types of things will be built into WordPress 1.3, but for the time being, it seems we're on our own.
+
+<h3 id="common-solution">A Common Solution</h3>
+
+Many people suggest using <kbd>.htaccess</kbd> rules and simply forward visitors to templates other than <kbd>index.php</kbd>.  I feel this method over-complicates things, and here's why:
+
+<ol>
+	<li>It creates duplicate code when most of the time you'll have the exact same basic page structure in each template.  Not only that, but multiple templates aren't very easy to maintain if you ever need to change that underlying structure.</li>
+	<li>There's no guarantee that all <abbr title="WordPress">WP</abbr> users will be able to create, edit, and use <kbd>.htaccess</kbd> files.  Some hosting companies just don't allow it.</li>
+	<li>Writing <kbd>.htaccess</kbd> rules can be downright confusing!</li>
+</ol>
+
+<h3 id="my-solution">My Solution</h3>
+
+Using some simple <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and the functionality that's already built into WordPress, you can easily control what appears on different page types without having to create multiple templates.  The key lies in exploiting a few under appreciated variables...
+
+<!--more-->
+
+<var>$single</var>, <var>$cat</var>, <var>$m</var>, and <var>$year</var> are all built in variables used by <abbr title="WordPress">WP</abbr> to determine information about the type of page you're looking at.  The <var>$single</var> variable corresponds to individual entry pages, the <var>$cat</var> variable to categorical listing pages, <var>$m</var> to monthly listings, and <var>$year</var> to yearly listings.
+
+When you're viewing each variable's corresponding page type, only that variable will be assigned a value.  If you're viewing the main page of your site, then <em>none</em> of those variables will be assigned a value.  Thus, a simple test of whether or not each variable has a value can be use to control exactly what is displayed and when.  Here's the basic idea:
+
+<pre><code>
+if ($single) {
+    // individual post contents
+} else if ($cat) {
+    // categorical listing contents
+} else if ($m) {
+    // monthly listing contents
+} else if ($year) {
+    // yearly listing contents
+} else {
+    // main page contents
+}
+</code></pre><br />
+
+All you have to do is place the content you want to appear in the appropriate spot.  If you don't want to do anything different in a particular section from how <abbr title="WordPress">WP</abbr> handles it by default, just leave out that variable's test.
+
+<h3 id="apply-it">How to Apply It</h3>
+
+Using one of the scenarios from above as an example, let's say that you want to show just the entry titles when viewing a categorical listing.  All you'd have to do is change the <code><div id="content"></code> section of your <kbd>index.php</kbd> file to be something like this:
+
+<pre><code markup="none">
+<div id="content">
+    <?php
+    if ($posts) : foreach ($posts as $post) : start_wp();
+
+    if ($cat) { ?>
+        <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+    <?php } else { ?>
+        <?php the_date('','<h2>','</h2>'); ?>
+
+        <div class="post">
+            <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+            <div class="meta">
+                <?php _e("Filed under:"); ?> <?php the_category() ?> &#8212; <?php the_author() ?> @ <?php the_time() ?> <?php edit_post_link(); ?>
+            </div>
+
+            <div class="storycontent">
+                <?php the_content(); ?>
+            </div>
+
+            <div class="feedback">
+                <?php wp_link_pages(); ?>
+
+                <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?>
+            </div>
+
+            <!--
+            <?php trackback_rdf(); ?>
+            -->
+
+            <?php include(ABSPATH . 'wp-comments.php'); ?>
+        </div>
+    <?php }
+
+    endforeach; else: ?>
+        <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+    <?php endif; ?>
+</div>
+</code></pre></br>
+
+The process would be just as easy to change what appears in the sidebar of your page...just edit the <code><div id="menu"></code> section.  Once you get the hang of it, these variables can be used to manipulate just about anything.
+
+<h3 id="step-further">Taking It a Step Further</h3>
+
+Adding in code for each of these page types can get confusing really fast.  With that much information packed in to one file, the scanability of <kbd>index.php</kbd> drops considerably and it becomes difficult to find what you want when you need it.
+
+To combat this, I've taken the fake template concept a step further...rather than listing all of the code directly in <kbd>index.php</kbd>, I use <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> includes to import each custom section from an external file.  Rather than make this tutorial any longer than it already is, here's how I set it up:
+
+<pre><code markup="none">
+<div id="content">
+    <?php
+    if ($posts) : foreach ($posts as $post) : start_wp();
+        // Faking multiple templates
+        if ($single) {
+            require('includes/single.php');
+        } else if ($cat) {
+            require('includes/category.php');
+        } else if ($m) {
+            require('includes/month.php');
+        } else if ($year) {
+            require('includes/year.php');
+        } else {
+            require('includes/main.php');
+    }
+    endforeach; else:
+        require('includes/nomatches.php');
+    endif;
+    ?>
+</div>
+</code></pre><br />
+
+In the external files themselves, simply put what content you want to appear, and that's it!  I hope this helps some of you guys out.

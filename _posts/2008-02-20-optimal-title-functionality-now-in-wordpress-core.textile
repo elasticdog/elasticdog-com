@@ -1,0 +1,48 @@
+---
+layout:    post
+published: false
+title:     Optimal Title Functionality Now in WordPress Core
+---
+I wrote <a href="http://elasticdog.com/2004/09/optimal-title/">Optimal Title</a> three and a half years ago to help fix a blatant flaw in <a href="http://wordpress.org">WordPress</a>'s default usability and search engine optimization (SEO).  Since then, the plugin has been downloaded by tens of thousands of people and written about by hundreds of bloggers.  Soon, the plugin will become obsolete...
+
+<h3 id="">A Change in WordPress v2.5</h3>
+
+As of the beginning of this year, a <a href="http://trac.wordpress.org/changeset/6538">changeset</a> was checked in to WordPress's <abbr title="Subversion">SVN</abbr> repository which adds a "separator location" argument to the built-in <code>wp_title()</code> function.  What that means, is that when WordPress v2.5 is released around March 10th of this year, users will be able to change the ordering of their <abbr title="Hypertext Markup Language">HTML</abbr> title tags without having to use a third-party plugin.
+
+The <a href="http://trac.wordpress.org/ticket/4407">developers decided</a> not to change the default behavior of <code>wp_title()</code>, and instead added the additional argument to the function in order to prevent breaking existing themes that rely on the current behavior.
+
+<h3 id="change">How to Make the Change</h3>
+
+If you're currently using Optimal Title and want to change your template back to using <code>wp_title()</code> after upgrading to WordPress v2.5 (and you <em>should</em>), here's what you need to do...
+
+Using the simplified example from the <a href="http://elasticdog.com/2004/09/optimal-title/#usage">original Optimal Title article</a>, you should currently have something like this in your theme's <kbd>header.php</kbd> file:
+
+<pre><code>
+<title><?php optimal_title(); ?> <?php bloginfo('name'); ?></title>
+</code></pre><br />
+
+Just replace the function call <code>optimal_title()</code> with a call to <code>wp_title('&raquo;',TRUE,'right')</code>, and you'll end up with something like this:
+
+<pre><code>
+<title><?php wp_title('&raquo;',TRUE,'right'); ?> <?php bloginfo('name'); ?></title>
+</code></pre><br />
+
+That's it!
+
+<h3 id="parameters">Parameters</h3>
+
+The <a href="http://codex.wordpress.org/Template_Tags/wp_title">wp_title codex page</a> won't be updated until the next release, however, here is how <code>wp_title()</code> will work after WordPress v2.5 is out:
+
+<pre><code>
+<?php wp_title('separator', display, 'seplocation'); ?>
+</code></pre><br />
+
+<ul>
+	<li>&#39;separator&#39; - <i>string</i> - The text to place between portions of the page title, such as the blog name and the category. Defaults to <code>'&raquo;'</code> (&raquo;).</li>
+	<li>display - <i>boolean</i> - Should the title be displayed (<code>TRUE</code>) or returned for use in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> (<code>FALSE</code>). Defaults to <code>TRUE</code>.</li>
+	<li>&#39;seplocation&#39; - <i>string</i> - The location of the separator in relation to the title.  All values default to the standard left position, with the exception of <code>'right'</code>, which will place the separator after the title rather than before.</li>
+</ul>
+
+<h3 id="glad">I'm Glad</h3>
+
+Even though it took so long to get this done, I'm glad WordPress finally came around to the idea and added Optimal Title's functionality to the core.  Regardless of whether or not you were using Optimal Title before, I'd highly recommend that <strong>all</strong> users make this simple change to their templates in order to take advantage of the many benefits that a proper title tag has to offer.

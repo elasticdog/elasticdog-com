@@ -1,0 +1,66 @@
+---
+layout:    post
+published: false
+title:     WP Plugin: Optimal Title
+---
+<ins datetime="2008-02-20T07:55:33+00:00">This plugin will soon be deprecated...see <a href="http://elasticdog.com/2008/02/optimal-title-functionality-now-in-wordpress-core/">Optimal Title Functionality Now in WordPress Core</a>.</ins>
+
+<h3 id="important">IMPORTANT!!!</h3>
+
+Due to recent <a href="http://wordpress.org/development/2007/04/wordpress-213-and-2010/">XSS security issues</a> fixed in WordPress 2.1.3, the code for Optimal Title also had to change in order to fix the vulnerabilities.  It is recommended that <strong>ALL</strong> users of this plugin upgrade to version 3.0.  Due to changes in how Optimal Title works, that should be the last upgrade you will ever need.  For more details, see the <a href="#update">update details</a> section below...
+
+<hr />
+
+Optimal Title is a <a href="http://wordpress.org/">WordPress</a> plugin that mirrors the function of <code>wp_title()</code> exactly, but moves the position of the &#39;separator&#39; to after the title rather than before.  This allows you to have your blog name tacked on to the end of the page title instead of having it appear first.
+
+Having your page information appear before your blog name in the title is advantageous because it provides more meaningful search engine results and browser bookmark names.  The text that appears between your <code><title></code> tags is used to generate both of these things, and will often be truncated when viewed.  Because of this, it is more effective to have words directly relating to the content of your page appear before common markers.  Not only will the titles be more meaningful, but the they will also be more scannable when being viewed in a list.  For more information on this concept, see Dr. Jakob Nielsen's article <a href="http://www.useit.com/alertbox/980906.html">Microcontent: How to Write Headlines, Page Titles, and Subject Lines</a>.
+
+<h3 id="installation">Installation</h3>
+
+<ol>
+	<li>Download <a href="http://downloads.wordpress.org/plugin/optimal-title.3.0.zip">Optimal Title v3.0</a> and unzip the archive.</li>
+	<li>Upload <code>optimal-title.php</code> into your <kbd>wp-content/plugins/</kbd> directory.</li>
+	<li>Activate the plugin on your <abbr title="WordPress">WP</abbr> Admin &raquo; Plugin Management page by clicking the corresponding &ldquo;Activate&rdquo; link under the <b>Action</b> column.</li>
+	<li>Follow the usage guidelines shown below&#8230;</li>
+</ol>
+
+<h3 id="usage">Usage</h3>
+
+In your <kbd>header.php</kbd> file, replace the function call <code>wp_title()</code> with a call to <code>optimal_title()</code>.  You'll also want to position your blog name after your usage of Optimal Title in order for this to work as intended.  You should end up with a line that looks something like this:
+
+<pre><code>
+<title><?php optimal_title(); ?> <?php bloginfo('name'); ?></title>
+</code></pre><br />
+
+For a more complicated version that checks to make sure the plugin is installed and also includes support for a tagline on the home page, this is actual code I use on this site:
+
+<pre><code>
+<title><?php if ( function_exists('optimal_title') ) { optimal_title('|'); bloginfo('name'); } else { bloginfo('name'); wp_title('|'); } ?><?php if ( is_home() ) { ?> | <?php bloginfo('description'); } ?></title>
+</code></pre>
+
+<!--more-->
+
+<h3 id="parameters">Parameters</h3>
+
+Optimal Title uses the same syntax as <code><a href="http://codex.wordpress.org/Template_Tags/wp_title">wp_title</a></code>, from the default <abbr title="WordPress">WP</abbr> installation, and thus functions in the exact same way...
+
+<pre><code>
+<?php optimal_title('separator', display); ?>
+</code></pre><br />
+
+<ul>
+	<li>&#39;separator&#39; - <i>string</i> - The text to place between portions of the page title, such as the blog name and the category. Defaults to <code>'&raquo;'</code> (&raquo;).</li>
+	<li>display - <i>boolean</i> - Should the title be displayed (<code>TRUE</code>) or returned for use in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> (<code>FALSE</code>). Defaults to <code>TRUE</code>.</li>
+</ul>
+
+<h3 id="version-history">Version History</h3>
+
+<ul>
+	<li><em>v3.0 (06 Apr 2007)</em> - Complete rework on how the plugin works; now should be compatible with all WordPress releases no matter the version.</li>
+	<li><em>v2.0 (26 Mar 2006)</em> - Updated to be compatible with the latest WordPress release (including WP 2.x version support).</li>
+	<li><em>v1.0 (08 Sep 2004)</em> - Initial release to the public.</li>
+</ul>
+
+<h3 id="update">v3.0 Update Details</h3>
+
+Upon the suggestion of <a href="http://leekelleher.com/">Lee Kelleher</a>, the way in which Optimal Title works was adapted in order to be more efficient, future-proof, and secure.  The plugin no longer generates the title text itself, but lets the built-in <code>wp_title()</code> function handle the generation, then rearranges things afterward.  Because of this change, Optimal Title will have the exact same security implications as the default installation of WordPress itself and should never need to be upgraded again...in other words, if your WordPress installation is up to date, you'll never have to worry about the security of using Optimal Title.  That also means that the plugin should work for <strong>ANY</strong> version of WordPress, past, present, and future.

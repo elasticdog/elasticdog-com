@@ -120,7 +120,7 @@ notextile.. <pre><code>(scratchpad) <strong>1 2 4 [ + ] dip</strong>
 6
 4</code></pre>
 
-p. These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you're curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the "retain stack") to temporarily store items while the supplied quotation is being executed. There are a few other "retain stack combinators":http://docs.factorcode.org/content/article-slip-keep-combinators.html that are worth exploring as well.
+p. These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you're curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the "retain stack") to temporarily store items while the supplied quotation is being executed. There are a few other "preserving combinators":http://docs.factorcode.org/content/article-dip-keep-combinators.html that are worth exploring as well.
 
 h3(#cleave). Cleave, Spread, and Apply
 

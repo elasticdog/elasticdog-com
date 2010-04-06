@@ -1,0 +1,28 @@
+---
+layout:    post
+published: false
+title:     Current Status of the Code Viewer WordPress Plugin
+---
+This site has been neglected for a long time, and that negligence has carried over to the development of the <a href="http://elasticdog.com/2004/09/code-viewer/">Code Viewer</a> WordPress plugin as well.  While I've been away, Code Viewer has been picked up/enhanced by a few other developers --- namely <a href="http://flash.terra.ee/">AJ</a> and <a href="http://www.familjencarlstrom.se/WordPress/">HÃ¥kan CarlstrÃ¶m</a> --- and has gained many new features...
+
+Code Viewer now supports syntax highlighting using <a href="http://qbnz.com/highlighter/">GeSHi</a>, can display specific line numbers, and has user-configurable scrollbars (among a few other niceties).  On top of those changes, the default code path variable can now be configured directly in WordPress's admin interface rather than editing the plugin code by hand...very nice!
+
+<h3 id="reactions">Reactions</h3>
+
+I don't agree with all of the design choices they made with the new changes, but my qualms are minor.  Specifically, I don't like some of the chosen defaults, nor the new format when specifying viewcode tags:<br />
+<code>[viewcode ] src=/code/example.txt link=yes[/viewcode]</code><br />
+...in comparison to the original:<br />
+<code><viewcode src="/code/example.txt" link="yes" /></code><br />
+
+That said, it <em>is</em> a cool feeling to find out that other people appreciate your work and chose to carry on with its development in your absence.
+
+<h3 id="torch">Passing the Torch</h3>
+
+With the latest design incarnation here at ElasticDog, I decided to no longer use Code Viewer for displaying code snippets.  Instead, I went with the plugin <a href="http://www.thunderguy.com/semicolon/wordpress/code-markup-wordpress-plugin/">Code Markup</a>, which allows me to easily embed custom markup within code blocks.  It's a completely different way of going about displaying code in blog entries when compared to Code Viewer, but it does the job well and suits my needs for the time being.
+
+Although I haven't actually worked on the development of Code Viewer since late 2004, I did register to have it hosted at the <a href="http://wordpress.org/extend/plugins/">WordPress Plugin Repository</a>.  Unfortunately, I never got around to packaging it up for general consumption.
+
+Trying to not be a slacker anymore, I <em>have</em> contacted HÃ¥kan in hopes of persuading him to take the reins and officially manage the plugin at the centralized WordPress repository.  If he agrees, you should be able to download the plugin here very shortly:<br />
+<a href="http://wordpress.org/extend/plugins/code-viewer/">http://wordpress.org/extend/plugins/code-viewer/</a>
+
+In the mean time, you can find the <a href="http://www.familjencarlstrom.se/WordPress/2006/08/17/code-viewer/">most up to date version of Code Viewer</a> at <a href="http://www.familjencarlstrom.se/WordPress/">HÃ¥kan's site</a>.  Happy coding!

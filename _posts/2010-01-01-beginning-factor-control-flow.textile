@@ -1,0 +1,213 @@
+---
+layout:    post
+published: false
+title:     Beginning Factor - Control Flow
+---
+In the <a href="http://elasticdog.com/2008/12/beginning-factor-shufflers-and-combinators/">previous installment</a> of Beginning Factor, we discussed stack shufflers, quotations & combinators, and specific details about some basic data types. Today I'd like to cover a <em>bunch</em> of words for control flow and then give an example of solving the same basic problem using different common idioms...let's get to it!
+
+<h2 id="controlflow">Control Flow</h2>
+
+Control flow is a computer science term referring to the manipulation of the order in which statements are executed. That would encompass conditional statements, looping, and iteration in general. Control flow words give you the ability to change what your program does depending on the input given.
+
+In Factor, most control flow words are just <a href="http://elasticdog.com/2008/12/beginning-factor-shufflers-and-combinators/#combinators">combinators</a> that call the supplied quotations in differing ways. The trick is, finding the right combinator for your problem domain. But before we can explore control flow words, it's important to understand booleans and comparisons...
+
+<h2 id="booleans">Booleans</h2>
+
+Every object in Factor that is not <code>f</code> is considered to be true. That means that <strong>the only false value is <code>f</code></strong>. The "canonical" true value is <code>t</code>.
+
+The typical logic operators are available for use on booleans (<code>and</code>, <code>or</code>, <code>xor</code>, <code>not</code>), but there are a couple of unique properties (gotchas) that are worth pointing out...
+
+When both inputs are true:
+
+<ul>
+	<li>the logical operator <code>and</code> will return the <em>second</em> true value</li>
+	<li>the logical operator <code>or</code> will return the <em>first</em> true value</li>
+</ul>
+
+<pre><code>
+( scratchpad ) <strong>t 7 and .</strong>
+7
+( scratchpad ) <strong>7 t and .</strong>
+t
+( scratchpad ) <strong>t 7 or .</strong>
+t
+( scratchpad ) <strong>7 t or .</strong>
+7
+</code></pre><br />
+
+Related to these logical operators, are two combinators that are used in place of the common idioms <code>bi@ and</code> and <code>bi@ or</code>:
+
+<dl>
+	<dt><code>both?</code> <i>( x y quot &#45;&#45; ? )</i></dt>
+		<dd>tests if <b><i>quot</i></b> yields a true value when applied to both <b><i>x</i></b> and <b><i>y</i></b></dd>
+	<dt><code>either?</code> <i>( x y quot &#45;&#45; ? )</i></dt>
+		<dd>tests if <b><i>quot</i></b> yields a true value when applied to either <b><i>x</i></b> or <b><i>y</i></b></dd>
+</dl>
+
+<pre><code>
+( scratchpad ) <strong>3 6 [ even? ] both? .</strong>
+f
+( scratchpad ) <strong>3 6 [ even? ] either? .</strong>
+t
+</code></pre><br />
+
+<h2 id="comparisons">Comparison Operators</h2>
+
+Nothing too exciting or unexpected here, but when you want to compare two values, these are your bread and butter:
+
+<pre><code>
+( scratchpad ) <strong>1 2 < .</strong>
+t
+( scratchpad ) <strong>1 2 > .</strong>
+f
+( scratchpad ) <strong>1 2 = .</strong>
+f
+( scratchpad ) <strong>1 2 = not .</strong>
+t
+( scratchpad ) <strong>1 1 <= .</strong>
+t
+( scratchpad ) <strong>1 1 >= .</strong>
+t
+( scratchpad ) <strong>1 1.0 = .</strong>
+f
+( scratchpad ) <strong>1 1.0 number= .</strong>
+t
+</code></pre><br />
+
+There are three different types of equality tests to worry about. The most prevalent of these is the <code>=</code> word, which is a <em>value comparison</em> where type matters. Determining whether or not two objects point to the same exact reference (<em>identity comparison</em>) is done with the <code>eq?</code> word, but it's not commonly used. To compare numbers while ignoring their types, use the word <code>number=</code>.
+
+Note that no word is explicitly defined for <em>in</em>equality, instead, you just use the logical operator <code>not</code> after performing a comparison.
+
+<h2 id="conditionals">Conditionals</h2>
+
+Finally, we can talk about conditionals! A <a href="http://docs.factorcode.org/content/article-conditionals.html">conditional combinator</a> is a word that performs a different action depending on whether a specified condition evaluates to true or false.
+
+<h3 id="if">If</h3>
+
+First up, the classic "if-then-else" statement:
+
+<dl>
+	<dt><code>if</code> <i>( ? true false &#45;&#45; )</i></dt>
+		<dd>calls the <b><i>true</i></b> quotation if the condition (<b><i>?</i></b>) is <code>t</code>; otherwise calls the <b><i>false</i></b> quotation</dd>
+</dl>
+
+<pre><code>
+( scratchpad ) <strong>2 even? [ "yep!" ] [ "nope" ] if print</strong>
+yep!
+( scratchpad ) <strong>3 even? [ "yep!" ] [ "nope" ] if print</strong>
+nope
+</code></pre><br />
+
+To relate this back to the "if-then-else" paradigm, you can essentially think of the <b><i>true</i></b> quotation as the "then" block, and the <b><i>false</i></b> quotation as the "else" block.
+
+Unless you're doing something short and trivial, conditional statements can get lengthy and hard to grok. To make things easier to read, it's common to split the statement up into multiple lines:
+
+<pre><code>
+: factorial ( n -- n! )
+    dup zero? [
+        drop 1
+    ] [
+        dup 1 - factorial *
+    ] if ;
+</code></pre><br />
+
+If you don't actually need to branch and just want to pick between two literals (like we did in the first example), you can use the <code>?</code> word to simplify things a bit:
+
+<pre><code>
+( scratchpad ) <strong>2 even? "yep!" "nope" ? print</strong>
+yep!
+</code></pre><br />
+
+<h3 id="when">When</h3>
+
+The word <code>when</code> is a variation of <code>if</code> used when your "else" block is empty:
+
+<dl>
+	<dt><code>when</code> <i>( ? true &#45;&#45; )</i></dt>
+		<dd>calls the <b><i>true</i></b> quotation as long as the condition (<b><i>?</i></b>) is not <code>f</code></dd>
+</dl>
+
+<pre><code>
+( scratchpad ) <strong>42 dup number? [ number>string ] when .</strong>
+"42"
+( scratchpad ) <strong>"hello" dup number? [ number>string ] when .</strong>
+"hello"
+</code></pre><br />
+
+For clarity, the following lines are equivalent:
+
+<pre><code>
+number? [ number>string ] [ ] if
+number? [ number>string ] when
+</code></pre><br />
+
+<h3 id="unless">Unless</h3>
+
+The word <code>unless</code> is a variation of <code>if</code> used when your "then" block is empty:
+
+<dl>
+	<dt><code>unless</code> <i>( ? false &#45;&#45; )</i></dt>
+		<dd>calls the <b><i>false</i></b> quotation only if the condition (<b><i>?</i></b>) is <code>f</code></dd>
+</dl>
+
+<pre><code>
+( scratchpad ) <strong>16 2 dup zero? [ / ] unless .</strong>
+8
+( scratchpad ) <strong>16 0 dup zero? [ / ] unless</strong>
+
+--- Data stack:
+16
+0
+</code></pre><br />
+
+For clarity, the following lines are equivalent:
+
+<pre><code>
+dup zero? [ ] [ / ] if
+dup zero? [ / ] unless
+</code></pre><br />
+
+<h3 id="case">Case</h3>
+
+The word <code>case</code> is a switch statement that is used in place of nested <code>if</code> statements when you want to alter the behavior of your word depending on the input value:
+
+<dl>
+	<dt><code>case</code> <i>( obj assoc &#45;&#45; )</i></dt>
+		<dd>compares the <b><i>obj</i></b> object to the first element of each pair in the <b><i>assoc</i></b> association, and if a match is found, calls the second element of that pair (which must be a quotation). You can optionally have a quotation as the last element in the association which will be the default fall-through behavior.</dd>
+</dl>
+
+The definition is a bit hard to follow, but it's less confusing in practice:
+
+<pre><code>
+: my-case ( n -- )
+    {
+        { 0 [ "You entered zero" ] }
+        { 1 [ "You entered a perfect square" ] }
+        { 2 [ "You entered an even number" ] }
+        { 3 [ "You entered an odd number" ] }
+        [ drop "You entered a number higher than three" ]
+    } case print ;
+</code></pre><br />
+
+<pre><code>
+( scratchpad ) <strong>1 my-case</strong>
+You entered a perfect square
+( scratchpad ) <strong>5 my-case</strong>
+You entered a number higher than three
+</code></pre><br />
+
+If you provide a default case at the end, the quotation will get called with <b>obj</b> still on the stack. Therefore, the <code>drop</code> is required in the above example to prevent unbalanced branches.
+
+<h3 id="cond">Cond</h3>
+
+The word <code>cond</code> is very similar to <code>case</code>, but is used when you need to test the input value in a specific way. a switch statement that is used in place of nested <code>if</code> statements when you want to alter the behavior of your word depending on the input value:
+
+<dl>
+	<dt><code>case</code> <i>( obj assoc &#45;&#45; )</i></dt>
+		<dd>compares the <b><i>obj</i></b> object to the first element of each pair in the <b><i>assoc</i></b> association, and if a match is found, calls the second element of that pair (which must be a quotation). You can optionally have a quotation as the last element in the association which will be the default fall-through behavior.</dd>
+</dl>
+
+
+<h2 id="iteration">Loops & Iteration</h2>
+
+The last thing to cover for control flow is iteration, or the act of repeating. Factor supports both imperative and declarative paradigms when handling iteration, although it's more common to see the latter. Like I've said before, the trick is using what fits best in each situation, and for looping, that usually means a high-level combinator...

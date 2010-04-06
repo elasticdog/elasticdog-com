@@ -140,8 +140,10 @@ h3(#syntax). Syntax Specifics
 
 If you study the word definition, you'll see that it's made up of a few elements:
 
-bc. : plus-two ( x -- y )
+{% highlight factor %}
+: plus-two ( x -- y )
     2 + ;
+{% endhighlight %}
 
 # A *colon* (@:@) is used to start the definition of a word. This is required and must have a space after it.
 # Right after the opening colon is the *name* of your word, also required.

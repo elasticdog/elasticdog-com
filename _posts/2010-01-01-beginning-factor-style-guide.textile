@@ -1,0 +1,22 @@
+---
+layout:    post
+published: false
+title:     Beginning Factor - Style Guide
+---
+keep lines under 64 characters
+indentation (conditionals, etc.)
+naming conventions
+4 spaces
+preference of combinators over shufflers
+
+
+    * Most word definitions should fit in three or fewer 64-column lines.
+    * Any copy/pasted code should be factored out into new words.
+    * Use combinators to abstract control flow patterns.
+    * Use library words where possible.
+    * More general words should go at the top of a file; more specific at the bottom.
+    * Try to use collections instead of working with individual objects on the stack.
+    * Don't use the datastack as a data structure.
+    * Use meaningful word names. Avoid too many words named (foo) or foo*.
+    * A word named (foo) should only exist to help implement the word foo.
+    * Come to the IRC channel and we'll review your code. It's fun!
