@@ -1,0 +1,2 @@
+#!/bin/bash
+jekyll && rsync -avz --delete _site/ linode:/srv/http/nginx/elasticdog.com
