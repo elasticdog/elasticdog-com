@@ -1,7 +1,7 @@
 ---
 layout:    post
 published: false
-title:     WP Plugin: Optimal Title
+title:     'WP Plugin: Optimal Title'
 ---
 <ins datetime="2008-02-20T07:55:33+00:00">This plugin will soon be deprecated...see <a href="http://elasticdog.com/2008/02/optimal-title-functionality-now-in-wordpress-core/">Optimal Title Functionality Now in WordPress Core</a>.</ins>
 
