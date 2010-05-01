@@ -1,6 +1,5 @@
 ---
 layout:    post
-published: false
 title:     Optimal Title Functionality Now in WordPress Core
 ---
 I wrote <a href="http://elasticdog.com/2004/09/optimal-title/">Optimal Title</a> three and a half years ago to help fix a blatant flaw in <a href="http://wordpress.org">WordPress</a>'s default usability and search engine optimization (SEO).  Since then, the plugin has been downloaded by tens of thousands of people and written about by hundreds of bloggers.  Soon, the plugin will become obsolete...

@@ -1,6 +1,5 @@
 ---
 layout:    post
-published: false
 title:     'HOWTO: Install WordPress on Nginx'
 ---
 I recently moved all of my sites from a cheap shared host to a shiny new <abbr title="Virtual Private Server">VPS</abbr> at <a href="http://www.slicehost.com/">SliceHost</a>, and couldn't be happier.  Running your own VPS means a great amount of flexibility since you have full root access to the server and get to configure everything exactly how you want it.  That said, it also means that if you want to maintain high performance, you have to keep your resource usage to a minimum.

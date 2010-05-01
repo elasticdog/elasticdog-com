@@ -1,16 +1,14 @@
 ---
 title:  Archives
-layout: base
+layout: default
 ---
-{% include header.html %}
-{% include nav.html %}
 <div id="container" class="archives">
 	<div class="index">
 		<h2><em>Notebook archives</em>&hellip;</h2>
 		<ul>
 			{% for post in site.posts %}
 			<li>
-			<a href="{{ post.url }}/#notebook" title="{{ post.title }}">
+			<a href="{{ post.url }}" title="{{ post.title }}">
 				<span class="date">
 					<span class="day">{{ post.date | date: '%d' }}</span>
 					<span class="month"><abbr>{{ post.date | date: '%b' }}</abbr></span>
@@ -23,4 +21,3 @@ layout: base
 		</ul>
 	</div> <!-- /.index -->
 </div> <!-- /#container.archives -->
-{% include footer.html %}

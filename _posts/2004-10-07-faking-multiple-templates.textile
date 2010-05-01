@@ -1,6 +1,5 @@
 ---
 layout:    post
-published: false
 title:     Faking Multiple Templates in WordPress
 ---
 One of the things that surprised me when I first switched from <a href="http://www.movabletype.org/">Movable Type</a> to <a href="http://wordpress.org/">WordPress</a> was its lack of multiple templates.  In <abbr title="Movable Type">MT</abbr> you create numerous templates which allow you to change the look of different pages on your site (i.e., the homepage, archive pages, individual entries, etc.).  If you want a list of your favorite links to appear on the homepage, but not on the page for an individual entry, you just delete that section of code from the appropriate template.

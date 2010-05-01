@@ -1,6 +1,5 @@
 ---
 layout:    post
-published: false
 title:     Current Status of the Code Viewer WordPress Plugin
 ---
 This site has been neglected for a long time, and that negligence has carried over to the development of the <a href="http://elasticdog.com/2004/09/code-viewer/">Code Viewer</a> WordPress plugin as well.  While I've been away, Code Viewer has been picked up/enhanced by a few other developers --- namely <a href="http://flash.terra.ee/">AJ</a> and <a href="http://www.familjencarlstrom.se/WordPress/">HÃ¥kan CarlstrÃ¶m</a> --- and has gained many new features...
