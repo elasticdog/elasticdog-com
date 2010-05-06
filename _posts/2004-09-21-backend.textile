@@ -1,38 +1,39 @@
 ---
 layout:    post
+published: false
 title:     Workin’ My Backend
 ---
-I'm under no delusions about the number of readers I have, and yet I feel compelled to write an update on how things are progressing.  Call it hope for a self-fulfilling prophecy...after all, if I'm going to start a blog that I actually expect people to read, I have to write entries in it sooner or later, right?
+I'm under no delusions about the number of readers I have, and yet I feel compelled to write an update on how things are progressing. Call it hope for a self-fulfilling prophecy...after all, if I'm going to start a blog that I actually expect people to read, I have to write entries in it sooner or later, right?
 
-It may look as though not much has changed around here over the past couple of weeks, but I assure you things <em>are</em> moving forward.  Admittedly, I have been busy with school and my personal life, and consequently haven't had much time to devote toward ElasticDog, but I haven't completely ignored it either.
+It may look as though not much has changed around here over the past couple of weeks, but I assure you things _are_ moving forward. Admittedly, I have been busy with school and my personal life, and consequently haven't had much time to devote toward ElasticDog, but I haven't completely ignored it either.
 
-Not only have I started working on numerous entries, but I've also been teaching myself some <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> in an attempt to customize WordPress even further than I already have.  Here's a short list of some of the projects I've been tackling:
+Not only have I started working on numerous entries, but I've also been teaching myself some <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> in an attempt to customize WordPress even further than I already have. Here's a short list of some of the projects I've been tackling:
 
 <ul>
 	<li>
-		<strong>Convenient Code</strong><br />
+		*Convenient Code*<br />
 		A <abbr title="WordPress">WP</abbr> plugin that pulls source code from an external file and displays the associated code with line numbers.
 	</li>
 	<li>
-		<strong>Faking Templates with <abbr title="WordPress">WP</abbr></strong><br />
-		There are about a billion different ways to do this, and I've come up with one of my own.  With my method, I'm able to control what appears in both the main column and sub column of my site, differing each one for the home page, individual pages, and each of the three archive page types (yearly, monthly, and categorical).
+		*Faking Templates with <abbr title="WordPress">WP</abbr>*<br />
+		There are about a billion different ways to do this, and I've come up with one of my own. With my method, I'm able to control what appears in both the main column and sub column of my site, differing each one for the home page, individual pages, and each of the three archive page types (yearly, monthly, and categorical).
 	</li>
 	<li>
-		<strong>Project JumpDrive</strong><br />
+		*Project JumpDrive*<br />
 		How I found the road to <abbr title="Universal Serial Bus">USB</abbr> flash drive heaven.
 	</li>
 	<li>
-		<strong>Additional <abbr title="Cascading Style Sheets">CSS</abbr> Inclusion</strong><br />
-		A <abbr title="WordPress">WP</abbr> plugin that will allow you to include an additional <abbr title="Cascading Style Sheets">CSS</abbr> file for a specific entry.  That way, you're not forced to load a bloated style sheet for all of your pages.
+		*Additional <abbr title="Cascading Style Sheets">CSS</abbr> Inclusion*<br />
+		A <abbr title="WordPress">WP</abbr> plugin that will allow you to include an additional <abbr title="Cascading Style Sheets">CSS</abbr> file for a specific entry. That way, you're not forced to load a bloated style sheet for all of your pages.
 	</li>
 	<li>
-		<strong>Streamlining Code and Planning for Upgradeability</strong><br />
+		*Streamlining Code and Planning for Upgradeability*<br />
 		Although this is a never-ending process, I've been going through my code, commenting important sections, simplifying structure, and adding more flexibility in preparation for inevitable updates.
 	</li>
 	<li>
-		<strong>Text Editor Showdown</strong><br />
+		*Text Editor Showdown*<br />
 		A no holds barred comparison between popular <abbr title="Hypertext Markup Language">HTML</abbr> &amp; text editors.
 	</li>
 </ul>
 
-That's just a sneak peak at what I've got brewing over the next couple of weeks.  I'll also be adding the rest of the main site pages (about, portfolio, etc.) as soon as humanly possible.  Simply put, there's much more to come here at ElasticDog, and by the time I'm finished workin' my backend, even Jennifer Lopez will have something to be envious of!
+That's just a sneak peak at what I've got brewing over the next couple of weeks. I'll also be adding the rest of the main site pages (about, portfolio, etc.) as soon as humanly possible. Simply put, there's much more to come here at ElasticDog, and by the time I'm finished workin' my backend, even Jennifer Lopez will have something to be envious of!
