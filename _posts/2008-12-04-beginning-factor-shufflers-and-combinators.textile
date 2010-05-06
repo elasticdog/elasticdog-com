@@ -2,7 +2,7 @@
 layout: post
 title:  Beginning Factor &#8211; Shufflers & Combinators
 ---
-In the "previous installment":http://elasticdog.com/2008/11/beginning-factor-introduction/ of Beginning Factor, we discussed some of the attributes of stack-based languages and the syntax for defining words in Factor. This time around, I'd like to introduce stack shufflers, quotations & combinators, and touch on some more basic data types and their properties.
+In the "previous installment":/2008/11/beginning-factor-introduction/ of Beginning Factor, we discussed some of the attributes of stack-based languages and the syntax for defining words in Factor. This time around, I'd like to introduce stack shufflers, quotations & combinators, and touch on some more basic data types and their properties.
 
 Up until now, we've essentially been using Factor as an overqualified RPN(Reverse Polish Notation) calculator. I just wanted to make sure that you don't underestimate Factor because of these particular examples; Factor is an extremely capable and modern language that can be used for everything from web applications, to game development, to complex text parsing, and so on. I'm purposefully using over-simplified examples as a means to demonstrate specific points about the language. Stick with me, and I assure you the examples will gradually get more expressive.
 
