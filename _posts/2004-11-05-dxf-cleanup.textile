@@ -2,32 +2,28 @@
 layout:    post
 title:     Design by Fire Cleanup
 ---
-Last week, Andrei Herasimchuk of <a href="http://www.designbyfire.com/">Design by Fire</a> announced a contest to see who could take his site's current design and "clean it up, optimizing it for best semantic and structural architecture."  Having the final code judged by three industry bigwigs (<a href="http://www.mezzoblue.com/">Dave Shea</a>, <a href="http://www.w3.org/People/Dean/">Dean Jackson</a>, and <a href="http://www.meyerweb.com/">Eric Meyer</a>), Andrei is offering the winner their choice of any three <a href="http://www.adobe.com/products/main.html">Adobe products</a>.  It's a widely known fact that software from Adobe is like crack to designers, so I figured I'd have a go at it.
+Last week, Andrei Herasimchuk of "Design by Fire":http://www.designbyfire.com/ announced a contest to see who could take his site's current design and "clean it up, optimizing it for best semantic and structural architecture." Having the final code judged by three industry bigwigs ("Dave Shea":http://www.mezzoblue.com/, "Dean Jackson":http://www.w3.org/People/Dean/, and "Eric Meyer":http://www.meyerweb.com/), Andrei is offering the winner their choice of any three "Adobe products":http://www.adobe.com/products/main.html. It's a widely known fact that software from Adobe is like crack to designers, so I figured I'd have a go at it.
 
-I by no means would consider myself an "expert" on web standards (at least not in the same league as these guys), but my anal-retentive temperament <em>has</em> provided me with the abnormal patience to sit down and scour the web for details regarding this subject matter.  I'd like to think that although I may not have a lot of industry experience, I have read tons about web standards and do enough work on my own to offer advice when it's needed.
+I by no means would consider myself an "expert" on web standards (at least not in the same league as these guys), but my anal-retentive temperament _has_ provided me with the abnormal patience to sit down and scour the web for details regarding this subject matter. I'd like to think that although I may not have a lot of industry experience, I have read tons about web standards and do enough work on my own to offer advice when it's needed.
 
-The contest consisted of cleaning up three different pages of code, and also optimizing the <abbr title="Cascading Style Sheets">CSS</abbr> involved in creating the look of Andrei's site.  Initially underestimating the amount of time it would take to complete this cleanup, I immediately downloaded the necessary source code and began hacking away.
-
-<!--more-->
+The contest consisted of cleaning up three different pages of code, and also optimizing the <abbr title="Cascading Style Sheets">CSS</abbr> involved in creating the look of Andrei's site. Initially underestimating the amount of time it would take to complete this cleanup, I immediately downloaded the necessary source code and began hacking away.
 
 <img src="/images/2004/11/dxf-code.jpg" alt="Screenshot of DxF Code" width="225" height="169" class="alignright" />
 
-<h3 id="results">The Results</h3>
+h2(#results). The Results
 
-After about four days of working on the contest, creating three new images, having two bloodshot eyes, and one neglected girlfriend, I decided my pseudo redesign was complete.  I'm sure it's not perfect, but I can honestly say that it <em>is</em> better.
+After about four days of working on the contest, creating three new images, having two bloodshot eyes, and one neglected girlfriend, I decided my pseudo redesign was complete. I'm sure it's not perfect, but I can honestly say that it _is_ better.
 
-Overall, my changes make the site much more consistent...not only in its structure, but in the way it's displayed across different browsers and platforms.  It's also much more accessible, much more semantic, <em>and</em> it tastes like chicken!
+Overall, my changes make the site much more consistent...not only in its structure, but in the way it's displayed across different browsers and platforms. It's also much more accessible, much more semantic, _and_ it tastes like chicken!
 
-The final judging for the contest has yet to take place, but I'm crossing my fingers.  Even if I don't win the software, it has been a good way for me to flex my design muscles -- plus there's the added bonus of three <strong>very</strong> prominent designers in the industry who will be looking closely at my work.
+The final judging for the contest has yet to take place, but I'm crossing my fingers. Even if I don't win the software, it has been a good way for me to flex my design muscles -- plus there's the added bonus of three *very* prominent designers in the industry who will be looking closely at my work.
 
 If any of my readers are interested in seeing the completed code (yes, I'm talking to both of you), the three pages can be found here:
 
-<ul>
-	<li><a href="http://elasticdog.com/dxf/">DxF Homepage</a></li>
-	<li><a href="http://elasticdog.com/dxf/cat_design.html">DxF Categorical Archive</a></li>
-	<li><a href="http://elasticdog.com/dxf/000146.html">DxF Sample Entry</a></li>
-</ul>
+* "DxF Homepage":/dxf/
+* "DxF Categorical Archive":/dxf/cat_design.html
+* "DxF Sample Entry":/dxf/000146.html
 
-I've also created <a href="http://elasticdog.com/dxf/contest.zip">a zip file</a> that contains all of the new code, images, <abbr title="Cascading Style Sheets">CSS</abbr>, and source files used in creating my entry.  Inside the zip, you'll also find a changelog that discusses the improvements I made in more detail.
+I've also created "a zip file":http://elasticdog.com/dxf/contest.zip that contains all of the new code, images, <abbr title="Cascading Style Sheets">CSS</abbr>, and source files used in creating my entry. Inside the zip, you'll also find a changelog that discusses the improvements I made in more detail.
 
 Wish me luck!
