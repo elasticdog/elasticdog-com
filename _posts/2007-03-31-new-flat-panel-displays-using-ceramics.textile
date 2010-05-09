@@ -2,25 +2,26 @@
 layout:    post
 title:     New Flat-Panel Displays using Ceramics
 ---
-While waiting for my tax refund, I've been checking out flat panel TVs and I ran across this article on a new ceramic flat panel technology in <a href="http://www.popsci.com">Popular Science</a>:
+While waiting for my tax refund, I've been checking out flat panel TVs and I ran across this article on a new ceramic flat panel technology in "Popular Science":http://www.popsci.com:
 
 <blockquote>
-"Researcher Steve Yando has invented a ceramic panel that converts video signals into moving pictures.  Yando did not have to invent a new way to convert electricity into light; flat electroluminescent panels to do that have been on the market for years. The problem was scanning: how to switch individual points of the panel on and off very rapidly to build up the quick-changing light-and-dark pattern of the TV image. ...Yando solved the problem by pulling a very cute trick with piezoelectric crystals, which are old and long-used electric devices.
+"Researcher Steve Yando has invented a ceramic panel that converts video signals into moving pictures. Yando did not have to invent a new way to convert electricity into light; flat electroluminescent panels to do that have been on the market for years. The problem was scanning: how to switch individual points of the panel on and off very rapidly to build up the quick-changing light-and-dark pattern of the TV image. ...Yando solved the problem by pulling a very cute trick with piezoelectric crystals, which are old and long-used electric devices.
 
 Piezo crystals convert mechanical movement to electricity, or electricity to mechanical movement; they work either way....Yando's trick was to make a piezo crystal work both ways at the same time -- convert electricity to motion, the motion to electricity -- and combine that with an electroluminescent panel to get light.
 
-<img src="/images/2007/04/popsci-diagram.png" alt="Ceramic Panel Diagram" class="center" />
+<img src="/images/2007/04/popsci-diagram.png" alt="Ceramic Panel Diagram" />
 
 The dinner-plate picture panel is a flat rectangle of piezo ceramic (lead zirconate-titanate) coated with electroluminescent phosphor (a powder similar to fluorescent-lamp coating). Electrodes at the sides of the ceramic bring scanning voltages that determine which point will light up. Electrodes on the back and face of the panel bring TV picture-signal voltages that determine how bright the point will light up. (The face electrode has to be transparent so you can see the picture that is created.)
 
 The scanning voltage causes a mechanical vibration to move across the ceramic in a line - like a long ocean wave. The vibration wave, in turn, generates a piezo voltage in the ceramic. So a line of voltage moves across the panel. But suppose you feed in two scanning voltages simultaneously, one to the top edge of the panel and one to a side edge. This gives you two moving lines of vibration waves and two moving lines of piezo voltage. Where the lines cross, you get a moving point of double piezo voltage. You can control the course of this point - make it scan across the panel - by doing things with the circuits in the TV receiver.
 
-The electroluminescent layer will light up whenever there is a voltage. But you don't want the moving lines to show at all, and even the moving spot must adjust it's brightness to suit the TV picture signal. So a varying resistance cuts out all voltage at or below the double-strength piezo voltage - even the moving spot, unaided, won't light up. But the additional voltage supplied by the picture signal can make the moving spot glow, changing it from dim to bright to create the entire image."</blockquote>
+The electroluminescent layer will light up whenever there is a voltage. But you don't want the moving lines to show at all, and even the moving spot must adjust it's brightness to suit the TV picture signal. So a varying resistance cuts out all voltage at or below the double-strength piezo voltage - even the moving spot, unaided, won't light up. But the additional voltage supplied by the picture signal can make the moving spot glow, changing it from dim to bright to create the entire image."
+</blockquote>
 
-Though the article is a little old and lacking on display specifications, they did mention that a full-scale prototype has already been built.  So I may end up waiting another year or so to see if this develops before looking for a new TV.
+Though the article is a little old and lacking on display specifications, they did mention that a full-scale prototype has already been built. So I may end up waiting another year or so to see if this develops before looking for a new TV.
 
-If anybody has any more info on ceramic flat panel TV technology, please drop me a line at <strong>aaron [at] elasticdog dot com</strong>.
+If anybody has any more info on ceramic flat panel TV technology, please drop me a line at *aaron [at] elasticdog dot com*.
 
-<h2 id="update">Update</h2>
+h2(#update). Update
 
-Whew...talk about an April Fools Day-spurred adrenaline rush!  I think we duped literally <b>TENS</b> of people with that one (not much response from <a href="http://www.digg.com/">Digg</a>, <a href="http://www.fark.com/">Fark</a>, or <a href="http://www.shacknews.com/">Shacknews</a>).  This entry was the brain-child of my diabolical work friend James whom found this article in a 1961 version of Popular Science.  Here are scans of the original article: <a href="http://elasticdog.com/images/2007/04/page1.jpg">page one</a> and <a href="http://elasticdog.com/images/2007/04/page2.jpg">page two</a>.  Hopefully next year we can get more traffic coming our way if we want to pull a successful prank on the internets.  Live and learn&#8230;
+Whew...talk about an April Fools Day-spurred adrenaline rush! I think we duped literally **TENS** of people with that one (not much response from "Digg":http://www.digg.com/, "Fark":http://www.fark.com/, or "Shacknews":http://www.shacknews.com/). This entry was the brain-child of my diabolical work friend James whom found this article in a 1961 version of Popular Science. Here are scans of the original article: "page one":/images/2007/04/page1.jpg and "page two":http://elasticdog.com/images/2007/04/page2.jpg. Hopefully next year we can get more traffic coming our way if we want to pull a successful prank on the internets. Live and learn...
