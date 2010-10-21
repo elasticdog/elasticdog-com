@@ -1,8 +1,15 @@
 ---
 layout: default
 ---
+{% if page.previous or page.next %}<p>{% endif %}
+{% if page.previous %}
+<a href="{{ page.previous.url }}/" title="{{ page.previous.title }}" rel="prev">&larr; previous article</a>
+{% endif %}
+{% if page.previous and page.next %} .::. {% endif %}
+{% if page.next %}
+<a href="{{ page.next.url }}/" title="{{ page.next.title }}" rel="next">next article &rarr;</a>
+{% endif %}
+{% if page.previous or page.next %}</p>{% endif %}
 <h2>{{ page.title }}</h2>
 
 {{ content }}
-
-<p>// published: {{ page.date | date: "%Y.%m.%d" }}</p>
