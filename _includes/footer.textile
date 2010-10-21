@@ -1,0 +1,29 @@
+<ul>
+{% if page.url != '/index.html' %}
+	<li><a href="/">Home</a></li>
+{% else %}
+	<li>Home</li>
+{% endif %}
+{% if page.url != '/about/index.html' %}
+	<li><a href="/about/">About</a></li>
+{% else %}
+	<li>About</li>
+{% endif %}
+{% if page.url != '/projects/index.html' %}
+	<li><a href="/projects/">Projects</a></li>
+{% else %}
+	<li>Projects</li>
+{% endif %}
+{% if page.url != '/archives/index.html' %}
+	<li><a href="/archives/">Archives</a></li>
+{% else %}
+	<li>Archives</li>
+{% endif %}
+{% if page.url != '/contact/index.html' %}
+	<li><a href="/contact/">Contact</a></li>
+{% else %}
+	<li>Contact</li>
+{% endif %}
+</ul>
+
+Copyright (c) 2003-{{ site.time | date: '%Y' }} Aaron Bull Schaefer - All Rights Reserved
