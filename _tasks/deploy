@@ -1,2 +1,22 @@
 #!/bin/bash
-jekyll && rsync -avz --delete _site/ linode:/srv/http/nginx/elasticdog.com
+
+# exit if any command in this script has a non-zero exit code
+set -o errexit
+
+readonly XML_FILE='_site/feed/atom.xml'          # location of unmodified feed file
+readonly TMP_FILE=$(mktemp /tmp/tmp.XXXXXXXXXX)  # temporary file used to store modified feed file
+
+# generate a fresh copy of the website
+rm -r _site/* && jekyll
+
+# replace relative URL references in the atom.xml feed with absolute URLs
+href='s/ href=\&quot;\// href=\&quot;http:\/\/elasticdog.com\//g'
+src='s/ src=\&quot;\// src=\&quot;http:\/\/elasticdog.com\//g'
+
+sed -e "$href;$src" $XML_FILE > $TMP_FILE
+mv $TMP_FILE $XML_FILE
+
+# sync the site contents over to the production server
+rsync -avz --delete _site/ linode:/srv/http/nginx/elasticdog.com
+
+exit 0
