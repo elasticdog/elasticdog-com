@@ -1,0 +1,1 @@
+Sitemap: http://elasticdog.com/sitemap.xml.gz

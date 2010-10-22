@@ -1,6 +1,9 @@
 ---
 layout: default
 title:  About | ElasticDog.com
+permalink: /
+changefreq: yearly
+priority: 0.4
 ---
 h2(#aaron). About Aaron Bull Schaefer
 
@@ -19,7 +22,7 @@ If you'd like to reach me for any reason, send an email to: *aaron [at] elasticd
 
 h4(#gnupg). My GnuPG Public Key
 
-"GNU Privcy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or GPG) is F/OSS(Free and Open Source Software) that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
+"GNU Privcy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or GPG) is <acronym title="Free and Open Source Software">F/OSS</acronym> that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
 
 pre. pub   1024D/50EDFCCD 2008-05-31
       Key fingerprint = 7074 406E 8272 D083 1E31  2845 666F D4C1 50ED FCCD

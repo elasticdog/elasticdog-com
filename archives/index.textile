@@ -1,6 +1,9 @@
 ---
 layout: default
 title:  Archives
+permalink: /
+changefreq: weekly
+priority: 0.2
 ---
 h2. Archives...
 

@@ -3,11 +3,15 @@
 # exit if any command in this script has a non-zero exit code
 set -o errexit
 
+readonly SITEMAP='_site/sitemap.xml'             # location of search engine sitemap file
 readonly XML_FILE='_site/feed/atom.xml'          # location of unmodified feed file
 readonly TMP_FILE=$(mktemp /tmp/tmp.XXXXXXXXXX)  # temporary file used to store modified feed file
 
 # generate a fresh copy of the website
 rm -r _site/* && jekyll
+
+# compress the search engine sitemap
+gzip --stdout --best "$SITEMAP" > "$SITEMAP.gz"
 
 # replace relative URL references in the atom.xml feed with absolute URLs
 href='s/ href=\&quot;\// href=\&quot;http:\/\/elasticdog.com\//g'
