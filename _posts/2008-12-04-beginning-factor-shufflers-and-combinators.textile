@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Beginning Factor &#8211; Shufflers & Combinators
+title:  Beginning Factor &#8211; Shufflers &amp; Combinators
 ---
 In the "previous installment":/2008/11/beginning-factor-introduction/ of Beginning Factor, we discussed some of the attributes of stack-based languages and the syntax for defining words in Factor. This time around, I'd like to introduce stack shufflers, quotations & combinators, and touch on some more basic data types and their properties.
 
