@@ -4,11 +4,15 @@ title:  About | ElasticDog.com
 ---
 h2(#aaron). About Aaron Bull Schaefer
 
-I'm a certifiable renaissance man, gentleman, and scholar. I have been working in the IT field since 2002 while simultaneously earning my degree in Computer & Information Technology (specializing in Network Engineering) from Purdue University. Working full-time while earning my degree has given me a unique blend of knowledge and experience that I wouldn't trade for anything. It's rumored that I may someday rule the world...
+I'm a certifiable renaissance man, gentleman, and scholar. I have been working in the IT(Information Technology) field since 2002 and am currently employeed as a Linux Administrator at "Wolfram Research, Inc.":http://www.wolfram.com/, the makers of "Mathematica":http://www.wolfram.com/products/mathematica/ and "Wolfram|Alpha":http://www.wolframalpha.com/. I earned my Bachelor's degree in Computer & Information Technology (specializing in Network Engineering) from Purdue University, graduating with highest distinction. I am passionate about security, automation, and using technology to make people's lives better. It's rumored that I may someday rule the world.
 
 If you'd like to see some of the projects I've been involved in, take a gander at my aptly named "projects page":/projects/.
 
-h3(#gnupg). My GnuPG Public Key
+h3(#contact). Contact Me
+
+If you'd like to reach me for any reason, send an email to: *aaron [at] elasticdog dot com*. I'm also constantly checking the horizon for smoke signals and carrier pigeons, if that's your thing. If you'd prefer a more secure means of communication, keep on reading...
+
+h4(#gnupg). My GnuPG Public Key
 
 "GNU Privcy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or GPG) is F/OSS(Free and Open Source Software) that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
 
@@ -21,15 +25,19 @@ You can import it from any keyserver, or by downloading the "ASCII armored versi
 
 h2(#elasticdog). About This Site
 
-ElasticDog is the place where I house all of my musings on technology, standards-based web design, personal finance, the arts, programming, life, pirates...whatever strikes my fancy. I tend to write a lot of "howto" articles on various technical subjects, usually stemming from when I have to research something complicated and don't want to forget how I did it. If my writing can also help other people, then all the better! Participation is always welcome.
+ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, the arts, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference a historical record of my thoughts at any given moment in time.
+
+It's inevitable that certain topics will fall out of favor and no longer be pertinent to global citizens at large, so eventually, articles will be tagged as 'retired' and de-emphasized site-wide. That way people don't have to worry about if the information they read here is applicable now, or if it was only applicable three years ago when it was first published. The distinction will be made abundantly clear.
+
+I _highly_ encourage participation through "email correspondence":#contact and writing thought-out responses published via your own chosen platform; but the ability to leave comments here directly has been turned off. If you get in touch and our conversation generates any interesting dialog, there's a good chance that I'll add more details to the appropriate article or write something entirely new. We'll see how this experiment goes!
 
 h3(#hosting). Hosting
 
-!/images/about/scrooge.jpg(Scrooge McDuck)! ElasticDog.com is hosted on a VPS(Virtual Private Server) from "Linode":http://www.linode.com/ along with a number of my other sites. If you're comfortable on the command line, then running a VPS is leaps and bounds better than any cheap shared hosting, and not that much more expensive. I know bloggers are always excited to promote their web host in hopes of someday swimming in all the referral money like Scrooge McDuck, but I don't really care about that. If just one person chooses Linode over Dreamhost and their ilk, then my work here is done. For all I care, tell 'em Large Marge sent ya...
+!/images/about/scrooge.jpg(Scrooge McDuck)! ElasticDog.com is hosted on a VPS(Virtual Private Server) from "Linode":http://www.linode.com/ along with a number of my other sites. If you're comfortable on the command line, then running a VPS is leaps and bounds better than any cheap shared hosting, and not that much more expensive. I know that bloggers are always excited to promote their web host in hopes of someday swimming in all the referral money like Scrooge McDuck, but I don't really care about that. If just one person chooses Linode over Dreamhost and their ilk, then my work here is done. For all I care, tell 'em Large Marge sent ya...
 
 h3(#design). Design
 
-Although it wasn't my first website, I created ElasticDog when I began learning about web standards back in 2003. I started off using "Movable Type":http://www.movabletype.org/ as a blogging engine, and unfortunately neglected to convert all of my entries when I later switched to "WordPress":http://wordpress.org/. Over the years, I've updated the look of this site a number of times...click a banner below to be transported into the past.
+Although it wasn't my first website, I created ElasticDog.com when I began learning about web standards back in 2003. I started off using "Movable Type":http://www.movabletype.org/ as a blogging engine, and unfortunately neglected to convert all of my entries when I later switched to "WordPress":http://wordpress.org/. Over the years, I've updated the look of this site a number of times...click a banner below to be transported into the past.
 
 h4(#2003). 2003
 
@@ -49,8 +57,10 @@ h4(#2007). 2007
 
 h4(#2008). 2008
 
+This version of ElasticDog.com was not designed by me, but was a highly-customized version of "Essay", a "Sandbox":http://www.plaintxt.org/themes/sandbox/ theme by "Ian Stewart":http://upperfortstewart.com/. The idea was that I could ignore the complexities of WordPress theme creation and get back to focusing on writing, but you can "see how that went":/archives/.
+
 !/images/about/elasticdog-2008-banner.png(ElasticDog.com's Design from 2008)!:/images/about/elasticdog-2008.png
 
 h4(#current). Current Design
 
-The current version of ElasticDog.com was not designed by me, but is a highly-customized version of "Essay":http://www.sndbx.org/results/designs/essay/, a "Sandbox":http://www.plaintxt.org/themes/sandbox/ theme by "Ian Stewart":http://upperfortstewart.com/.
+The current version of ElasticDog.com is another attempt at getting back to basics. I've dropped WordPress in favor of using the static site generator "Jekyll":http://github.com/mojombo/jekyll, and will intentially be keeping the design minimal.
