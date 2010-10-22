@@ -1,9 +1,0 @@
----
-layout: default
-title:  Contact | ElasticDog.com
----
-h2. Contact
-
-Question, comment, lawsuit? You've found the right place! If you'd like to reach me, send an email to: *aaron [at] elasticdog dot com*. I'm also constantly checking the horizon for smoke signals and carrier pigeons, if that's your thing.
-
-If you'd like to communicate with me in a more secure manner, take a gander at <a href="http://elasticdog.com/about/#gnupg">my GnuPG public key</a>.

@@ -4,9 +4,14 @@ title:  About | ElasticDog.com
 ---
 h2(#aaron). About Aaron Bull Schaefer
 
-I'm a certifiable renaissance man, gentleman, and scholar. I have been working in the IT(Information Technology) field since 2002 and am currently employeed as a Linux Administrator at "Wolfram Research, Inc.":http://www.wolfram.com/, the makers of "Mathematica":http://www.wolfram.com/products/mathematica/ and "Wolfram|Alpha":http://www.wolframalpha.com/. I earned my Bachelor's degree in Computer & Information Technology (specializing in Network Engineering) from Purdue University, graduating with highest distinction. I am passionate about security, automation, and using technology to make people's lives better. It's rumored that I may someday rule the world.
+I'm a certifiable renaissance man, gentleman, and scholar. I have been working in the IT(Information Technology) field since 2002 and am currently employeed as a Linux Administrator at "Wolfram Research":http://www.wolfram.com/, the makers of "Mathematica":http://www.wolfram.com/products/mathematica/ and "Wolfram|Alpha":http://www.wolframalpha.com/. I earned my Bachelor's degree in Computer & Information Technology (specializing in Network Engineering) from Purdue University, graduating with highest distinction. I am passionate about security, automation, and using technology to make people's lives better. It's rumored that I may someday rule the world.
 
-If you'd like to see some of the projects I've been involved in, take a gander at my aptly named "projects page":/projects/.
+If you'd like to see some of the projects I've been involved in, take a gander at my aptly named "projects page":/projects/ or my personal "code repositories":http://projects.elasticdog.com/. You can easily find me all over the intertubes, but here are a few places to get you started:
+
+* "LinkedIn":http://www.linkedin.com/in/aaronschaefer
+* "Twitter":http://twitter.com/elasticdog
+* "GitHub":http://github.com/elasticdog
+* "Flickr":http://flickr.com/photos/elasticdog/
 
 h3(#contact). Contact Me
 
@@ -25,9 +30,9 @@ You can import it from any keyserver, or by downloading the "ASCII armored versi
 
 h2(#elasticdog). About This Site
 
-ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, the arts, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference a historical record of my thoughts at any given moment in time.
+ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference a historical record of my thoughts at any given moment in time.
 
-It's inevitable that certain topics will fall out of favor and no longer be pertinent to global citizens at large, so eventually, articles will be tagged as 'retired' and de-emphasized site-wide. That way people don't have to worry about if the information they read here is applicable now, or if it was only applicable three years ago when it was first published. The distinction will be made abundantly clear.
+It's inevitable that certain topics will fall out of favor and no longer be pertinent to myself or global citizens at large, so eventually, articles will be tagged as 'retired' and de-emphasized site-wide. That way people don't have to worry about if the information they read here is applicable now, or if it was only applicable three years ago when it was first published. The distinction will be made abundantly clear.
 
 I _highly_ encourage participation through "email correspondence":#contact and writing thought-out responses published via your own chosen platform; but the ability to leave comments here directly has been turned off. If you get in touch and our conversation generates any interesting dialog, there's a good chance that I'll add more details to the appropriate article or write something entirely new. We'll see how this experiment goes!
 
@@ -57,9 +62,9 @@ h4(#2007). 2007
 
 h4(#2008). 2008
 
-This version of ElasticDog.com was not designed by me, but was a highly-customized version of "Essay", a "Sandbox":http://www.plaintxt.org/themes/sandbox/ theme by "Ian Stewart":http://upperfortstewart.com/. The idea was that I could ignore the complexities of WordPress theme creation and get back to focusing on writing, but you can "see how that went":/archives/.
-
 !/images/about/elasticdog-2008-banner.png(ElasticDog.com's Design from 2008)!:/images/about/elasticdog-2008.png
+
+This version of ElasticDog.com was not designed by me, but was a highly-customized version of "Essay", a "Sandbox":http://www.plaintxt.org/themes/sandbox/ theme by "Ian Stewart":http://upperfortstewart.com/. The idea was that I could ignore the complexities of WordPress theme creation and get back to focusing on writing, but you can "see how that went":/archives/.
 
 h4(#current). Current Design
 
