@@ -18,7 +18,7 @@ href='s/ href=\&quot;\// href=\&quot;http:\/\/elasticdog.com\//g'
 src='s/ src=\&quot;\// src=\&quot;http:\/\/elasticdog.com\//g'
 
 sed -e "$href;$src" $XML_FILE > $TMP_FILE
-mv $TMP_FILE $XML_FILE
+install -m644 $TMP_FILE $XML_FILE
 
 # sync the site contents over to the production server
 rsync -avz --delete _site/ linode:/srv/http/nginx/elasticdog.com
