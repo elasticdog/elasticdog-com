@@ -1,20 +1,22 @@
+<hr />
+
 <ul>
-{% if page.url != '/index.html' %}
+{% if page.url != '/' %}
 	<li><a href="/">Home</a></li>
 {% else %}
 	<li>Home</li>
 {% endif %}
-{% if page.url != '/about/index.html' %}
+{% if page.url != '/about/' %}
 	<li><a href="/about/">About</a></li>
 {% else %}
 	<li>About</li>
 {% endif %}
-{% if page.url != '/projects/index.html' %}
+{% if page.url != '/projects/' %}
 	<li><a href="/projects/">Projects</a></li>
 {% else %}
 	<li>Projects</li>
 {% endif %}
-{% if page.url != '/archives/index.html' %}
+{% if page.url != '/archives/' %}
 	<li><a href="/archives/">Archives</a></li>
 {% else %}
 	<li>Archives</li>
