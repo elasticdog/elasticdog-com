@@ -1,66 +1,60 @@
 ---
-layout:    post
-title:     'HOWTO: Install WordPress on Nginx'
+layout: post
+title:  'HOWTO: Install WordPress on Nginx'
 ---
-I recently moved all of my sites from a cheap shared host to a shiny new <abbr title="Virtual Private Server">VPS</abbr> at <a href="http://www.slicehost.com/">SliceHost</a>, and couldn't be happier.  Running your own VPS means a great amount of flexibility since you have full root access to the server and get to configure everything exactly how you want it.  That said, it also means that if you want to maintain high performance, you have to keep your resource usage to a minimum.
+I recently moved all of my sites from a cheap shared host to a shiny new VPS(Virtual Private Server) at "SliceHost":http://www.slicehost.com/, and couldn't be happier. Running your own VPS means a great amount of flexibility since you have full root access to the server and get to configure everything exactly how you want it. That said, it also means that if you want to maintain high performance, you have to keep your resource usage to a minimum.
 
-<a href="http://httpd.apache.org/">Apache</a> is a very well-establish web server that can handle just about any situation.  Unfortunately, that flexibility comes at the cost of size and relatively high demands on server resources.  <a href="http://nginx.net/">Nginx</a> (&#8220;engine x") is a lightweight web server/reverse proxy that is very efficient and perfect for hosting WordPress.  Read on to see how that can be done...
+"Apache":http://httpd.apache.org/ is a very well-establish web server that can handle just about any situation. Unfortunately, that flexibility comes at the cost of size and relatively high demands on server resources. "Nginx":http://nginx.net/ ("engine x") is a lightweight web server/reverse proxy that is very efficient and perfect for hosting WordPress. Read on to see how that can be done...
 
-<h3 id="step-one">Step One: FastCGI</h3>
+h3(#step-one). Step One: FastCGI
 
-First off, Nginx does not provide FastCGI for you (FastCGI is what your web server uses to interact with WordPress's <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> code), so you've got to have a way to spawn your own FastCGI processes.  My preferred method is to use the <code>spawn-fcgi</code> program provided by the web server <a href="http://www.lighttpd.net/">lighttpd</a>. You <em>can</em> use PHP's built-in FastCGI manager <code>php-cgi</code> to <a href="http://blog.kovyrin.net/2006/05/30/nginx-php-fastcgi-howto/">do the same thing</a>, but it's not as straight-forward. Plus, if you learn how to use <code>spawn-fcgi</code>, you can easily adapt it for use with other web applications requiring FastCGI.
+First off, Nginx does not provide FastCGI for you (FastCGI is what your web server uses to interact with WordPress's PHP(PHP: Hypertext Preprocessor) code), so you've got to have a way to spawn your own FastCGI processes. My preferred method is to use the @spawn-fcgi@ program provided by the web server "lighttpd":http://www.lighttpd.net/. You _can_ use PHP's built-in FastCGI manager @php-cgi@ to "do the same thing":http://blog.kovyrin.net/2006/05/30/nginx-php-fastcgi-howto/, but it's not as straight-forward. Plus, if you learn how to use @spawn-fcgi@, you can easily adapt it for use with other web applications requiring FastCGI.
 
-<h4>Install spawn-fcgi</h4>
+h4. Install spawn-fcgi
 
-To download and install <code>spawn-fcgi</code>, run the following commands.  Don't worry, all of the building happens in your current directory...nothing else will be installed on your machine.
+To download and install @spawn-fcgi@, run the following commands. Don't worry, all of the building happens in your current directory...nothing else will be installed on your machine.
 
-<pre><code>
-$ wget http://www.lighttpd.net/download/lighttpd-1.4.18.tar.bz2
+bc. $ wget http://www.lighttpd.net/download/lighttpd-1.4.18.tar.bz2
 $ tar -xvjf lighttpd-1.4.18.tar.bz2
 $ cd lighttpd-1.4.18/
 $ ./configure
 $ make
 $ sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi
-</code></pre><br />
 
-<i>NOTE: If you're following the steps above verbatim, you will need to have root privileges in order to copy the binary to its final location...everything else should work fine as a normal user. To gain root privileges, the program <code>sudo</code> was used in the example above; you may or may not have access to <code>sudo</code> on your machine.</i>
+__NOTE: If you're following the steps above verbatim, you will need to have root privileges in order to copy the binary to its final location...everything else should work fine as a normal user. To gain root privileges, the program @sudo@ was used in the example above; you may or may not have access to @sudo@ on your machine.__
 
-After <code>spawn-fcgi</code> has been copied to the desired location, you can safely remove the build directory and original source file:
+After @spawn-fcgi@ has been copied to the desired location, you can safely remove the build directory and original source file:
 
-<pre><code>
-$ cd ..
+bc. $ cd ..
 $ rm -rf lighttpd-1.4.18/
 $ rm lighttpd-1.4.18.tar.bz2
-</code></pre><br />
 
-<h4>Run spawn-fcgi</h4>
+h4. Run spawn-fcgi
 
 This part will be fairly distribution-specific, but I'll provide the basic command that you'll need. What you want to do is find a way to run this command as part of your init scripts so the processes will be spawned automatically when you reboot your server.
 
-<pre><code>/usr/bin/spawn-fcgi -f /usr/bin/php-cgi -a 127.0.0.1 -p 53217 -P /var/run/fastcgi-php.pid</code></pre><br />
+bc. /usr/bin/spawn-fcgi -f /usr/bin/php-cgi -a 127.0.0.1 -p 53217 -P /var/run/fastcgi-php.pid
 
-<ul>
-	<li><code>-f</code> &rarr; the filename of the fcgi-application; in our case we want "php-cgi", which is provided by your distribution's <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> package. If you don't know where to find it, try running <code>which php-cgi</code> on the command line.</li>
-	<li><code>-a</code> &rarr; the IP address to bind the processes to; in our case we want the localhost</li>
-	<li><code>-p</code> &rarr; the port number to bind the processes to; pick whatever you want that won't cause a conflict (technically it would be best to pick a random number between 49152 and 65535), just make sure to remember the number and use that same port for your Nginx configuration file later on</li>
-	<li><code>-P</code> &rarr; the location where to save the process id file; you can use this file to easily kill the processes later</li>
-</ul>
+* @-f@ &rarr; the filename of the fcgi-application; in our case we want "php-cgi", which is provided by your distribution's PHP package. If you don't know where to find it, try running @which php-cgi@ on the command line.
+* @-a@ &rarr; the IP address to bind the processes to; in our case we want the localhost
+* @-p@ &rarr; the port number to bind the processes to; pick whatever you want that won't cause a conflict (technically it would be best to pick a random number between 49152 and 65535), just make sure to remember the number and use that same port for your Nginx configuration file later on
+* @-P@ &rarr; the location where to save the process id file; you can use this file to easily kill the processes later
 
-For better security, you can also spawn the processes as a non-privileged user by specifying the user/group with the <code>-u</code> and <code>-g</code> flags respectively. For more information on all the available options, run <code>spawn-fcgi -h</code> on the command line. 
+For better security, you can also spawn the processes as a non-privileged user by specifying the user/group with the @-u@ and @-g@ flags respectively. For more information on all the available options, run @spawn-fcgi -h@ on the command line. 
 
-If you're interested in seeing the complete init script that I wrote for use with <a href="http://www.archlinux.org/">Arch Linux</a>, you can download it here: <a href="http://elasticdog.com/code/2008/02/fastcgi-php">fastcgi-php</a>
+If you're interested in seeing the complete init script that I wrote for use with "Arch Linux":http://www.archlinux.org/, you can download it here: "fastcgi-php":http://elasticdog.com/code/2008/02/fastcgi-php
 
-<h3 id="step-two">Step Two: Complete 83.33% of the Famous 5-Minute Install</h3>
+h3(#step-two). Step Two: Complete 83.33% of the Famous 5-Minute Install
 
-Next you should download the WordPress files and extract them to their final location on your server.  Simply follow steps 1--5 of the <a href="http://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install">Famous 5-Minute Install</a> (the 6th and final step requires that your web server be up and running properly, so we'll do it later).  This guide will assume that you extracted the WordPress core files here: <code>/srv/www/nginx/domain.com/</code>
+Next you should download the WordPress files and extract them to their final location on your server. Simply follow steps 1--5 of the "Famous 5-Minute Install":http://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install (the 6th and final step requires that your web server be up and running properly, so we'll do it later). This guide will assume that you extracted the WordPress core files here: @/srv/www/nginx/domain.com/@
 
-<h3 id="step-three">Step Three: Nginx Configuration</h3>
+h3(#step-three). Step Three: Nginx Configuration
 
-To get the web server up and running properly, the file you need to edit is called "nginx.conf" and is installed in different places depending on your Linux distribution. If you install Nginx from source, the default location is <code>/usr/local/nginx/conf/nginx.conf</code>, however yours may be somewhere else.
+To get the web server up and running properly, the file you need to edit is called "nginx.conf" and is installed in different places depending on your Linux distribution. If you install Nginx from source, the default location is @/usr/local/nginx/conf/nginx.conf@, however yours may be somewhere else.
 
 Once you find that file, open it with your favorite text editor and add a server declaration that looks something like this (I'll cover what each part means after posting the code):
 
-<pre><code>
+notextile.. <pre><code>
 server {
     listen       <em>12.34.56.78</em>:80;  <strong># your server's public IP address</strong>
     server_name  <em>domain.com</em>;      <strong># your domain name</strong>
@@ -111,16 +105,17 @@ server {
     }
 }
 </code></pre>
-<div class="sourcelink">Download Source Code: <a href="http://elasticdog.com/code/2008/02/nginx-conf.txt">nginx-conf.txt</a></div><br />
 
-You will need to edit all of the highlighted sections above using your own information.  The first part is merely the server declaration where you define what your server's publicly available IP address is and what domain name that address is associated with.
+div(sourcelink). Download Source Code: "nginx.conf.txt":http://elasticdog.com/code/2008/02/nginx-conf.txt
 
-Next we add to that some default settings for the root location.  The key part here is that WordPress uses the "Front Controller" design pattern, meaning that any request for a file that does not exist on the server should be handled by the main index.php file.  To do this, we need an appropriate set of rewrite rules pointing to the proper path of our installation.
+You will need to edit all of the highlighted sections above using your own information. The first part is merely the server declaration where you define what your server's publicly available IP address is and what domain name that address is associated with.
 
-Last, we add one more location block that tells Nginx to dynamically forward <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> requests to the FastCGI processes we <a href="#step-one">spawned earlier</a>.  That's it!
+Next we add to that some default settings for the root location. The key part here is that WordPress uses the "Front Controller" design pattern, meaning that any request for a file that does not exist on the server should be handled by the main index.php file. To do this, we need an appropriate set of rewrite rules pointing to the proper path of our installation.
 
-<h3 id="step-four">Step Four: Finishing Up</h3>
+Last, we add one more location block that tells Nginx to dynamically forward PHP requests to the FastCGI processes we "spawned earlier":#step-one.  That's it!
 
-Everything should be good to go...all you need to do now is start your Nginx server process (another distribution specific command), then complete the 6th step of the <a href="http://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install">Famous 5-Minute Install</a> and you should have WordPress up and running on Nginx!
+h3(#step-four). Step Four: Finishing Up
+
+Everything should be good to go...all you need to do now is start your Nginx server process (another distribution specific command), then complete the 6th step of the "Famous 5-Minute Install":http://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install and you should have WordPress up and running on Nginx!
 
 If any of this needs further clarification or you're just having trouble, leave me a comment and I'll see what I can do to help...

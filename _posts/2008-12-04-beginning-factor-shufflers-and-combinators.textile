@@ -35,7 +35,7 @@ There are three basic varieties of stack shufflers. Here they are along with the
 	</li>
 </ol>
 
-<img src="/images/2008/12/stack-swap.png" alt="Swapping Two Items on the Top of a Stack" width="554" height="257">
+!/images/2008/12/stack-swap.png(Swapping Two Items on the Top of a Stack)!
 
 ...and here are a couple of word definitions that use these shufflers appropriately:
 

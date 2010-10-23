@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'WP Plugin: Optimal Title'
+title:  'WP Plugin: Optimal Title'
 ---
 <ins datetime="2008-02-20T07:55:33+00:00">This plugin is now deprecated...see "Optimal Title Functionality Now in WordPress Core":/2008/02/optimal-title-functionality-now-in-wordpress-core/.</ins>
 
@@ -18,7 +18,7 @@ h2(#installation). Installation
 
 # Download "Optimal Title v3.0":http://downloads.wordpress.org/plugin/optimal-title.3.0.zip and unzip the archive.
 # Upload @optimal-title.php@ into your <kbd>wp-content/plugins/</kbd> directory.
-# Activate the plugin on your <abbr title="WordPress">WP</abbr> Admin &raquo; Plugin Management page by clicking the corresponding &ldquo;Activate&rdquo; link under the **Action** column.
+# Activate the plugin on your WP(WordPress) Admin &raquo; Plugin Management page by clicking the corresponding &ldquo;Activate&rdquo; link under the **Action** column.
 # Follow the usage guidelines shown below...
 
 h2(#usage). Usage
@@ -37,14 +37,14 @@ For a more complicated version that checks to make sure the plugin is installed 
 
 h2(#parameters). Parameters
 
-Optimal Title uses the same syntax as "@wp_title@":http://codex.wordpress.org/Template_Tags/wp_title, from the default <abbr title="WordPress">WP</abbr> installation, and thus functions in the exact same way...
+Optimal Title uses the same syntax as "@wp_title@":http://codex.wordpress.org/Template_Tags/wp_title, from the default WP installation, and thus functions in the exact same way...
 
 {% highlight php %}
 <?php optimal_title('separator', display); ?>
 {% endhighlight %}
 
 * &#39;separator&#39; - __string__ - The text to place between portions of the page title, such as the blog name and the category. Defaults to @'&raquo;'@ (&raquo;).
-* display - __boolean__ - Should the title be displayed (@TRUE@) or returned for use in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> (@FALSE@). Defaults to @TRUE@.
+* display - __boolean__ - Should the title be displayed (@TRUE@) or returned for use in PHP(PHP: Hypertext Preprocessor) (@FALSE@). Defaults to @TRUE@.
 
 h2(#version-history). Version History
 

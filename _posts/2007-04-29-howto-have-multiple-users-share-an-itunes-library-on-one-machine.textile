@@ -1,6 +1,6 @@
 ---
-layout:    post
-title:     'HOWTO: Have Multiple Users Share an iTunes Library on One Machine'
+layout: post
+title:  'HOWTO: Have Multiple Users Share an iTunes Library on One Machine'
 ---
 I recently purchased a new MacBook (never having owned a Mac before), and have been reading up on keeping things secure. Per one of those security-related suggestions, once everything was set up to my liking, I stopped using the admin account for everyday use and started forcing myself to log in as a regular user. I've also created a user account for my live-in girlfriend so she can go wild customizing her desktop with pictures of flowers, Hugh Jackman, Hugh Jackman laying in a bed of flowers, and so on, without making my eyes bleed.
 

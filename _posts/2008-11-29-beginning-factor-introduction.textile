@@ -18,7 +18,7 @@ If you're unfamiliar with the data structure called a stack, the concept is fair
 
 I like to picture a stack like a tower of LEGOs. The only thing you can do with it are add another brick to the top ("push" an item onto the stack), or take the top brick off to use it for something else ("pop" an item off the stack). That's all there is to stacks!
 
-<img src="/images/2008/11/stack-push.png" alt="Pushing an Item onto a Stack" width="554" height="257" />
+!/images/2008/11/stack-push.png(Pushing an Item onto a Stack)!
 
 h3(#use-stack). How to Use the Stack
 
@@ -68,16 +68,9 @@ h3(#words). A Few More Words
 
 If you start messing around in the listener, odds are your stack is going to grow pretty quickly and become unmanageable. There are a few words that are essential to know in order to keep things under control:
 
-<dl>
-	<dt>@drop@ __( x &#45;&#45; )__</dt>
-	<dd>removes the top item from the stack and discards it</dd>
-
-	<dt>@.@ __( obj &#45;&#45; )__</dt>
-	<dd>takes the top item from the stack and prettyprints it</dd>
-
-	<dt>@clear@ __( &#45;&#45; )__</dt>
-	<dd>removes all items from the stack</dd>
-</dl>
+- @drop@ __( x &#45;&#45; )__ := removes the top item from the stack and discards it
+- @.@ __( obj &#45;&#45; )__ := takes the top item from the stack and prettyprints it
+- @clear@ __( &#45;&#45; )__ := removes all items from the stack
 
 notextile.. <pre><code>(scratchpad) <strong>2 3 -</strong>
 

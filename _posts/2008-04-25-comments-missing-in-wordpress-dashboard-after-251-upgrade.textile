@@ -1,18 +1,18 @@
 ---
-layout:    post
-title:     Comments Missing in WordPress Dashboard After 2.5.1 Upgrade
+layout: post
+title:  Comments Missing in WordPress Dashboard After 2.5.1 Upgrade
 ---
-I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments.  I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet <a href="http://elasticdog.com/images/2008/04/awaiting-moderation.png">it would not let me see them</a>.  Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.
+I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments. I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet "it would not let me see them":http://elasticdog.com/images/2008/04/awaiting-moderation.png. Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.
 
 After searching for a bit and checking my sever logs, I found that the upgrade script did not add the proper index to the "comment_date_gmt" column in the comments table for my WordPress database:
 
-<pre><code>Apr 25 18:22:17 php-cgi: WordPress database error Key 'comment_date_gmt' doesn't exist in table 'wp_comment' for query...</code></pre><br />
+bc. Apr 25 18:22:17 php-cgi: WordPress database error Key 'comment_date_gmt' doesn't exist in table 'wp_comment' for query...
 
-<h3 id="solution">The Solution</h3>
+h3(#solution). The Solution
 
-If you don't want to wait until the upgrade script gets fixed in a later WordPress release, you'll have to add the missing index to the database table yourself to get things working again.  I'll demonstrate how to do that using the MySQL command line interface, however, if you're more comfortable with using phpMyAdmin, see <a href="http://wordpress.org/support/topic/167450#post-737217">the steps outlined here</a>.
+If you don't want to wait until the upgrade script gets fixed in a later WordPress release, you'll have to add the missing index to the database table yourself to get things working again. I'll demonstrate how to do that using the MySQL command line interface, however, if you're more comfortable with using phpMyAdmin, see "the steps outlined here":http://wordpress.org/support/topic/167450#post-737217.
 
-<h4 id="privileges">Check for Proper Privileges</h4>
+h4(#privileges). Check for Proper Privileges
 
 First of all, you must have the proper privileges on your WordPress database in order to add an index.  To check that, follow these steps:
 
@@ -46,16 +46,16 @@ mysql> <strong>SELECT user, index_priv FROM user;</strong>
 
 As long as you see a 'Y' next to your username, then you should be good to go.
 
-<h4 id="cli">Add the Index to the Comments Table</h4>
+h4(#cli). Add the Index to the Comments Table
 
 Once you have access to an account that can add indexes, then follow these steps to add the missing index:
 
 <ol>
-	<li>Specify that you want to access your WordPress database.  If you don't know the name of your WordPress database, run <code>show databases;</code> to see a list of databases you have access to.
+	<li>Specify that you want to access your WordPress database. If you don't know the name of your WordPress database, run <code>show databases;</code> to see a list of databases you have access to.
 <pre><code>
 mysql> <strong>use elasticdog_wordpress</strong>
 Database changed</code></pre></li>
-	<li>Add the index.  The table names for WordPress are fairly standard, but if you don't have one named "wp_comments", run <code>show tables;</code> to see a list of contenders and it should be easy to figure out.
+	<li>Add the index. The table names for WordPress are fairly standard, but if you don't have one named "wp_comments", run <code>show tables;</code> to see a list of contenders and it should be easy to figure out.
 <pre><code>
 mysql> <strong>CREATE INDEX comment_date_gmt ON wp_comments (comment_date_gmt);</strong>
 Query OK, 458 rows affected (0.14 sec)

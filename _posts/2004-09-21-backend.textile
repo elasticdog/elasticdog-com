@@ -1,30 +1,30 @@
 ---
 layout:    post
 published: false
-title:     Workin’ My Backend
+title:     Workin&#8217; My Backend
 ---
 I'm under no delusions about the number of readers I have, and yet I feel compelled to write an update on how things are progressing. Call it hope for a self-fulfilling prophecy...after all, if I'm going to start a blog that I actually expect people to read, I have to write entries in it sooner or later, right?
 
 It may look as though not much has changed around here over the past couple of weeks, but I assure you things _are_ moving forward. Admittedly, I have been busy with school and my personal life, and consequently haven't had much time to devote toward ElasticDog, but I haven't completely ignored it either.
 
-Not only have I started working on numerous entries, but I've also been teaching myself some <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> in an attempt to customize WordPress even further than I already have. Here's a short list of some of the projects I've been tackling:
+Not only have I started working on numerous entries, but I've also been teaching myself some PHP(PHP: Hypertext Preprocessor) in an attempt to customize WordPress even further than I already have. Here's a short list of some of the projects I've been tackling:
 
 <ul>
 	<li>
 		*Convenient Code*<br />
-		A <abbr title="WordPress">WP</abbr> plugin that pulls source code from an external file and displays the associated code with line numbers.
+		A WP(WordPress) plugin that pulls source code from an external file and displays the associated code with line numbers.
 	</li>
 	<li>
-		*Faking Templates with <abbr title="WordPress">WP</abbr>*<br />
+		*Faking Templates with WP*<br />
 		There are about a billion different ways to do this, and I've come up with one of my own. With my method, I'm able to control what appears in both the main column and sub column of my site, differing each one for the home page, individual pages, and each of the three archive page types (yearly, monthly, and categorical).
 	</li>
 	<li>
 		*Project JumpDrive*<br />
-		How I found the road to <abbr title="Universal Serial Bus">USB</abbr> flash drive heaven.
+		How I found the road to USB(Universal Serial Bus) flash drive heaven.
 	</li>
 	<li>
-		*Additional <abbr title="Cascading Style Sheets">CSS</abbr> Inclusion*<br />
-		A <abbr title="WordPress">WP</abbr> plugin that will allow you to include an additional <abbr title="Cascading Style Sheets">CSS</abbr> file for a specific entry. That way, you're not forced to load a bloated style sheet for all of your pages.
+		*Additional CSS(Cascading Style Sheets) Inclusion*<br />
+		A WP plugin that will allow you to include an additional CSS file for a specific entry. That way, you're not forced to load a bloated style sheet for all of your pages.
 	</li>
 	<li>
 		*Streamlining Code and Planning for Upgradeability*<br />
@@ -32,7 +32,7 @@ Not only have I started working on numerous entries, but I've also been teaching
 	</li>
 	<li>
 		*Text Editor Showdown*<br />
-		A no holds barred comparison between popular <abbr title="Hypertext Markup Language">HTML</abbr> &amp; text editors.
+		A no holds barred comparison between popular HTML(Hypertext Markup Language) & text editors.
 	</li>
 </ul>
 

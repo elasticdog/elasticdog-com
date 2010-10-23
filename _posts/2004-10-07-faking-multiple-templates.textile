@@ -1,14 +1,14 @@
 ---
-layout:    post
-title:     Faking Multiple Templates in WordPress
+layout: post
+title:  Faking Multiple Templates in WordPress
 ---
-One of the things that surprised me when I first switched from "Movable Type":http://www.movabletype.org/ to "WordPress":http://wordpress.org/ was its lack of multiple templates. In <abbr title="Movable Type">MT</abbr> you create numerous templates which allow you to change the look of different pages on your site (i.e., the homepage, archive pages, individual entries, etc.). If you want a list of your favorite links to appear on the homepage, but not on the page for an individual entry, you just delete that section of code from the appropriate template.
+One of the things that surprised me when I first switched from "Movable Type":http://www.movabletype.org/ to "WordPress":http://wordpress.org/ was its lack of multiple templates. In MT(Movable Type) you create numerous templates which allow you to change the look of different pages on your site (i.e., the homepage, archive pages, individual entries, etc.). If you want a list of your favorite links to appear on the homepage, but not on the page for an individual entry, you just delete that section of code from the appropriate template.
 
 WordPress handles its pages a bit differently. Everything is based off of a single template, and through the magic of database queries and dynamic page generation, the right content is always shown according to which type of page you're looking at.
 
 h2(#the-problem). The Problem
 
-By using a single template, the default installation of <abbr title="WordPress">WP</abbr> will show the exact same sidebar on every page, and likewise, whenever you view an entry listing, it will always look the same. This one-template structure is viewed as a blessing to some, but an over-simplification to others.
+By using a single template, the default installation of WP(WordPress) will show the exact same sidebar on every page, and likewise, whenever you view an entry listing, it will always look the same. This one-template structure is viewed as a blessing to some, but an over-simplification to others.
 
 What if you want to show a list of just the entry titles on your archive pages, rather than the entire entry itself? What if you want to hide the sidebar's calendar on your individual entry pages? There are countless scenarios like these that require a little more flexibility than the default <kbd>index.php</kbd> file can give you.
 
@@ -19,14 +19,14 @@ h2(#common-solution). A Common Solution
 Many people suggest using <kbd>.htaccess</kbd> rules and simply forward visitors to templates other than <kbd>index.php</kbd>. I feel this method over-complicates things, and here's why:
 
 # It creates duplicate code when most of the time you'll have the exact same basic page structure in each template. Not only that, but multiple templates aren't very easy to maintain if you ever need to change that underlying structure.
-# There's no guarantee that all <abbr title="WordPress">WP</abbr> users will be able to create, edit, and use <kbd>.htaccess</kbd> files. Some hosting companies just don't allow it.
+# There's no guarantee that all WP users will be able to create, edit, and use <kbd>.htaccess</kbd> files. Some hosting companies just don't allow it.
 # Writing <kbd>.htaccess</kbd> rules can be downright confusing!
 
 h2(#my-solution). My Solution
 
-Using some simple <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and the functionality that's already built into WordPress, you can easily control what appears on different page types without having to create multiple templates. The key lies in exploiting a few under appreciated variables...
+Using some simple PHP(PHP: Hypertext Preprocessor) and the functionality that's already built into WordPress, you can easily control what appears on different page types without having to create multiple templates. The key lies in exploiting a few under appreciated variables...
 
-<var>$single</var>, <var>$cat</var>, <var>$m</var>, and <var>$year</var> are all built in variables used by <abbr title="WordPress">WP</abbr> to determine information about the type of page you're looking at. The <var>$single</var> variable corresponds to individual entry pages, the <var>$cat</var> variable to categorical listing pages, <var>$m</var> to monthly listings, and <var>$year</var> to yearly listings.
+<var>$single</var>, <var>$cat</var>, <var>$m</var>, and <var>$year</var> are all built in variables used by WP to determine information about the type of page you're looking at. The <var>$single</var> variable corresponds to individual entry pages, the <var>$cat</var> variable to categorical listing pages, <var>$m</var> to monthly listings, and <var>$year</var> to yearly listings.
 
 When you're viewing each variable's corresponding page type, only that variable will be assigned a value. If you're viewing the main page of your site, then _none_ of those variables will be assigned a value. Thus, a simple test of whether or not each variable has a value can be use to control exactly what is displayed and when. Here's the basic idea:
 
@@ -44,7 +44,7 @@ if ($single) {
 }
 {% endhighlight %}
 
-All you have to do is place the content you want to appear in the appropriate spot. If you don't want to do anything different in a particular section from how <abbr title="WordPress">WP</abbr> handles it by default, just leave out that variable's test.
+All you have to do is place the content you want to appear in the appropriate spot. If you don't want to do anything different in a particular section from how WP handles it by default, just leave out that variable's test.
 
 h2(#apply-it). How to Apply It
 
@@ -97,7 +97,7 @@ h2(#step-further). Taking It a Step Further
 
 Adding in code for each of these page types can get confusing really fast. With that much information packed in to one file, the scanability of <kbd>index.php</kbd> drops considerably and it becomes difficult to find what you want when you need it.
 
-To combat this, I've taken the fake template concept a step further...rather than listing all of the code directly in <kbd>index.php</kbd>, I use <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> includes to import each custom section from an external file. Rather than make this tutorial any longer than it already is, here's how I set it up:
+To combat this, I've taken the fake template concept a step further...rather than listing all of the code directly in <kbd>index.php</kbd>, I use PHP includes to import each custom section from an external file. Rather than make this tutorial any longer than it already is, here's how I set it up:
 
 {% highlight php %}
 <div id="content">
