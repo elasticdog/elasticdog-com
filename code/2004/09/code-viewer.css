@@ -1,0 +1,38 @@
+/* ---( CODE VIEWER FORMATTING )------------------------- */
+
+ol.codelist {
+	border: 1px solid #DDD;
+	color: #C63;
+	font-family: "Courier New", Courier, monospace;
+	line-height: 130%;
+	padding: 12px 12px 12px 45px;
+	margin: 1.5em 0;
+	}
+
+ol.codelist li {
+	margin: 0;
+	padding: 1px 2px;
+	}
+
+ol.codelist li.tab0 { padding-left: 2px; }
+ol.codelist li.tab1 { padding-left: 26px; }
+ol.codelist li.tab2 { padding-left: 50px; }
+ol.codelist li.tab3 { padding-left: 74px; }
+ol.codelist li.tab4 { padding-left: 98px; }
+ol.codelist li.tab5 { padding-left: 122px; }
+ol.codelist li.tab6 { padding-left: 146px; }
+ol.codelist li.tab7 { padding-left: 170px; }
+
+ol.codelist li.odd { background-color: #FFF; }
+ol.codelist li.even { background-color: #F0F0F0; }
+
+ol.codelist li.sourcelink {
+	color: #000;
+	font: 115% Georgia, "Times New Roman", Times, serif;
+	list-style: none;
+	margin-left: -32px;
+	padding-top: .85em;
+	text-align: center;
+	}
+
+ol.codelist li code { color: #222; }

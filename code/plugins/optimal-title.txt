@@ -1,0 +1,33 @@
+<?php
+/*
+Plugin Name: Optimal Title
+Plugin URI: http://elasticdog.com/2004/09/optimal-title/
+Description: Mirrors the function of wp_title() exactly, but moves the position of the 'separator' to after the title rather than before.
+Version: 3.0
+Author: Aaron Schaefer
+Author URI: http://elasticdog.com/
+*/
+
+function optimal_title($sep = '&raquo;', $display = true) {
+
+	// get the standard wordpress-generated title
+	$title =  wp_title($sep, false);
+
+	// split the title by the 'separator'
+	$sections = explode(" $sep ", $title);
+
+	// move the first section to the end of the array
+	array_push($sections, array_shift($sections));
+
+	// put the array back together in the modified order
+	$optimal_title = implode(" $sep ", $sections);
+
+	// send out the generated optimal title accordingly
+	if ($display) {
+		echo $optimal_title;
+	} else {
+		return $optimal_title;
+	}
+
+}
+?>

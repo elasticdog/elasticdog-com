@@ -1,0 +1,35 @@
+#!/bin/bash
+
+. /etc/rc.conf
+. /etc/rc.d/functions
+
+case "$1" in
+  start)
+    stat_busy "Starting FastCGI for PHP"
+	/usr/bin/spawn-fcgi -f /usr/bin/php-cgi -u nobody -g nobody -a 127.0.0.1 -p 53217 -P /var/run/habari-ed.pid &>/dev/null
+    if [ $? -gt 0 ]; then
+      stat_fail
+    else
+      add_daemon fastcgi-php
+      stat_done
+    fi
+    ;;
+  stop)
+    stat_busy "Stopping FastCGI for PHP"
+	kill $(cat /var/run/fastcgi-php.pid) &>/dev/null
+    if [ $? -ne 0 ]; then
+      stat_fail
+    else
+      rm_daemon fastcgi-php
+      stat_done
+    fi
+    ;;
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+  *)
+    echo "usage: $0 {start|stop|restart}"
+    ;;
+esac
