@@ -15,7 +15,7 @@ h3(#archlinux). Arch Linux
 
 !/images/projects/archlinux-banner.png(Arch Linux Distribution)!:http://archlinux.org/
 
-I am a Trusted User for Arch Linux, meaning I contribute trusted binary packages to their community repository and help with special projects. I am also active in providing support on the forums and on IRC. For a list of the software packages I maintain, see "my community packages":https://www.archlinux.org/packages/?maintainer=aschaefer and "my AUR page":http://aur.archlinux.org/packages.php?SeB=m&K=elasticdog.
+I am a Trusted User for Arch Linux, meaning I contribute trusted binary packages to their community repository and help with special projects. I am also active in providing support on the forums and on IRC(Internet Relay Chat). For a list of the software packages I maintain, see "my community packages":https://www.archlinux.org/packages/?maintainer=aschaefer and "my AUR page":http://aur.archlinux.org/packages.php?SeB=m&K=elasticdog.
 
 h3(#factor). Factor
 
@@ -53,7 +53,7 @@ h3(#service). Purdue University Service Learning
 
 !/images/projects/service-learning-banner.png(Purdue University Service Learning Website)!:/images/projects/service-learning.png
 
-A website designed for Purdue University professors involved in service learning projects. The original backend for this site was developed by myself and a team of students using ASP.NET.
+A website designed for Purdue University professors involved in service learning projects. The original back-end for this site was developed by myself and a team of students using ASP.NET.
 
 h3(#rubidium). Rubidium
 
