@@ -1,0 +1,68 @@
+---
+layout: default
+title:  Projects | ElasticDog.com
+permalink: /
+changefreq: monthly
+priority: 0.4
+---
+h2. Projects
+
+Here are a few projects that I've been involved with in one form or another over the years. Click a banner below to see more details...
+
+h2(#contributions). Contributions
+
+h3(#archlinux). Arch Linux
+
+!/images/projects/archlinux-banner.png(Arch Linux Distribution)!:http://archlinux.org/
+
+I am a Trusted User for Arch Linux, meaning I contribute trusted binary packages to their community repository and help with special projects. I am also active in providing support on the forums and on IRC. For a list of the software packages I maintain, see "my community packages":https://www.archlinux.org/packages/?maintainer=aschaefer and "my AUR page":http://aur.archlinux.org/packages.php?SeB=m&K=elasticdog.
+
+h3(#factor). Factor
+
+!/images/projects/factor-banner.png(Factor Programming Language)!:http://factorcode.org/
+
+Factor is "a general purpose, dynamically typed, stack-based programming language" that I have been experimenting with for a while now. I've had the opportunity to contribute back a decent amount of code to the project, including new math libraries, editor integration code, and numerous "Project Euler":http://projecteuler.net solutions using the language. I also wrote the "Pygments":http://pygments.org/ lexer for Factor, which is responsible for the syntax highlighting you see on this site as well as places like "GitHub":http://github.com/. I keep up to date with Factor's mailing list and IRC chatroom, and have begun writing a series of blog posts entitled "Beginning Factor":http://elasticdog.com/2008/11/beginning-factor-introduction/ to help others learn the language. I host a copy of Factor's git repository (including my contributions) on my projects subdomain: "http://projects.elasticdog.com/git/factor.git":http://projects.elasticdog.com/git/factor.git
+
+h3(#wordpress). WordPress
+
+!/images/projects/wordpress-banner.png(WordPress CMS)!:http://wordpress.org/
+
+I've used the WordPress blogging engine for a number of years and have written various plugins that have been downloaded tens of thousands of times. I still write about the technical side of WordPress on this site and continually contribute to the community in some capacity.
+
+h2(#design-and-development). Design & Development
+
+h3(#beckyandaaron). Becky and Aaron
+
+!/images/projects/beckyandaaron-banner.png(Becky and Aaron's Wedding Website)!:/images/projects/beckyandaaron.png
+
+A website housing details about our engagement and wedding -- "http://beckyandaaron.com/":http://beckyandaaron.com/
+
+h3(#lightpress). LightPress
+
+!/images/projects/lightpress-banner.png(LightPress Website Design Comp)!:/images/projects/lightpress.png
+
+A logo and website design comp created for the now-defunct open source project LightPress.
+
+h3(#matrix). Matrix Communications, Inc.
+
+!/images/projects/matrix-logo-banner.png(Matrix Communications, Inc. Logo Redesign)!:/images/projects/matrix-logo.png
+
+A logo designed for Matrix Communications, Inc., a business telecommunications services company -- "http://www.utmatrix.com/":http://www.utmatrix.com/
+
+h3(#service). Purdue University Service Learning
+
+!/images/projects/service-learning-banner.png(Purdue University Service Learning Website)!:/images/projects/service-learning.png
+
+A website designed for Purdue University professors involved in service learning projects. The original backend for this site was developed by myself and a team of students using ASP.NET.
+
+h3(#rubidium). Rubidium
+
+!/images/projects/rubidium-banner.png(Rubidium Application Web Site)!:/images/projects/rubidium.png
+
+An open source time-tracking application written in Ruby on Rails by myself and a couple of friends. Sadly, it was never completed, but I still own the domain "RubyTreasures.com":http://rubytreasures.com/, which will some day house other Ruby-based projects. If you're interested, I've also posted a "screenshot of Rubidium's interface":/images/projects/rubidium-interface.png demonstrating user management -- "http://rubytreasures.com/rubidium/":http://rubytreasures.com/rubidium/
+
+h3(#whamfan). WHAMFAN!
+
+!/images/projects/whamfan-banner.png(WhamFan Web Site)!:/images/projects/whamfan.png
+
+An amazing website to go along with an amazing email address...yes, I created WHAMFAN! as a joke -- "http://whamfan.com/":http://whamfan.com/
