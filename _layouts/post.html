@@ -2,7 +2,7 @@
 layout: default
 ---
 {% if page.previous or page.next %}
-<p>
+<p class="relativity">
 {% if page.previous %}
 	<a href="{{ page.previous.url }}/" title="{{ page.previous.title }}" rel="prev">&larr; previous article</a>
 {% endif %}
@@ -19,10 +19,10 @@ layout: default
 
 {{ content }}
 
-<div class="signature">&#8212; Aaron Bull Schaefer <span>&lt;aaron [at] elasticdog dot com&gt;</span></div>
+<div class="signature">&#8212; Aaron Bull Schaefer <span>&lt;aaron@elasticdog.com&gt;</span></div>
 
 {% if page.previous or page.next %}
-<p>
+<p class="relativity">
 {% if page.previous %}
 	<a href="{{ page.previous.url }}/" title="{{ page.previous.title }}" rel="prev">&larr; previous article</a>
 {% endif %}
