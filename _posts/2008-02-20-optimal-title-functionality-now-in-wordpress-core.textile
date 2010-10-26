@@ -4,13 +4,13 @@ title:  Optimal Title Functionality Now in WordPress Core
 ---
 I wrote "Optimal Title":http://elasticdog.com/2004/09/optimal-title/ three and a half years ago to help fix a blatant flaw in "WordPress's":http://wordpress.org default usability and search engine optimization (SEO). Since then, the plugin has been downloaded by tens of thousands of people and written about by hundreds of bloggers. Soon, the plugin will become obsolete...
 
-h3. A Change in WordPress v2.5
+h2. A Change in WordPress v2.5
 
 As of the beginning of this year, a "changeset":http://trac.wordpress.org/changeset/6538 was checked in to WordPress's SVN(Subversion) repository which adds a "separator location" argument to the built-in @wp_title()@ function. What that means, is that when WordPress v2.5 is released around March 10th of this year, users will be able to change the ordering of their HTML(Hypertext Markup Language) title tags without having to use a third-party plugin.
 
 The "developers decided":http://trac.wordpress.org/ticket/4407 not to change the default behavior of @wp_title()@, and instead added the additional argument to the function in order to prevent breaking existing themes that rely on the current behavior.
 
-h3(#change). How to Make the Change
+h2(#change). How to Make the Change
 
 If you're currently using Optimal Title and want to change your template back to using @wp_title()@ after upgrading to WordPress v2.5 (and you _should_), here's what you need to do...
 
@@ -24,7 +24,7 @@ bc. <title><?php wp_title('&raquo;',TRUE,'right'); ?> <?php bloginfo('name'); ?>
 
 That's it!
 
-h3(#parameters). Parameters
+h2(#parameters). Parameters
 
 The "wp_title codex page":http://codex.wordpress.org/Template_Tags/wp_title won't be updated until the next release, however, here is how @wp_title()@ will work after WordPress v2.5 is out:
 
@@ -34,6 +34,6 @@ bc. <?php wp_title('separator', display, 'seplocation'); ?>
 * display - __boolean__ - Should the title be displayed (@TRUE@) or returned for use in PHP(PHP: Hypertext Preprocessor) (@FALSE@). Defaults to @TRUE@.
 * &#39;seplocation&#39; - __string__ - The location of the separator in relation to the title. All values default to the standard left position, with the exception of @'right'@, which will place the separator after the title rather than before.
 
-h3(#glad). I'm Glad
+h2(#glad). I'm Glad
 
 Even though it took so long to get this done, I'm glad WordPress finally came around to the idea and added Optimal Title's functionality to the core. Regardless of whether or not you were using Optimal Title before, I'd highly recommend that *all* users make this simple change to their templates in order to take advantage of the many benefits that a proper title tag has to offer.

@@ -5,7 +5,7 @@ permalink: /
 changefreq: yearly
 priority: 0.4
 ---
-h2(#aaron). About Aaron Bull Schaefer
+h1(#aaron). About Aaron Bull Schaefer
 
 I'm a certifiable renaissance man, gentleman, and scholar. I have been working in the IT(Information Technology) field since 2002 and am currently employeed as a Linux Administrator at "Wolfram Research":http://www.wolfram.com/, the makers of "Mathematica":http://www.wolfram.com/products/mathematica/ and "Wolfram|Alpha":http://www.wolframalpha.com/. I earned my Bachelor's degree in Computer & Information Technology (specializing in Network Engineering) from Purdue University, graduating with highest distinction. I am passionate about security, automation, and using technology to make people's lives better. It's rumored that I may someday rule the world.
 
@@ -16,22 +16,22 @@ If you'd like to see some of the projects I've been involved in, take a gander a
 * "GitHub":http://github.com/elasticdog
 * "Flickr":http://flickr.com/photos/elasticdog/
 
-h3(#contact). Contact Me
+h2(#contact). Contact Me
 
-If you'd like to reach me for any reason, send an email to: *aaron [at] elasticdog dot com*. I'm also constantly checking the horizon for smoke signals and carrier pigeons, if that's your thing. If you'd prefer a more secure means of communication, keep on reading...
+If you'd like to reach me for any reason, send an email to *"aaron@elasticdog.com":mailto:aaron@elasticdog.com*. I'm also constantly checking the horizon for smoke signals and carrier pigeons, if that's your thing. If you'd prefer a more secure means of communication, keep on reading...
 
-h4(#gnupg). My GnuPG Public Key
+h3(#gnupg). My GnuPG Public Key
 
-"GNU Privcy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or GPG) is <acronym title="Free and Open Source Software">F/OSS</acronym> that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
+"GNU Privacy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or ==GPG==) is <acronym title="Free and Open Source Software">==F/OSS==</acronym> that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
 
 pre. pub   1024D/50EDFCCD 2008-05-31
       Key fingerprint = 7074 406E 8272 D083 1E31  2845 666F D4C1 50ED FCCD
 uid                  Aaron Bull Schaefer <aaron@elasticdog.com>
 sub   2048g/388B7E9C 2008-05-31 [expires: 2012-12-21]
 
-You can import it from any keyserver, or by downloading the "ASCII-armored version":/code/elasticdog-pubkey.asc manually. *DO NOT* forget to verify the key against the fingerprint listed above to ensure that they are the same. For more information, see "The GNU Privacy Handbook":http://www.gnupg.org/gph/en/manual.html.
+You can import it from any keyserver, or by downloading the "ASCII-armored version":/code/elasticdog-pubkey.asc manually. *DO ==NOT==* forget to verify the key against the fingerprint listed above to ensure that they are the same. For more information, see "The GNU Privacy Handbook":http://www.gnupg.org/gph/en/manual.html.
 
-h2(#elasticdog). About This Site
+h1(#elasticdog). About This Site
 
 ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference a historical record of my thoughts at any given moment in time.
 
@@ -39,36 +39,36 @@ It's inevitable that certain topics will fall out of favor and no longer be pert
 
 I _highly_ encourage participation through "email correspondence":#contact and writing thought-out responses published via your own chosen platform; but the ability to leave comments here directly has been turned off. If you get in touch and our conversation generates any interesting dialog, there's a good chance that I'll add more details to the appropriate article or write something entirely new. We'll see how this experiment goes!
 
-h3(#hosting). Hosting
+h2(#hosting). Hosting
 
 !/images/about/scrooge.jpg(Scrooge McDuck)! ElasticDog.com is hosted on a VPS(Virtual Private Server) from "Linode":http://www.linode.com/ along with a number of my other sites. If you're comfortable on the command line, then running a VPS is leaps and bounds better than any cheap shared hosting, and not that much more expensive. I know that bloggers are always excited to promote their web host in hopes of someday swimming in all the referral money like Scrooge McDuck, but I don't really care about that. If just one person chooses Linode over Dreamhost and their ilk, then my work here is done. For all I care, tell 'em Large Marge sent ya...
 
-h3(#design). Design
+h2(#design). Design
 
 Although it wasn't my first website, I created ElasticDog.com when I began learning about web standards back in 2003. I started off using "Movable Type":http://www.movabletype.org/ as a blogging engine, and unfortunately neglected to convert all of my entries when I later switched to "WordPress":http://wordpress.org/. Over the years, I've updated the look of this site a number of times...click a banner below to be transported into the past.
 
-h4(#2003). 2003
+h3(#2003). 2003
 
 !/images/about/elasticdog-2003-banner.png(ElasticDog.com's Design from 2003)!:/images/about/elasticdog-2003.png
 
-h4(#2004). 2004
+h3(#2004). 2004
 
 !/images/about/elasticdog-2004-banner.png(ElasticDog.com's Design from 2004)!:/images/about/elasticdog-2004.png
 
-h4(#2006). 2006
+h3(#2006). 2006
 
 !/images/about/elasticdog-2006-banner.png(ElasticDog.com's Design from 2006)!:/images/about/elasticdog-2006.png
 
-h4(#2007). 2007
+h3(#2007). 2007
 
 !/images/about/elasticdog-2007-banner.png(ElasticDog.com's Design from 2007)!:/images/about/elasticdog-2007.png
 
-h4(#2008). 2008
+h3(#2008). 2008
 
 !/images/about/elasticdog-2008-banner.png(ElasticDog.com's Design from 2008)!:/images/about/elasticdog-2008.png
 
 This version of ElasticDog.com was not designed by me, but was a highly-customized version of "Essay", a "Sandbox":http://www.plaintxt.org/themes/sandbox/ theme by "Ian Stewart":http://upperfortstewart.com/. The idea was that I could ignore the complexities of WordPress theme creation and get back to focusing on writing, but you can "see how that went":/archives/.
 
-h4(#current). Current Design
+h3(#current). Current Design
 
 The current version of ElasticDog.com is another attempt at getting back to basics. I've dropped WordPress in favor of using the static site generator "Jekyll":http://github.com/mojombo/jekyll, and will intentially be keeping the design minimal.

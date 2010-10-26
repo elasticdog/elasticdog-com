@@ -5,7 +5,7 @@ permalink: /
 changefreq: monthly
 priority: 0.4
 ---
-h2. Projects
+h1. Projects
 
 Here are a few projects that I've been involved with in one form or another over the years. Click a banner below to see more details...
 
@@ -61,8 +61,8 @@ h3(#rubidium). Rubidium
 
 An open source time-tracking application written in Ruby on Rails by myself and a couple of friends. Sadly, it was never completed, but I still own the domain "RubyTreasures.com":http://rubytreasures.com/, which will some day house other Ruby-based projects. If you're interested, I've also posted a "screenshot of Rubidium's interface":/images/projects/rubidium-interface.png demonstrating user management -- "http://rubytreasures.com/rubidium/":http://rubytreasures.com/rubidium/
 
-h3(#whamfan). WHAMFAN!
+h3(#whamfan). ==WHAMFAN!==
 
 !/images/projects/whamfan-banner.png(WhamFan Web Site)!:/images/projects/whamfan.png
 
-An amazing website to go along with an amazing email address...yes, I created WHAMFAN! as a joke -- "http://whamfan.com/":http://whamfan.com/
+An amazing website to go along with an amazing email address...yes, I created ==WHAMFAN!== as a joke -- "http://whamfan.com/":http://whamfan.com/
