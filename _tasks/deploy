@@ -8,7 +8,9 @@ readonly XML_FILE='_site/feed/atom.xml'          # location of unmodified feed f
 readonly TMP_FILE=$(mktemp /tmp/tmp.XXXXXXXXXX)  # temporary file used to store modified feed file
 
 # generate a fresh copy of the website
-rm -r _site/* && jekyll
+rm -r _site/*
+jekyll
+compass compile --output-style compressed
 
 # compress the search engine sitemap
 gzip --stdout --best "$SITEMAP" > "$SITEMAP.gz"
