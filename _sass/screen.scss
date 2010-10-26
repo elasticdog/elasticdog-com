@@ -3,17 +3,16 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:regular,italic,bold&subset=latin);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata&subset=latin);
 
-/* Compass Modules */
-/* @import "compass/reset"; */
-@import "compass/utilities/general/float";
+// Compass Modules
 @import "compass/css3/border-radius";
+@import "compass/utilities/general/float";
 
-/* Font Sets */
+// Font Sets
 $fixed-width: "Inconsolata", "Courier New", Courier, mono;
 $serif: "Droid Serif", Palatino, Georgia, "Times New Roman", serif;
 $sans-serif: Cuprum, Tahoma, Helvetica, Arial, sans-serif;
 
-/* Color Pallette */
+// Color Pallette
 $code-grey: #222;
 $cool-grey: #808094;
 $dark-orange: #3C2F20;
@@ -21,9 +20,10 @@ $light-grey: #E7E7EB;
 $light-red-orange: #B46353;
 $red-orange: #992A1A;
 
-/* Measurements */
+// Measurements
 $left-margin: 72px;
 $outdent: 9px;
+
 
 abbr {
 	border-bottom: 1px dotted $cool-grey;
