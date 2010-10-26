@@ -30,39 +30,39 @@ So, now we know that Factor manages its input and output with a stack, but how d
 
 Things do get slightly more complicated than that, but for the most part those two rules hold true. The most simple example of this behavior is the ubiquitous hello world program, shown entered directly into Factor's interactive listener environment:
 
-notextile. <pre><code>(scratchpad) <strong>"Hello world!" print</strong>
-Hello world!</code></pre>
+bc. (scratchpad) "Hello world!" print
+Hello world!
 
 To understand what is happening, you can just type the string first, and then execute the @print@ word later:
 
-notextile.. <pre><code>(scratchpad) <strong>"Hello world!"</strong>
+bc.. (scratchpad) "Hello world!"
 
 --- Data stack:
 "Hello world!"
-(scratchpad) <strong>print</strong>
-Hello world!</code></pre>
+(scratchpad) print
+Hello world!
 
 p. In this particular case, typing the literal string @"Hello world!"@ will push that value onto the stack; then the word @print@, takes a single string off the stack and writes it to the output stream.
 
 The same idea can be applied to simple arithmetic. Like strings, numbers are also literals, so you just have to type them in (separated by spaces) for them to be pushed onto the stack:
 
-notextile.. <pre><code>(scratchpad) <strong>2 3</strong>
+bc.. (scratchpad) 2 3
 
 --- Data stack:
 2
-3</code></pre>
+3
 
-p. __NOTE: the stack is displayed in the listener upside-down from the way you'd think, so the bottom number is actually the top of the stack.__
+p. __==NOTE==: the stack is displayed in the listener upside-down from the way you'd think, so the bottom number is actually the top of the stack.__
 
 ...and if you want to add the top two numbers together, the @+@ word will simply pop two numbers off the stack, add them together, and push the result back onto the stack:
 
-notextile.. <pre><code>--- Data stack:
+bc.. --- Data stack:
 2
 3
-(scratchpad) <strong>+</strong>
+(scratchpad) +
 
 --- Data stack:
-5</code></pre>
+5
 
 h3(#words). A Few More Words
 
@@ -72,22 +72,21 @@ If you start messing around in the listener, odds are your stack is going to gro
 - @.@ __( obj &#45;&#45; )__ := takes the top item from the stack and prettyprints it
 - @clear@ __( &#45;&#45; )__ := removes all items from the stack
 
-notextile.. <pre><code>(scratchpad) <strong>2 3 -</strong>
+bc.. (scratchpad) 2 3 -
 
 --- Data stack:
 -1
-(scratchpad) <strong>drop</strong>
-
-(scratchpad) <strong>20 5 / .</strong>
+(scratchpad) drop
+(scratchpad) 20 5 / .
 4
-(scratchpad) <strong>2 3 + 6 7</strong>
+(scratchpad) 2 3 + 6 7
 
 --- Data stack:
 5
 6
 7
-(scratchpad) <strong>clear</strong>
-(scratchpad)</code></pre>
+(scratchpad) clear
+(scratchpad)
 
 h3(#stack-ramifications). Ramifications of Stack-Based Design
 
@@ -101,9 +100,9 @@ From these simple examples, we can observe a couple of important things about Fa
 
 		This also makes words more concise and unambiguous when compared to _infix_ notation and eliminates the need for copious amounts of parentheses used by _prefix_ notation languages, like Lisp or Scheme.
 
-<pre><code>POSTFIX:  6 5 4 * +
+bc. POSTFIX:  6 5 4 * +
 INFIX:    6 + 5 * 4 =
-PREFIX:   (+ (* 4 5) 6)</code></pre>
+PREFIX:   (+ (* 4 5) 6)
 
 		With the infix example above, you'd have to know "order of operations rules":http://en.wikipedia.org/wiki/Order_of_operations in order to get the correct answer (or use parentheses to force the matter). When using postfix notation, the fact that multiplication is done first becomes explicit. Prefix notation also gets rid of that ambiguity, but becomes messier and harder to type with the more nesting you add.
 	</li>
@@ -122,10 +121,10 @@ If you've typed in the examples from above and messed around in the listener, th
 bc. : plus-two ( x -- y )
     2 + ;
 
-If you copy and paste that into your listener, than you can use the word <code>plus-two</code> anywhere you would like to add two to a number on the top of the stack:
+If you copy and paste that into your listener, than you can use the word @plus-two@ anywhere you would like to add two to a number on the top of the stack:
 
-notextile. <pre><code>(scratchpad) <strong>15 plus-two .</strong>
-17</code></pre>
+bc. (scratchpad) 15 plus-two .
+17
 
 Not very exciting, but it gives us a couple more things to talk about...
 

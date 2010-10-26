@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'HOWTO: Install WordPress on Nginx'
+title:  '==HOWTO==: Install WordPress on Nginx'
 ---
 I recently moved all of my sites from a cheap shared host to a shiny new VPS(Virtual Private Server) at "SliceHost":http://www.slicehost.com/, and couldn't be happier. Running your own VPS means a great amount of flexibility since you have full root access to the server and get to configure everything exactly how you want it. That said, it also means that if you want to maintain high performance, you have to keep your resource usage to a minimum.
 
@@ -21,7 +21,7 @@ $ ./configure
 $ make
 $ sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi
 
-__NOTE: If you're following the steps above verbatim, you will need to have root privileges in order to copy the binary to its final location...everything else should work fine as a normal user. To gain root privileges, the program @sudo@ was used in the example above; you may or may not have access to @sudo@ on your machine.__
+__==NOTE==: If you're following the steps above verbatim, you will need to have root privileges in order to copy the binary to its final location...everything else should work fine as a normal user. To gain root privileges, the program @sudo@ was used in the example above; you may or may not have access to @sudo@ on your machine.__
 
 After @spawn-fcgi@ has been copied to the desired location, you can safely remove the build directory and original source file:
 

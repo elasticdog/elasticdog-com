@@ -45,11 +45,10 @@ bc.. : sq ( x -- y )
 : neg ( x -- -x )
     0 swap - ;
 
-notextile.. <pre><code>(scratchpad) <strong>5 sq .</strong>
-
+bc. (scratchpad) 5 sq .
 25
-(scratchpad) <strong>1 neg .</strong>
--1</code></pre>
+(scratchpad) 1 neg .
+-1
 
 h3(#caveats). Caveats
 
@@ -61,12 +60,12 @@ h2(#quotations). Quotations
 
 Before we can get to the idea of combinators, we first have to discuss quotations:
 
-notextile. <pre><code>(scratchpad) <strong>5 [ "hello" print ] times</strong>
+bc. (scratchpad) 5 [ "hello" print ] times
 hello
 hello
 hello
 hello
-hello</code></pre>
+hello
 
 In this example, @[ "hello" print ]@ is a quotation.
 
@@ -74,12 +73,12 @@ In layman's terms, a quotation is a way to encapsulate a snippet of code so it d
 
 If we didn't have quotations, that same example would get ugly real fast:
 
-notextile. <pre><code>(scratchpad) <strong>"hello" dup dup dup dup print print print print print</strong>
+bc. (scratchpad) "hello" dup dup dup dup print print print print print
 hello
 hello
 hello
 hello
-hello</code></pre>
+hello
 
 Imagine if you wanted to print "hello" 1000 times!
 
@@ -107,18 +106,19 @@ To illustrate this point, I'd like to introduce a couple of simple combinators:
 
 While both of these combinators have the same stack effect declaration, their usage is a bit different:
 
-notextile.. <pre><code>(scratchpad) <strong>1 2 4 [ + ] dip</strong>
+bc.. (scratchpad) 1 2 4 [ + ] dip
 
 --- Data stack:
 3
 4
-(scratlear</strong>
-(scratchpad) <strong>1 2 4 [ + ] keep</strong>
+
+(scratchpad) clear
+(scratchpad) 1 2 4 [ + ] keep
 
 --- Data stack:
 1
 6
-4</code></pre>
+4
 
 p. These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you're curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the "retain stack") to temporarily store items while the supplied quotation is being executed. There are a few other "preserving combinators":http://docs.factorcode.org/content/article-dip-keep-combinators.html that are worth exploring as well.
 
@@ -134,8 +134,8 @@ The cleave, spread, and apply combinators are your best weapons when trying to r
 
 		Let's say that you want to find the average of a bunch of numbers in an array. The steps are straightforward, you take the sum of all the numbers and divide that sum by how many numbers you have (the length of the array):
 
-notextile. <pre><code>(scratchpad) <strong>{ 1 2 3 } dup sum swap length / .</strong>
-2</code></pre>
+bc. (scratchpad) { 1 2 3 } dup sum swap length / .
+2
 
 		We can eliminate the need for those stack shufflers and better express our intent by using a cleave combinator to achieve the same thing:
 
@@ -146,8 +146,8 @@ notextile. <pre><code>(scratchpad) <strong>{ 1 2 3 } dup sum swap length / .</st
 
 		<img src="/images/2008/12/cleave.png" alt="Cleave Combinator Demonstration" width="510" height="222" />
 
-notextile. <pre><code>(scratchpad) <strong>{ 1 2 3 } [ sum ] [ length ] bi / .</strong>
-2</code></pre>
+bc. (scratchpad) { 1 2 3 } [ sum ] [ length ] bi / .
+2
 
 		The different "cleave combinators":http://docs.factorcode.org/content/article-cleave-combinators.html change either the number of quotations applied to your items (@bi@ vs. @tri@), or the number of items used as input for your quotations (@bi@ vs. @2bi@).
 	</li>
@@ -158,8 +158,8 @@ notextile. <pre><code>(scratchpad) <strong>{ 1 2 3 } [ sum ] [ length ] bi / .</
 
 		Let's say that you have two coordinate positions in the form of @{ x y }@, and you'd like to extract the x-coordinate from the first position, and the y-coordinate from the second position to form a new position with those values:
 
-notextile. <pre><code>(scratchpad) <strong>{ 1 2 } { 3 4 } swap first swap second 2array .</strong>
-{ 1 4 }</code></pre>
+bc. (scratchpad) { 1 2 } { 3 4 } swap first swap second 2array .
+{ 1 4 }
 
 		We can eliminate the need for those stack shufflers and better express our intent by using a spread combinator to achieve the same thing:
 
@@ -170,8 +170,8 @@ notextile. <pre><code>(scratchpad) <strong>{ 1 2 } { 3 4 } swap first swap secon
 
 		<img src="/images/2008/12/spread.png" alt="Spread Combinator Demonstration" width="510" height="222" />
 
-notextile. <pre><code>(scratchpad) <strong>{ 1 2 } { 3 4 } [ first ] [ second ] bi* 2array .</strong>
-{ 1 4 }</code></pre>
+bc. (scratchpad) { 1 2 } { 3 4 } [ first ] [ second ] bi* 2array .
+{ 1 4 }
 
 		When you want to do the same thing with more than two quotations/items, then using spread combinators eliminates the need for nested dips or shufflers and the added clarity becomes much more evident.
 
@@ -184,8 +184,8 @@ notextile. <pre><code>(scratchpad) <strong>{ 1 2 } { 3 4 } [ first ] [ second ] 
 
 		Let's say that you have two strings, each containing a name, and you want to see if those names are the same. In order to ignore case when doing the comparison, you decide to convert both strings to upper case before checking for equality:
 
-notextile. <pre><code>(scratchpad) <strong>"john" "John" swap &gt;upper swap &gt;upper = .</strong>
-t</code></pre>
+bc. (scratchpad) "john" "John" swap >upper swap >upper = .
+t
 
 		We can eliminate the need for those stack shufflers and better express our intent by using an apply combinator to achieve the same thing:
 
@@ -196,8 +196,8 @@ t</code></pre>
 
 		<img src="/images/2008/12/apply.png" alt="Apply Combinator Demonstration" width="510" height="222" />
 
-notextile. <pre><code>(scratchpad) <strong>"john" "John" [ &gt;upper ] bi@ = .</strong>
-t</code></pre>
+bc. (scratchpad) "john" "John" [ >upper ] bi@ = .
+t
 
 		The different "apply combinators":http://docs.factorcode.org/content/article-apply-combinators.html change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).
 	</li>
@@ -223,16 +223,16 @@ Factor has many sequence types that you may already be familiar with, such as "a
 
 Using the sequence operators and combinators together, you can create all sorts of powerful abstractions that I'll talk more about next time. Here are a couple of examples to whet your appetite:
 
-notextile. <pre><code>(scratchpad) <strong>{ 1 2 3 4 5 } [ even? ] filter .</strong>
+bc. (scratchpad) { 1 2 3 4 5 } [ even? ] filter .
 { 2 4 }
-(scratchpad) <strong>{ 1 2 3 } [ . ] each</strong>
+(scratchpad) { 1 2 3 } [ . ] each
 1
 2
 3
-(scratchpad) <strong>"Hello" [ alpha? ] all? .</strong>
+(scratchpad) "Hello" [ alpha? ] all? .
 t
-(scratchpad) <strong>"Hello!!!" [ alpha? ] all? .</strong>
-f</code></pre>
+(scratchpad) "Hello!!!" [ alpha? ] all? .
+f
 
 Keep in mind that in Factor, *sequences are zero-based*.
 
@@ -240,14 +240,14 @@ h3(#numbers). Numbers
 
 The last topic for the day is numbers. So far, we have only used integers, but Factor also supports "rational numbers":http://docs.factorcode.org/content/article-rationals.html (fractions), "floats":http://docs.factorcode.org/content/article-floats.html (decimal approximations of a number), and "complex numbers":http://docs.factorcode.org/content/article-complex-numbers.html (imaginary numbers).
 
-notextile. <pre><code>(scratchpad) <strong>100 330 / .</strong>
+bc. (scratchpad) 100 330 / .
 10/33
-(scratchpad) <strong>5/4 1/2 + .</strong>
+(scratchpad) 5/4 1/2 + .
 1+3/4
-(scratchpad) <strong>5/4 0.5 + .</strong>
+(scratchpad) 5/4 0.5 + .
 1.75
-(scratchpad) <strong>2 5 rect&gt; .</strong>
-C{ 2 5 }</code></pre>
+(scratchpad) 2 5 rect> .
+C{ 2 5 }
 
 One more shortcut that is going to come in handy, is a word for creating sequences from integers:
 

@@ -19,8 +19,7 @@ First of all, you must have the proper privileges on your WordPress database in 
 <ol>
 	<li>Log in to MySQL with whatever account credentials you know.
 
-<pre><code>
-$ <strong>mysql -u root -p</strong>
+<pre><code>$ mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 59202
@@ -31,10 +30,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
 mysql></code></pre></li>
 	<li>Specify that you want to access the "mysql" database, then ensure that you do have the privileges to add indexes.
 
-<pre><code>
-mysql> <strong>use mysql</strong>
+<pre><code>mysql> use mysql
 Database changed
-mysql> <strong>SELECT user, index_priv FROM user;</strong>
+mysql> SELECT user, index_priv FROM user;
 +------------------+-----------------+
 | user       | index_priv |
 +------------------+-----------------+
@@ -52,12 +50,10 @@ Once you have access to an account that can add indexes, then follow these steps
 
 <ol>
 	<li>Specify that you want to access your WordPress database. If you don't know the name of your WordPress database, run <code>show databases;</code> to see a list of databases you have access to.
-<pre><code>
-mysql> <strong>use elasticdog_wordpress</strong>
+<pre><code>mysql> use elasticdog_wordpress
 Database changed</code></pre></li>
 	<li>Add the index. The table names for WordPress are fairly standard, but if you don't have one named "wp_comments", run <code>show tables;</code> to see a list of contenders and it should be easy to figure out.
-<pre><code>
-mysql> <strong>CREATE INDEX comment_date_gmt ON wp_comments (comment_date_gmt);</strong>
+<pre><code>mysql> CREATE INDEX comment_date_gmt ON wp_comments (comment_date_gmt);
 Query OK, 458 rows affected (0.14 sec)
 Records: 458  Duplicates: 0  Warnings: 0</code></pre></li>
 	<li>If want to verify that the index was created, run <br /><code>SHOW INDEX FROM wp_comments;</code> to list all indexes, and then you can exit out.</li>
