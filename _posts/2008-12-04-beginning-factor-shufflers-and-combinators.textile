@@ -15,23 +15,22 @@ Much like the name implies, stack shufflers are merely words that change the ord
 There are three basic varieties of stack shufflers. Here they are along with the most commonly used word for each type:
 
 <ol>
-	<li>Removing Shufflers
-		<dl>
-			<dt>@drop@ __( x &#45;&#45; )__</dt>
-			<dd>removes the top item from the stack and discards it</dd>
-		</dl>
+	<li>
+		*Removing Shufflers*
+
+- @drop@ __( x &#45;&#45; )__ := removes the top item from the stack and discards it
+
 	</li>
-	<li>Duplicating Shufflers
-		<dl>
-			<dt>@dup@ __( x &#45;&#45; x x )__</dt>
-			<dd>duplicates the top item on the stack</dd>
-		</dl>
+	<li>
+		*Duplicating Shufflers*
+
+- @dup@ __( x &#45;&#45; x x )__ := duplicates the top item on the stack
+
 	</li>
-	<li>Permuting Shufflers
-		<dl>
-			<dt>@swap@ __( x y &#45;&#45; y x )__</dt>
-			<dd>exchanges the positions of the first and second items on the top of the stack</dd>
-		</dl>
+	<li>
+		*Permuting Shufflers*
+
+- @swap@ __( x y &#45;&#45; y x )__ := exchanges the positions of the first and second items on the top of the stack
 	</li>
 </ol>
 
@@ -96,13 +95,9 @@ While our code examples thus far have been easy to follow, when you start tackli
 
 To illustrate this point, I'd like to introduce a couple of simple combinators:
 
-<dl>
-	<dt>@dip@ __( x quot &#45;&#45; x )__</dt>
-	<dd>calls a quotation while temporarily hiding the top item on the stack</dd>
+- @dip@ __( x quot &#45;&#45; x )__ := calls a quotation while temporarily hiding the top item on the stack
 
-	<dt>@keep@ __( x quot &#45;&#45; x )__</dt>
-	<dd>calls a quotation with an item on the stack, restoring that item after the quotation returns</dd>
-</dl>
+- @keep@ __( x quot &#45;&#45; x )__ := calls a quotation with an item on the stack, restoring that item after the quotation returns
 
 While both of these combinators have the same stack effect declaration, their usage is a bit different:
 
@@ -139,10 +134,7 @@ bc. (scratchpad) { 1 2 3 } dup sum swap length / .
 
 		We can eliminate the need for those stack shufflers and better express our intent by using a cleave combinator to achieve the same thing:
 
-		<dl>
-			<dt>@bi@ __( x p q &#45;&#45; )__</dt>
-			<dd>applies quotation **__p__** to **__x__**, then applies quotation **__q__** to **__x__**</dd>
-		</dl>
+- @bi@ __( x p q &#45;&#45; )__ := applies quotation **__p__** to **__x__**, then applies quotation **__q__** to **__x__**
 
 		<img src="/images/2008/12/cleave.png" alt="Cleave Combinator Demonstration" width="510" height="222" />
 
@@ -163,10 +155,7 @@ bc. (scratchpad) { 1 2 } { 3 4 } swap first swap second 2array .
 
 		We can eliminate the need for those stack shufflers and better express our intent by using a spread combinator to achieve the same thing:
 
-		<dl>
-			<dt>@bi*@ __( x y p q &#45;&#45; )__</dt>
-			<dd>applies quotation **__p__** to **__x__**, then applies quotation **__q__** to **__y__**</dd>
-		</dl>
+- @bi*@ __( x y p q &#45;&#45; )__ := applies quotation **__p__** to **__x__**, then applies quotation **__q__** to **__y__**
 
 		<img src="/images/2008/12/spread.png" alt="Spread Combinator Demonstration" width="510" height="222" />
 
@@ -189,10 +178,7 @@ t
 
 		We can eliminate the need for those stack shufflers and better express our intent by using an apply combinator to achieve the same thing:
 
-		<dl>
-			<dt><code>bi@</code> __( x y quot &#45;&#45; )__</dt>
-			<dd>applies the quotation to **__x__**, then to **__y__**</dd>
-		</dl>
+- <code>bi@</code> __( x y quot &#45;&#45; )__ := applies the quotation to **__x__**, then to **__y__**
 
 		<img src="/images/2008/12/apply.png" alt="Apply Combinator Demonstration" width="510" height="222" />
 
@@ -238,7 +224,7 @@ Keep in mind that in Factor, *sequences are zero-based*.
 
 h3(#numbers). Numbers
 
-The last topic for the day is numbers. So far, we have only used integers, but Factor also supports "rational numbers":http://docs.factorcode.org/content/article-rationals.html (fractions), "floats":http://docs.factorcode.org/content/article-floats.html (decimal approximations of a number), and "complex numbers":http://docs.factorcode.org/content/article-complex-numbers.html (imaginary numbers).
+So far, we have only used integers, but Factor also supports "rational numbers":http://docs.factorcode.org/content/article-rationals.html (fractions), "floats":http://docs.factorcode.org/content/article-floats.html (decimal approximations of a number), and "complex numbers":http://docs.factorcode.org/content/article-complex-numbers.html (imaginary numbers).
 
 bc. (scratchpad) 100 330 / .
 10/33
@@ -249,12 +235,11 @@ bc. (scratchpad) 100 330 / .
 (scratchpad) 2 5 rect> .
 C{ 2 5 }
 
-One more shortcut that is going to come in handy, is a word for creating sequences from integers:
+h4(#iota). Iota
 
-<dl>
-	<dt>@iota@ __( n &#45;&#45; iota )__</dt>
-	<dd>creates a sequence of length **__n__**, whose elements are its non-negative predecessors (i.e. 0 to **__n__**-1 inclusive)</dd>
-</dl>
+One last thing that is going to come in handy, is a word for creating sequences from integers:
+
+- @iota@ __( n &#45;&#45; iota )__ := creates a sequence of length **__n__**, whose elements are its non-negative predecessors (i.e. 0 to **__n__**-1 inclusive)
 
 This word can be very helpful when performing counted loops or other control flow statements. For example, the following two lines are equivalent:
 
