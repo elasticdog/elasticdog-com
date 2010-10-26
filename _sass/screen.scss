@@ -12,7 +12,7 @@ $fixed-width: "Inconsolata", "Courier New", Courier, mono;
 $serif: "Droid Serif", Palatino, Georgia, "Times New Roman", serif;
 $sans-serif: Cuprum, Tahoma, Helvetica, Arial, sans-serif;
 
-// Color Pallette
+// Color Palette
 $code-grey: #222;
 $cool-grey: #808094;
 $dark-orange: #3C2F20;
@@ -39,8 +39,10 @@ blockquote {
 
 body {
 	color: $dark-orange;
-	font-size: 100%;
-	font-family: $serif;
+	font: {
+		family: $serif;
+		size: 100%;
+	}
 	margin: ($left-margin / 2) $left-margin 0 $left-margin;
 	width: 640px;
 }
@@ -52,8 +54,10 @@ code {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $sans-serif;
-	font-weight: normal;
+	font: {
+		family: $sans-serif;
+		weight: normal;
+	}
 	line-height: 1em;
 }
 
@@ -96,8 +100,10 @@ img {
 
 p {
 	line-height: 1.5;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+	margin: {
+		top: 1.5em;
+		bottom: 1.5em;
+	}
 	word-spacing: 0.1em;
 }
 
@@ -107,8 +113,10 @@ pre {
 	color: #F2F2F2;
 	font-family: $fixed-width;
 	line-height: 1.25em;
-	margin-left: -$outdent;
-	margin-right: -$outdent;
+	margin: {
+		left: -$outdent;
+		right: -$outdent;
+	}
 	overflow: auto;
 	padding: 6px $outdent;
 
@@ -134,8 +142,10 @@ pre {
 #header {
 	h1 {
 		border: none;
-		font-size: 36px;
-		font-weight: bold;
+		font: {
+			size: 36px;
+			weight: bold;
+		}
 		margin-left: 0;
 		padding: 0;
 		word-spacing: -0.05em;
@@ -166,8 +176,10 @@ pre {
 
 .signature {
 	@include float-right;
-	font-size: 18px;
-	font-variant: small-caps;
+	font: {
+		size: 18px;
+		variant: small-caps;
+	}
 	margin-bottom: 1.5em;
 }
 
