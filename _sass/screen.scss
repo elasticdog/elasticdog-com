@@ -9,8 +9,8 @@
 
 // Font Sets
 $fixed-width: "Inconsolata", "Courier New", Courier, mono;
-$serif: "Droid Serif", Palatino, Georgia, "Times New Roman", serif;
 $sans-serif: Cuprum, Tahoma, Helvetica, Arial, sans-serif;
+$serif: "Droid Serif", Palatino, Georgia, "Times New Roman", serif;
 
 // Color Palette
 $code-grey: #222;
@@ -25,11 +25,7 @@ $left-margin: 72px;
 $outdent: 9px;
 
 
-abbr {
-	border-bottom: 1px dotted $cool-grey;
-}
-
-acronym {
+abbr, acronym {
 	border-bottom: 1px dotted $cool-grey;
 }
 
@@ -95,7 +91,7 @@ hr {
 }
 
 img {
-	border-style: none;
+	border: none;
 }
 
 p {
@@ -160,7 +156,7 @@ pre {
 }
 
 #syndication {
-	float: right;
+	@include float-right;
 	margin-top: 0.5em;
 }
 
