@@ -140,14 +140,30 @@ ul.posts {
 }
 
 #footer {
-	@include link-colors($light-blue, $purple, $dark-blue);
+	@include link-colors($medium-red-orange, $medium-red-orange, $dark-red-orange);
 
 	hr {
 		margin-bottom: .5em;
 	}
 
 	p {
-		margin: 1em 0;
+		margin: 0 0 1em 0;
+	}
+
+	ul {
+		@include float-right;
+		font-variant: small-caps;
+		list-style-type: none;
+		line-height: 1.25em;
+		margin: {
+			left: 0;
+			top: 0.5em;
+		}
+		padding-left: 0;
+	}
+
+	#syndication {
+		margin: 1em 0 0.5em;
 	}
 }
 
@@ -168,11 +184,6 @@ ul.posts {
 		padding: 0;
 		margin-left: 0;
 	}
-}
-
-#syndication {
-	@include float-right;
-	margin-top: 0.5em;
 }
 
 .caps {

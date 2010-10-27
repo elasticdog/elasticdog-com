@@ -1,8 +1,6 @@
 <div id="footer">
 	<hr />
 
-	<div id="syndication"><a href="/feed/" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
-
 	<ul>
 	{% if page.url != '/' %}
 		<li><a href="/">Home</a></li>
@@ -25,6 +23,8 @@
 		<li>Archives</li>
 	{% endif %}
 	</ul>
+
+	<div id="syndication"><a href="/feed/" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;{{ site.time | date: '%Y' }} Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>
