@@ -149,18 +149,15 @@ pre {
 	@include link-colors($medium-red-orange, $medium-red-orange, $dark-red-orange);
 
 	h1 {
-		border: none;
 		font: {
 			size: 36px;
 			weight: bold;
 		}
-		margin-left: 0;
-		padding: 0;
 		word-spacing: -0.05em;
 	}
 
 	h2 {
-		border: none;
+		border-left: none;
 		font-weight: normal;
 		padding: 0;
 		margin-left: 0;
