@@ -10,7 +10,7 @@ readonly TMP_FILE=$(mktemp /tmp/tmp.XXXXXXXXXX)  # temporary file used to store 
 # generate a fresh copy of the website
 rm -r _site/*
 jekyll
-compass compile --output-style compressed
+compass compile --force --output-style compressed
 
 # compress the search engine sitemap
 gzip --stdout --best "$SITEMAP" > "$SITEMAP.gz"
