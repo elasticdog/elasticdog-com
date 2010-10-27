@@ -15,15 +15,21 @@ $serif: "Droid Serif", Palatino, Georgia, "Times New Roman", serif;
 // Color Palette
 $code-grey: #222;
 $cool-grey: #808094;
-$dark-orange: #3C2F20;
+$dark-blue: #03C;
+$dark-brown: #3C2F20;
+$dark-red-orange: #992A1A;
+$light-blue: #06C;
 $light-grey: #E7E7EB;
 $light-red-orange: #B46353;
-$red-orange: #992A1A;
+$medium-red-orange: #A74737;
+$purple: #4D0073;
 
 // Measurements
 $left-margin: 72px;
 $outdent: 9px;
 
+// Partials
+@import "links";
 
 abbr, acronym {
 	border-bottom: 1px dotted $cool-grey;
@@ -34,7 +40,7 @@ blockquote {
 }
 
 body {
-	color: $dark-orange;
+	color: $dark-brown;
 	font: {
 		family: $serif;
 		size: 100%;
@@ -63,7 +69,7 @@ h1 {
 
 h2 {
 	font-size: 24px;
-	border-left: ($left-margin - $outdent) solid $red-orange;
+	border-left: ($left-margin - $outdent) solid $dark-red-orange;
 	margin-left: -$left-margin;
 	padding: 8px 0 2px $outdent;
 }
@@ -84,7 +90,7 @@ h5 {
 }
 
 hr {
-	border: 1px solid $dark-orange;
+	border: 1px solid $dark-brown;
 	height: 1px;
 	margin: 1.5em 0;
 	max-height: 0px;
@@ -122,10 +128,14 @@ pre {
 }
 
 #content {
+	@include link-colors($light-blue, $purple, $dark-blue);
+
 	line-height: 1.5em;
 }
 
 #footer {
+	@include link-colors($light-blue, $purple, $dark-blue);
+
 	hr {
 		margin-bottom: .5em;
 	}
@@ -136,6 +146,8 @@ pre {
 }
 
 #header {
+	@include link-colors($medium-red-orange, $medium-red-orange, $dark-red-orange);
+
 	h1 {
 		border: none;
 		font: {
@@ -177,10 +189,10 @@ pre {
 		variant: small-caps;
 	}
 	margin-bottom: 1.5em;
-}
 
-.signature span {
-	color: $cool-grey;
-	font-size: 12px;
-	text-transform: lowercase;
+	span {
+		color: $cool-grey;
+		font-size: 12px;
+		text-transform: lowercase;
+	}
 }

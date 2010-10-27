@@ -1,0 +1,41 @@
+@mixin link-colors($link, $visited, $hover, $active: $hover) {
+	a:link,
+	a:visited {
+		text-decoration: none;
+		&:focus {
+			color: $hover;
+		}
+	}
+
+	a:link {
+		color: $link;
+	}
+
+	a:visited {
+		color: $visited;
+	}
+
+	a:link,
+	a:visited {
+		&:hover {
+			color: $hover;
+		}
+
+		&:active {
+			color: $active;
+		}
+	}
+}
+
+// style external links differently
+a[href^="http://"],
+a[href^="https://"] {
+	background: url(/images/external-link.png) no-repeat right top;
+	padding-right: 16px;
+}
+
+a[href^="http://elasticdog.com"],
+a[href^="http://projects.elasticdog.com"] {
+	background-image: none;
+	padding-right: 0;
+}
