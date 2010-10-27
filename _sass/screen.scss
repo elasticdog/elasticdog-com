@@ -127,6 +127,12 @@ pre {
 	}
 }
 
+ul.posts {
+	span.date {
+		font-family: $fixed-width;
+	}
+}
+
 #content {
 	@include link-colors($light-blue, $purple, $dark-blue);
 
