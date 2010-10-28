@@ -187,9 +187,11 @@ ul.posts {
 }
 
 .caps {
-	font-variant: small-caps;
+	font: {
+		size: 14px;
+		variant: small-caps;
+	}
 	letter-spacing: 0.1em;
-	text-transform: lowercase;
 }
 
 .relativity {
