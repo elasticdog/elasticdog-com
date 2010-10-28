@@ -30,10 +30,8 @@ So, now we know that Factor manages its input and output with a stack, but how d
 
 Things do get slightly more complicated than that, but for the most part those two rules hold true. The most simple example of this behavior is the ubiquitous hello world program, shown entered directly into Factor's interactive listener environment:
 
-{% highlight factor %}
-(scratchpad) "Hello world!" print
+bc. (scratchpad) "Hello world!" print
 Hello world!
-{% endhighlight %}
 
 To understand what is happening, you can just type the string first, and then execute the @print@ word later:
 
@@ -51,7 +49,7 @@ In this particular case, typing the literal string @"Hello world!"@ will push th
 The same idea can be applied to simple arithmetic. Like strings, numbers are also literals, so you just have to type them in (separated by spaces) for them to be pushed onto the stack:
 
 {% highlight factor %}
-bc.. (scratchpad) 2 3
+(scratchpad) 2 3
 
 --- Data stack:
 2
@@ -128,10 +126,8 @@ h2(#first-word). Your First Word
 
 If you've typed in the examples from above and messed around in the listener, then you might want to know how to write your own word rather than just using ones that are predefined. Drawing on what we already know, here's how to write your first word:
 
-{% highlight factor %}
-: plus-two ( x -- y )
+bc. : plus-two ( x -- y )
     2 + ;
-{% endhighlight %}
 
 If you copy and paste that into your listener, than you can use the word @plus-two@ anywhere you would like to add two to a number on the top of the stack:
 
