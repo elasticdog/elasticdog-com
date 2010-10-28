@@ -33,15 +33,17 @@ You can import it from any keyserver, or by downloading the "ASCII-armored versi
 
 h1(#elasticdog). About This Site
 
-ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference a historical record of my thoughts at any given moment in time.
+ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference a historical record of the articles.
 
 It's inevitable that certain topics will fall out of favor and no longer be pertinent to myself or global citizens at large, so eventually, articles will be tagged as 'retired' and de-emphasized site-wide. That way people don't have to worry about if the information they read here is applicable now, or if it was only applicable three years ago when it was first published. The distinction will be made abundantly clear.
 
 I _highly_ encourage participation through "email correspondence":#contact and writing thought-out responses published via your own chosen platform; but the ability to leave comments here directly has been turned off. If you get in touch and our conversation generates any interesting dialog, there's a good chance that I'll add more details to the appropriate article or write something entirely new. We'll see how this experiment goes!
 
-h2(#hosting). Hosting
+h2(#colophon). Colophon
 
-!/images/about/scrooge.jpg(Scrooge McDuck)! ElasticDog.com is hosted on a VPS(Virtual Private Server) from "Linode":http://www.linode.com/ along with a number of my other sites. If you're comfortable on the command line, then running a VPS is leaps and bounds better than any cheap shared hosting, and not that much more expensive. I know that bloggers are always excited to promote their web host in hopes of someday swimming in all the referral money like Scrooge McDuck, but I don't really care about that. If just one person chooses Linode over Dreamhost and their ilk, then my work here is done. For all I care, tell 'em Large Marge sent ya...
+ElasticDog.com is hosted on a VPS(Virtual Private Server) from "Linode":http://www.linode.com/ along with a number of my other sites. The server runs "Arch Linux":http://www.archlinux.org/ and has its configuration managed via "Chef":http://wiki.opscode.com/display/chef/Home using the "Opscode Platform":http://www.opscode.com/. The site itself is completely static, but uses a combination of "Jekyll":http://github.com/mojombo/jekyll with "RedCloth":http://redcloth.org/ to generate the HTML(Hypertext Markup Language), and "Compass":http://compass-style.org/ with "Sass":http://sass-lang.com/ to generate the CSS(Cascading Style Sheets).
+
+It's all tracked with "Git":http://git-scm.com/ and can be viewed directly in my "code repositories":http://projects.elasticdog.com/git.
 
 h2(#design). Design
 
@@ -71,4 +73,4 @@ This version of ElasticDog.com was not designed by me, but was a highly-customiz
 
 h3(#current). Current Design
 
-The current version of ElasticDog.com is another attempt at getting back to basics. I've dropped WordPress in favor of using the static site generator "Jekyll":http://github.com/mojombo/jekyll, and will intentially be keeping the design minimal.
+The current design of ElasticDog.com (completed in October 2010) is another attempt at getting back to basics. I started with the idea of making the site look similar to output from "Readability":http://lab.arc90.com/experiments/readability/, but went further to enhance its typography, color palette, and structure to better represent the content I write. The design is intentially minimal, but with close attention paid to the details.
