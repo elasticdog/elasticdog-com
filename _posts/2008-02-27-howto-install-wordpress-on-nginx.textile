@@ -14,20 +14,24 @@ h3. Install spawn-fcgi
 
 To download and install @spawn-fcgi@, run the following commands. Don't worry, all of the building happens in your current directory...nothing else will be installed on your machine.
 
-bc. $ wget http://www.lighttpd.net/download/lighttpd-1.4.18.tar.bz2
+{% highlight bash-session %}
+$ wget http://www.lighttpd.net/download/lighttpd-1.4.18.tar.bz2
 $ tar -xvjf lighttpd-1.4.18.tar.bz2
 $ cd lighttpd-1.4.18/
 $ ./configure
 $ make
 $ sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi
+{% endhighlight %}
 
 __==NOTE==: If you're following the steps above verbatim, you will need to have root privileges in order to copy the binary to its final location...everything else should work fine as a normal user. To gain root privileges, the program @sudo@ was used in the example above; you may or may not have access to @sudo@ on your machine.__
 
 After @spawn-fcgi@ has been copied to the desired location, you can safely remove the build directory and original source file:
 
-bc. $ cd ..
+{% highlight bash-session %}
+$ cd ..
 $ rm -rf lighttpd-1.4.18/
 $ rm lighttpd-1.4.18.tar.bz2
+{% endhighlight %}
 
 h3. Run spawn-fcgi
 
@@ -54,7 +58,8 @@ To get the web server up and running properly, the file you need to edit is call
 
 Once you find that file, open it with your favorite text editor and add a server declaration that looks something like this (I'll cover what each part means after posting the code):
 
-bc.. server {
+{% highlight nginx %}
+server {
     listen       12.34.56.78:80;              # your server's public IP address
     server_name  domain.com;                  # your domain name
     root         /srv/http/nginx/domain.com;  # absolute path to your WordPress installation
@@ -67,6 +72,7 @@ bc.. server {
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     }
 }
+{% endhighlight %}
 
 div(sourcelink). Download Source Code: "nginx.conf.txt":http://elasticdog.com/code/2008/02/nginx-conf.txt
 

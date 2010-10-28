@@ -30,39 +30,47 @@ So, now we know that Factor manages its input and output with a stack, but how d
 
 Things do get slightly more complicated than that, but for the most part those two rules hold true. The most simple example of this behavior is the ubiquitous hello world program, shown entered directly into Factor's interactive listener environment:
 
-bc. (scratchpad) "Hello world!" print
+{% highlight factor %}
+(scratchpad) "Hello world!" print
 Hello world!
+{% endhighlight %}
 
 To understand what is happening, you can just type the string first, and then execute the @print@ word later:
 
-bc.. (scratchpad) "Hello world!"
+{% highlight factor %}
+(scratchpad) "Hello world!"
 
 --- Data stack:
 "Hello world!"
 (scratchpad) print
 Hello world!
+{% endhighlight %}
 
-p. In this particular case, typing the literal string @"Hello world!"@ will push that value onto the stack; then the word @print@, takes a single string off the stack and writes it to the output stream.
+In this particular case, typing the literal string @"Hello world!"@ will push that value onto the stack; then the word @print@, takes a single string off the stack and writes it to the output stream.
 
 The same idea can be applied to simple arithmetic. Like strings, numbers are also literals, so you just have to type them in (separated by spaces) for them to be pushed onto the stack:
 
+{% highlight factor %}
 bc.. (scratchpad) 2 3
 
 --- Data stack:
 2
 3
+{% endhighlight %}
 
-p. __==NOTE==: the stack is displayed in the listener upside-down from the way you'd think, so the bottom number is actually the top of the stack.__
+__==NOTE==: the stack is displayed in the listener upside-down from the way you'd think, so the bottom number is actually the top of the stack.__
 
 ...and if you want to add the top two numbers together, the @+@ word will simply pop two numbers off the stack, add them together, and push the result back onto the stack:
 
-bc.. --- Data stack:
+{% highlight factor %}
+--- Data stack:
 2
 3
 (scratchpad) +
 
 --- Data stack:
 5
+{% endhighlight %}
 
 h3(#words). A Few More Words
 
@@ -72,7 +80,8 @@ If you start messing around in the listener, odds are your stack is going to gro
 - @.@ __( obj &#45;&#45; )__ := takes the top item from the stack and prettyprints it
 - @clear@ __( &#45;&#45; )__ := removes all items from the stack
 
-bc.. (scratchpad) 2 3 -
+{% highlight factor %}
+(scratchpad) 2 3 -
 
 --- Data stack:
 -1
@@ -87,6 +96,7 @@ bc.. (scratchpad) 2 3 -
 7
 (scratchpad) clear
 (scratchpad)
+{% endhighlight %}
 
 h3(#stack-ramifications). Ramifications of Stack-Based Design
 
@@ -118,13 +128,17 @@ h2(#first-word). Your First Word
 
 If you've typed in the examples from above and messed around in the listener, then you might want to know how to write your own word rather than just using ones that are predefined. Drawing on what we already know, here's how to write your first word:
 
-bc. : plus-two ( x -- y )
+{% highlight factor %}
+: plus-two ( x -- y )
     2 + ;
+{% endhighlight %}
 
 If you copy and paste that into your listener, than you can use the word @plus-two@ anywhere you would like to add two to a number on the top of the stack:
 
-bc. (scratchpad) 15 plus-two .
+{% highlight factor %}
+(scratchpad) 15 plus-two .
 17
+{% endhighlight %}
 
 Not very exciting, but it gives us a couple more things to talk about...
 

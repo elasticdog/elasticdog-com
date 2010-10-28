@@ -47,10 +47,12 @@ There are three basic varieties of stack shufflers. Here they are along with the
     0 swap - ;
 {% endhighlight %}
 
-bc. (scratchpad) 5 sq .
+{% highlight factor %}
+(scratchpad) 5 sq .
 25
 (scratchpad) 1 neg .
 -1
+{% endhighlight %}
 
 h3(#caveats). Caveats
 
@@ -62,12 +64,14 @@ h2(#quotations). Quotations
 
 Before we can get to the idea of combinators, we first have to discuss quotations:
 
-bc. (scratchpad) 5 [ "hello" print ] times
+{% highlight factor %}
+(scratchpad) 5 [ "hello" print ] times
 hello
 hello
 hello
 hello
 hello
+{% endhighlight %}
 
 In this example, @[ "hello" print ]@ is a quotation.
 
@@ -75,12 +79,14 @@ In layman's terms, a quotation is a way to encapsulate a snippet of code so it d
 
 If we didn't have quotations, that same example would get ugly real fast:
 
-bc. (scratchpad) "hello" dup dup dup dup print print print print print
+{% highlight factor %}
+(scratchpad) "hello" dup dup dup dup print print print print print
 hello
 hello
 hello
 hello
 hello
+{% endhighlight %}
 
 Imagine if you wanted to print "hello" 1000 times!
 
@@ -104,7 +110,8 @@ To illustrate this point, I'd like to introduce a couple of simple combinators:
 
 While both of these combinators have the same stack effect declaration, their usage is a bit different:
 
-bc.. (scratchpad) 1 2 4 [ + ] dip
+{% highlight factor %}
+(scratchpad) 1 2 4 [ + ] dip
 
 --- Data stack:
 3
@@ -117,6 +124,7 @@ bc.. (scratchpad) 1 2 4 [ + ] dip
 1
 6
 4
+{% endhighlight %}
 
 p. These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you're curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the "retain stack") to temporarily store items while the supplied quotation is being executed. There are a few other "preserving combinators":http://docs.factorcode.org/content/article-dip-keep-combinators.html that are worth exploring as well.
 
@@ -132,8 +140,10 @@ The cleave, spread, and apply combinators are your best weapons when trying to r
 
 		Let's say that you want to find the average of a bunch of numbers in an array. The steps are straightforward, you take the sum of all the numbers and divide that sum by how many numbers you have (the length of the array):
 
-bc. (scratchpad) { 1 2 3 } dup sum swap length / .
+{% highlight factor %}
+(scratchpad) { 1 2 3 } dup sum swap length / .
 2
+{% endhighlight %}
 
 		We can eliminate the need for those stack shufflers and better express our intent by using a cleave combinator to achieve the same thing:
 
@@ -141,8 +151,10 @@ bc. (scratchpad) { 1 2 3 } dup sum swap length / .
 
 		<img src="/images/2008/12/cleave.png" alt="Cleave Combinator Demonstration" width="510" height="222" />
 
-bc. (scratchpad) { 1 2 3 } [ sum ] [ length ] bi / .
+{% highlight factor %}
+(scratchpad) { 1 2 3 } [ sum ] [ length ] bi / .
 2
+{% endhighlight %}
 
 		The different "cleave combinators":http://docs.factorcode.org/content/article-cleave-combinators.html change either the number of quotations applied to your items (@bi@ vs. @tri@), or the number of items used as input for your quotations (@bi@ vs. @2bi@).
 
@@ -154,8 +166,10 @@ bc. (scratchpad) { 1 2 3 } [ sum ] [ length ] bi / .
 
 		Let's say that you have two coordinate positions in the form of @{ x y }@, and you'd like to extract the x-coordinate from the first position, and the y-coordinate from the second position to form a new position with those values:
 
-bc. (scratchpad) { 1 2 } { 3 4 } swap first swap second 2array .
+{% highlight factor %}
+(scratchpad) { 1 2 } { 3 4 } swap first swap second 2array .
 { 1 4 }
+{% endhighlight %}
 
 		We can eliminate the need for those stack shufflers and better express our intent by using a spread combinator to achieve the same thing:
 
@@ -163,8 +177,10 @@ bc. (scratchpad) { 1 2 } { 3 4 } swap first swap second 2array .
 
 		<img src="/images/2008/12/spread.png" alt="Spread Combinator Demonstration" width="510" height="222" />
 
-bc. (scratchpad) { 1 2 } { 3 4 } [ first ] [ second ] bi* 2array .
+{% highlight factor %}
+(scratchpad) { 1 2 } { 3 4 } [ first ] [ second ] bi* 2array .
 { 1 4 }
+{% endhighlight %}
 
 		When you want to do the same thing with more than two quotations/items, then using spread combinators eliminates the need for nested dips or shufflers and the added clarity becomes much more evident.
 
@@ -178,8 +194,10 @@ bc. (scratchpad) { 1 2 } { 3 4 } [ first ] [ second ] bi* 2array .
 
 		Let's say that you have two strings, each containing a name, and you want to see if those names are the same. In order to ignore case when doing the comparison, you decide to convert both strings to upper case before checking for equality:
 
-bc. (scratchpad) "john" "John" swap >upper swap >upper = .
+{% highlight factor %}
+(scratchpad) "john" "John" swap >upper swap >upper = .
 t
+{% endhighlight %}
 
 		We can eliminate the need for those stack shufflers and better express our intent by using an apply combinator to achieve the same thing:
 
@@ -187,8 +205,10 @@ t
 
 		<img src="/images/2008/12/apply.png" alt="Apply Combinator Demonstration" width="510" height="222" />
 
-bc. (scratchpad) "john" "John" [ >upper ] bi@ = .
+{% highlight factor %}
+(scratchpad) "john" "John" [ >upper ] bi@ = .
 t
+{% endhighlight %}
 
 		The different "apply combinators":http://docs.factorcode.org/content/article-apply-combinators.html change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).
 
@@ -215,7 +235,8 @@ Factor has many sequence types that you may already be familiar with, such as "a
 
 Using the sequence operators and combinators together, you can create all sorts of powerful abstractions that I'll talk more about next time. Here are a couple of examples to whet your appetite:
 
-bc. (scratchpad) { 1 2 3 4 5 } [ even? ] filter .
+{% highlight factor %}
+(scratchpad) { 1 2 3 4 5 } [ even? ] filter .
 { 2 4 }
 (scratchpad) { 1 2 3 } [ . ] each
 1
@@ -225,6 +246,7 @@ bc. (scratchpad) { 1 2 3 4 5 } [ even? ] filter .
 t
 (scratchpad) "Hello!!!" [ alpha? ] all? .
 f
+{% endhighlight %}
 
 Keep in mind that in Factor, *sequences are zero-based*.
 
@@ -232,7 +254,8 @@ h3(#numbers). Numbers
 
 So far, we have only used integers, but Factor also supports "rational numbers":http://docs.factorcode.org/content/article-rationals.html (fractions), "floats":http://docs.factorcode.org/content/article-floats.html (decimal approximations of a number), and "complex numbers":http://docs.factorcode.org/content/article-complex-numbers.html (imaginary numbers).
 
-bc. (scratchpad) 100 330 / .
+{% highlight factor %}
+(scratchpad) 100 330 / .
 10/33
 (scratchpad) 5/4 1/2 + .
 1+3/4
@@ -240,6 +263,7 @@ bc. (scratchpad) 100 330 / .
 1.75
 (scratchpad) 2 5 rect> .
 C{ 2 5 }
+{% endhighlight %}
 
 h4(#iota). Iota
 
@@ -249,8 +273,12 @@ One last thing that is going to come in handy, is a word for creating sequences 
 
 This word can be very helpful when performing counted loops or other control flow statements. For example, the following two lines are equivalent:
 
-bc. { 0 1 2 3 4 5 6 7 8 9 } [ . ] each
+{% highlight factor %}
+{ 0 1 2 3 4 5 6 7 8 9 } [ . ] each
+{% endhighlight %}
+{% highlight factor %}
 10 iota [ . ] each
+{% endhighlight %}
 
 h2(#next). Next Time
 

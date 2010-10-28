@@ -16,11 +16,15 @@ If you're currently using Optimal Title and want to change your template back to
 
 Using the simplified example from the "original Optimal Title article":http://elasticdog.com/2004/09/optimal-title/#usage, you should currently have something like this in your theme's <kbd>header.php</kbd> file:
 
-bc. <title><?php optimal_title(); ?> <?php bloginfo('name'); ?></title>
+{% highlight php %}
+<title><?php optimal_title(); ?> <?php bloginfo('name'); ?></title>
+{% endhighlight %}
 
 Just replace the function call @optimal_title()@ with a call to @wp_title('&raquo;',TRUE,'right')@, and you'll end up with something like this:
 
-bc. <title><?php wp_title('&raquo;',TRUE,'right'); ?> <?php bloginfo('name'); ?></title>
+{% highlight php %}
+<title><?php wp_title('&raquo;',TRUE,'right'); ?> <?php bloginfo('name'); ?></title>
+{% endhighlight %}
 
 That's it!
 
@@ -28,7 +32,9 @@ h2(#parameters). Parameters
 
 The "wp_title codex page":http://codex.wordpress.org/Template_Tags/wp_title won't be updated until the next release, however, here is how @wp_title()@ will work after WordPress v2.5 is out:
 
-bc. <?php wp_title('separator', display, 'seplocation'); ?>
+{% highlight php %}
+<?php wp_title('separator', display, 'seplocation'); ?>
+{% endhighlight %}
 
 * &#39;separator&#39; - __string__ - The text to place between portions of the page title, such as the blog name and the category. Defaults to @'&raquo;'@ (&raquo;).
 * display - __boolean__ - Should the title be displayed (@TRUE@) or returned for use in PHP(PHP: Hypertext Preprocessor) (@FALSE@). Defaults to @TRUE@.

@@ -30,7 +30,7 @@ Using some simple PHP(PHP: Hypertext Preprocessor) and the functionality that's 
 
 When you're viewing each variable's corresponding page type, only that variable will be assigned a value. If you're viewing the main page of your site, then _none_ of those variables will be assigned a value. Thus, a simple test of whether or not each variable has a value can be use to control exactly what is displayed and when. Here's the basic idea:
 
-{% highlight php %}
+{% highlight php startinline %}
 if ($single) {
     // individual post contents
 } else if ($cat) {

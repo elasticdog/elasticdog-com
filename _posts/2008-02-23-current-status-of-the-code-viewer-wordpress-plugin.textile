@@ -10,11 +10,15 @@ h2(#reactions). Reactions
 
 I don't agree with all of the design choices they made with the new changes, but my qualms are minor. Specifically, I don't like some of the chosen defaults, nor the new format when specifying viewcode tags:
 
-bc. [viewcode ] src=/code/example.txt link=yes[/viewcode]
+{% highlight bbcode %}
+[viewcode ] src=/code/example.txt link=yes[/viewcode]
+{% endhighlight %}
 
 ...in comparison to the original:<br />
 
-bc. <viewcode src="/code/example.txt" link="yes" />
+{% highlight xml %}
+<viewcode src="/code/example.txt" link="yes" />
+{% endhighlight %}
 
 That said, it _is_ a cool feeling to find out that other people appreciate your work and chose to carry on with its development in your absence.
 
@@ -24,7 +28,6 @@ With the latest design incarnation here at ElasticDog, I decided to no longer us
 
 Although I haven't actually worked on the development of Code Viewer since late 2004, I did register to have it hosted at the "WordPress Plugin Repository":http://wordpress.org/extend/plugins/. Unfortunately, I never got around to packaging it up for general consumption.
 
-Trying to not be a slacker anymore, I _have_ contacted H&aring;kan in hopes of persuading him to take the reins and officially manage the plugin at the centralized WordPress repository. If he agrees, you should be able to download the plugin here very shortly:<br />
-"http://wordpress.org/extend/plugins/code-viewer/":http://wordpress.org/extend/plugins/code-viewer/
+Trying to not be a slacker anymore, I _have_ contacted H&aring;kan in hopes of persuading him to take the reins and officially manage the plugin at the centralized WordPress repository. If he agrees, you should be able to download the plugin here very shortly: "http://wordpress.org/extend/plugins/code-viewer/":http://wordpress.org/extend/plugins/code-viewer/
 
 In the mean time, you can find the "most up to date version of Code Viewer":http://www.familjencarlstrom.se/WordPress/2006/08/17/code-viewer/ at "H&aring;kan's site":http://www.familjencarlstrom.se/WordPress/. Happy coding!
