@@ -39,11 +39,13 @@ There are three basic varieties of stack shufflers. Here they are along with the
 
 ...and here are a couple of word definitions that use these shufflers appropriately:
 
-bc.. : sq ( x -- y )
+{% highlight factor %}
+: sq ( x -- y )
     dup * ;
 
 : neg ( x -- -x )
     0 swap - ;
+{% endhighlight %}
 
 bc. (scratchpad) 5 sq .
 25

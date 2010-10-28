@@ -13,7 +13,6 @@ $sans-serif: Cuprum, Tahoma, Helvetica, Arial, sans-serif;
 $serif: "Droid Serif", Palatino, Georgia, "Times New Roman", serif;
 
 // Color Palette
-$code-grey: #222;
 $cool-grey: #808094;
 $dark-blue: #03C;
 $dark-brown: #3C2F20;
@@ -26,10 +25,11 @@ $purple: #4D0073;
 
 // Measurements
 $left-margin: 72px;
-$outdent: 9px;
+$outdent: 12px;
 
 // Partials
 @import "links";
+@import "pygments";
 
 abbr, acronym {
 	border-bottom: 1px dotted $cool-grey;
@@ -110,7 +110,7 @@ p {
 }
 
 pre {
-	background-color: $code-grey;
+	background-color: $code-black;
 	@include border-radius(9px);
 	color: #F2F2F2;
 	font-family: $fixed-width;
@@ -120,7 +120,7 @@ pre {
 		right: -$outdent;
 	}
 	overflow: auto;
-	padding: 6px $outdent;
+	padding: 9px $outdent;
 
 	code {
 		background-color: inherit;
