@@ -1,0 +1,344 @@
+---
+layout: post
+published: false
+title:  Pygments Test
+---
+{% highlight factor %}
+! Copyright (c) 2009 Aaron Schaefer, Doug Coleman. All rights reserved.
+! The contents of this file are licensed under the Simplified BSD License
+! A copy of the license is available at http://factorcode.org/license.txt
+USING: accessors arrays ascii assocs binary-search combinators
+fry kernel locals math math.bitwise math.combinatorics
+IN: poker;
+
+<PRIVATE
+
+! Bitfield Format for Card Values:
+
+!     +-------------------------------------+
+!     | xxxbbbbb bbbbbbbb ssssrrrr xxpppppp |
+!     +-------------------------------------+
+!       xxxAKQJT 98765432 CDHSrrrr xxpppppp
+!     +-------------------------------------+
+!     | 00001000 00000000 01001011 00100101 |  King of Diamonds
+!     | 00000000 00001000 00010011 00000111 |  Five of Spades
+!     | 00000010 00000000 10001001 00011101 |  Jack of Clubs
+
+! p = prime number value of rank (deuce = 2, trey = 3, four = 5, ..., ace = 41)
+! r = rank of card (deuce = 0, trey = 1, four = 2, ..., ace = 12)
+
+CONSTANT: CLUB     8
+CONSTANT: DIAMOND  4
+CONSTANT: HEART    2
+CONSTANT: SPADE    1
+
+CONSTANT: SUIT_STR { "C" "D" "H" "S" }
+
+CONSTANT: VALUE_STR { "Straight Flush" "Four of a Kind" "Full House" "Flush"
+    "Straight" "Three of a Kind" "Two Pair" "One Pair" "High Card" }
+
+: card-rank-prime ( rank -- n )
+    RANK_STR index { 2 3 5 7 11 13 17 19 23 29 31 37 41 } nth ;
+
+: card-rank ( rank -- n )
+    {
+        { "2" [ DEUCE ] }
+        { "3" [ TREY  ] }
+        { "4" [ FOUR  ] }
+        { "5" [ FIVE  ] }
+        { "6" [ SIX   ] }
+        { "7" [ SEVEN ] }
+        { "8" [ EIGHT ] }
+        { "9" [ NINE  ] }
+        { "T" [ TEN   ] }
+        { "J" [ JACK  ] }
+        { "Q" [ QUEEN ] }
+        { "K" [ KING  ] }
+        { "A" [ ACE   ] }
+    } case ;
+
+: card-rank-bit ( rank -- n )
+    RANK_STR index 1 swap shift ;
+
+: card-bitfield ( rank rank suit rank -- n )
+    {
+        { card-rank-bit 16 }
+        { card-suit 12 }
+        { card-rank 8 }
+        { card-rank-prime 0 }
+    } bitfield ;
+
+:: (>ckf) ( rank suit -- n )
+    rank rank suit rank card-bitfield ;
+
+#! Cactus Kev Format
+GENERIC: >ckf ( string -- n )
+
+M: string >ckf >upper 1 cut (>ckf) ;
+M: integer >ckf ;
+
+: parse-cards ( string -- seq )
+    " " split [ >ckf ] map ;
+
+: flush? ( cards -- ? )
+    HEX: F000 [ bitand ] reduce 0 = not ;
+
+: rank-bits ( cards -- q )
+    0 [ bitor ] reduce -16 shift ;
+
+: lookup ( cards table -- value )
+    [ rank-bits ] dip nth ;
+
+: map-product ( seq quot -- n )
+    [ 1 ] 2dip [ dip * ] curry [ swap ] prepose each ; inline
+
+: prime-bits ( cards -- q )
+    [ HEX: FF bitand ] map-product ;
+
+: perfect-hash-find ( q -- value )
+    #! magic to convert a hand's unique identifying bits to the
+    #! proper index for fast lookup in a table of hand values
+    HEX: E91AAA35 +
+    dup -16 shift bitxor
+    dup   8 shift w+
+    dup  -4 shift bitxor
+    [ -8 shift HEX: 1FF bitand adjustments-table nth ]
+    [ dup 2 shift w+ -19 shift ] bi
+    bitxor values-table nth ;
+
+: hand-value ( cards -- value )
+    dup flush? [ flushes-table lookup ] [
+        dup unique5-table lookup dup 0 > [ nip ] [
+            drop prime-bits perfect-hash-find
+        ] if
+    ] if ;
+
+: >card-rank ( card -- string )
+    -8 shift HEX: F bitand RANK_STR nth ;
+
+: >card-suit ( card -- string )
+    {
+        { [ dup 15 bit? ] [ drop "C" ] }
+        { [ dup 14 bit? ] [ drop "D" ] }
+        { [ dup 13 bit? ] [ drop "H" ] }
+        [ drop "S" ]
+    } cond ;
+
+: value>rank ( value -- rank )
+    {
+        { [ dup 6185 > ] [ drop HIGH_CARD ] }        ! 1277 high card
+        { [ dup 3325 > ] [ drop ONE_PAIR ] }         ! 2860 one pair
+        [ drop STRAIGHT_FLUSH ]                      !   10 straight-flushes
+    } cond ;
+
+: card>string ( n -- string )
+    [ >card-rank ] [ >card-suit ] bi append ;
+
+PRIVATE>
+
+: <deck> ( -- deck )
+    RANK_STR SUIT_STR 2array
+    [ concat >ckf ] V{ } product-map-as randomize ;
+
+: best-holdem-hand ( hand -- n cards )
+    5 [ [ hand-value ] [ ] bi ] { } map>assoc-combinations
+    infimum first2 ;
+
+: value>string ( n -- string )
+    value>rank VALUE_STR nth ;
+
+: hand>card-names ( hand -- string )
+    [ card>string ] map ;
+
+: string>value ( string -- value )
+    parse-cards best-holdem-hand drop ;
+
+ERROR: no-card card deck ;
+
+: draw-specific-card ( card deck -- card )
+    [ >ckf ] dip
+    2dup index [ swap remove-nth! drop ] [ no-card ] if* ;
+
+: start-hands ( seq -- seq' deck )
+    <deck> [ '[ [ _ draw-specific-card ] map ] map ] keep ;
+
+:: holdem-hand% ( hole1 deck community n -- x )
+    community length 5 swap - 2 + :> #samples
+    n [
+        drop
+        deck #samples sample :> sampled
+        hand1 hand2 [ best-holdem-hand 2array ] bi@ <=> +lt+ =
+    ] count ;
+
+:: compare-holdem-hands ( holes deck n -- seq )
+    n [
+        holes deck 5 sample '[
+            [ _ append best-holdem-hand drop ] keep
+        ] { } map>assoc infimum second
+    ] replicate histogram ;
+
+: (best-omaha-hand) ( seq -- pair )
+    4 cut
+    [ 2 all-combinations ] [ 3 all-combinations ] bi*
+    2array [ concat [ best-holdem-hand drop ] keep ] { } product-map>assoc ;
+
+: best-omaha-hand ( seq -- n cards ) (best-omaha-hand) infimum first2 ;
+
+:: compare-omaha-hands ( holes deck n -- seq )
+    n [
+        holes deck 5 sample '[
+            [ _ append best-omaha-hand drop ] keep
+        ] { } map>assoc infimum second
+    ] replicate histogram ;
+
+ERROR: bad-suit-symbol ch ;
+
+: symbol>suit ( ch -- ch' )
+    ch>upper
+    H{
+        { CHAR: ♠ CHAR: S }
+        { CHAR: ♦ CHAR: D }
+        { CHAR: ♥ CHAR: H }
+        { CHAR: ♣ CHAR: C }
+        { CHAR: S CHAR: S }
+        { CHAR: D CHAR: D }
+        { CHAR: H CHAR: H }
+        { CHAR: C CHAR: C }
+    } ?at [ bad-suit-symbol ] unless ;
+
+: card> ( string -- card )
+    1 over [ symbol>suit ] change-nth >ckf ;
+
+: value>hand-name ( value -- string )
+    value>rank VALUE_STR nth ;
+
+: string>hand-name ( string -- string' )
+    string>value value>hand-name ;
+
+SYNTAX: HAND{
+    "}" [ card> ] map-tokens suffix! ;
+{% endhighlight %}
+
+{% highlight html %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+	<title>Becky Bull &amp; Aaron Schaefer - Wedding Details</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="all" />
+	<meta name="author" content="Aaron Schaefer" />
+	<meta name="description" content="Wedding details for Becky Bull and Aaron Schaefer" />
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/screen.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="screen, projection" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+	<script src="/javascripts/sprites.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			generateSprites(".nav", false, 150, 300, "fade");
+		});
+	</script>
+</head>
+
+<body id="beckyandaaron-com">
+<div id="wrapper">
+	<div id="header">
+		<h1><a href="/" title="Home" rel="home">Becky &amp; Aaron</a></h1>
+	</div><!-- end of #header -->
+
+    <p><em>emphasis</em> and <strong>strong</strong></p>
+	<p id="skiplink"><a href="#content" title="Go directly to the main content">Skip to Content &raquo;</a></p>
+
+	<ul class="nav">
+		<li class="welcome current"><a href="/">Welcome</a></li>
+		<li class="about"><a href="/about/">About Us</a></li>
+		<li class="ceremony"><a href="/ceremony/">Our Ceremony</a></li>
+		<li class="reception"><a href="/reception/">Our Reception</a></li>
+		<li class="registries"><a href="/registries/">Gift Registries</a></li>
+	</ul>
+
+	<hr />
+
+	<div id="container">
+		<div id="content">
+			<h2 class="welcome">Welcome</h2>
+
+			<p class="right" style="margin-top: 0px;"><img src="/images/family.jpg" alt="Picture of Us" class="picture up" width"400" height="267" /></p>
+
+			<p>Welcome to Becky &amp; Aaron&#8217;s wedding website&#8230;we look forward to having you celebrate this special occasion with us!</p>
+
+			<p>We built this site to give our guests specific details about us, our wedding day, and our reception. Don&#8217;t hesitate to contact us with any questions or comments you have&#8230;we&#8217;d love to hear from you!</p>
+
+			<p>You can reach us at the email addresses below:</p>
+
+			<ul>
+				<li>Aaron - <a href="mailto:aaron@beckyandaaron.com">aaron@beckyandaaron.com</a></li>
+				<li>Becky - <a href="mailto:becky@beckyandaaron.com">becky@beckyandaaron.com</a></li>
+			</ul>
+</html>
+{% endhighlight %}
+
+{% highlight ruby %}
+class LoginsController < ApplicationController
+  verify :params => [:username, :password],
+         :render => {:action => "new"},
+         :add_flash => {
+           :error => "Username and password required to log in"
+         }
+
+  def create
+    @user = User.authenticate(params[:username], params[:password])
+    if @user
+      flash[:notice] = "You're logged in"
+      redirect_to root_url
+    else
+      render :action => "new"
+    end
+  end
+end
+{% endhighlight %}
+
+{% highlight css %}
+/* ---( CODE VIEWER FORMATTING )------------------------- */
+
+ol.codelist {
+    border: 1px solid #DDD;
+    color: #C63;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 130%;
+    padding: 12px 12px 12px 45px;
+    margin: 1.5em 0;
+    }
+
+ol.codelist li {
+    margin: 0;
+    padding: 1px 2px;
+    }
+
+ol.codelist li.tab7 { padding-left: 170px; }
+
+ol.codelist li.odd { background-color: #FFF; }
+ol.codelist li.even { background-color: #F0F0F0; }
+
+ol.codelist li.sourcelink {
+    color: #000;
+    font: 115% Georgia, "Times New Roman", Times, serif;
+    list-style: none;
+    margin-left: -32px;
+    padding-top: .85em;
+    text-align: center;
+    }
+
+ol.codelist li code { color: #222; }
+{% endhighlight %}
+
+{% highlight php %}
+<title>
+    <?php if ( function_exists('optimal_title') ) { optimal_title('|'); bloginfo('name'); } else { bloginfo('name'); wp_title('|'); } ?>
+    <?php if ( is_home() ) { ?> | <?php bloginfo('description'); } ?>
+</title>
+{% endhighlight %}

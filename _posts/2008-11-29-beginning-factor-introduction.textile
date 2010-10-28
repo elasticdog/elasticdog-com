@@ -75,7 +75,9 @@ h3(#words). A Few More Words
 If you start messing around in the listener, odds are your stack is going to grow pretty quickly and become unmanageable. There are a few words that are essential to know in order to keep things under control:
 
 - @drop@ __( x &#45;&#45; )__ := removes the top item from the stack and discards it
+
 - @.@ __( obj &#45;&#45; )__ := takes the top item from the stack and prettyprints it
+
 - @clear@ __( &#45;&#45; )__ := removes all items from the stack
 
 {% highlight factor %}

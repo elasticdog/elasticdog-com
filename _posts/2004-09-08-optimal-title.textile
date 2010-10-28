@@ -4,7 +4,7 @@ title:  'WP Plugin: Optimal Title'
 ---
 <ins datetime="2008-02-20T07:55:33+00:00">This plugin is now deprecated...see "Optimal Title Functionality Now in WordPress Core":/2008/02/optimal-title-functionality-now-in-wordpress-core/.</ins>
 
-h2(#important). IMPORTANT!!!
+h2(#important). ==IMPORTANT==!!!
 
 Due to recent "XSS security issues":http://wordpress.org/development/2007/04/wordpress-213-and-2010/ fixed in WordPress 2.1.3, the code for Optimal Title also had to change in order to fix the vulnerabilities. It is recommended that *ALL* users of this plugin upgrade to version 3.0. Due to changes in how Optimal Title works, that should be the last upgrade you will ever need For more details, see the "update details":#update section below...
 

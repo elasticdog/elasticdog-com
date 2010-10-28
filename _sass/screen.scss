@@ -136,8 +136,11 @@ ul.posts {
 
 #content {
 	@include link-colors($light-blue, $purple, $dark-blue);
-
 	line-height: 1.5em;
+
+	li {
+		margin: 0.5em 0;
+	}
 }
 
 #footer {
