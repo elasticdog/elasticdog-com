@@ -153,7 +153,6 @@ ul.posts {
 
 	ul {
 		@include float-right;
-		font-variant: small-caps;
 		list-style-type: none;
 		line-height: 1.25em;
 		margin: {
@@ -161,6 +160,7 @@ ul.posts {
 			top: 0.5em;
 		}
 		padding-left: 0;
+		text-transform: uppercase;
 	}
 
 	#syndication {
