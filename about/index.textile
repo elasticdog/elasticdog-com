@@ -11,10 +11,12 @@ I'm a certifiable renaissance man, gentleman, and scholar. I have been working i
 
 If you'd like to see some of the projects I've been involved in, take a gander at my aptly named "projects page":/projects/ or my personal "code repositories":http://projects.elasticdog.com/. You can easily find me all over the intertubes, but here are a few places to get you started:
 
+<div class="links">
 * "LinkedIn":http://www.linkedin.com/in/aaronschaefer
 * "Twitter":http://twitter.com/elasticdog
 * "GitHub":http://github.com/elasticdog
 * "Flickr":http://flickr.com/photos/elasticdog/
+</ul>
 
 h2(#contact). Contact Me
 

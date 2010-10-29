@@ -133,7 +133,7 @@ pre {
 
 ul.posts {
 	li {
-		line-height: 1em;
+		line-height: 1.25em;
 	}
 
 	.date {
@@ -203,6 +203,12 @@ ul.posts {
 		variant: small-caps;
 	}
 	letter-spacing: 0.1em;
+}
+
+.links {
+	li {
+		line-height: 1.25em;
+	}
 }
 
 .published {
