@@ -17,11 +17,13 @@ $cool-grey: #808094;
 $dark-blue: #03C;
 $dark-brown: #3C2F20;
 $dark-red-orange: #992A1A;
+$dark-yellow: #9F6000;
 $light-blue: #06C;
 $light-grey: #E7E7EB;
 $light-red-orange: #B46353;
 $medium-red-orange: #A74737;
 $purple: #4D0073;
+$yellow: #FEEFB3;
 
 // Measurements
 $left-margin: 72px;
@@ -200,6 +202,22 @@ ul.posts {
 
 .relativity {
 	clear: right;
+}
+
+.retired {
+	border: {
+		bottom: 1px solid $dark-yellow;
+		top: 1px solid $dark-yellow;
+	}
+	background: {
+		color: $yellow;
+		image: url(/images/warning-icon.png);
+		position: 16px center;
+		repeat: no-repeat
+	}
+	clear: both;
+	font-size: 24px;
+	padding: 16px 0 16px 80px;
 }
 
 .signature {
