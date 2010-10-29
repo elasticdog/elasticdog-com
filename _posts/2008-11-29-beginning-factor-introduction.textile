@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  Beginning Factor &#8211; Introduction
+categories:
+- factor
 ---
 I've been involved in the "Factor programming language":http://factorcode.org/ community for about a year now, and am constantly amazed with how productive its contributors are. Large improvements to the language and its libraries are made on a weekly (if not daily) basis, and it's finally starting to attract some much-deserved attention from the programming community.
 
