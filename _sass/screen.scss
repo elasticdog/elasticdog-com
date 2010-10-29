@@ -151,6 +151,17 @@ ul.posts {
 	li {
 		margin: 0.5em 0;
 	}
+
+	.signature {
+		@include float-right;
+		font: {
+			size: 18px;
+			style: italic;
+			variant: small-caps;
+		}
+		@include link-colors($cool-grey, $cool-grey, $light-blue);
+		margin-bottom: 1.5em;
+	}
 }
 
 #footer {
@@ -255,17 +266,3 @@ ul.posts {
 	padding: 16px 0 16px 80px;
 }
 
-.signature {
-	@include float-right;
-	font: {
-		size: 18px;
-		variant: small-caps;
-	}
-	margin-bottom: 1.5em;
-
-	span {
-		color: $cool-grey;
-		font-size: 12px;
-		text-transform: lowercase;
-	}
-}
