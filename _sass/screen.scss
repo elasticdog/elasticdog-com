@@ -132,7 +132,11 @@ pre {
 }
 
 ul.posts {
-	span.date {
+	li {
+		line-height: 1em;
+	}
+
+	.date {
 		font-family: $fixed-width;
 	}
 }
