@@ -16,7 +16,7 @@ If you'd like to see some of the projects I've been involved in, take a gander a
 * "Twitter":http://twitter.com/elasticdog
 * "GitHub":http://github.com/elasticdog
 * "Flickr":http://flickr.com/photos/elasticdog/
-</ul>
+</div>
 
 h2(#contact). Contact Me
 
