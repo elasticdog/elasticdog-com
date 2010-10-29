@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: retired
 title:  'WP Plugin: Code Viewer'
 ---
 Code Viewer is a "WordPress":http://wordpress.org/ plugin that pulls source code from an external file and displays it, optionally adding a link to download the code directly. The plugin displays the code with proper indentation, line numbers, and automatic long-line wrapping.

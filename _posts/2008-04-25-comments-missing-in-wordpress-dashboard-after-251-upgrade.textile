@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: retired
 title:  Comments Missing in WordPress Dashboard After 2.5.1 Upgrade
 ---
 I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments. I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet "it would not let me see them":http://elasticdog.com/images/2008/04/awaiting-moderation.png. Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.

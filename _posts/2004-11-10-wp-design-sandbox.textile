@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: retired
 title:  WordPress Design Sandbox
 ---
 When creating a website, it's best not to make experimental changes to your code directly on your server for the whole world to see. What if you accidentally mess things up beyond all recognition and don't remember exactly what you did? It's a good idea to test developmental changes in a protected environment where you know they won't effect anything that's mission critical. Typically this is simple to do as you can just edit the files on your local machine before uploading them. Making a test bed for "WordPress":http://www.wordpress.org, however, is a bit more difficult due to the nature of dynamic page generation.

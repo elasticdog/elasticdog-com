@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: retired
 title:  'WP Plugin: Optimal Title'
 ---
 <ins datetime="2008-02-20T07:55:33+00:00">This plugin is now deprecated...see "Optimal Title Functionality Now in WordPress Core":/2008/02/optimal-title-functionality-now-in-wordpress-core/.</ins>

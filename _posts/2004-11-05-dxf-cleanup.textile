@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: retired
 title:  Design by Fire Cleanup
 ---
 Last week, Andrei Herasimchuk of "Design by Fire":http://www.designbyfire.com/ announced a contest to see who could take his site's current design and "clean it up, optimizing it for best semantic and structural architecture." Having the final code judged by three industry bigwigs ("Dave Shea":http://www.mezzoblue.com/, "Dean Jackson":http://www.w3.org/People/Dean/, and "Eric Meyer":http://www.meyerweb.com/), Andrei is offering the winner their choice of any three "Adobe products":http://www.adobe.com/products/main.html. It's a widely known fact that software from Adobe is like crack to designers, so I figured I'd have a go at it.

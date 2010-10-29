@@ -1,6 +1,5 @@
 ---
-layout:    post
-published: false
+layout:    retired
 title:     Workin&#8217; My Backend
 ---
 I'm under no delusions about the number of readers I have, and yet I feel compelled to write an update on how things are progressing. Call it hope for a self-fulfilling prophecy...after all, if I'm going to start a blog that I actually expect people to read, I have to write entries in it sooner or later, right?

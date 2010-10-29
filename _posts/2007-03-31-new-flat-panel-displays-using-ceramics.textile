@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: retired
 title:  New Flat-Panel Displays using Ceramics
 ---
 While waiting for my tax refund, I've been checking out flat panel TVs and I ran across this article on a new ceramic flat panel technology in "Popular Science":http://www.popsci.com:

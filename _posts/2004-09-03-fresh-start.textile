@@ -1,7 +1,6 @@
 ---
-layout:    post
-published: true
-title:     A Fresh Start
+layout: retired
+title:  A Fresh Start
 ---
 I started the original ElasticDog about a year ago when I became interested in standards-based--web-design. The more I read about the subject, the more I wanted to try things out and to create a standards-based site of my own. It had been years since I had even touched HTML(Hypertext Markup Language), but I was determined to do things right this time around. I stayed up late nights reading, experimenting, repeatedly failing, and eventually, learning...
 
