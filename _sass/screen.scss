@@ -115,7 +115,7 @@ p {
 pre {
 	background-color: $code-black;
 	@include border-radius(9px);
-	color: #F2F2F2;
+	color: $code-white;
 	font-family: $fixed-width;
 	line-height: 1.25em;
 	margin: {
@@ -132,6 +132,9 @@ pre {
 }
 
 ul.posts {
+	list-style-type: none;
+	padding-left: 0;
+
 	li {
 		line-height: 1.25em;
 	}
