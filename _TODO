@@ -1,0 +1,7 @@
+- sort the archive's contemporary article list by name
+- establish category pages and tag all entries
+  - make category list for archive page
+  - generate category-specific feeds
+- front page pagination, with possible removal of retired posts
+- style blockquotes
+- have drafts get generated, but not deployed
