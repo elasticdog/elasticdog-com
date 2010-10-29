@@ -22,7 +22,7 @@ If you'd like to reach me for any reason, send an email to *"aaron@elasticdog.co
 
 h3(#gnupg). My GnuPG Public Key
 
-"GNU Privacy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or ==GPG==) is <acronym title="Free and Open Source Software">==F/OSS==</acronym> that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
+"GNU Privacy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or GPG) is <acronym title="Free and Open Source Software">==F/OSS==</acronym> that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
 
 pre. pub   1024D/50EDFCCD 2008-05-31
       Key fingerprint = 7074 406E 8272 D083 1E31  2845 666F D4C1 50ED FCCD
@@ -33,17 +33,19 @@ You can import it from any keyserver, or by downloading the "ASCII-armored versi
 
 h1(#elasticdog). About This Site
 
-ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference a historical record of the articles.
-
-It's inevitable that certain topics will fall out of favor and no longer be pertinent to myself or global citizens at large, so eventually, articles will be tagged as 'retired' and de-emphasized site-wide. That way people don't have to worry about if the information they read here is applicable now, or if it was only applicable three years ago when it was first published. The distinction will be made abundantly clear.
+ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":http://projects.elasticdog.com/git/elasticdog-com.git, so you still have the ability to reference historical versions of the articles, if so desired.
 
 I _highly_ encourage participation through "email correspondence":#contact and writing thought-out responses published via your own chosen platform; but the ability to leave comments here directly has been turned off. If you get in touch and our conversation generates any interesting dialog, there's a good chance that I'll add more details to the appropriate article or write something entirely new. We'll see how this experiment goes!
+
+h2(#retired). Retired Articles
+
+It's inevitable that certain topics will fall out of favor and no longer be pertinent to myself or global citizens at large, so eventually, articles will be tagged as "retired" and de-emphasized site-wide. That way people don't have to worry about if the information they read here is applicable now, or if it was only applicable three years ago when it was first published. The distinction will be made abundantly clear.
 
 h2(#colophon). Colophon
 
 ElasticDog.com is hosted on a VPS(Virtual Private Server) from "Linode":http://www.linode.com/ along with a number of my other sites. The server runs "Arch Linux":http://www.archlinux.org/ and has its configuration managed via "Chef":http://wiki.opscode.com/display/chef/Home using the "Opscode Platform":http://www.opscode.com/. The site itself is completely static, but uses a combination of "Jekyll":http://github.com/mojombo/jekyll with "RedCloth":http://redcloth.org/ to generate the HTML(Hypertext Markup Language), and "Compass":http://compass-style.org/ with "Sass":http://sass-lang.com/ to generate the CSS(Cascading Style Sheets).
 
-It's all tracked with "Git":http://git-scm.com/ and can be viewed directly in my "code repositories":http://projects.elasticdog.com/git.
+It's all tracked with "Git":http://git-scm.com/ and can be freely explored in my "code repositories":http://projects.elasticdog.com/git.
 
 h2(#design). Design
 
