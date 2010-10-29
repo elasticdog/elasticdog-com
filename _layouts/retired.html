@@ -1,7 +1,12 @@
 ---
 layout: default
 ---
-<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+
+{% include relativity.html %}
+
+{% include retired-notice.html %}
+
+<div class="published">&#8212; Originally Published on {{ page.date | date: '%B %d, %Y' }} &#8212;</div>
 
 <h1>{{ page.title }}</h1>
 
@@ -9,4 +14,6 @@ layout: default
 
 <div class="signature">&#8212; Aaron Bull Schaefer <span>&lt;aaron@elasticdog.com&gt;</span></div>
 
-<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+{% include retired-notice.html %}
+
+{% include relativity.html %}

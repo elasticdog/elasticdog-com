@@ -1,19 +1,7 @@
 ---
 layout: default
 ---
-{% if page.previous or page.next %}
-<p class="relativity">
-{% if page.previous %}
-	<a href="{{ page.previous.url }}/" title="{{ page.previous.title }}" rel="prev">&larr; previous article</a>
-{% endif %}
-{% if page.previous and page.next %}
-	.::.
-{% endif %}
-{% if page.next %}
-	<a href="{{ page.next.url }}/" title="{{ page.next.title }}" rel="next">next article &rarr;</a>
-{% endif %}
-</p>
-{% endif %}
+{% include relativity.html %}
 
 <h1>{{ page.title }}</h1>
 
@@ -21,16 +9,4 @@ layout: default
 
 <div class="signature">&#8212; Aaron Bull Schaefer <span>&lt;aaron@elasticdog.com&gt;</span></div>
 
-{% if page.previous or page.next %}
-<p class="relativity">
-{% if page.previous %}
-	<a href="{{ page.previous.url }}/" title="{{ page.previous.title }}" rel="prev">&larr; previous article</a>
-{% endif %}
-{% if page.previous and page.next %}
-	.::.
-{% endif %}
-{% if page.next %}
-	<a href="{{ page.next.url }}/" title="{{ page.next.title }}" rel="next">next article &rarr;</a>
-{% endif %}
-</p>
-{% endif %}
+{% include relativity.html %}
