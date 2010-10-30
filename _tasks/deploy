@@ -10,6 +10,7 @@ readonly TMP_FILE=$(mktemp /tmp/tmp.XXXXXXXXXX)  # temporary file used to store 
 # generate a fresh copy of the website
 rm -r _site/*
 jekyll
+rm -r stylesheets/*
 compass compile --force --output-style compressed
 
 # compress the search engine sitemap
