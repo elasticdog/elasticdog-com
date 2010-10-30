@@ -2,13 +2,13 @@
 layout: post
 title:  'HOWTO: Install WordPress on Nginx'
 ---
-I recently moved all of my sites from a cheap shared host to a shiny new VPS(Virtual Private Server) at "Linode":http://www.linode.com/, and couldn't be happier. Running your own VPS means a great amount of flexibility since you have full root access to the server and get to configure everything exactly how you want it. That said, it also means that if you want to maintain high performance, you have to keep your resource usage to a minimum.
+A few years ago, I moved all of my sites from a cheap shared host to a shiny new VPS(Virtual Private Server), and have never looked back. As long as you're comfortable on the command line, running your own VPS gives you a great amount of flexibility since you have full root access on the server and can configure everything exactly how you want it. That said, it also means that if you want to maintain high performance, you have to keep your resource usage to a minimum.
 
 "Apache":http://httpd.apache.org/ is a very well-establish web server that can handle just about any situation. Unfortunately, that flexibility comes at the cost of size and relatively high demands on server resources. "Nginx":http://nginx.net/ ("engine x") is a lightweight web server/reverse proxy that is very efficient and perfect for hosting WordPress. Read on to see how that can be done...
 
 h2(#step-one). Step One: FastCGI
 
-First off, Nginx does not provide FastCGI for you (FastCGI is what your web server uses to interact with WordPress's PHP(PHP: Hypertext Preprocessor) code), so you've got to have a way to spawn your own FastCGI processes. My preferred method is to use the @spawn-fcgi@ program provided by the same people that develop the web server "lighttpd":http://www.lighttpd.net/. You _can_ use PHP's built-in FastCGI manager @php-cgi@ to "do the same thing":http://blog.kovyrin.net/2006/05/30/nginx-php-fastcgi-howto/, but it's not as straight-forward. Plus, if you learn how to use @spawn-fcgi@, you can easily adapt it for use with other web applications that require FastCGI.
+First off, Nginx does not provide FastCGI for you (FastCGI is what your web server uses to interact with WordPress's PHP(PHP: Hypertext Preprocessor) code), so you've got to have a way to spawn your own FastCGI processes. My preferred method is to use the @spawn-fcgi@ program provided by the "lighttpd":http://www.lighttpd.net/ project. You _can_ use PHP's built-in FastCGI manager @php-cgi@ to "do the same thing":http://blog.kovyrin.net/2006/05/30/nginx-php-fastcgi-howto/, but it's not as straight-forward. Plus, if you learn how to use @spawn-fcgi@, you can easily adapt it for use with other non-PHP web applications that require FastCGI.
 
 h3. Install spawn-fcgi
 
