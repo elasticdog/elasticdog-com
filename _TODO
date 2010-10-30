@@ -4,4 +4,3 @@
   - generate category-specific feeds
 - front page pagination, with possible removal of retired posts
 - style blockquotes
-- have drafts get generated, but not deployed

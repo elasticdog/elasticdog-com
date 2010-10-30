@@ -24,6 +24,6 @@ sed -e "$href;$src" $XML_FILE > $TMP_FILE
 install -m644 $TMP_FILE $XML_FILE
 
 # sync the site contents over to the production server
-rsync -avz --delete --exclude "movies/*" _site/ linode:/srv/http/nginx/elasticdog.com
+rsync -avz --delete --exclude "drafts/" --exclude "movies/*" _site/ linode:/srv/http/nginx/elasticdog.com
 
 exit 0
