@@ -1,7 +1,7 @@
 server {
-	listen       12.34.56.78:80;             # your server's public IP address
-	server_name  domain.com;                 # your domain name
-	root         /srv/http/nginx/domain.com;  # absolute path to your WordPress installation
+	listen       192.0.32.10:80;                # your server's public IP address
+	server_name  example.com;                   # your domain name
+	root         /srv/http/nginx/example.com/;  # absolute path to your WordPress installation
 
 	try_files $uri $uri/ /index.php;
 
