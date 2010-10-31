@@ -5,3 +5,4 @@ server_port: 4000
 pygments:    true
 permalink:   /:year/:month/:title
 exclude:     config.rb
+paginate:    3

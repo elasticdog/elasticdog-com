@@ -1,0 +1,13 @@
+{% if paginator.previous_page or paginator.next_page %}
+<ul class="relativity">
+{% if paginator.next_page %}
+	<li><a href="/page{{ paginator.next_page }}/" class="prev" rel="prev">&larr; older articles</a></li>
+{% endif %}
+{% if paginator.previous_page and paginator.page != 2 %}
+	<li><a href="/page{{ paginator.previous_page }}/" class="next" rel="next">newer articles &rarr;</a></li>
+{% endif %}
+{% if paginator.previous_page and paginator.page == 2 %}
+	<li><a href="/" class="next" rel="next">newer articles &rarr;</a></li>
+{% endif %}
+</ul>
+{% endif %}
