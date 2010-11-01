@@ -1,0 +1,23 @@
+---
+layout: post
+title:  Magnetic-Based versus Flash-Based Storage
+---
+This article is the answer I wrote to an exam question for a basic cyber forensics course I took back in Feb 2009. I recently ran across this exam in my files and thought others might be interested in a high-level overview of the differences between "magnetic-based":https://secure.wikimedia.org/wikipedia/en/wiki/Hard_disk_drive and "flash-based":https://secure.wikimedia.org/wikipedia/en/wiki/Solid-state_drive storage technologies...
+
+h2(#question). The Question
+
+bq. "Briefly discuss the differences between magnetic-based storage and flash-based storage. What effect do these differences have on digital evidence investigations?"
+
+h2(#answer). My Answer
+
+Between the two types of disk storage technology of magnetic-based and flash-based hard drives (HDD(Hard Disk Drive)s and SSD(Solid-State Drive)s respectively), magnetic-based drives are more common, with flash-based drives quickly gaining speed in development and adoption rates.
+
+Magnetic-based drives use a series of stacked metal or glass disks called "platters", which store microscopic magnetic information on concentric rings called "tracks", which are further split into smaller "sectors" of 571 bytes each. A sector only holds 512 bytes of actual data and uses the remaining bytes for syncing purposes, a header with a location ID, and error detection via CRC(Cyclic Redundancy Check) checksums. A magnetic read head hovers over the metal platters as they spin, and depending on the electrical impulses that motion creates, you get either a one or zero represented as binary data. A "cylinder" is the combined data for a single track on all of the platters in a drive (both sides of each platter). Once the data is read, on-board hardware decodes that information and transmits it to the computer via a standardized interface.
+
+Flash-based drives are quite different. There are no physically moving parts, and they store data electronically instead of magnetically. Using a pair of transistor gates (a float gate and a control gate), flash-based storage sends electrical impulses to logically segmented areas in memory to store the appropriate ones and zeros in binary format (just like magnetic drives). Because they use only electricity and don't have to wait for actuator arms to physically move heads into position for reads and writes, flash-based storage is typically much faster at I/O operations. Like magnetic drives, flash-based drives also have a built-in hardware controller to manage its operation and to convert the data into a standardized format to be read by the computer.
+
+The effect each one of these has on a digital investigation is wide-spread. First of all, they both retain data for different amounts of time when left sitting. Magnetic data is not very reliable after a year or so, while flash-based data will usually last quite a bit longer. Flash-based memory also has a limited number of erase cycles, after which, whatever data is stored on that segment _will not_ change. This can actually help in an investigation if you can trick the hardware controller into thinking it can no longer use the memory, you could essentially turn it into a read-only device and preserve evidence. Likewise, magnetic disks often have a residual magnetic signature of previous data, even if it has been overwritten. Sometimes these properties can be exploited by an expert lab with the proper equipment to recover data that was intentionally destroyed.
+
+Both storage mediums will usually not overwrite data when it is deleted, but will simply update an allocation table to specify that a cluster or segment is free for writing again.
+
+Keeping in mind how each of these technologies transforms physical properties into a common, logical storage interface can help you to make better decisions on how to preserve data, how to find evidence, and what to expect when doing an investigation. If you don't pay attention to how these technologies differ, you have the potential to either miss important information, or in the worst case, destroy the information you do have.
