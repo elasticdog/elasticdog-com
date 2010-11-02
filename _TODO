@@ -2,5 +2,4 @@
 - establish category pages and tag all entries
   - make category list for archive page
   - generate category-specific feeds
-- front page pagination, with possible removal of retired posts
-- style blockquotes
+- possible to remove retired posts from front page pagination?
