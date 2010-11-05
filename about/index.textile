@@ -7,6 +7,8 @@ priority: 0.4
 ---
 h1(#aaron). About Aaron Bull Schaefer
 
+!/images/about/aaron-schaefer.jpg(It's a me...Aaron Bull Schaefer-io!)!
+
 I'm a certifiable renaissance man, gentleman, and scholar. I have been working in the IT(Information Technology) field since 2002 and am currently employeed as a Linux Administrator at "Wolfram Research":http://www.wolfram.com/, the makers of "Mathematica":http://www.wolfram.com/products/mathematica/ and "Wolfram|Alpha":http://www.wolframalpha.com/. I earned my Bachelor's degree in Computer & Information Technology (specializing in Network Engineering) from Purdue University, graduating with highest distinction. I am passionate about security, automation, and using technology to make people's lives better. It's rumored that I may someday rule the world.
 
 If you'd like to see some of the projects I've been involved in, take a gander at my aptly named "projects page":/projects/ or my personal "code repositories":http://projects.elasticdog.com/. You can easily find me all over the intertubes, but here are a few places to get you started:
