@@ -1,8 +1,321 @@
 ---
-layout:    post
-published: false
-title:     Porting a Poker Hand Evaluator from C to Factor
+layout: post
+title:  Porting a Poker Hand Evaluator from C to Factor
 ---
-Todo
+To help teach myself "Factor":http://factorcode.org/, I started solving a lot of the problems at "Project Euler":http://projecteuler.net/ and approached each one, not only as a way to learn a new language, but as a means of exploring unfamiliar programming/mathematical methods, structures, and algorithms. This article explains the process I went through to port a fairly complicated poker hand evaluation algorithm from C to Factor.
 
-I'd like to clean up and add to the API for using this vocab by introducing a deck object. This will allow me to recreate the testing
+h2(#problem54). Problem 54
+
+In order to solve "Problem 54":http://projecteuler.net/index.php?section=problems&id=54, I needed to come up with a way to programatically determine the winner when comparing two poker hands. I had recently read an extensive blog post covering various "poker hand evaluators":http://www.codingthewheel.com/archives/poker-hand-evaluator-roundup, so I knew that I didn't want to bother with a naive solution when there were much better options out there. After reading through the different techniques, one stood out to me in particular; it was a relatively small amount of code, it didn't require a ton of storage space, and it was plenty fast...
+
+h3(#cactuskev). Cactus Kev's Poker Hand Evaluator
+
+Through the power of mathematics ("combinatorics":https://secure.wikimedia.org/wikipedia/en/wiki/Combinatorics in particular), you can ascertain that out of all 2,598,960 possible poker hands (52 choose 5), there are actually only 7462 distinct poker hand values that you need to be concerned with. The basic idea behind "Cactus Kev's Poker Hand Evaluator":http://www.suffecool.net/poker/evaluator.html is that you can take advantage of this fact by storing a card's representation in an efficient manner, do some basic bit twiddling, some multiplication (which is computationally cheap), add in a couple lookup tables and a binary search, and you can determine a hand's final value very quickly.
+
+The key concept here is that each of a card's possible 13 ranks (deuce through ace) is stored as a different prime number, and by multiplying a hand's five prime numbers together, you will get a unique result that can then be used to determine that hand's overall value. All you have to do is handle the special cases of flushes and straights, and the rest can be boiled down to a simple binary search. You can read the gory details at "Kevin Suffecool's site":http://www.suffecool.net/poker/evaluator.html.
+
+h2(#porting). The Porting Process
+
+h3(#constants). Bitfield Representation
+
+Each card will be stored as a "bitfield":http://en.wikipedia.org/wiki/Bitfield, inside of an interger that's four bytes long:
+
+bc. +-------------------------------------+
+| xxxbbbbb bbbbbbbb ssssrrrr xxpppppp |
++-------------------------------------+
+  xxxAKQJT 98765432 CDHSrrrr xxpppppp
++-------------------------------------+
+| 00001000 00000000 01001011 00100101 |  King of Diamonds
+| 00000000 00001000 00010011 00000111 |  Five of Spades
+| 00000010 00000000 10001001 00011101 |  Jack of Clubs
+
+* @p@ = prime number value of rank (deuce = 2, trey = 3, four = 5, ..., ace = 41)
+* @r@ = rank of card (deuce = 0, trey = 1, four = 2, ..., ace = 12)
+* @s@ = bit turned on depending on suit of card
+* @b@ = bit turned on depending on rank of card
+* @x@ = bit turned off, not used
+
+For now, I'm going to ignore how we get cards into this particular format, but I'll come back to that in a bit.
+
+h3(#constants). Constants
+
+Now that we have an efficient means of representing individual cards, we need to establish some basic constants to align with the above bitfield representation and overall hand values...
+
+h4(#constants-c). In C:
+
+{% highlight c %}
+#define CLUB     0x8000
+#define DIAMOND  0x4000
+#define HEART    0x2000
+#define SPADE    0x1000
+
+#define Deuce  0
+#define Trey   1
+#define Four   2
+#define Five   3
+#define Six    4
+#define Seven  5
+#define Eight  6
+#define Nine   7
+#define Ten    8
+#define Jack   9
+#define Queen  10
+#define King   11
+#define Ace    12
+
+#define STRAIGHT_FLUSH   1
+#define FOUR_OF_A_KIND   2
+#define FULL_HOUSE       3
+#define FLUSH            4
+#define STRAIGHT         5
+#define THREE_OF_A_KIND  6
+#define TWO_PAIR         7
+#define ONE_PAIR         8
+#define HIGH_CARD        9
+
+static char *value_str[] = {
+    "",
+    "Straight Flush",
+    "Four of a Kind",
+    "Full House",
+    "Flush",
+    "Straight",
+    "Three of a Kind",
+    "Two Pair",
+    "One Pair",
+    "High Card"
+};
+{% endhighlight %}
+
+h4(#constants-factor). In Factor:
+
+{% highlight factor %}
+CONSTANT: CLUB     8
+CONSTANT: DIAMOND  4
+CONSTANT: HEART    2
+CONSTANT: SPADE    1
+
+CONSTANT: DEUCE  0
+CONSTANT: TREY   1
+CONSTANT: FOUR   2
+CONSTANT: FIVE   3
+CONSTANT: SIX    4
+CONSTANT: SEVEN  5
+CONSTANT: EIGHT  6
+CONSTANT: NINE   7
+CONSTANT: TEN    8
+CONSTANT: JACK   9
+CONSTANT: QUEEN  10
+CONSTANT: KING   11
+CONSTANT: ACE    12
+
+CONSTANT: STRAIGHT_FLUSH   0
+CONSTANT: FOUR_OF_A_KIND   1
+CONSTANT: FULL_HOUSE       2
+CONSTANT: FLUSH            3
+CONSTANT: STRAIGHT         4
+CONSTANT: THREE_OF_A_KIND  5
+CONSTANT: TWO_PAIR         6
+CONSTANT: ONE_PAIR         7
+CONSTANT: HIGH_CARD        8
+
+CONSTANT: VALUE_STR { "Straight Flush" "Four of a Kind" "Full House" "Flush"
+    "Straight" "Three of a Kind" "Two Pair" "One Pair" "High Card" }
+{% endhighlight %}
+
+Here, the only difference I made in the Factor version was to start the hand value types at 0 instead of 1 to eliminate the empty string at index 0...it's unneccessary.
+
+h3(#prime). Prime Numbers
+
+As mentioned above, each card rank will be represented by its own prime number, so we'll need a way to reference that...
+
+h4(#prime-c). In C:
+
+{% highlight c %}
+int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41 };
+{% endhighlight %}
+
+h4(#prime-factor). In Factor:
+
+{% highlight factor %}
+CONSTANT: RANK_STR { "2" "3" "4" "5" "6" "7" "8" "9" "T" "J" "Q" "K" "A" }
+
+: card-rank-prime ( rank -- n )
+    RANK_STR index { 2 3 5 7 11 13 17 19 23 29 31 37 41 } nth ;
+{% endhighlight %}
+
+A minor change I made here was to establish a @RANK_STR@ constant to make it easier to develop ways to parse and print card representations later (read the "section on printing":#printing to see the C equivalent). That said, @card-rank-prime@ in the Factor version has the same purpose as the @primes@ array in the C version.
+
+h3(#initialize-card). Initializing Cards
+
+Now that we have some basic infrastructure in place, we can tackle initializing cards in the desired format. Cactus Kev's code glosses over this process and only demonstrates how to generate an entire deck, so I'll just cover the Factor code here...
+
+h4(#initialize-card-factor). In Factor:
+
+{% highlight factor %}
+: card-rank ( rank -- n )
+    {
+        { "2" [ DEUCE ] }
+        { "3" [ TREY  ] }
+        { "4" [ FOUR  ] }
+        { "5" [ FIVE  ] }
+        { "6" [ SIX   ] }
+        { "7" [ SEVEN ] }
+        { "8" [ EIGHT ] }
+        { "9" [ NINE  ] }
+        { "T" [ TEN   ] }
+        { "J" [ JACK  ] }
+        { "Q" [ QUEEN ] }
+        { "K" [ KING  ] }
+        { "A" [ ACE   ] }
+    } case ;
+
+: card-suit ( suit -- n )
+    {
+        { "C" [ CLUB    ] }
+        { "D" [ DIAMOND ] }
+        { "H" [ HEART   ] }
+        { "S" [ SPADE   ] }
+    } case ;
+
+: card-rank-bit ( rank -- n )
+    RANK_STR index 1 swap shift ;
+
+: card-bitfield ( rank rank suit rank -- n )
+    {
+        { card-rank-bit 16 }
+        { card-suit 12 }
+        { card-rank 8 }
+        { card-rank-prime 0 }
+    } bitfield ;
+
+:: (>ckf) ( rank suit -- n )
+    rank rank suit rank card-bitfield ;
+
+: >ckf ( string -- n )
+    #! Cactus Kev Format
+    >upper 1 cut (>ckf) ;
+
+: parse-cards ( string -- seq )
+    " " split [ >ckf ] map ;
+{% endhighlight %}
+
+To use this code, you'd start with a string representing a card, like @"AS"@ for the Ace of Spades or @"7H"@ for the Seven of Hearts, and then pass it to @>ckf@ to get it's integer representation. The @parse-cards@ word simply does this conversion for an entire hand; given a string like @"7C 5D 4H 3S 2C"@, it will output an array of the proper integers.
+
+Due to Factor's concatenative nature, you tend to write a lot of small words that do one specific thing rather than writing longer methods. Words are expected to be defined before you reference them (unless they've been "deferred":http://docs.factorcode.org/content/article-deferred.html), so when reading code from top to bottom, you'll see big-picture words defined after the more-focues words they use. It's also a convention to name helper words the same as the word from which they're called, but with parenthesis around the name (e.g., @>ckf@ uses the helper word @(>ckf)@).
+
+One special thing to note is the use of "locals":http://docs.factorcode.org/content/word-__colon____colon__,locals.html in the @(>ckf)@ word...if you start a word definition with @::@ instead of just @:@, Factor will bind the named inputs (from the stack declaration) to lexical variables from left to right. It's used in this case because we need to pass these values to the @card-bitfield@ word in a specific order, and "shufflers would make this a bit more confusing":/2008/12/beginning-factor-shufflers-and-combinators/#caveats.
+
+The last thing to explain is the @card-bitfield@ word itself...all it does is look up the proper bit values for the different parts of our card representation, and then constructs the final integer from those parts. See the "bitfield documentation":http://docs.factorcode.org/content/word-bitfield,math.bitwise.html for more details.
+
+h3(#decks). Decks and Shuffling
+
+Initializing and shuffling a deck wasn't strictly necessary for solving the Project Euler problem, but it was a useful abstraction and would be expected in a general poker library...
+
+h4(#initialize-deck-c). In C:
+
+{% highlight c %}
+init_deck( int *deck )
+{
+    int i, j, n = 0, suit = 0x8000;
+
+    for ( i = 0; i < 4; i++, suit >>= 1 )
+        for ( j = 0; j < 13; j++, n++ )
+            deck[n] = primes[j] | (j << 8) | suit | (1 << (16+j));
+}
+
+double  drand48();
+
+shuffle_deck( int *deck )
+{
+    int i, n, temp[52];
+
+    for ( i = 0; i < 52; i++ )
+        temp[i] = deck[i];
+
+    for ( i = 0; i < 52; i++ )
+    {
+        do {
+            n = (int)(51.9999999 * drand48());
+        } while ( temp[n] == 0 );
+        deck[i] = temp[n];
+        temp[n] = 0;
+    }
+}
+{% endhighlight %}
+
+h4(#initialize-deck-factor). In Factor:
+
+{% highlight factor %}
+: <deck> ( -- deck )
+    RANK_STR SUIT_STR 2array [ concat >ckf ] product-map ;
+
+ALIAS: shuffle randomize
+{% endhighlight %}
+
+I'm cheating a bit here with the shuffle word, as Factor already implements @randomize@ using the Fisher-Yates algorithm, so rather than re-inventing the wheel, I just aliased it.
+
+h3(#printing). Printing Hands
+
+This is where the languages start to noticibly deviate in their implementations.  Printing hands wasn't necessary for the Project Euler solution, but it was something useful for testing and would be expected in a general purpose poker vocabulary...
+
+h4(#printing-c). In C:
+
+{% highlight c %}
+print_hand( int *hand, int n )
+{
+    int i, r;
+    char suit;
+    static char *rank = "23456789TJQKA";
+
+    for ( i = 0; i < n; i++ )
+    {
+        r = (*hand >> 8) & 0xF;
+        if ( *hand & 0x8000 )
+            suit = 'c';
+        else if ( *hand & 0x4000 )
+            suit = 'd';
+        else if ( *hand & 0x2000 )
+            suit = 'h';
+        else
+            suit = 's';
+
+        printf( "%c%c ", rank[r], suit );
+        hand++;
+    }
+}
+{% endhighlight %}
+
+h4(#printing-factor). In Factor:
+
+{% highlight factor %}
+: >card-rank ( card -- string )
+    -8 shift HEX: F bitand RANK_STR nth ;
+
+: >card-suit ( card -- string )
+    {
+        { [ dup 15 bit? ] [ drop "C" ] }
+        { [ dup 14 bit? ] [ drop "D" ] }
+        { [ dup 13 bit? ] [ drop "H" ] }
+        [ drop "S" ]
+    } cond ;
+
+: card>string ( card -- string )
+    [ >card-rank ] [ >card-suit ] bi append ;
+
+: print-hand ( hand -- )
+    [ card>string ] map " " join print flush;
+{% endhighlight %}
+
+The comparison here is pretty straight-forward, and both versions are manipulating the integer representation of cards as the input. With Factor, you'll notice that count-controlled loops are much less common in comparison to using "sequence operators":http://docs.factorcode.org/content/article-sequences.html directly on the elements of a data structure.
+
+
+h3(#lookup). Lookup Tables
+
+
+
+
+
+h3(#senzee). Senzee Perfect Hash Optimization
+
+After weighing the pro's and con's of various existing evaluators, I decided to create a "poker vocabulary":https://github.com/slavapestov/factor/tree/master/extra/poker which was basically a direct port of "Cactus Kev's Poker Hand Evaluator":http://www.suffecool.net/poker/evaluator.html using the "Senzee Perfect Hash Optimization":http://www.senzee5.com/2006/06/some-perfect-hash.html.
