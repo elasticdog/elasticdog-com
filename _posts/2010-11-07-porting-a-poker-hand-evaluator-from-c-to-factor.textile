@@ -489,7 +489,7 @@ h4(#evaluation-factor). Hand Evaluation In Factor:
 
 {% endhighlight %}
 
-Each language's implementation checks for flushes first, then for hands with five unique ranks, and if all else fails, multiplies the primes together, searches for that product in a lookup table, and then uses that index to determine the hand's final value. The @findit@ function in C is the binary search, and once again I used Factor's built-in libraries to do the same thing with the @sorted-index@ word.
+Each language's implementation checks for flushes first, then for hands with five unique ranks, and if all else fails, multiplies the primes together, searches for that product in a lookup table, and then uses that index to determine the hand's final value. The @findit@ function in C is the binary search, and once again I used Factor's built-in libraries to do the same thing with the "sorted-index":http://docs.factorcode.org/content/word-sorted-index,binary-search.html word.
 
 h3(#ranking). Hand Ranking
 
