@@ -565,10 +565,10 @@ Getting back to our original goal of solving Project Euler's "Problem 54":http:/
     source-054 [ [ string>value ] map first2 before? ] count ;
 {% endhighlight %}
 
-The @source-054@ word simply converts the provided text file into the format our evaluator expects and the hand comparisons are subsequently handled by the @euler054@ word and counted up. Let's just say that __Player 2__ is much better at poker :-)
+The @source-054@ word simply converts the provided text file into the format our evaluator expects and the hand comparisons are subsequently handled by the @euler054@ word and counted up! Let's just say that __Player 2__ is much better at poker :-)
 
 h2(#improvements). Vocabulary Improvements
 
-Since porting the initial version of the poker vocabulary, many improvements have been made to generalize the code for use beyond just solving Project Euler problems. I ended up dropping the binary search in favor of using the "Senzee Perfect Hash Optimization":http://www.senzee5.com/2006/06/some-perfect-hash.html, and other Factor contributors have added code specifically for Texas Hold'em and Omaha evaluation. I didn't want to cover all of that here as the focus of this article is the direct comparison between C and Factor, but you can view the "current poker vocabulary":https://github.com/slavapestov/factor/tree/master/extra/poker to see all of these enhancements.
+Since porting the initial version of the poker vocabulary, many improvements have been made to generalize the code for use beyond just solving Project Euler problems. I ended up dropping the binary search in favor of using the "Senzee Perfect Hash Optimization":http://www.senzee5.com/2006/06/some-perfect-hash.html, and other Factor contributors have added code specifically for Texas Hold'em and Omaha evaluation. I didn't want to cover all of that here, as the focus of this article is the direct comparison between C and Factor, but you can view the "current poker vocabulary":https://github.com/slavapestov/factor/tree/master/extra/poker to see all of these enhancements.
 
 As always, feel free to "drop me a line":/about/#contact if you'd like to discuss things further.
