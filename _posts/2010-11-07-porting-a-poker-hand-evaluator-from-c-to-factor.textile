@@ -542,7 +542,7 @@ Cactus Kev's code didn't include the code for explicit output of a string, but h
 
 h2(#all-together). Putting it All Together
 
-To use the poker evaluator directly in Factor's interactive listener environment, you could enter something like these examples:
+To use the poker evaluator directly in Factor's interactive listener environment, you can enter something like these examples:
 
 {% highlight factor %}
 (scratchpad) "7H 7S 7D AS AC" hand-rank .
