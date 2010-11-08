@@ -14,12 +14,12 @@ layout: nil
 		<priority>0.6</priority>
 	</url>
 	{% endfor %}
-	{% for page in site.html_pages %}
+	{% for page in site.html_pages %}{% unless page.url contains '/drafts/' %}
 	<url>
 		<loc>http://elasticdog.com{{ page.url }}</loc>
 		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		{% if page.changefreq %}<changefreq>{{ page.changefreq }}</changefreq>{% endif %}
 		{% if page.priority %}<priority>{{ page.priority }}</priority>{% endif %}
 	</url>
-	{% endfor %}
+	{% endunless %}{% endfor %}
 </urlset>
