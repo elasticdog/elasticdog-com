@@ -19,9 +19,9 @@ gzip --stdout --best "$SITEMAP" > "$SITEMAP.gz"
 # replace relative URL references in the atom.xml feed with absolute URLs
 href='s/ href=\&quot;\// href=\&quot;http:\/\/elasticdog.com\//g'
 src='s/ src=\&quot;\// src=\&quot;http:\/\/elasticdog.com\//g'
-
 sed -e "$href;$src" $XML_FILE > $TMP_FILE
 install -m644 $TMP_FILE $XML_FILE
+rm $TMP_FILE
 
 # sync the site contents over to the production server
 rsync -avz --delete --exclude "drafts/" --exclude "movies/*" _site/ linode:/srv/http/nginx/elasticdog.com
