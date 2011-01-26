@@ -1,0 +1,59 @@
+---
+layout:  post
+title:   Shelf-Made Standing Desk
+---
+
+Since I started working from home, I've found that I spend even more time sitting at my desk than I did when I worked at the office. I've never had great posture and started noticing that my back and shoulders were pretty achy by the end of the day. Once I got to that point, it was harder to stay focused on work and I was becoming noticably fatigued.
+
+I started researching alternative workspaces, and found ideas ranging from sitting on an excercise ball to walking on a treadmill desk. Having sat on excercise balls before, I knew that I would quickly regress back to slouching; and the idea of working on a treadmill seemed too impractical. I needed something in between...
+
+h2(standing-desk). A Standing Desk
+
+There seems to be a surge of people converting to standing desks recently, and there's no shortage of personal stories and information on why they can be beneficial. Some very nice commercially-made standing desks are available, but not knowing if I'd actually like using one, I didn't want to make a big up-front investment.
+
+h2(old-desk). My Old Desk
+
+For reference, my old desk was simply a cubicle desk surface that had been reclaimed from a dumpster. I always liked the amount of horizontal space it provided, and it was extremely solid, but not completely ideal.
+
+!(frame)/images/2011/01/old-desk-small.jpg(My Old Sitting Desk)!:/images/2011/01/old-desk.jpg
+
+h2(new-desk). My New Desk
+
+I decided to convert a cheap shelving unit into a standing desk as a way to test the waters. At 48"W x 24"D x 72"H, "this $80 rack":http://www.lowes.com/pd_101933-1281-CR4824_0__?&productId=1000527 from Lowes was pretty ideal, and I figured that after a month if I didn't like it, the shelf could always be used in my garage.
+
+!(frame)/images/2011/01/muscle-rack-small.jpg(Muscle Rack)!:/images/2011/01/muscle-rack.jpg
+
+I tried to follow OSHA(Occupational Safety and Health Administration) guidelines as closely as possible when setting up the height of each shelf. The bottom shelf is about 7" above the ground to give my feet ample space below the rack; the upper shelf was placed so the top of the displays are right about eye-level; and the middle shelf was placed just below my elbow height for the keyboard and mouse. I used the extra shelf (which would have been on the very top) as a keyboard "tray" by cutting some notches in the corners to create a ledge that sticks out about six inches in the front.
+
+!(frame)/images/2011/01/keyboard-tray-small.jpg(Keyboard Tray Wrapped with Contact Paper)!:/images/2011/01/keyboard-tray.jpg
+
+Some friends pointed out that MDF(Medium-Density Fiberboard) could potentially contain Formaldehyde in the resin used to bind it together, and that prolonged contact might cause skin irritation. To prevent this, I wrapped the front part of the keyboard tray in faux leather contact paper. It looks nice, and prevents my wrists from getting itchy.
+
+Here's how everything came together...
+
+!(frame)/images/2011/01/complete-desk-small.jpg(Complete Standing Desk)!:/images/2011/01/complete-desk.jpg
+
+So my hands always stay at the proper height, I use "Synergy":http://synergy-foss.org/ to control both my Linux desktop and my MacBook Pro laptop with the same keyboard and mouse.
+
+!(frame)/images/2011/01/complete-desk-me-small.jpg(Complete Standing Desk with Me)!:/images/2011/01/complete-desk-me.jpg
+!(frame)/images/2011/01/complete-desk-footrest-small.jpg(Complete Standing Desk using Footrest)!:/images/2011/01/complete-desk-footrest.jpg
+
+The medical community points out that staying in one position for too long (whether that's sitting *or* standing) can be bad for you, so there's also a futon in my office where I can switch to using my laptop with a "Logitech Comfort Lapdesk":http://www.logitech.com/index.cfm/notebook_products/stands/devices/4841. Eventually, I may order a tall stool, so the option to sit at the desk will also be available; although, I do plan on standing for the majority of the time.
+
+h3(accessories). Accessories
+
+To make the standing desk more ergonomic, I purchased a few accessories:
+
+* A "Rain Design mStand":http://www.raindesigninc.com/mstand.html laptop stand to bring my MacBook Pro's display up to the proper height
+* A "Kensington SoleMate Plus":http://us.kensington.com/html/14801.html adjustable footrest to help facilitate shifting my weight throughout the day
+* A 16" "Zilotek LED(Light-Emitting Diode) strip light":http://zilotek.com/led_striplight.htm to help eliminate shadows and illuminiate the shelf with the keyboard and mouse
+
+Here's an idea of roughly how the keyboard tray looks without the LED strip light installed; and if you mouse over the image, you'll see what it looks like with the LED lights turned on...
+
+p(togglev). !(frame)/images/2011/01/shelf-toggle.jpg(Shelf Lighting)!:/images/2011/01/shelf-light.jpg
+
+!(frame)/images/2011/01/shelf-leds-small.jpg(Shelf LED Lights)!:/images/2011/01/shelf-leds.jpg
+
+h2(conclusions). Conclusions
+
+So far I really love the desk...my first full day standing at the desk was January 19th, 2011, and the first week was definitely a little rough, with my feet and back becoming sore by the end of the day. After I've given the desk a bit more time, I'll post another update, but I'm optimistic that it will be a permanent and beneficial change to my home office.

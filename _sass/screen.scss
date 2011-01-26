@@ -16,6 +16,7 @@ $serif: "Droid Serif", Palatino, Georgia, "Times New Roman", serif;
 $cool-grey: #808094;
 $dark-blue: #03C;
 $dark-brown: #3C2F20;
+$dark-frame: #BFBCA5;
 $dark-red-orange: #992A1A;
 $dark-yellow: #9F6000;
 $light-blue: #06C;
@@ -224,6 +225,11 @@ ul.posts {
 	letter-spacing: 0.1em;
 }
 
+.frame {
+	border: 1px solid $dark-frame;
+	padding: 1px;
+}
+
 .links {
 	li {
 		line-height: 1.25em;
@@ -275,4 +281,14 @@ ul.posts {
 	font-size: 14px;
 	margin-top: 0;
 	text-align: right;
+}
+
+.togglev {
+	height: 342px;
+	overflow: hidden;
+	width: 512px;
+}
+
+.togglev a:hover img {
+	margin-top: -341px;
 }
