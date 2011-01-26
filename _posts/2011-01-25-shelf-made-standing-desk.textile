@@ -38,7 +38,7 @@ So my hands always stay at the proper height, I use "Synergy":http://synergy-fos
 !(frame)/images/2011/01/complete-desk-me-small.jpg(Complete Standing Desk with Me)!:/images/2011/01/complete-desk-me.jpg
 !(frame)/images/2011/01/complete-desk-footrest-small.jpg(Complete Standing Desk using Footrest)!:/images/2011/01/complete-desk-footrest.jpg
 
-The medical community points out that staying in one position for too long (whether that's sitting *or* standing) can be bad for you, so there's also a futon in my office where I can switch to using my laptop with a "Logitech Comfort Lapdesk":http://www.logitech.com/index.cfm/notebook_products/stands/devices/4841. Eventually, I may order a tall stool, so the option to sit at the desk will also be available; although, I do plan on standing for the majority of the time.
+The medical community points out that staying in one position for too long (whether that's sitting *or* standing) can be bad for you, so there's also a futon in my office where I can switch to using my laptop with a "Logitech Comfort Lapdesk":http://www.logitech.com/en-us/notebook-products/cooling-pads/devices/4841. Eventually, I may order a tall stool, so the option to sit at the desk will also be available; although, I do plan on standing for the majority of the time.
 
 h3(accessories). Accessories
 
@@ -56,4 +56,4 @@ p(togglev). !(frame)/images/2011/01/shelf-toggle.jpg(Shelf Lighting)!:/images/20
 
 h2(conclusions). Conclusions
 
-So far I really love the desk...my first full day standing at the desk was January 19th, 2011, and the first week was definitely a little rough, with my feet and back becoming sore by the end of the day. After I've given the desk a bit more time, I'll post another update, but I'm optimistic that it will be a permanent and beneficial change to my home office.
+So far I really love the desk...my first full day standing at the desk was January 19th, 2011. The first week was definitely a little rough, with my feet and back becoming sore by the end of the day. After I've given the desk a bit more time, I'll post another update, but I'm optimistic that it will be a permanent and beneficial change to my home office.
