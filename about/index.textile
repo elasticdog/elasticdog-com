@@ -22,6 +22,8 @@ If you'd like to see some of the projects I've been involved in, take a gander a
 
 h2(#contact). Contact Me
 
+!{float:right;margin-right:-25px;margin-top:-2.75em;}/images/about/contact-qrcode.png(MECARD Formatted QR Code)!
+
 If you'd like to reach me for any reason, send an email to *"aaron@elasticdog.com":mailto:aaron@elasticdog.com*. I'm also constantly checking the horizon for smoke signals and carrier pigeons, if that's your thing. If you'd prefer a more secure means of communication, keep on reading...
 
 h3(#gnupg). My GnuPG Public Key
