@@ -7,7 +7,7 @@ Since I started working from home, I've found that I spend even more time sittin
 
 I started researching alternative workspaces, and found ideas ranging from sitting on an excercise ball to walking on a treadmill desk. Having sat on excercise balls before, I knew that I would quickly regress back to slouching; and the idea of working on a treadmill seemed too impractical. I needed something in between...
 
-h2(standing-desk). A Standing Desk
+h2(#standing-desk). A Standing Desk
 
 There seems to be a surge of people converting to standing desks recently, and there's no shortage of personal stories and information on why they can be beneficial. Some very nice commercially-made standing desks are available, but not knowing if I'd actually like using one, I didn't want to make a big up-front investment.
 
@@ -17,7 +17,7 @@ For reference, my old desk was simply a cubicle desk surface that had been recla
 
 !(frame)/images/2011/01/old-desk-small.jpg(My Old Sitting Desk)!:/images/2011/01/old-desk.jpg
 
-h2(new-desk). My New Desk
+h2(#new-desk). My New Desk
 
 I decided to convert a cheap shelving unit into a standing desk as a way to test the waters. At 48"W x 24"D x 72"H, "this $80 rack":http://www.lowes.com/pd_101933-1281-CR4824_0__?&productId=1000527 from Lowes was pretty ideal, and I figured that after a month if I didn't like it, the shelf could always be used in my garage.
 
@@ -40,7 +40,7 @@ So my hands always stay at the proper height, I use "Synergy":http://synergy-fos
 
 The medical community points out that staying in one position for too long (whether that's sitting *or* standing) can be bad for you, so there's also a futon in my office where I can switch to using my laptop with a "Logitech Comfort Lapdesk":http://www.logitech.com/en-us/notebook-products/cooling-pads/devices/4841. Eventually, I may order a tall stool, so the option to sit at the desk will also be available; although, I do plan on standing for the majority of the time.
 
-h3(accessories). Accessories
+h3(#accessories). Accessories
 
 To make the standing desk more ergonomic, I purchased a few accessories:
 
@@ -54,6 +54,20 @@ p(togglev). !(frame)/images/2011/01/shelf-toggle.jpg(Shelf Lighting)!:/images/20
 
 !(frame)/images/2011/01/shelf-leds-small.jpg(Shelf LED Lights)!:/images/2011/01/shelf-leds.jpg
 
-h2(conclusions). Conclusions
+h2(#conclusions). Conclusions
 
 My first full day of standing was January 19th, 2011, and so far, I really love the desk. The first week was definitely a little rough, with my feet and back becoming sore by the end of the day, but it's getting better. I've read that it takes a couple of weeks to fully adjust, so after I've given the desk a bit more time, I'll post another update. At this point, I'm optimistic that it will be a permanent change to my home office setup.
+
+h2(#update). Update
+
+It has been almost 8 months since I started using the standing desk, and I don't think I could go back. My posture has noticeably improved, and I quickly got over the initial soreness. I stand up about 85&#8211;90% of the time, and sit down with my lapboard for the rest (mostly later in the day). I've only made a few changes to my setup so far:
+
+# I switched to an "Kenesis Freestyle ergonomic keyboard":http://www.kinesis-ergo.com/freestyle_mac.htm to help improve wrist positioning and limit overreaching when using the mouse
+# I added an "Imprint anti-fatigue floor mat":http://www.imprintmats.com/p-16-elite-series-nantucket-basketweave-design.aspx to make standing more comfortable (even though my office is carpeted)
+# I added an "Apple Magic Trackpad":http://www.apple.com/magictrackpad/ near my mouse pad so I wouldn't need to reach to the upper level of the desk to perform multi-touch gestures
+
+It's safe to say that I enjoy utilizing a standing desk, and even though my shelving unit was originally purchased as an inexpensive way to get my feet wet, it has worked out better than expected. For now, it gets the job done and I don't see the need to purchase a more expensive standing desk.
+
+The only other planned improvements I have would be, to finally cut off the extra portion of each of the metal support rails that stick out from the top, and to build small side shelves that could support a pair of "KRK Rokit 5 studio monitors":http://www.krksys.com/krk-studio-monitor-speakers/rokit/rokit-5.html. Once I've done those things, I'll post an updated photo of how it looks.
+
+Since posting this original article, I've inspired a handful of friends to try out standing desks, and all of them have stuck with it. If you've been on the fence about trying a standing desk, I can easily say that it's worth the effort to give it a shot. I'd love to "hear from you":/about/#contact if you end up taking the plunge!
