@@ -1,0 +1,136 @@
+---
+layout: post
+title:  'Use sshuttle to Keep Safe on Insecure Wi-Fi'
+date:   2011-12-31 10:56
+categories:
+- network
+- osx
+- security
+---
+If you've ever used an insecure Wi-Fi connection in a public place (think coffee shop, airport, etc.), your personal information could be at risk. Anyone on the local network could potentially be monitoring your traffic and even "hijack your sessions":http://codebutler.github.com/firesheep/ to control accounts that you've logged into.
+
+Every week I "meet up with some friends":http://hackerbreakfast.com/ to work on personal projects, and the venue only offers an open wireless connection with no encryption. To mitigate the risk of leaking personal information, I've tried a handful of strategies and eventually settled on using "sshuttle":https://github.com/apenwarr/sshuttle.
+
+h2(#sshuttle). What is sshuttle?
+
+The sshuttle utility is part transparent proxy, part Virtual Private Network (VPN), and part SSH(Secure Shell). It solves a lot of common problems with encrypting your traffic, and it does so in a very efficient way.
+
+There's no need for a complicated pre-existing infrastructure. All you need is Python 2.x, and a remote machine you can SSH to that also has Python installed. You don't even have to be an administrator on the remote machine. The project's "README":https://github.com/apenwarr/sshuttle/blob/master/README.md has a lot more information on its theory, design, and alternate uses.
+
+h3(#previous). Previous Method
+
+As an aside, I had previously relied on creating a SOCKS proxy with SSH, and then tunnelling my web traffic through it...
+
+{% highlight bash %}
+$ ssh -fqND 1080 example.com
+{% endhighlight %}
+
+But, you have to adjust your machine's proxy configuration settings each time you set up the tunnel, and then tear it all down when you're done. This method *will not* force absolutely all traffic over the tunnel, as things like DNS(Domain Name System) lookups and a lot of command-line tools will just ignore the proxy. You're also encapsulating TCP(Transmission Control Protocol)-over-TCP, which can cause performance problems.
+
+I briefly messed with the "Sidestep project":http://chetansurpur.com/projects/sidestep/ to automate these setup/teardown steps on OS X, but ran across repeated authentication issues and wasn't overly impressed with its developer. Overall, I needed a more elegant solution.
+
+h2(#installation). Installation
+
+I wanted to use sshuttle on OS X Lion, and even though it's primarily a command-line utility, it also comes with a graphical user interface wrapper that will sit in the menu bar. If you just want the command-line script and already use "Homebrew":http://mxcl.github.com/homebrew/, @brew install sshuttle@ is the way to go. If you don't use Homebrew and/or want the GUI, I've got your back...
+
+h3(#building). Building sshuttle from Source
+
+Unfortunately, pre-compiled binaries are not made available for every release, and documentation for building sshuttle is non-existent. The project uses a "build system called 'redo'":https://github.com/apenwarr/redo instead of the more-customary 'make', so the process is a bit different than what most people are used to.
+
+Luckily, the sshuttle repository includes a shell script named 'do', which is a simplified version of redo, so you _won't need to_ install any additional build software. The only real dependencies are "Python":http://python.org/ and "Pandoc":http://johnmacfarlane.net/pandoc/, which is used to generate the man page. If you've got those two things, you're all set...
+
+{% highlight bash %}
+$ git clone git://github.com/apenwarr/sshuttle.git
+$ cd sshuttle/
+$ ./do all
+$ cp sshuttle /usr/local/bin/sshuttle
+$ mkdir -p /usr/local/share/man/man8
+$ cp sshuttle.8 /usr/local/share/man/man8
+$ mv ui-macos/Sshuttle\ VPN.app /Applications
+{% endhighlight %}
+
+_*NOTE:* You may have to adjust paths or permissions slightly depending on your machine's setup._
+
+h2(#configuration). Configuration
+
+Due to some changes in OS X Lion, there are some further hoops to jump through. In order to keep the network happy when using sshuttle, we need to adjust the @net.inet.ip.scopedroute@ kernel flag, but you can no longer make changes in @/etc/sysctl.conf@ and have it stick for that particular attribute.
+
+To get that kernel flag set to @0@, we have to adjust a system configuration plist file to set the flag on boot. This is how things should look like before the adjustment:
+
+{% highlight bash %}
+$ defaults read /Library/Preferences/SystemConfiguration/com.apple.Boot
+{
+    "Kernel Flags" = "";
+}
+$ sysctl -a | grep scopedroute
+net.inet.ip.scopedroute: 1
+net.inet6.ip6.scopedroute: 1
+{% endhighlight %}
+
+Then we update the flag by running:
+
+{% highlight bash %}
+$ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.Boot "Kernel Flags" "net.inet.ip.scopedroute=0"
+{% endhighlight %}
+
+Writing this attribute will automatically convert the plist file to a binary format, which makes the kernel a sad panda...so just convert it back to XML(Extensible Markup Language), and we're good to go:
+
+{% highlight bash %}
+$ sudo plutil -convert xml1 /Library/Preferences/SystemConfiguration/com.apple.Boot.plist
+$ defaults read /Library/Preferences/SystemConfiguration/com.apple.Boot
+{
+    "Kernel Flags" = "net.inet.ip.scopedroute=0";
+}
+{% endhighlight %}
+
+...then reboot the machine, and you can confirm the status:
+
+{% highlight bash %}
+$ sysctl -a | grep scopedroute
+kern.bootargs: net.inet.ip.scopedroute=0
+net.inet.ip.scopedroute: 0
+net.inet6.ip6.scopedroute: 1
+{% endhighlight %}
+
+h2(#usage). Usage
+
+Finally we can get down to actually using sshuttle! It's flexible enough to do fancier things, but for our particular use case, we just need to forward all traffic over the tunnel.
+
+h3(#cli). <notextile>CLI</notextile>
+
+The basic command to achieve our goal looks like this:
+
+{% highlight bash %}
+$ sshuttle --dns -r example.com 0/0
+{% endhighlight %}
+
+Run that, and all of your traffic (_including_ DNS requests) will be transparently proxied through an SSH connection to _example.com_. You can verify this by browsing to "http://ifconfig.me":http://ifconfig.me.
+
+To stop forwarding traffic, just press @Ctrl-c@ back in the terminal. We can do a bit better though by forking the process into the background so we don't tie up our terminal session. These are the aliases I use to make setting up and tearing down the tunnel easier:
+
+{% highlight bash %}
+alias tunnel='sshuttle --dns --daemon --pidfile=/tmp/sshuttle.pid --remote=example.com 0/0'
+alias tunnelx='[[ -f /tmp/sshuttle.pid ]] && kill $(cat /tmp/sshuttle.pid) && echo "Disconnected."'
+{% endhighlight %}
+
+h3(#gui). <notextile>GUI</notextile>
+
+The sshuttle GUI is pretty self-explanatory, but again, it's not without its complications. Version 0.54 has a bug in the GUI where it won't properly revert the firewall rules when tearing down the proxy, so network connectivity will be broken afterward. Hopefully that will be fixed soon so you no longer have to worry about it.
+
+You can see the current firewall rules using:
+
+{% highlight bash %}
+$ sudo ipfw list
+{% endhighlight %}
+
+...and you can manually flush out those rules to fix connectivity by running:
+
+{% highlight bash %}
+$ sudo ipfw -f flush
+{% endhighlight %}
+
+h2(#conclusion). Conclusion
+
+Admittedly, sshuttle takes a bit more work than other solutions to get up and running, but the security it provides gives me peace of mind when forced to use insecure Wi-Fi networks.
+
+If you have any issues, there is an "active mailing list":http://groups.google.com/group/sshuttle or you can always "send me a note":/about/#contact and I'll see what I can do to help.
