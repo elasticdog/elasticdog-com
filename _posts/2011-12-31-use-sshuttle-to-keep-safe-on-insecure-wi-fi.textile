@@ -7,7 +7,7 @@ categories:
 - osx
 - security
 ---
-If you've ever used an insecure Wi-Fi connection in a public place (think coffee shop, airport, etc.), your personal information could be at risk. Anyone on the local network could potentially be monitoring your traffic and even "hijack your sessions":http://codebutler.github.com/firesheep/ to control accounts that you've logged into.
+If you've ever used an insecure Wi-Fi connection in a public place (think coffee shop, airport, etc.), your personal information could be at risk. Anyone on the local network could potentially be monitoring your traffic and they could even "hijack your sessions":http://codebutler.github.com/firesheep/ to control accounts that you've logged into.
 
 Every week I "meet up with some friends":http://hackerbreakfast.com/ to work on personal projects, and the venue only offers an open wireless connection with no encryption. To mitigate the risk of leaking personal information, I've tried a handful of strategies and eventually settled on using "sshuttle":https://github.com/apenwarr/sshuttle.
 
@@ -43,7 +43,7 @@ Luckily, the sshuttle repository includes a shell script named 'do', which is a 
 $ git clone git://github.com/apenwarr/sshuttle.git
 $ cd sshuttle/
 $ ./do all
-$ cp sshuttle /usr/local/bin/sshuttle
+$ cp sshuttle /usr/local/bin
 $ mkdir -p /usr/local/share/man/man8
 $ cp sshuttle.8 /usr/local/share/man/man8
 $ mv ui-macos/Sshuttle\ VPN.app /Applications
@@ -133,4 +133,4 @@ h2(#conclusion). Conclusion
 
 Admittedly, sshuttle takes a bit more work than other solutions to get up and running, but the security it provides gives me peace of mind when forced to use insecure Wi-Fi networks.
 
-If you have any issues, there is an "active mailing list":http://groups.google.com/group/sshuttle or you can always "send me a note":/about/#contact and I'll see what I can do to help.
+If you have any issues, there is an "active mailing list":http://groups.google.com/group/sshuttle for the project, or you can always "send me a note":/about/#contact and I'll see what I can do to help.
