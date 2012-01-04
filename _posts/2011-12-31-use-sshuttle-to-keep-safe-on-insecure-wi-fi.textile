@@ -55,7 +55,7 @@ $ ln -s /usr/local/libexec/sshuttle/sshuttle.8 /usr/local/share/man/man8
 $ ln -s /usr/local/libexec/sshuttle/ui-macos/Sshuttle\ VPN.app /Applications
 {% endhighlight %}
 
-_*NOTE:* You may have to adjust paths or permissions slightly depending on your machine's setup._
+__==NOTE==: You may have to adjust paths or permissions slightly depending on your machine's setup.__
 
 h2(#configuration). Configuration
 
@@ -108,7 +108,7 @@ The basic command to achieve our goal looks like this:
 $ sshuttle --dns -r example.com 0/0
 {% endhighlight %}
 
-_*NOTE:* Sshuttle will honor your @~/.ssh/config@ connection settings, but you can also manually specify a different username/port, if necessary:_
+__==NOTE==: Sshuttle will honor your @~/.ssh/config@ connection settings, but you can also manually specify a different username/port, if necessary:__
 
 {% highlight bash %}
 $ sshuttle --dns -r username@example.com:2222 0/0
@@ -123,7 +123,7 @@ alias tunnel='sshuttle --dns --daemon --pidfile=/tmp/sshuttle.pid --remote=examp
 alias tunnelx='[[ -f /tmp/sshuttle.pid ]] && kill $(cat /tmp/sshuttle.pid) && echo "Disconnected."'
 {% endhighlight %}
 
-The __<notextile>Sshuttle VPN.app</notextile>__ GUI is pretty self-explanatory, but again, it's not without its complications...
+The __==Sshuttle VPN.app==__ GUI is pretty self-explanatory, but again, it's not without its complications...
 
 h2(#bugs). Known Bugs
 
