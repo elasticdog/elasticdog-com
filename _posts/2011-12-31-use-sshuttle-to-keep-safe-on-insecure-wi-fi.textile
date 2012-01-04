@@ -52,7 +52,7 @@ Once sshuttle is built, we just make symlinks so the binary, man page, and GUI a
 $ ln -s /usr/local/libexec/sshuttle/sshuttle /usr/local/bin
 $ mkdir -p /usr/local/share/man/man8
 $ ln -s /usr/local/libexec/sshuttle/sshuttle.8 /usr/local/share/man/man8
-$ ln -s /Applications /usr/local/libexec/sshuttle/ui-macos/Sshuttle\ VPN.app
+$ ln -s /usr/local/libexec/sshuttle/ui-macos/Sshuttle\ VPN.app /Applications
 {% endhighlight %}
 
 _*NOTE:* You may have to adjust paths or permissions slightly depending on your machine's setup._
