@@ -108,6 +108,12 @@ The basic command to achieve our goal looks like this:
 $ sshuttle --dns -r example.com 0/0
 {% endhighlight %}
 
+_*NOTE:* Sshuttle will honor your @~/.ssh/config@ connection settings, but you can also manually specify a different username/port, if necessary:_
+
+{% highlight bash %}
+$ sshuttle --dns -r username@example.com:2222 0/0
+{% endhighlight %}
+
 Run that, and all of your traffic (_including_ DNS requests) will be transparently proxied through an SSH connection to _example.com_. You can verify this by browsing to "http://ifconfig.me":http://ifconfig.me.
 
 To stop forwarding traffic, just press @Ctrl-c@ back in the terminal. We can do a bit better though by forking the process into the background so we don't tie up our terminal session. These are the aliases I use to make setting up and tearing down the tunnel easier:
