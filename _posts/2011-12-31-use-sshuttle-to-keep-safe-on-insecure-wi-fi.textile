@@ -141,6 +141,8 @@ $ sudo ipfw list
 $ sudo ipfw -f flush
 {% endhighlight %}
 
+Aside from that bug, you may see a bunch of "*warning: closed channel ...*" messages when running sshuttle (either on STDOUT or in your system.log), but these warnings are safe to ignore. The developer "knows about the issue":http://groups.google.com/group/sshuttle/browse_thread/thread/853316d8e0a90269/4febfe3136aba5df and is thinking of the best way to suppress/eliminate the condition.
+
 h2(#update). Update sshuttle
 
 Since our installation of sshuttle is managed via git, updating to the latest version is pretty straightforward:
