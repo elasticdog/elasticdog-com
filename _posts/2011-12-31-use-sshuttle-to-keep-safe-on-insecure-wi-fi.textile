@@ -40,13 +40,19 @@ Unfortunately, pre-compiled binaries are not made available for every release, a
 Luckily, the sshuttle repository includes a shell script named 'do', which is a simplified version of redo, so you _won't need to_ install any additional build software. The only real dependencies are "Python":http://python.org/ and "Pandoc":http://johnmacfarlane.net/pandoc/, which is used to generate the man page. If you've got those two things, you're all set...
 
 {% highlight bash %}
-$ git clone git://github.com/apenwarr/sshuttle.git
-$ cd sshuttle/
+$ mkdir -p /usr/local/libexec
+$ git clone git://github.com/apenwarr/sshuttle.git /usr/local/libexec/sshuttle
+$ cd /usr/local/libexec/sshuttle/
 $ ./do all
-$ cp sshuttle /usr/local/bin
+{% endhighlight %}
+
+Once sshuttle is built, we just make symlinks so the binary, man page, and GUI app are in the proper places:
+
+{% highlight bash %}
+$ ln -s /usr/local/libexec/sshuttle/sshuttle /usr/local/bin
 $ mkdir -p /usr/local/share/man/man8
-$ cp sshuttle.8 /usr/local/share/man/man8
-$ mv ui-macos/Sshuttle\ VPN.app /Applications
+$ ln -s /usr/local/libexec/sshuttle/sshuttle.8 /usr/local/share/man/man8
+$ ln -s /Applications /usr/local/libexec/sshuttle/ui-macos/Sshuttle\ VPN.app
 {% endhighlight %}
 
 _*NOTE:* You may have to adjust paths or permissions slightly depending on your machine's setup._
@@ -67,7 +73,7 @@ net.inet.ip.scopedroute: 1
 net.inet6.ip6.scopedroute: 1
 {% endhighlight %}
 
-Then we update the flag by running:
+We can update the flag by running:
 
 {% highlight bash %}
 $ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.Boot "Kernel Flags" "net.inet.ip.scopedroute=0"
@@ -96,8 +102,6 @@ h2(#usage). Usage
 
 Finally we can get down to actually using sshuttle! It's flexible enough to do fancier things, but for our particular use case, we just need to forward all traffic over the tunnel.
 
-h3(#cli). <notextile>CLI</notextile>
-
 The basic command to achieve our goal looks like this:
 
 {% highlight bash %}
@@ -113,9 +117,11 @@ alias tunnel='sshuttle --dns --daemon --pidfile=/tmp/sshuttle.pid --remote=examp
 alias tunnelx='[[ -f /tmp/sshuttle.pid ]] && kill $(cat /tmp/sshuttle.pid) && echo "Disconnected."'
 {% endhighlight %}
 
-h3(#gui). <notextile>GUI</notextile>
+The __<notextile>Sshuttle VPN.app</notextile>__ GUI is pretty self-explanatory, but again, it's not without its complications...
 
-The sshuttle GUI is pretty self-explanatory, but again, it's not without its complications. Version 0.54 has a bug in the GUI where it won't properly revert the firewall rules when tearing down the proxy, so network connectivity will be broken afterward. Hopefully that will be fixed soon so you no longer have to worry about it.
+h2(#bugs). Known Bugs
+
+Version 0.54 has "a bug":http://groups.google.com/group/sshuttle/browse_thread/thread/6603f9d17ae8eec4 where sometimes sshuttle won't properly revert the firewall rules when tearing down the proxy. This means *all* network connectivity will be broken afterward until you flush out the rules manually. This happens every time you disconnect when using the GUI, but I've also seen a report of it happening with the CLI(Command-Line Interface) as well. Personally, I've never had any issues with the CLI, but your mileage may vary. Hopefully, the underlying issue will be fixed soon so you no longer have to worry about it.
 
 You can see the current firewall rules using:
 
@@ -127,6 +133,16 @@ $ sudo ipfw list
 
 {% highlight bash %}
 $ sudo ipfw -f flush
+{% endhighlight %}
+
+h2(#update). Update sshuttle
+
+Since our installation of sshuttle is managed via git, updating to the latest version is pretty straightforward:
+
+{% highlight bash %}
+$ cd /usr/local/libexec/sshuttle
+$ git pull
+$ ./do all
 {% endhighlight %}
 
 h2(#conclusion). Conclusion
