@@ -37,7 +37,15 @@ h3(#building). Building sshuttle from Source
 
 Unfortunately, pre-compiled binaries are not made available for every release, and documentation for building sshuttle is non-existent. The project uses a "build system called 'redo'":https://github.com/apenwarr/redo instead of the more-customary 'make', so the process is a bit different than what most people are used to.
 
-Luckily, the sshuttle repository includes a shell script named 'do', which is a simplified version of redo, so you _won't need to_ install any additional build software. The only real dependencies are "Python":http://python.org/ and "Pandoc":http://johnmacfarlane.net/pandoc/, which is used to generate the man page. If you've got those two things, you're all set...
+Luckily, the sshuttle repository includes a shell script named 'do', which is a simplified version of redo, so you _won't need to_ install any additional build software. The only real dependencies are "Python":http://python.org/ and two Python modules to generate the man page (feel free to use @pip install@ instead of @easy_install@, if you prefer):
+
+{% highlight bash %}
+$ easy_install markdown BeautifulSoup
+{% endhighlight %}
+
+Once you've installed those two modules, you're all set to build...
+
+__==NOTE==: You may have to adjust paths or permissions slightly depending on your machine's setup.__
 
 {% highlight bash %}
 $ mkdir -p /usr/local/libexec
@@ -46,22 +54,29 @@ $ cd /usr/local/libexec/sshuttle/
 $ ./do all
 {% endhighlight %}
 
-Once sshuttle is built, we just make symlinks so the binary, man page, and GUI app are in the proper places:
+Once sshuttle is built, we just make symlinks so the binary and man page are in the proper places:
 
 {% highlight bash %}
 $ ln -s /usr/local/libexec/sshuttle/sshuttle /usr/local/bin
 $ mkdir -p /usr/local/share/man/man8
-$ ln -s /usr/local/libexec/sshuttle/sshuttle.8 /usr/local/share/man/man8
-$ ln -s /usr/local/libexec/sshuttle/ui-macos/Sshuttle\ VPN.app /Applications
+$ ln -s /usr/local/libexec/sshuttle/Documentation/sshuttle.8 /usr/local/share/man/man8
 {% endhighlight %}
 
-__==NOTE==: You may have to adjust paths or permissions slightly depending on your machine's setup.__
+For the GUI app, we need to create an _alias_ instead a symlink, because ["Spotlight":http://en.wikipedia.org/wiki/Spotlight_(software)] will not index symlinks. Yes, you could just copy __==Sshuttle VPN.app==__ directly into __/Applications__, but then you'd have to remember to copy it every time you update/rebuild sshuttle.
+
+Without getting too technical, aliases are a lot like symlinks but they use extra metadata called "resource forks" to follow a file (even when it's moved) rather then blindly pointing to a path. More importantly, Spotlight *will* index them. There's no way to create an alias from the command line, so you have to use Finder:
+
+# Open Finder and press *Command-Shift-G* to open the "Go to the folder:" dialog box.
+# Type @/usr/local/libexec/sshuttle/ui-macos@ in the box and click the *Go* button.
+<img src="/images/2011/12/go-to-the-folder.png" alt="Go to the folder: Dialog Box" width="868" height="536" />
+# Click and hold __==Sshuttle VPN.app==__, then while holding down both the *Command* and *Option* keys, drag the app over to _Applications_ on the left and release the mouse button.
+<img src="/images/2011/12/sshuttle-alias.png" alt="Create the sshuttle Alias" width="868" height="536" />
 
 h2(#configuration). Configuration
 
-Due to some changes in OS X Lion, there are some further hoops to jump through. In order to keep the network happy when using sshuttle, we need to adjust the @net.inet.ip.scopedroute@ kernel flag, but you can no longer make changes in @/etc/sysctl.conf@ and have it stick for that particular attribute.
+Due to some sysctl changes in OS X Lion, you will have to reboot your machine after you run sshuttle for the first time. An adjustment to the @net.inet.ip.scopedroute@ kernel flag needs to be made, and it can no longer be done during runtime. This is required so forwarding rules will be honored by the firewall.
 
-To get that kernel flag set to @0@, we have to adjust a system configuration plist file to set the flag on boot. This is how things should look like before the adjustment:
+Everything should be handled automatically by sshuttle, but if your curious to see the change, you can display the boot kernel flags and current settings with the following commands:
 
 {% highlight bash %}
 $ defaults read /Library/Preferences/SystemConfiguration/com.apple.Boot
@@ -73,25 +88,13 @@ net.inet.ip.scopedroute: 1
 net.inet6.ip6.scopedroute: 1
 {% endhighlight %}
 
-We can update the flag by running:
+After you run sshuttle for the first time and then reboot the machine, you can confirm the updated status:
 
 {% highlight bash %}
-$ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.Boot "Kernel Flags" "net.inet.ip.scopedroute=0"
-{% endhighlight %}
-
-Writing this attribute will automatically convert the plist file to a binary format, which makes the kernel a sad panda...so just convert it back to XML(Extensible Markup Language), and we're good to go:
-
-{% highlight bash %}
-$ sudo plutil -convert xml1 /Library/Preferences/SystemConfiguration/com.apple.Boot.plist
 $ defaults read /Library/Preferences/SystemConfiguration/com.apple.Boot
 {
     "Kernel Flags" = "net.inet.ip.scopedroute=0";
 }
-{% endhighlight %}
-
-...then reboot the machine, and you can confirm the status:
-
-{% highlight bash %}
 $ sysctl -a | grep scopedroute
 kern.bootargs: net.inet.ip.scopedroute=0
 net.inet.ip.scopedroute: 0
@@ -123,13 +126,13 @@ alias tunnel='sshuttle --dns --daemon --pidfile=/tmp/sshuttle.pid --remote=examp
 alias tunnelx='[[ -f /tmp/sshuttle.pid ]] && kill $(cat /tmp/sshuttle.pid) && echo "Disconnected."'
 {% endhighlight %}
 
-The __==Sshuttle VPN.app==__ GUI is pretty self-explanatory, but again, it's not without its complications...
+The __==Sshuttle VPN.app==__ GUI is pretty self-explanatory, just make sure to enable the _Send DNS requests through this server_ checkbox, and select _Send all traffic through this server_ for the "Network routes:" option.
 
 h2(#bugs). Known Bugs
 
-Version 0.54 has "a bug":http://groups.google.com/group/sshuttle/browse_thread/thread/6603f9d17ae8eec4 where sometimes sshuttle won't properly revert the firewall rules when tearing down the proxy. This means *all* network connectivity will be broken afterward until you flush out the rules manually. This happens every time you disconnect when using the GUI, but I've also seen a report of it happening with the CLI(Command-Line Interface) as well. Personally, I've never had any issues with the CLI, but your mileage may vary. Hopefully, the underlying issue will be fixed soon so you no longer have to worry about it.
+You may see a bunch of "*warning: closed channel ...*" messages when running sshuttle (either on STDOUT or in your system.log), but these warnings are safe to ignore. The developer "knows about the issue":http://groups.google.com/group/sshuttle/browse_thread/thread/853316d8e0a90269/4febfe3136aba5df and is thinking of the best way to suppress/eliminate the condition.
 
-You can see the current firewall rules using:
+Also, prior to version 0.60 of sshuttle, there was "a bug in the GUI application":http://groups.google.com/group/sshuttle/browse_thread/thread/6603f9d17ae8eec4 when disconnecting tunnels, where the controlling terminal would disappear before firewall rules could cleaned up. This would leave the network in an odd state and all DNS lookups would fail. It should be fixed now, but if you experience networking trouble after disconnecting a sshuttle tunnel, you can see the current firewall rules using:
 
 {% highlight bash %}
 $ sudo ipfw list
@@ -141,7 +144,7 @@ $ sudo ipfw list
 $ sudo ipfw -f flush
 {% endhighlight %}
 
-Aside from that bug, you may see a bunch of "*warning: closed channel ...*" messages when running sshuttle (either on STDOUT or in your system.log), but these warnings are safe to ignore. The developer "knows about the issue":http://groups.google.com/group/sshuttle/browse_thread/thread/853316d8e0a90269/4febfe3136aba5df and is thinking of the best way to suppress/eliminate the condition.
+Be aware though, *this will flush out all rules*, not just the rules set by sshuttle, so it may have unintended consequences. If you're unsure, you can always reboot the machine to get connectivity back to normal.
 
 h2(#update). Update sshuttle
 
