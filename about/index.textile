@@ -27,14 +27,15 @@ If you'd like to reach me for any reason, send an email to *"aaron@elasticdog.co
 
 h3(#gnupg). My GnuPG Public Key
 
-"GNU Privacy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or GPG) is <acronym title="Free and Open Source Software">==F/OSS==</acronym> that allows you to easily sign and encrypt your data. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
+"GNU Privacy Guard":http://www.gnupg.org/ (a.k.a. GnuPG or GPG) is <acronym title="Free and Open Source Software">==F/OSS==</acronym> that allows you to easily sign and encrypt your data following the OpenPGP standard. This enables you to verify people's identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:
 
-pre. pub   1024D/50EDFCCD 2008-05-31
-      Key fingerprint = 7074 406E 8272 D083 1E31  2845 666F D4C1 50ED FCCD
-uid                  Aaron Bull Schaefer <aaron@elasticdog.com>
-sub   2048g/388B7E9C 2008-05-31 [expires: 2015-03-26]
+pre. pub   4096R/C31E7946 2013-03-27
+      Key fingerprint = 5FC9 160D A643 E0E9 B83A  F4BB 5E34 0427 C31E 7946
+      uid                  Aaron Bull Schaefer <aaron@elasticdog.com>
 
 You can import it from any keyserver, or by downloading the "ASCII-armored version":/code/elasticdog-pubkey.asc manually. *DO ==NOT==* forget to verify the key against the fingerprint listed above to ensure that they are the same. For more information, see "The GNU Privacy Handbook":http://www.gnupg.org/gph/en/manual.html.
+
+Note that in March of 2013, I transitioned away from an older DSA key to the stronger RSA key shown above. If you had any dealings with the previous key, please read my "transition statement":/code/key-transition-20130326.txt for further details.
 
 h1(#elasticdog). About This Site
 

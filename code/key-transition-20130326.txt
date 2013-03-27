@@ -1,0 +1,65 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1,SHA512
+
+Tue, 26 Mar 2013 22:24:26 -0700
+
+For a number of reasons, I have decided to move to a new OpenPGP key and will
+be transitioning away from my old key (which will be revoked shortly). This
+message has been signed with both the old and the new keys in order to certify
+the transaction.
+
+The old key was:
+
+pub   1024D/50EDFCCD 2008-05-31
+      Key fingerprint = 7074 406E 8272 D083 1E31  2845 666F D4C1 50ED FCCD
+
+...and the new key is:
+
+pub   4096R/C31E7946 2013-03-27
+      Key fingerprint = 5FC9 160D A643 E0E9 B83A  F4BB 5E34 0427 C31E 7946
+
+To fetch my new key from a public key server, you can simply do:
+
+  gpg --keyserver pgp.mit.edu --recv-key C31E7946
+
+If you already know my old key, you can now verify that the new key is signed
+by the old one:
+
+  gpg --check-sigs C31E7946
+
+If you don't already know my old key, or you just want to be double extra
+paranoid, you can check the fingerprint against the one above:
+
+  gpg --fingerprint C31E7946
+
+If you are satisfied that you've got the right key, and the UIDs match what you
+expect, I'd appreciate it if you would sign my key and then upload the
+signature directly to a public key server:
+
+  gpg --sign-key C31E7946
+  gpg --keyserver pgp.mit.edu --send-key C31E7946
+
+Please let me know if there is any trouble, and sorry for the inconvenience.
+
+Thanks,
+
+    Aaron
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.19 (GNU/Linux)
+
+iEYEARECAAYFAlFSiFMACgkQZm/UwVDt/M2VuQCfQCzPXQ/2xPyhj+nQy1ubGsJV
+m7MAn1qIRnw/DFJS0rgAxrsPx01p0ItEiQIcBAEBCgAGBQJRUohTAAoJEDhqMulK
+sq2zD/8QALY15cRIt1GXTukdzJbCBx+pvnWljc7WiEj0Q+3CV00wWqnsN5/ODpuw
+RIiOxwR/AYyeOWzn3uZnPxLryjIUSGWHkbLF2rdgGw4ywxmpJAb8awq6LtEDGOHm
+Iv9eli1EKJAcsj35blmPcNvtJojBOTSGuc7AN15mPJcsDTaiU39Pi+ksshxlCyAv
+ZwfHMB2zX0rWQfmZ91kgUpSHrMsDmhIie9ohC2xuvam+ykYC6mZBkzM7s9o1HoDZ
+Yx4UfDRLSI0EKqrR0PHA2Aav5HdCcp/BvFc21mlyLtlRK1NCH2qYNGNB08UsD9Vq
+RUyHKclJ5wWQT2yQ11Fh7G2u1Mvn1rY+vrqgiRjmFw6RkZudpn9Cbrri6anap5a+
+EGkExka02PL4/WkZ6cki4m2RNP5xpS5GajbtdmI8Jv7ndTR0NfHmUBruQXrTCJel
+EJoTsP9UK9LdJZHdZH39PiSnfEvQLIOc8G9ZyjW9fnXXssK26e+7kRZnGtgRLirY
+JXKDdsj2uXc5GMk4F5+I4A5Do+j4sVKHs2x87ydsqyShI7o1eyjxIZmqIoE98JRK
+4wJ3BYy09MZguxksDjHfDu525jK4MF+9xGPv6gCEpezNWU+JWLjNBMRR9NfNG+tt
+TygyMcbNQAcF8bOAr2+J0YenUAXtgXXzfDv8qcvdWDfX3SFbWicf
+=wfyE
+-----END PGP SIGNATURE-----
