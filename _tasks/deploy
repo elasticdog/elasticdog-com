@@ -10,7 +10,7 @@ readonly TMP_FILE=$(mktemp /tmp/tmp.XXXXXXXXXX)  # temporary file used to store 
 # generate a fresh copy of the website
 touch _site/foobar
 rm -r _site/*
-jekyll
+jekyll build
 rm -r stylesheets/*
 compass compile --force --output-style compressed
 
