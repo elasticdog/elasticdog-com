@@ -28,7 +28,9 @@ Solving the Python 2 problem was a little trickier. Ansible itself provided a po
 
 Since utilizing Ansible for configuration _as well as_ orchestration tasks was desirable, but would require having a proper setup outside of Vagrant anyway, I just decided to ignore Vagrant's provisioner altogether. Instead, I wrote a short script to handle the one-time tasks so I could interact with the VM(Virtual Machine) using Ansible in the exact same fashion as I would any other server.
 
-The prerequisites for running the bootstrap script included assigning a known IP address to the machine via the "Vagrantfile":http://docs.vagrantup.com/v2/vagrantfile/index.html:
+h3(#preparation). Preparation
+
+The prerequisites for running the bootstrap script include assigning a known IP address to the machine via the "Vagrantfile":http://docs.vagrantup.com/v2/vagrantfile/index.html:
 
 {% highlight ruby %}
 # -*- mode: ruby -*-
@@ -43,12 +45,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 {% endhighlight %}
 
-...and then recording that same IP in an "inventory file":http://ansibleworks.com/docs/patterns.html named @hosts@ for Ansible to reference:
+...recording that same IP in an "inventory file":http://ansibleworks.com/docs/patterns.html named @hosts@ for Ansible to reference:
 
 {% highlight ini %}
 [vagrant]
 192.168.111.222
 {% endhighlight %}
+
+...and finally pointing Ansible to the correct Python binary by creating a @group_vars/all@ file containing:
+
+{% highlight yaml %}
+---
+# Variables listed here are applicable to all host groups.
+
+ansible_python_interpreter: /usr/bin/python2
+{% endhighlight %}
+
+h3(#script). The Script
 
 On top of installing Python 2, I had the bootstrap script handle a few other items for convenience:
 
@@ -57,8 +70,6 @@ On top of installing Python 2, I had the bootstrap script handle a few other ite
 # Download a current package "mirrorlist":https://www.archlinux.org/mirrorlist/ based on my geography.
 
 The user management steps are handled by running the tasks tagged "_bootstrap_" from my regular master playbook, and the mirrorlist is downloaded and then transferred to the machine via the "copy module":http://ansibleworks.com/docs/modules.html#copy.
-
-h3(#script). The Script
 
 Without further ado, here's the bootstrap script:
 
