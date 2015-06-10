@@ -34,7 +34,7 @@ At this point, you've done all that is necessary to do within iTunes, and all th
 # Download "the script":/code/2007/04/share-itunes and put it anywhere you want. I made another directory called @/Users/Shared/bin/@ and put the script there, but the location doesn't really matter.
 # Modify the script's @LIBRARY@ variable (in the @CONSTANTS@ section) to point to the centralized music directory you created above.
 # Ensure that the script is executable by running:<br />
-{% highlight bash-session %}$ chmod 755 /Users/Shared/bin/share-itunes{% endhighlight %}
+{% highlight console %}$ chmod 755 /Users/Shared/bin/share-itunes{% endhighlight %}
 # Then edit the @/etc/ttys@ file with your favorite text editor, and change the line starting with "console" to add:<br />@-LoginHook /Users/Shared/bin/share-itunes@<br />right after the "loginwindow" declaration. Make sure you actually point it to the location where you downloaded the script to. The line should have looked something like this before you edited it:<br />
 <pre><code>console "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow" vt100 on secure onoption="/usr/libexec/getty std.9600"</code></pre>...and look like this after you edit it:
 <pre><code>console "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow -LoginHook /Users/Shared/bin/share-itunes" vt100 on secure onoption="/usr/libexec/getty std.9600"</code></pre>

@@ -63,7 +63,7 @@ ansible_python_interpreter: /usr/bin/python2
 
 h3(#script). The Script
 
-On top of installing Python 2, I had the bootstrap script handle a few other items for convenience:
+On top of installing Python 2, I have the bootstrap script handle a few other items for convenience:
 
 # Create my user account and grant it full sudo privileges.
 # Add my SSH(Secure SHell) public keys to the newly created account.

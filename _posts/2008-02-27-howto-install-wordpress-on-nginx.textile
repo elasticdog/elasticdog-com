@@ -15,7 +15,7 @@ h3. Install spawn-fcgi
 To download and install @spawn-fcgi@, either use your native package manager (this would be the recommended approach), or run the following commands to install the package from source. All of the building happens in your current directory and the binary will be installed under @/usr/local/bin/@ with a man page under @/usr/local/share/man/@.
 
 {% assign pkg = 'spawn-fcgi-1.6.3' %}
-{% highlight bash-session %}
+{% highlight console %}
 $ wget http://www.lighttpd.net/download/{{ pkg }}.tar.bz2
 $ tar xvjf {{ pkg }}.tar.bz2
 $ cd {{ pkg }}/
@@ -28,7 +28,7 @@ __==NOTE==: If you're following the steps above verbatim, you will need to have 
 
 After @spawn-fcgi@ has been installed, you can safely remove the build directory and original source file:
 
-{% highlight bash-session %}
+{% highlight console %}
 $ cd ..
 $ rm -rf {{ pkg }}/
 $ rm {{ pkg }}.tar.bz2

@@ -196,10 +196,6 @@ ERROR: bad-suit-symbol ch ;
 : symbol>suit ( ch -- ch' )
     ch>upper
     H{
-        { CHAR: ♠ CHAR: S }
-        { CHAR: ♦ CHAR: D }
-        { CHAR: ♥ CHAR: H }
-        { CHAR: ♣ CHAR: C }
         { CHAR: S CHAR: S }
         { CHAR: D CHAR: D }
         { CHAR: H CHAR: H }
