@@ -5,4 +5,5 @@ highlighter: pygments
 permalink:   /:year/:month/:title
 relative_permalinks: true
 exclude:     [config.rb]
+plugins:     [jekyll-paginate]
 paginate:    3
