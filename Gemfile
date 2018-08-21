@@ -14,3 +14,6 @@ gem "jekyll-paginate", "~> 1.1"
 
 # Added at 2018-08-21 00:00:34 +0000 by root:
 gem "jekyll-textile-converter", "~> 0.1.0"
+
+# Added at 2018-08-21 00:07:31 +0000 by root:
+gem "pygments.rb", "~> 1.2"
