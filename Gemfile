@@ -11,3 +11,6 @@ gem "jekyll", "~> 3.8"
 
 # Added at 2018-08-20 23:52:33 +0000 by root:
 gem "jekyll-paginate", "~> 1.1"
+
+# Added at 2018-08-21 00:00:34 +0000 by root:
+gem "jekyll-textile-converter", "~> 0.1.0"
