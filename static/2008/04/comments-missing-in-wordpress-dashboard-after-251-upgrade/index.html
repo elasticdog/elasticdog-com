@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Comments Missing in WordPress Dashboard After 2.5.1 Upgrade</title>
+
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+
+	<link rel="alternate" type="application/atom+xml" href="/feed/" title="ElasticDog.com Articles Feed" />
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19272271-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 })();
+	 </script>
+</head>
+
+<body id="elasticdog-com">
+<div id="header">
+	<h1>
+		<a href="/">ElasticDog.com</a><br />
+		&hellip;the ballyhoo of <a href="/about/">Aaron Bull Schaefer</a>
+	</h1>
+
+	<h2>Survey my <a href="/projects/">Influence</a> or Peruse my <a href="/archives/">Relics</a></h2>
+
+	<hr />
+</div>
+
+<div id="content">
+	
+<ul class="relativity">
+
+	<li><a href="/2008/02/howto-install-wordpress-on-nginx/" title="HOWTO: Install WordPress on Nginx" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2008/11/beginning-factor-introduction/" title="Beginning Factor &#8211; Introduction" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+
+
+<div class="published">&#8212; Originally Published on April 25, 2008 &#8212;</div>
+
+<h1>Comments Missing in WordPress Dashboard After 2.5.1 Upgrade</h1>
+
+<p>I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments. I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet <a href="http://elasticdog.com/images/2008/04/awaiting-moderation.png">it would not let me see them</a>. Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.</p>
+<p>After searching for a bit and checking my sever logs, I found that the upgrade script did not add the proper index to the &#8220;comment_date_gmt&#8221; column in the comments table for my WordPress database:</p>
+<pre><code>Apr 25 18:22:17 php-cgi: WordPress database error Key 'comment_date_gmt' doesn't exist in table 'wp_comment' for query...</code></pre>
+<h2 id="solution">The Solution</h2>
+<p>If you don&#8217;t want to wait until the upgrade script gets fixed in a later WordPress release, you&#8217;ll have to add the missing index to the database table yourself to get things working again. I&#8217;ll demonstrate how to do that using the MySQL command line interface, however, if you&#8217;re more comfortable with using phpMyAdmin, see <a href="http://wordpress.org/support/topic/167450#post-737217">the steps outlined here</a>.</p>
+<h3 id="privileges">Check for Proper Privileges</h3>
+<p>First of all, you must have the proper privileges on your WordPress database in order to add an index.  To check that, follow these steps:</p>
+<ol>
+	<li>Log in to MySQL with whatever account credentials you know.<br />
+<br />
+<pre><code>$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 59202
+Server version: 5.0.51a Source distribution
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+mysql&gt;</code></pre>	</li>
+	<li>Specify that you want to access the &#8220;mysql&#8221; database, then ensure that you do have the privileges to add indexes.<br />
+<br />
+<pre><code>mysql&gt; use mysql
+Database changed
+mysql&gt; SELECT user, index_priv FROM user;
++------------------+-----------------+
+| user       | index_priv |
++------------------+-----------------+
+| root       | Y          |
+| elasticdog | N          |
++------------------+-----------------+
+2 rows in set (0.00 sec)</code></pre></li>
+</ol>
+<p>As long as you see a &#8216;Y&#8217; next to your username, then you should be good to go.</p>
+<h3 id="cli">Add the Index to the Comments Table</h3>
+<p>Once you have access to an account that can add indexes, then follow these steps to add the missing index:</p>
+<ol>
+	<li>Specify that you want to access your WordPress database. If you don&#8217;t know the name of your WordPress database, run <code>show databases;</code> to see a list of databases you have access to.<br />
+<pre><code>mysql&gt; use elasticdog_wordpress
+Database changed</code></pre></li>
+	<li>Add the index. The table names for WordPress are fairly standard, but if you don&#8217;t have one named &#8220;wp_comments&#8221;, run <code>show tables;</code> to see a list of contenders and it should be easy to figure out.<br />
+<pre><code>mysql&gt; CREATE INDEX comment_date_gmt ON wp_comments (comment_date_gmt);
+Query OK, 458 rows affected (0.14 sec)
+Records: 458  Duplicates: 0  Warnings: 0</code></pre></li>
+	<li>If want to verify that the index was created, run <br /><code>SHOW INDEX FROM wp_comments;</code> to list all indexes, and then you can exit out.</li>
+</ol>
+<p>If everything went as planned, all will be right in the world and your comments should be viewable through the dashboard once again!</p>
+
+<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+
+
+
+<ul class="relativity">
+
+	<li><a href="/2008/02/howto-install-wordpress-on-nginx/" title="HOWTO: Install WordPress on Nginx" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2008/11/beginning-factor-introduction/" title="Beginning Factor &#8211; Introduction" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+</div>
+<div id="footer">
+	<hr />
+
+	<ul>
+	
+		<li><a href="/">Home</a></li>
+	
+	
+		<li><a href="/about/">About</a></li>
+	
+	
+		<li><a href="/projects/">Projects</a></li>
+	
+	
+		<li><a href="/archives/">Archives</a></li>
+	
+	</ul>
+
+	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+
+	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

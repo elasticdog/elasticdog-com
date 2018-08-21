@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>ElasticDog.com | The ballyhoo of Aaron Bull Schaefer</title>
+
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+
+	<link rel="alternate" type="application/atom+xml" href="/feed/" title="ElasticDog.com Articles Feed" />
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19272271-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 })();
+	 </script>
+</head>
+
+<body id="elasticdog-com">
+<div id="header">
+	<h1>
+		<a href="/">ElasticDog.com</a><br />
+		&hellip;the ballyhoo of <a href="/about/">Aaron Bull Schaefer</a>
+	</h1>
+
+	<h2>Survey my <a href="/projects/">Influence</a> or Peruse my <a href="/archives/">Relics</a></h2>
+
+	<hr />
+</div>
+
+<div id="content">
+	
+<ul class="relativity">
+
+	<li><a href="/page5/" class="prev" rel="prev">&larr; older articles</a></li>
+
+
+	<li><a href="/page3/" class="next" rel="next">newer articles &rarr;</a></li>
+
+
+</ul>
+
+
+
+	<h1 id="article1"><a href="/2008/02/current-status-of-the-code-viewer-wordpress-plugin/">Current Status of the Code Viewer WordPress Plugin</a></h1>
+
+	
+
+	<p>This site has been neglected for a long time, and that negligence has carried over to the development of the <a href="http://elasticdog.com/2004/09/code-viewer/">Code Viewer</a> WordPress plugin as well. While I&#8217;ve been away, Code Viewer has been picked up/enhanced by a few other developers &#8212; namely <a href="http://flash.terra.ee/">AJ</a> and <a href="http://www.familjencarlstrom.se/WordPress/">H&aring;kan Carlstr&ouml;m</a> &#8212; and has gained many new features&#8230;</p>
+<p>Code Viewer now supports syntax highlighting using <a href="http://qbnz.com/highlighter/">GeSHi</a>, can display specific line numbers, and has user-configurable scrollbars (among a few other niceties). On top of those changes, the default code path variable can now be configured directly in WordPress&#8217;s admin interface rather than editing the plugin code by hand&#8230;very nice!</p>
+<h2 id="reactions">Reactions</h2>
+<p>I don&#8217;t agree with all of the design choices they made with the new changes, but my qualms are minor. Specifically, I don&#8217;t like some of the chosen defaults, nor the new format when specifying viewcode tags:</p>
+<div class="highlight"><pre><code class="bbcode"><span class="k">[viewcode</span> <span class="k">]</span> src=/code/example.txt link=yes<span class="k">[/viewcode]</span>
+</code></pre></div><p>&#8230;in comparison to the original:<br /></p>
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;/code/example.txt&quot;</span> <span class="na">link=</span><span class="s">&quot;yes&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div><p>That said, it <em>is</em> a cool feeling to find out that other people appreciate your work and chose to carry on with its development in your absence.</p>
+<h2 id="torch">Passing the Torch</h2>
+<p>With the latest design incarnation here at ElasticDog, I decided to no longer use Code Viewer for displaying code snippets.  Instead, I went with the plugin <a href="http://www.thunderguy.com/semicolon/wordpress/code-markup-wordpress-plugin/">Code Markup</a>, which allows me to easily embed custom markup within code blocks. It&#8217;s a completely different way of going about displaying code in blog entries when compared to Code Viewer, but it does the job well and suits my needs for the time being.</p>
+<p>Although I haven&#8217;t actually worked on the development of Code Viewer since late 2004, I did register to have it hosted at the <a href="http://wordpress.org/extend/plugins/">WordPress Plugin Repository</a>. Unfortunately, I never got around to packaging it up for general consumption.</p>
+<p>Trying to not be a slacker anymore, I <em>have</em> contacted H&aring;kan in hopes of persuading him to take the reins and officially manage the plugin at the centralized WordPress repository. If he agrees, you should be able to download the plugin here very shortly: <a href="http://wordpress.org/extend/plugins/code-viewer/">http://wordpress.org/extend/plugins/code-viewer/</a></p>
+<p>In the mean time, you can find the <a href="http://www.familjencarlstrom.se/WordPress/2006/08/17/code-viewer/">most up to date version of Code Viewer</a> at <a href="http://www.familjencarlstrom.se/WordPress/">H&aring;kan&#8217;s site</a>. Happy coding!</p>
+	<hr />
+
+	<h1 id="article2"><a href="/2008/02/optimal-title-functionality-now-in-wordpress-core/">Optimal Title Functionality Now in WordPress Core</a></h1>
+
+	
+
+	<p>I wrote <a href="http://elasticdog.com/2004/09/optimal-title/">Optimal Title</a> three and a half years ago to help fix a blatant flaw in <a href="http://wordpress.org">WordPress&#8217;s</a> default usability and search engine optimization (<span class="caps">SEO</span>). Since then, the plugin has been downloaded by tens of thousands of people and written about by hundreds of bloggers. Soon, the plugin will become obsolete&#8230;</p>
+<h2>A Change in WordPress v2.5</h2>
+<p>As of the beginning of this year, a <a href="http://trac.wordpress.org/changeset/6538">changeset</a> was checked in to WordPress&#8217;s <acronym title="Subversion"><span class="caps">SVN</span></acronym> repository which adds a &#8220;separator location&#8221; argument to the built-in <code>wp_title()</code> function. What that means, is that when WordPress v2.5 is released around March 10th of this year, users will be able to change the ordering of their <acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym> title tags without having to use a third-party plugin.</p>
+<p>The <a href="http://trac.wordpress.org/ticket/4407">developers decided</a> not to change the default behavior of <code>wp_title()</code>, and instead added the additional argument to the function in order to prevent breaking existing themes that rely on the current behavior.</p>
+<h2 id="change">How to Make the Change</h2>
+<p>If you&#8217;re currently using Optimal Title and want to change your template back to using <code>wp_title()</code> after upgrading to WordPress v2.5 (and you <em>should</em>), here&#8217;s what you need to do&#8230;</p>
+<p>Using the simplified example from the <a href="http://elasticdog.com/2004/09/optimal-title/#usage">original Optimal Title article</a>, you should currently have something like this in your theme&#8217;s <kbd>header.php</kbd> file:</p>
+<div class="highlight"><pre><code class="php"><span class="x">&lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="nx">optimal_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"> </span><span class="cp">&lt;?php</span> <span class="nx">bloginfo</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+</code></pre></div><p>Just replace the function call <code>optimal_title()</code> with a call to <code>wp_title('&amp;raquo;',TRUE,'right')</code>, and you&#8217;ll end up with something like this:</p>
+<div class="highlight"><pre><code class="php"><span class="x">&lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="nx">wp_title</span><span class="p">(</span><span class="s1">&#39;&amp;raquo;&#39;</span><span class="p">,</span><span class="k">TRUE</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"> </span><span class="cp">&lt;?php</span> <span class="nx">bloginfo</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+</code></pre></div><p>That&#8217;s it!</p>
+<h2 id="parameters">Parameters</h2>
+<p>The <a href="http://codex.wordpress.org/Template_Tags/wp_title">wp_title codex page</a> won&#8217;t be updated until the next release, however, here is how <code>wp_title()</code> will work after WordPress v2.5 is out:</p>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span> <span class="nx">wp_title</span><span class="p">(</span><span class="s1">&#39;separator&#39;</span><span class="p">,</span> <span class="nx">display</span><span class="p">,</span> <span class="s1">&#39;seplocation&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div><ul>
+	<li>&#39;separator&#39; &#8211; <i>string</i> &#8211; The text to place between portions of the page title, such as the blog name and the category. Defaults to <code>'&amp;raquo;'</code> (&raquo;).</li>
+	<li>display &#8211; <i>boolean</i> &#8211; Should the title be displayed (<code>TRUE</code>) or returned for use in <acronym title="PHP: Hypertext Preprocessor"><span class="caps">PHP</span></acronym> (<code>FALSE</code>). Defaults to <code>TRUE</code>.</li>
+	<li>&#39;seplocation&#39; &#8211; <i>string</i> &#8211; The location of the separator in relation to the title. All values default to the standard left position, with the exception of <code>'right'</code>, which will place the separator after the title rather than before.</li>
+</ul>
+<h2 id="glad">I&#8217;m Glad</h2>
+<p>Even though it took so long to get this done, I&#8217;m glad WordPress finally came around to the idea and added Optimal Title&#8217;s functionality to the core. Regardless of whether or not you were using Optimal Title before, I&#8217;d highly recommend that <strong>all</strong> users make this simple change to their templates in order to take advantage of the many benefits that a proper title tag has to offer.</p>
+	<hr />
+
+	<h1 id="article3"><a href="/2007/04/howto-have-multiple-users-share-an-itunes-library-on-one-machine/">HOWTO: Have Multiple Users Share an iTunes Library on One Machine</a></h1>
+
+	
+
+	<p>I recently purchased a new MacBook (never having owned a Mac before), and have been reading up on keeping things secure. Per one of those security-related suggestions, once everything was set up to my liking, I stopped using the admin account for everyday use and started forcing myself to log in as a regular user. I&#8217;ve also created a user account for my live-in girlfriend so she can go wild customizing her desktop with pictures of flowers, Hugh Jackman, Hugh Jackman laying in a bed of flowers, and so on, without making my eyes bleed.</p>
+<p>The trouble is, we both buy music from iTunes on a regular basis using our own individual Apple ID accounts, and there isn&#8217;t an easy way to share our music seamlessly with one another. We have similar tastes in music and we&#8217;d like it so that when one person buys a new song, it is immediately available for the other person to listen to. Ideally, we&#8217;d also be able to create our own unique playlists and assign ratings to the various songs to reflect our own personal likes/dislikes. This article lays out the details of how I accomplished that goal&#8230;</p>
+<h2 id="problem">The Problem</h2>
+<p>The main problem with assigning two iTunes Libraries to the same location comes down to permissions. By default, when you download music through iTunes, it assigns permissions based on the user that&#8217;s logged in. It only allows that user and people in the <span class="caps">UNIX</span> group &#8220;wheel&#8221; to read the music file (if you&#8217;re <span class="caps">UNIX</span>-literate, that means it has 640 file permissions). Since a different user (in this case, my girlfriend) would not fit into those categories, she doesn&#8217;t have the proper permissions to read any of the music I download. To put it simply&#8230;music needs to be world readable.</p>
+<h2 id="solution">The Solution</h2>
+<p>These permissions can be easily fixed by running a <a href="/code/2007/04/share-itunes">simple script</a> that uses the <code>chmod</code> command to modify your music so anyone can play it. To give you a breakdown, <a href="/code/2007/04/share-itunes">the script</a> runs a few safety checks to ensure that you have the proper permissions to modify the files, it then checks that your specified library actually exists, and then it recursively looks at all of your music making sure it is world readable.</p>
+<p>The trick is getting the script to run only when necessary as not to waste resources. You could set up a cron job, but then it would have to run on a fixed time table. Either it would run more often than necessary, or not often enough&#8230;so cron is out. You could set up a launchd/launchctl configuration file and specify it to run when your Library folder is modified, but unfortunately that doesn&#8217;t get triggered when a <em>sub</em>-folder gets modified&#8230;so launchd is out.</p>
+<p>The key ends up being something called a &#8220;LoginHook&#8221; that is configured in the <code>/etc/ttys</code> file. Creating a LoginHook will ensure that whenever any user logs in to the machine, the script will be run and proper permissions will be set on the entire library.</p>
+<h2 id="together">Putting it All Together</h2>
+<p>This should go without saying, but I&#8217;m saying it&#8230;<strong>back up all of your music files before doing anything else</strong>! Once that&#8217;s done, proceed with the following steps:</p>
+<ol>
+	<li>First you must pick a centralized location that all your users have access to and make sure the directory exists. I picked /Users/Shared/Music/iTunes and created it on the command-line using:<br /><code>mkdir -p /Users/Shared/Music/iTunes</code></li>
+	<li>Next, you must adjust your iTunes settings to point to the new location. You do this by launching iTunes, then navigate to <em>iTunes &raquo; Preferences&#8230; &raquo; Advanced</em>, and under the <em>General</em> tab, click the <em>Change&#8230;</em> button next to the &#8220;iTunes Music folder location&#8221; box. Navigate to your newly-created centralized folder (in my case /Users/Shared/Music/iTunes), and click <em>Choose</em>.</li>
+	<li>For ease of maintenance and to prevent duplicate files from being generated, make sure the checkbox labeled &#8220;Copy files to iTunes Music folder when adding to library&#8221; is <strong>not</strong> selected (this is also under the <em>Advanced</em> section of the Preferences dialog box).</li>
+	<li>Click <em>OK</em> to accept the changes you made to your preferences.</li>
+	<li>To copy your current library to the new location, navigate to <em>Advanced &raquo; Consolidate Library&#8230;</em> then proceed by clicking <em>Consolidate</em>. This step only needs to be performed one time per user to ensure that everything gets moved over to the new location.</li>
+	<li>Repeat these configuration steps for all users that you wish to consolidate libraries for.</li>
+</ol>
+<p>At this point, you&#8217;ve done all that is necessary to do within iTunes, and all that is left is fixing the file permissions. To do that, log in as a user with administrator privileges and follow these steps:</p>
+<ol>
+	<li>Download <a href="/code/2007/04/share-itunes">the script</a> and put it anywhere you want. I made another directory called <code>/Users/Shared/bin/</code> and put the script there, but the location doesn&#8217;t really matter.</li>
+	<li>Modify the script&#8217;s <code>LIBRARY</code> variable (in the <code>CONSTANTS</code> section) to point to the centralized music directory you created above.</li>
+	<li>Ensure that the script is executable by running:<br />
+<div class="highlight"><pre><code class="console"><span class="gp">$</span> chmod 755 /Users/Shared/bin/share-itunes
+</code></pre></div></li>
+	<li>Then edit the <code>/etc/ttys</code> file with your favorite text editor, and change the line starting with &#8220;console&#8221; to add:<br /><code>-LoginHook /Users/Shared/bin/share-itunes</code><br />right after the &#8220;loginwindow&#8221; declaration. Make sure you actually point it to the location where you downloaded the script to. The line should have looked something like this before you edited it:<br />
+<pre><code>console "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow" vt100 on secure onoption="/usr/libexec/getty std.9600"</code></pre>&#8230;and look like this after you edit it:<br />
+<pre><code>console "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow -LoginHook /Users/Shared/bin/share-itunes" vt100 on secure onoption="/usr/libexec/getty std.9600"</code></pre></li>
+	<li>Save the file, and close your text editor.</li>
+</ol>
+<p>That&#8217;s it! Everything should be all set to go and your permissions will be checked each time you log in to the computer.</p>
+<h2 id="caveats">Caveats</h2>
+<p>The only thing I wasn&#8217;t able to automate was adding new music purchased by my girlfriend in to my library so it actually shows up when I launch iTunes. For all I know, there may be an easy way to automate it, but I haven&#8217;t found one at this time. Luckily it&#8217;s a fast/easy procedure to do by hand&#8230;</p>
+<p>To actually have new music purchased by another user show up in your library, all you have to do is launch iTunes, go to <em>File &raquo; Add to Library&#8230;</em>, then navigate to your shared music folder and click <em>Choose</em>. It will take a few seconds to parse through your library, but after it&#8217;s done, all of the music should be available for you to play. You will have to do that every time you know that music has been added by another user, but everything else should be automated for you.</p>
+<h2 id="why">Why it Works</h2>
+<p>Unless you get tricky, iTunes always stores your album artwork, playlists, and song rating information in a file under your home directory (well, in ~/Music/iTunes, to be precise). It also stores a meta file with information regarding what it thinks should be included in your library. These files will be unique to the user even if you choose to share your actual music collections. So when you update your iTunes preferences to move the location of your Library, you still retain the ability to have all your own custom settings regardless of what other users add to the common music folder.</p>
+<p>By periodically telling iTunes to add the common music directory in to your library, you&#8217;re simply forcing it to update the library meta file so it reflects whatever actually exists in that directory&#8230;regardless of whether or not you were the person to purchase the music.</p>
+<p>Hopefully these steps will be able to help someone else out there having a similar issue. When I first started looking in to how to accomplish this configuration, I though surely it would be easy and done before, but alas, things got a bit more complicated than I had hoped. If you know of a better way, please do leave a comment and let us know what works for you. If you have any trouble understanding these procedures or getting it to work, let me know and I&#8217;ll see what I can do to help out&#8230;happy listening!</p>
+	
+
+
+<ul class="relativity">
+
+	<li><a href="/page5/" class="prev" rel="prev">&larr; older articles</a></li>
+
+
+	<li><a href="/page3/" class="next" rel="next">newer articles &rarr;</a></li>
+
+
+</ul>
+
+
+
+</div>
+<div id="footer">
+	<hr />
+
+	<ul>
+	
+		<li><a href="/">Home</a></li>
+	
+	
+		<li><a href="/about/">About</a></li>
+	
+	
+		<li><a href="/projects/">Projects</a></li>
+	
+	
+		<li><a href="/archives/">Archives</a></li>
+	
+	</ul>
+
+	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+
+	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

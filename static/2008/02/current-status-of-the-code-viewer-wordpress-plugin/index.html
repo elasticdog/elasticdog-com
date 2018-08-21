@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Current Status of the Code Viewer WordPress Plugin</title>
+
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+
+	<link rel="alternate" type="application/atom+xml" href="/feed/" title="ElasticDog.com Articles Feed" />
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19272271-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 })();
+	 </script>
+</head>
+
+<body id="elasticdog-com">
+<div id="header">
+	<h1>
+		<a href="/">ElasticDog.com</a><br />
+		&hellip;the ballyhoo of <a href="/about/">Aaron Bull Schaefer</a>
+	</h1>
+
+	<h2>Survey my <a href="/projects/">Influence</a> or Peruse my <a href="/archives/">Relics</a></h2>
+
+	<hr />
+</div>
+
+<div id="content">
+	
+<ul class="relativity">
+
+	<li><a href="/2008/02/optimal-title-functionality-now-in-wordpress-core/" title="Optimal Title Functionality Now in WordPress Core" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2008/02/howto-install-wordpress-on-nginx/" title="HOWTO: Install WordPress on Nginx" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+<h1>Current Status of the Code Viewer WordPress Plugin</h1>
+
+<p>This site has been neglected for a long time, and that negligence has carried over to the development of the <a href="http://elasticdog.com/2004/09/code-viewer/">Code Viewer</a> WordPress plugin as well. While I&#8217;ve been away, Code Viewer has been picked up/enhanced by a few other developers &#8212; namely <a href="http://flash.terra.ee/">AJ</a> and <a href="http://www.familjencarlstrom.se/WordPress/">H&aring;kan Carlstr&ouml;m</a> &#8212; and has gained many new features&#8230;</p>
+<p>Code Viewer now supports syntax highlighting using <a href="http://qbnz.com/highlighter/">GeSHi</a>, can display specific line numbers, and has user-configurable scrollbars (among a few other niceties). On top of those changes, the default code path variable can now be configured directly in WordPress&#8217;s admin interface rather than editing the plugin code by hand&#8230;very nice!</p>
+<h2 id="reactions">Reactions</h2>
+<p>I don&#8217;t agree with all of the design choices they made with the new changes, but my qualms are minor. Specifically, I don&#8217;t like some of the chosen defaults, nor the new format when specifying viewcode tags:</p>
+<div class="highlight"><pre><code class="bbcode"><span class="k">[viewcode</span> <span class="k">]</span> src=/code/example.txt link=yes<span class="k">[/viewcode]</span>
+</code></pre></div><p>&#8230;in comparison to the original:<br /></p>
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;/code/example.txt&quot;</span> <span class="na">link=</span><span class="s">&quot;yes&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div><p>That said, it <em>is</em> a cool feeling to find out that other people appreciate your work and chose to carry on with its development in your absence.</p>
+<h2 id="torch">Passing the Torch</h2>
+<p>With the latest design incarnation here at ElasticDog, I decided to no longer use Code Viewer for displaying code snippets.  Instead, I went with the plugin <a href="http://www.thunderguy.com/semicolon/wordpress/code-markup-wordpress-plugin/">Code Markup</a>, which allows me to easily embed custom markup within code blocks. It&#8217;s a completely different way of going about displaying code in blog entries when compared to Code Viewer, but it does the job well and suits my needs for the time being.</p>
+<p>Although I haven&#8217;t actually worked on the development of Code Viewer since late 2004, I did register to have it hosted at the <a href="http://wordpress.org/extend/plugins/">WordPress Plugin Repository</a>. Unfortunately, I never got around to packaging it up for general consumption.</p>
+<p>Trying to not be a slacker anymore, I <em>have</em> contacted H&aring;kan in hopes of persuading him to take the reins and officially manage the plugin at the centralized WordPress repository. If he agrees, you should be able to download the plugin here very shortly: <a href="http://wordpress.org/extend/plugins/code-viewer/">http://wordpress.org/extend/plugins/code-viewer/</a></p>
+<p>In the mean time, you can find the <a href="http://www.familjencarlstrom.se/WordPress/2006/08/17/code-viewer/">most up to date version of Code Viewer</a> at <a href="http://www.familjencarlstrom.se/WordPress/">H&aring;kan&#8217;s site</a>. Happy coding!</p>
+
+<div class="signature"><a href="mailto:aaron@elasticdog.com?subject=Comment on Current Status of the Code Viewer WordPress Plugin" title="Send me your comments">&#8212; Aaron Bull Schaefer</a></div>
+
+
+
+<ul class="relativity">
+
+	<li><a href="/2008/02/optimal-title-functionality-now-in-wordpress-core/" title="Optimal Title Functionality Now in WordPress Core" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2008/02/howto-install-wordpress-on-nginx/" title="HOWTO: Install WordPress on Nginx" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+</div>
+<div id="footer">
+	<hr />
+
+	<ul>
+	
+		<li><a href="/">Home</a></li>
+	
+	
+		<li><a href="/about/">About</a></li>
+	
+	
+		<li><a href="/projects/">Projects</a></li>
+	
+	
+		<li><a href="/archives/">Archives</a></li>
+	
+	</ul>
+
+	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+
+	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

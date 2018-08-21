@@ -1,0 +1,3 @@
+Sitemap: http://elasticdog.com/sitemap.xml.gz
+User-agent: *
+Disallow: /movies/

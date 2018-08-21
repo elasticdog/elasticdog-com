@@ -1,0 +1,32 @@
+/*
+designbyfire.com - dxf3-print.css
+Andrei Herasimchuk [andrei@designbyfire.com]
+Last Updated: 08 Nov 2004
+*/
+
+a { color: #000; }
+
+body {
+	font-family: serif;
+	font-size: 12pt;
+	}
+
+dt { font-weight: bold; }
+
+hr { display: none; }
+
+.skiplink { display: none; }
+
+#navigation { display: none; }
+
+#header blockquote { display: none; }
+
+#maincontent div#commentform { display: none; }
+
+#subcontent { display: none; }
+
+#footer { display: none; }
+
+:link img, :visited img {
+	border:					none;
+	}

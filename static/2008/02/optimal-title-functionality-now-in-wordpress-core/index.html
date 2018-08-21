@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Optimal Title Functionality Now in WordPress Core</title>
+
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+
+	<link rel="alternate" type="application/atom+xml" href="/feed/" title="ElasticDog.com Articles Feed" />
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19272271-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 })();
+	 </script>
+</head>
+
+<body id="elasticdog-com">
+<div id="header">
+	<h1>
+		<a href="/">ElasticDog.com</a><br />
+		&hellip;the ballyhoo of <a href="/about/">Aaron Bull Schaefer</a>
+	</h1>
+
+	<h2>Survey my <a href="/projects/">Influence</a> or Peruse my <a href="/archives/">Relics</a></h2>
+
+	<hr />
+</div>
+
+<div id="content">
+	
+<ul class="relativity">
+
+	<li><a href="/2007/04/howto-have-multiple-users-share-an-itunes-library-on-one-machine/" title="HOWTO: Have Multiple Users Share an iTunes Library on One Machine" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2008/02/current-status-of-the-code-viewer-wordpress-plugin/" title="Current Status of the Code Viewer WordPress Plugin" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+<h1>Optimal Title Functionality Now in WordPress Core</h1>
+
+<p>I wrote <a href="http://elasticdog.com/2004/09/optimal-title/">Optimal Title</a> three and a half years ago to help fix a blatant flaw in <a href="http://wordpress.org">WordPress&#8217;s</a> default usability and search engine optimization (<span class="caps">SEO</span>). Since then, the plugin has been downloaded by tens of thousands of people and written about by hundreds of bloggers. Soon, the plugin will become obsolete&#8230;</p>
+<h2>A Change in WordPress v2.5</h2>
+<p>As of the beginning of this year, a <a href="http://trac.wordpress.org/changeset/6538">changeset</a> was checked in to WordPress&#8217;s <acronym title="Subversion"><span class="caps">SVN</span></acronym> repository which adds a &#8220;separator location&#8221; argument to the built-in <code>wp_title()</code> function. What that means, is that when WordPress v2.5 is released around March 10th of this year, users will be able to change the ordering of their <acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym> title tags without having to use a third-party plugin.</p>
+<p>The <a href="http://trac.wordpress.org/ticket/4407">developers decided</a> not to change the default behavior of <code>wp_title()</code>, and instead added the additional argument to the function in order to prevent breaking existing themes that rely on the current behavior.</p>
+<h2 id="change">How to Make the Change</h2>
+<p>If you&#8217;re currently using Optimal Title and want to change your template back to using <code>wp_title()</code> after upgrading to WordPress v2.5 (and you <em>should</em>), here&#8217;s what you need to do&#8230;</p>
+<p>Using the simplified example from the <a href="http://elasticdog.com/2004/09/optimal-title/#usage">original Optimal Title article</a>, you should currently have something like this in your theme&#8217;s <kbd>header.php</kbd> file:</p>
+<div class="highlight"><pre><code class="php"><span class="x">&lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="nx">optimal_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"> </span><span class="cp">&lt;?php</span> <span class="nx">bloginfo</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+</code></pre></div><p>Just replace the function call <code>optimal_title()</code> with a call to <code>wp_title('&amp;raquo;',TRUE,'right')</code>, and you&#8217;ll end up with something like this:</p>
+<div class="highlight"><pre><code class="php"><span class="x">&lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="nx">wp_title</span><span class="p">(</span><span class="s1">&#39;&amp;raquo;&#39;</span><span class="p">,</span><span class="k">TRUE</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"> </span><span class="cp">&lt;?php</span> <span class="nx">bloginfo</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+</code></pre></div><p>That&#8217;s it!</p>
+<h2 id="parameters">Parameters</h2>
+<p>The <a href="http://codex.wordpress.org/Template_Tags/wp_title">wp_title codex page</a> won&#8217;t be updated until the next release, however, here is how <code>wp_title()</code> will work after WordPress v2.5 is out:</p>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span> <span class="nx">wp_title</span><span class="p">(</span><span class="s1">&#39;separator&#39;</span><span class="p">,</span> <span class="nx">display</span><span class="p">,</span> <span class="s1">&#39;seplocation&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div><ul>
+	<li>&#39;separator&#39; &#8211; <i>string</i> &#8211; The text to place between portions of the page title, such as the blog name and the category. Defaults to <code>'&amp;raquo;'</code> (&raquo;).</li>
+	<li>display &#8211; <i>boolean</i> &#8211; Should the title be displayed (<code>TRUE</code>) or returned for use in <acronym title="PHP: Hypertext Preprocessor"><span class="caps">PHP</span></acronym> (<code>FALSE</code>). Defaults to <code>TRUE</code>.</li>
+	<li>&#39;seplocation&#39; &#8211; <i>string</i> &#8211; The location of the separator in relation to the title. All values default to the standard left position, with the exception of <code>'right'</code>, which will place the separator after the title rather than before.</li>
+</ul>
+<h2 id="glad">I&#8217;m Glad</h2>
+<p>Even though it took so long to get this done, I&#8217;m glad WordPress finally came around to the idea and added Optimal Title&#8217;s functionality to the core. Regardless of whether or not you were using Optimal Title before, I&#8217;d highly recommend that <strong>all</strong> users make this simple change to their templates in order to take advantage of the many benefits that a proper title tag has to offer.</p>
+
+<div class="signature"><a href="mailto:aaron@elasticdog.com?subject=Comment on Optimal Title Functionality Now in WordPress Core" title="Send me your comments">&#8212; Aaron Bull Schaefer</a></div>
+
+
+
+<ul class="relativity">
+
+	<li><a href="/2007/04/howto-have-multiple-users-share-an-itunes-library-on-one-machine/" title="HOWTO: Have Multiple Users Share an iTunes Library on One Machine" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2008/02/current-status-of-the-code-viewer-wordpress-plugin/" title="Current Status of the Code Viewer WordPress Plugin" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+</div>
+<div id="footer">
+	<hr />
+
+	<ul>
+	
+		<li><a href="/">Home</a></li>
+	
+	
+		<li><a href="/about/">About</a></li>
+	
+	
+		<li><a href="/projects/">Projects</a></li>
+	
+	
+		<li><a href="/archives/">Archives</a></li>
+	
+	</ul>
+
+	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+
+	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	
+	<url>
+		<loc>http://elasticdog.com/2013/08/developing-ansible-playbooks-for-arch-linux-with-vagrant/</loc>
+		<lastmod>2013-08-28</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2011/12/use-sshuttle-to-keep-safe-on-insecure-wi-fi/</loc>
+		<lastmod>2011-12-31</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2011/01/shelf-made-standing-desk/</loc>
+		<lastmod>2011-01-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2010/11/porting-a-poker-hand-evaluator-from-c-to-factor/</loc>
+		<lastmod>2010-11-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2010/11/magnetic-based-versus-flash-based-storage/</loc>
+		<lastmod>2010-11-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2008/12/beginning-factor-shufflers-and-combinators/</loc>
+		<lastmod>2008-12-04</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2008/11/beginning-factor-introduction/</loc>
+		<lastmod>2008-11-29</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2008/04/comments-missing-in-wordpress-dashboard-after-251-upgrade/</loc>
+		<lastmod>2008-04-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2008/02/howto-install-wordpress-on-nginx/</loc>
+		<lastmod>2008-02-27</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2008/02/current-status-of-the-code-viewer-wordpress-plugin/</loc>
+		<lastmod>2008-02-23</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2008/02/optimal-title-functionality-now-in-wordpress-core/</loc>
+		<lastmod>2008-02-20</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2007/04/howto-have-multiple-users-share-an-itunes-library-on-one-machine/</loc>
+		<lastmod>2007-04-29</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2007/03/new-flat-panel-displays-using-ceramics/</loc>
+		<lastmod>2007-03-31</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2005/06/upgrade-in-progress/</loc>
+		<lastmod>2005-06-30</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2004/11/wp-design-sandbox/</loc>
+		<lastmod>2004-11-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2004/11/dxf-cleanup/</loc>
+		<lastmod>2004-11-05</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2004/10/faking-multiple-templates/</loc>
+		<lastmod>2004-10-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2004/09/code-viewer/</loc>
+		<lastmod>2004-09-26</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2004/09/backend/</loc>
+		<lastmod>2004-09-21</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2004/09/optimal-title/</loc>
+		<lastmod>2004-09-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/2004/09/fresh-start/</loc>
+		<lastmod>2004-09-03</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	
+	
+	<url>
+		<loc>http://elasticdog.com/about/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/archives/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/projects/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/page2/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/page3/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/page4/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/page5/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/page6/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+	<url>
+		<loc>http://elasticdog.com/page7/</loc>
+		<lastmod>2013-08-29</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+</urlset>

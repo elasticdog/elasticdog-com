@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Faking Multiple Templates in WordPress</title>
+
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+
+	<link rel="alternate" type="application/atom+xml" href="/feed/" title="ElasticDog.com Articles Feed" />
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19272271-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 })();
+	 </script>
+</head>
+
+<body id="elasticdog-com">
+<div id="header">
+	<h1>
+		<a href="/">ElasticDog.com</a><br />
+		&hellip;the ballyhoo of <a href="/about/">Aaron Bull Schaefer</a>
+	</h1>
+
+	<h2>Survey my <a href="/projects/">Influence</a> or Peruse my <a href="/archives/">Relics</a></h2>
+
+	<hr />
+</div>
+
+<div id="content">
+	
+<ul class="relativity">
+
+	<li><a href="/2004/09/code-viewer/" title="WP Plugin: Code Viewer" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2004/11/dxf-cleanup/" title="Design by Fire Cleanup" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+
+
+<div class="published">&#8212; Originally Published on October 07, 2004 &#8212;</div>
+
+<h1>Faking Multiple Templates in WordPress</h1>
+
+<p>One of the things that surprised me when I first switched from <a href="http://www.movabletype.org/">Movable Type</a> to <a href="http://wordpress.org/">WordPress</a> was its lack of multiple templates. In <acronym title="Movable Type"><span class="caps">MT</span></acronym> you create numerous templates which allow you to change the look of different pages on your site (i.e., the homepage, archive pages, individual entries, etc.). If you want a list of your favorite links to appear on the homepage, but not on the page for an individual entry, you just delete that section of code from the appropriate template.</p>
+<p>WordPress handles its pages a bit differently. Everything is based off of a single template, and through the magic of database queries and dynamic page generation, the right content is always shown according to which type of page you&#8217;re looking at.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>By using a single template, the default installation of <acronym title="WordPress"><span class="caps">WP</span></acronym> will show the exact same sidebar on every page, and likewise, whenever you view an entry listing, it will always look the same. This one-template structure is viewed as a blessing to some, but an over-simplification to others.</p>
+<p>What if you want to show a list of just the entry titles on your archive pages, rather than the entire entry itself? What if you want to hide the sidebar&#8217;s calendar on your individual entry pages? There are countless scenarios like these that require a little more flexibility than the default <kbd>index.php</kbd> file can give you.</p>
+<p>This issue has been discussed many times on the <a href="http://wordpress.org/support/">WordPress support forums</a>, but I&#8217;ve found most of the proposed solutions to be less than ideal. It&#8217;s rumored that the functionality to control these types of things will be built into WordPress 1.3, but for the time being, it seems we&#8217;re on our own.</p>
+<h2 id="common-solution">A Common Solution</h2>
+<p>Many people suggest using <kbd>.htaccess</kbd> rules and simply forward visitors to templates other than <kbd>index.php</kbd>. I feel this method over-complicates things, and here&#8217;s why:</p>
+<ol>
+	<li>It creates duplicate code when most of the time you&#8217;ll have the exact same basic page structure in each template. Not only that, but multiple templates aren&#8217;t very easy to maintain if you ever need to change that underlying structure.</li>
+	<li>There&#8217;s no guarantee that all WP users will be able to create, edit, and use <kbd>.htaccess</kbd> files. Some hosting companies just don&#8217;t allow it.</li>
+	<li>Writing <kbd>.htaccess</kbd> rules can be downright confusing!</li>
+</ol>
+<h2 id="my-solution">My Solution</h2>
+<p>Using some simple <acronym title="PHP: Hypertext Preprocessor"><span class="caps">PHP</span></acronym> and the functionality that&#8217;s already built into WordPress, you can easily control what appears on different page types without having to create multiple templates. The key lies in exploiting a few under appreciated variables&#8230;</p>
+<p><var>$single</var>, <var>$cat</var>, <var>$m</var>, and <var>$year</var> are all built in variables used by WP to determine information about the type of page you&#8217;re looking at. The <var>$single</var> variable corresponds to individual entry pages, the <var>$cat</var> variable to categorical listing pages, <var>$m</var> to monthly listings, and <var>$year</var> to yearly listings.</p>
+<p>When you&#8217;re viewing each variable&#8217;s corresponding page type, only that variable will be assigned a value. If you&#8217;re viewing the main page of your site, then <em>none</em> of those variables will be assigned a value. Thus, a simple test of whether or not each variable has a value can be use to control exactly what is displayed and when. Here&#8217;s the basic idea:</p>
+<div class="highlight"><pre><code class="php"><span class="x">if ($single) {</span>
+<span class="x">    // individual post contents</span>
+<span class="x">} else if ($cat) {</span>
+<span class="x">    // categorical listing contents</span>
+<span class="x">} else if ($m) {</span>
+<span class="x">    // monthly listing contents</span>
+<span class="x">} else if ($year) {</span>
+<span class="x">    // yearly listing contents</span>
+<span class="x">} else {</span>
+<span class="x">    // main page contents</span>
+<span class="x">}</span>
+</code></pre></div><p>All you have to do is place the content you want to appear in the appropriate spot. If you don&#8217;t want to do anything different in a particular section from how WP handles it by default, just leave out that variable&#8217;s test.</p>
+<h2 id="apply-it">How to Apply It</h2>
+<p>Using one of the scenarios from above as an example, let&#8217;s say that you want to show just the entry titles when viewing a categorical listing. All you&#8217;d have to do is change the <code>&lt;div id="content"&gt;</code> section of your <kbd>index.php</kbd> file to be something like this:</p>
+<div class="highlight"><pre><code class="php"><span class="x">&lt;div id=&quot;content&quot;&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$posts</span><span class="p">)</span> <span class="o">:</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$posts</span> <span class="k">as</span> <span class="nv">$post</span><span class="p">)</span> <span class="o">:</span> <span class="nx">start_wp</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$cat</span><span class="p">)</span> <span class="p">{</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;h3 class=&quot;storytitle&quot; id=&quot;post-</span><span class="cp">&lt;?php</span> <span class="nx">the_ID</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;&lt;a href=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_permalink</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x">&quot; rel=&quot;bookmark&quot; title=&quot;Permanent Link: </span><span class="cp">&lt;?php</span> <span class="nx">the_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span><span class="cp">&lt;?php</span> <span class="nx">the_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&lt;/a&gt;&lt;/h3&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="nx">the_date</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;h2&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;/h2&gt;&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+
+<span class="x">        &lt;div class=&quot;post&quot;&gt;</span>
+<span class="x">            &lt;h3 class=&quot;storytitle&quot; id=&quot;post-</span><span class="cp">&lt;?php</span> <span class="nx">the_ID</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;&lt;a href=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_permalink</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x">&quot; rel=&quot;bookmark&quot; title=&quot;Permanent Link: </span><span class="cp">&lt;?php</span> <span class="nx">the_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span><span class="cp">&lt;?php</span> <span class="nx">the_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&lt;/a&gt;&lt;/h3&gt;</span>
+
+<span class="x">            &lt;div class=&quot;meta&quot;&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="nx">_e</span><span class="p">(</span><span class="s2">&quot;Filed under:&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"> </span><span class="cp">&lt;?php</span> <span class="nx">the_category</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"> &amp;#8212; </span><span class="cp">&lt;?php</span> <span class="nx">the_author</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"> @ </span><span class="cp">&lt;?php</span> <span class="nx">the_time</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"> </span><span class="cp">&lt;?php</span> <span class="nx">edit_post_link</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">            &lt;/div&gt;</span>
+
+<span class="x">            &lt;div class=&quot;storycontent&quot;&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="nx">the_content</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">            &lt;/div&gt;</span>
+
+<span class="x">            &lt;div class=&quot;feedback&quot;&gt;</span>
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="nx">wp_link_pages</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+
+<span class="x">                </span><span class="cp">&lt;?php</span> <span class="nx">comments_popup_link</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Comments (0)&#39;</span><span class="p">),</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Comments (1)&#39;</span><span class="p">),</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Comments (%)&#39;</span><span class="p">));</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">            &lt;/div&gt;</span>
+
+<span class="x">            &lt;!--</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="nx">trackback_rdf</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">            --&gt;</span>
+
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="nx">ABSPATH</span> <span class="o">.</span> <span class="s1">&#39;wp-comments.php&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="p">}</span>
+
+    <span class="k">endforeach</span><span class="p">;</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;p&gt;</span><span class="cp">&lt;?php</span> <span class="nx">_e</span><span class="p">(</span><span class="s1">&#39;Sorry, no posts matched your criteria.&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/p&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/div&gt;</span>
+</code></pre></div><p>The process would be just as easy to change what appears in the sidebar of your page&#8230;just edit the <code>&lt;div id="menu"&gt;</code> section. Once you get the hang of it, these variables can be used to manipulate just about anything.</p>
+<h2 id="step-further">Taking It a Step Further</h2>
+<p>Adding in code for each of these page types can get confusing really fast. With that much information packed in to one file, the scanability of <kbd>index.php</kbd> drops considerably and it becomes difficult to find what you want when you need it.</p>
+<p>To combat this, I&#8217;ve taken the fake template concept a step further&#8230;rather than listing all of the code directly in <kbd>index.php</kbd>, I use <span class="caps">PHP</span> includes to import each custom section from an external file. Rather than make this tutorial any longer than it already is, here&#8217;s how I set it up:</p>
+<div class="highlight"><pre><code class="php"><span class="x">&lt;div id=&quot;content&quot;&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$posts</span><span class="p">)</span> <span class="o">:</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$posts</span> <span class="k">as</span> <span class="nv">$post</span><span class="p">)</span> <span class="o">:</span> <span class="nx">start_wp</span><span class="p">();</span>
+        <span class="c1">// Faking multiple templates</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$single</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">require</span><span class="p">(</span><span class="s1">&#39;includes/single.php&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$cat</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">require</span><span class="p">(</span><span class="s1">&#39;includes/category.php&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$m</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">require</span><span class="p">(</span><span class="s1">&#39;includes/month.php&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$year</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">require</span><span class="p">(</span><span class="s1">&#39;includes/year.php&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">require</span><span class="p">(</span><span class="s1">&#39;includes/main.php&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">endforeach</span><span class="p">;</span> <span class="k">else</span><span class="o">:</span>
+        <span class="k">require</span><span class="p">(</span><span class="s1">&#39;includes/nomatches.php&#39;</span><span class="p">);</span>
+    <span class="k">endif</span><span class="p">;</span>
+    <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/div&gt;</span>
+</code></pre></div><p>In the external files themselves, simply put what content you want to appear, and that&#8217;s it! I hope this helps some of you guys out.</p>
+
+<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+
+
+
+<ul class="relativity">
+
+	<li><a href="/2004/09/code-viewer/" title="WP Plugin: Code Viewer" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2004/11/dxf-cleanup/" title="Design by Fire Cleanup" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+</div>
+<div id="footer">
+	<hr />
+
+	<ul>
+	
+		<li><a href="/">Home</a></li>
+	
+	
+		<li><a href="/about/">About</a></li>
+	
+	
+		<li><a href="/projects/">Projects</a></li>
+	
+	
+		<li><a href="/archives/">Archives</a></li>
+	
+	</ul>
+
+	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+
+	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

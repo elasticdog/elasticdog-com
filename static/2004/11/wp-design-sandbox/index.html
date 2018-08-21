@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>WordPress Design Sandbox</title>
+
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+
+	<link rel="alternate" type="application/atom+xml" href="/feed/" title="ElasticDog.com Articles Feed" />
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19272271-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 })();
+	 </script>
+</head>
+
+<body id="elasticdog-com">
+<div id="header">
+	<h1>
+		<a href="/">ElasticDog.com</a><br />
+		&hellip;the ballyhoo of <a href="/about/">Aaron Bull Schaefer</a>
+	</h1>
+
+	<h2>Survey my <a href="/projects/">Influence</a> or Peruse my <a href="/archives/">Relics</a></h2>
+
+	<hr />
+</div>
+
+<div id="content">
+	
+<ul class="relativity">
+
+	<li><a href="/2004/11/dxf-cleanup/" title="Design by Fire Cleanup" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2005/06/upgrade-in-progress/" title="Upgrade in Progress" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+
+
+<div class="published">&#8212; Originally Published on November 10, 2004 &#8212;</div>
+
+<h1>WordPress Design Sandbox</h1>
+
+<p>When creating a website, it&#8217;s best not to make experimental changes to your code directly on your server for the whole world to see. What if you accidentally mess things up beyond all recognition and don&#8217;t remember exactly what you did? It&#8217;s a good idea to test developmental changes in a protected environment where you know they won&#8217;t effect anything that&#8217;s mission critical. Typically this is simple to do as you can just edit the files on your local machine before uploading them. Making a test bed for <a href="http://www.wordpress.org">WordPress</a>, however, is a bit more difficult due to the nature of dynamic page generation.</p>
+<p>WordPress uses <acronym title="PHP: Hypertext Preprocessor"><span class="caps">PHP</span></acronym> to pull data from a database, and then subsequently creates the needed <acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym> based off of that data. Without the <span class="caps">PHP</span>, your page would merely render as junk. Thus, in order to see a design change made in your <acronym title="Cascading Style Sheets"><span class="caps">CSS</span></acronym>, you&#8217;re usually forced to upload the file to your server so WordPress has access to its heart and soul. Not anymore&#8230;</p>
+<h2 id="sandbox">The Sandbox</h2>
+<p>In an effort to make things easier on WordPress users wanting to customize the default installation, I&#8217;ve created a static version of the default <acronym title="WordPress"><span class="caps">WP</span></acronym> template and have placed it in a zip file along with a clean copy of <kbd>wp-layout.css</kbd> and <kbd>print.css</kbd>. The template includes a sample entry that utilizes many common <span class="caps">HTML</span> elements so you can tell exactly what they would look like on your page.</p>
+<p>In this developmental sandbox, you can make structural code changes, try out new <span class="caps">CSS</span> techniques, whatever you want&#8230;all without having to worry about messing up your live site. Once you get things the way you like them, simply update your real files accordingly, and you&#8217;re good to go!</p>
+<h2 id="installation">Installation</h2>
+<ol>
+	<li>Download <a href="http://elasticdog.com/code/2004/11/wp-design-sandbox.zip">wp-design-sandbox.zip</a></li>
+	<li>Create a new directory on your local machine in which you&#8217;d like to place the test files</li>
+	<li>Unzip the three files into the newly created directory</li>
+	<li>Design away</li>
+</ol>
+
+<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
+
+
+
+<ul class="relativity">
+
+	<li><a href="/2004/11/dxf-cleanup/" title="Design by Fire Cleanup" class="prev" rel="prev">&larr; previous article</a></li>
+
+
+	<li><a href="/2005/06/upgrade-in-progress/" title="Upgrade in Progress" class="next" rel="next">next article &rarr;</a></li>
+
+</ul>
+
+
+
+</div>
+<div id="footer">
+	<hr />
+
+	<ul>
+	
+		<li><a href="/">Home</a></li>
+	
+	
+		<li><a href="/about/">About</a></li>
+	
+	
+		<li><a href="/projects/">Projects</a></li>
+	
+	
+		<li><a href="/archives/">Archives</a></li>
+	
+	</ul>
+
+	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+
+	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
+</div>
+
+</body>
+</html>
