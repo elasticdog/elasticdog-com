@@ -6,7 +6,7 @@ title:  Pygments Test
 {% highlight factor %}
 ! Copyright (c) 2009 Aaron Schaefer, Doug Coleman. All rights reserved.
 ! The contents of this file are licensed under the Simplified BSD License
-! A copy of the license is available at http://factorcode.org/license.txt
+! A copy of the license is available at https://factorcode.org/license.txt
 USING: accessors arrays ascii assocs binary-search combinators
 fry kernel locals math math.bitwise math.combinatorics
 IN: poker;
@@ -216,9 +216,9 @@ SYNTAX: HAND{
 {% endhighlight %}
 
 {% highlight html %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
 	<title>Becky Bull &amp; Aaron Schaefer - Wedding Details</title>
 
@@ -231,7 +231,7 @@ SYNTAX: HAND{
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="screen, projection" />
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
 	<script src="/javascripts/sprites.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){

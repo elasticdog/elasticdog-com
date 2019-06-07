@@ -28,14 +28,14 @@
 }
 
 // style external links differently
-a[href^="http://"],
+a[href^="https://"],
 a[href^="https://"] {
 	background: url(/images/external-link.png) no-repeat right top;
 	padding-right: 16px;
 }
 
-a[href^="http://elasticdog.com"],
-a[href^="http://feeds.elasticdog.com"] {
+a[href^="https://elasticdog.com"],
+a[href^="https://feeds.elasticdog.com"] {
 	background-image: none;
 	padding-right: 0;
 }

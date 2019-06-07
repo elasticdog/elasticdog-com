@@ -58,7 +58,7 @@ There are three basic varieties of stack shufflers. Here they are along with the
 
 h3(#caveats). Caveats
 
-There are many more "shuffle words":http://docs.factorcode.org/content/article-shuffle-words.html that support intricate rearrangements and the duplication/removal of multiple items from differing locations within the stack. The problem is, _code that is full of stack shufflers can easily become confusing_. In general, you should try to minimize the use of stack shufflers to keep things understandable.
+There are many more "shuffle words":https://docs.factorcode.org/content/article-shuffle-words.html that support intricate rearrangements and the duplication/removal of multiple items from differing locations within the stack. The problem is, _code that is full of stack shufflers can easily become confusing_. In general, you should try to minimize the use of stack shufflers to keep things understandable.
 
 Of course there are exceptions to that rule, times when shufflers make the most sense, but the _preferred_ alternative to complicated stack shufflers is the use of a "combinator" that fits your use case. That said, combinators will take a bit of explaining...
 
@@ -128,7 +128,7 @@ While both of these combinators have the same stack effect declaration, their us
 4
 {% endhighlight %}
 
-p. These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you're curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the "retain stack") to temporarily store items while the supplied quotation is being executed. There are a few other "preserving combinators":http://docs.factorcode.org/content/article-dip-keep-combinators.html that are worth exploring as well.
+p. These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you're curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the "retain stack") to temporarily store items while the supplied quotation is being executed. There are a few other "preserving combinators":https://docs.factorcode.org/content/article-dip-keep-combinators.html that are worth exploring as well.
 
 h3(#cleave). Cleave, Spread, and Apply
 
@@ -158,7 +158,7 @@ The cleave, spread, and apply combinators are your best weapons when trying to r
 2
 {% endhighlight %}
 
-		The different "cleave combinators":http://docs.factorcode.org/content/article-cleave-combinators.html change either the number of quotations applied to your items (@bi@ vs. @tri@), or the number of items used as input for your quotations (@bi@ vs. @2bi@).
+		The different "cleave combinators":https://docs.factorcode.org/content/article-cleave-combinators.html change either the number of quotations applied to your items (@bi@ vs. @tri@), or the number of items used as input for your quotations (@bi@ vs. @2bi@).
 
 	</li>
 	<li>
@@ -186,7 +186,7 @@ The cleave, spread, and apply combinators are your best weapons when trying to r
 
 		When you want to do the same thing with more than two quotations/items, then using spread combinators eliminates the need for nested dips or shufflers and the added clarity becomes much more evident.
 
-		The different "spread combinators":http://docs.factorcode.org/content/article-spread-combinators.html change the number of quotations applied to the corresponding number of items on the stack (@bi*@ vs. @tri*@).
+		The different "spread combinators":https://docs.factorcode.org/content/article-spread-combinators.html change the number of quotations applied to the corresponding number of items on the stack (@bi*@ vs. @tri*@).
 
 	</li>
 	<li>
@@ -212,7 +212,7 @@ t
 t
 {% endhighlight %}
 
-		The different "apply combinators":http://docs.factorcode.org/content/article-apply-combinators.html change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).
+		The different "apply combinators":https://docs.factorcode.org/content/article-apply-combinators.html change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).
 
 	</li>
 </ol>
@@ -223,7 +223,7 @@ The cleave, spread, and apply combinators are all closely related; if you're hav
 * If the suffix is *, it is a "spread"
 * If the suffix is @, it is an "apply"
 
-Once you learn these combinators, you should be able to express almost any pattern of complicated stack shufflers. Note that there are also "generic forms":http://docs.factorcode.org/content/article-combinators.html for all of these combinators that can take additional inputs from the stack. If you find that you resort to using the generic forms more often then not, that's usually a good indication that you should rethink your approach or put your data into a more appropriate structure.
+Once you learn these combinators, you should be able to express almost any pattern of complicated stack shufflers. Note that there are also "generic forms":https://docs.factorcode.org/content/article-combinators.html for all of these combinators that can take additional inputs from the stack. If you find that you resort to using the generic forms more often then not, that's usually a good indication that you should rethink your approach or put your data into a more appropriate structure.
 
 h2(#data). Data Type Details
 
@@ -231,9 +231,9 @@ Before I turn you loose, I wanted to offer a few extra details about some of Fac
 
 h3(#sequences). Sequences
 
-In the cleave and spread examples above, I was sneaky and used sequences without explaining them formally. A sequence is a _finite, ordered, collection of elements_. Any data type that implements the sequence mixin class (meaning a data type that knows its length and will let you set/get an element at a specific index) gains the ability to use the powerful built-in "sequence operators":http://docs.factorcode.org/content/article-sequences.html. Read through that documentation to get an idea on how to manipulate sequences and their elements.
+In the cleave and spread examples above, I was sneaky and used sequences without explaining them formally. A sequence is a _finite, ordered, collection of elements_. Any data type that implements the sequence mixin class (meaning a data type that knows its length and will let you set/get an element at a specific index) gains the ability to use the powerful built-in "sequence operators":https://docs.factorcode.org/content/article-sequences.html. Read through that documentation to get an idea on how to manipulate sequences and their elements.
 
-Factor has many sequence types that you may already be familiar with, such as "arrays":http://docs.factorcode.org/content/article-arrays.html (fixed-size mutable sequences) and "vectors":http://docs.factorcode.org/content/article-vectors.html (resizable mutable sequences), but there are also other data types that you might not expect to be sequences, such as strings. In Factor, a string is merely an array of Unicode 5.0 code points.
+Factor has many sequence types that you may already be familiar with, such as "arrays":https://docs.factorcode.org/content/article-arrays.html (fixed-size mutable sequences) and "vectors":https://docs.factorcode.org/content/article-vectors.html (resizable mutable sequences), but there are also other data types that you might not expect to be sequences, such as strings. In Factor, a string is merely an array of Unicode 5.0 code points.
 
 Using the sequence operators and combinators together, you can create all sorts of powerful abstractions that I'll talk more about next time. Here are a couple of examples to whet your appetite:
 
@@ -254,7 +254,7 @@ Keep in mind that in Factor, *sequences are zero-based*.
 
 h3(#numbers). Numbers
 
-So far, we have only used integers, but Factor also supports "rational numbers":http://docs.factorcode.org/content/article-rationals.html (fractions), "floats":http://docs.factorcode.org/content/article-floats.html (decimal approximations of a number), and "complex numbers":http://docs.factorcode.org/content/article-complex-numbers.html (imaginary numbers).
+So far, we have only used integers, but Factor also supports "rational numbers":https://docs.factorcode.org/content/article-rationals.html (fractions), "floats":https://docs.factorcode.org/content/article-floats.html (decimal approximations of a number), and "complex numbers":https://docs.factorcode.org/content/article-complex-numbers.html (imaginary numbers).
 
 {% highlight factor %}
 (scratchpad) 100 330 / .

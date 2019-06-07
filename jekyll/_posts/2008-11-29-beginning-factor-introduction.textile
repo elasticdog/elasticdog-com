@@ -4,15 +4,15 @@ title:  Beginning Factor &#8211; Introduction
 categories:
 - factor
 ---
-I've been involved in the "Factor programming language":http://factorcode.org/ community for about a year now, and am constantly amazed with how productive its contributors are. Large improvements to the language and its libraries are made on a weekly (if not daily) basis, and it's finally starting to attract some much-deserved attention from the programming community.
+I've been involved in the "Factor programming language":https://factorcode.org/ community for about a year now, and am constantly amazed with how productive its contributors are. Large improvements to the language and its libraries are made on a weekly (if not daily) basis, and it's finally starting to attract some much-deserved attention from the programming community.
 
 The problem is, the language is a huge departure from the norm for most developers and it can be overwhelming to someone just getting started. I would like to help ease that transition by posting on various topics that I know have been confusing to me over the past year.
 
-Note that many topics are covered in "the official FAQ":http://concatenative.org/wiki/view/Factor/FAQ -- which is well worth a read -- and I won't spend time covering how to install Factor on the 14 or so platforms it supports, but beyond that, I'll try to give enough information (from basic to advanced) to get you going.
+Note that many topics are covered in "the official FAQ":https://concatenative.org/wiki/view/Factor/FAQ -- which is well worth a read -- and I won't spend time covering how to install Factor on the 14 or so platforms it supports, but beyond that, I'll try to give enough information (from basic to advanced) to get you going.
 
 h2(#basics). The Basics of the Basics
 
-First of all, Factor is a stack-based language, which means that it uses a "stack":http://en.wikipedia.org/wiki/Stack_(data_structure) to store all arguments and returned values from functions (called "words" in Factor). To put that another way, Factor words don't receive arguments in the traditional manner; all input values that your word needs are expected to already exist on the top of the stack.
+First of all, Factor is a stack-based language, which means that it uses a "stack":https://en.wikipedia.org/wiki/Stack_(data_structure) to store all arguments and returned values from functions (called "words" in Factor). To put that another way, Factor words don't receive arguments in the traditional manner; all input values that your word needs are expected to already exist on the top of the stack.
 
 h3(#what-stack). What is a Stack?
 
@@ -108,7 +108,7 @@ From these simple examples, we can observe a couple of important things about Fa
 	<li>
 		*Postfix Notation*
 
-		When using a stack, passing data becomes implicit and we can assume that all input needed by words already exists on the stack. This naturally lends itself to using "postfix notation":http://en.wikipedia.org/wiki/Reverse_Polish_notation because you have to push your data onto the stack before you can use it.
+		When using a stack, passing data becomes implicit and we can assume that all input needed by words already exists on the stack. This naturally lends itself to using "postfix notation":https://en.wikipedia.org/wiki/Reverse_Polish_notation because you have to push your data onto the stack before you can use it.
 
 		This also makes words more concise and unambiguous when compared to _infix_ notation and eliminates the need for copious amounts of parentheses used by _prefix_ notation languages, like Lisp or Scheme.
 
@@ -116,7 +116,7 @@ bc. POSTFIX:  6 5 4 * +
 INFIX:    6 + 5 * 4 =
 PREFIX:   (+ (* 4 5) 6)
 
-		With the infix example above, you'd have to know "order of operations rules":http://en.wikipedia.org/wiki/Order_of_operations in order to get the correct answer (or use parentheses to force the matter). When using postfix notation, the fact that multiplication is done first becomes explicit. Prefix notation also gets rid of that ambiguity, but becomes messier and harder to type with the more nesting you add.
+		With the infix example above, you'd have to know "order of operations rules":https://en.wikipedia.org/wiki/Order_of_operations in order to get the correct answer (or use parentheses to force the matter). When using postfix notation, the fact that multiplication is done first becomes explicit. Prefix notation also gets rid of that ambiguity, but becomes messier and harder to type with the more nesting you add.
 	</li>
 
 	<li>

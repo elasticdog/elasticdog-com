@@ -7,9 +7,9 @@ categories:
 - osx
 - security
 ---
-If you've ever used an insecure Wi-Fi connection in a public place (think coffee shop, airport, etc.), your personal information could be at risk. Anyone on the local network could potentially be monitoring your traffic and they could even "hijack your sessions":http://codebutler.github.com/firesheep/ to control accounts that you've logged into.
+If you've ever used an insecure Wi-Fi connection in a public place (think coffee shop, airport, etc.), your personal information could be at risk. Anyone on the local network could potentially be monitoring your traffic and they could even "hijack your sessions":https://codebutler.github.com/firesheep/ to control accounts that you've logged into.
 
-Every week I "meet up with some friends":http://hackerbreakfast.com/ to work on personal projects, and the venue only offers an open wireless connection with no encryption. To mitigate the risk of leaking personal information, I've tried a handful of strategies and eventually settled on using "sshuttle":https://github.com/apenwarr/sshuttle.
+Every week I "meet up with some friends":https://hackerbreakfast.com/ to work on personal projects, and the venue only offers an open wireless connection with no encryption. To mitigate the risk of leaking personal information, I've tried a handful of strategies and eventually settled on using "sshuttle":https://github.com/apenwarr/sshuttle.
 
 h2(#sshuttle). What is sshuttle?
 
@@ -27,17 +27,17 @@ $ ssh -fqND 1080 example.com
 
 But, you have to adjust your machine's proxy configuration settings each time you set up the tunnel, and then tear it all down when you're done. This method *will not* force absolutely all traffic over the tunnel, as things like DNS(Domain Name System) lookups and a lot of command-line tools will just ignore the proxy. You're also encapsulating TCP(Transmission Control Protocol)-over-TCP, which can cause performance problems.
 
-I briefly messed with the "Sidestep project":http://chetansurpur.com/projects/sidestep/ to automate these setup/teardown steps on OS X, but ran across repeated authentication issues and wasn't overly impressed with its developer. Overall, I needed a more elegant solution.
+I briefly messed with the "Sidestep project":https://chetansurpur.com/projects/sidestep/ to automate these setup/teardown steps on OS X, but ran across repeated authentication issues and wasn't overly impressed with its developer. Overall, I needed a more elegant solution.
 
 h2(#installation). Installation
 
-I wanted to use sshuttle on OS X Lion, and even though it's primarily a command-line utility, it also comes with a graphical user interface wrapper that will sit in the menu bar. If you just want the command-line script and already use "Homebrew":http://mxcl.github.com/homebrew/, @brew install sshuttle@ is the way to go. If you don't use Homebrew and/or want the GUI, I've got your back...
+I wanted to use sshuttle on OS X Lion, and even though it's primarily a command-line utility, it also comes with a graphical user interface wrapper that will sit in the menu bar. If you just want the command-line script and already use "Homebrew":https://mxcl.github.com/homebrew/, @brew install sshuttle@ is the way to go. If you don't use Homebrew and/or want the GUI, I've got your back...
 
 h3(#building). Building sshuttle from Source
 
 Unfortunately, pre-compiled binaries are not made available for every release, and documentation for building sshuttle is non-existent. The project uses a "build system called 'redo'":https://github.com/apenwarr/redo instead of the more-customary 'make', so the process is a bit different than what most people are used to.
 
-Luckily, the sshuttle repository includes a shell script named 'do', which is a simplified version of redo, so you _won't need to_ install any additional build software. The only real dependencies are "Python":http://python.org/ and two Python modules to generate the man page (feel free to use @pip install@ instead of @easy_install@, if you prefer):
+Luckily, the sshuttle repository includes a shell script named 'do', which is a simplified version of redo, so you _won't need to_ install any additional build software. The only real dependencies are "Python":https://python.org/ and two Python modules to generate the man page (feel free to use @pip install@ instead of @easy_install@, if you prefer):
 
 {% highlight bash %}
 $ easy_install markdown BeautifulSoup
@@ -62,7 +62,7 @@ $ mkdir -p /usr/local/share/man/man8
 $ ln -s /usr/local/libexec/sshuttle/Documentation/sshuttle.8 /usr/local/share/man/man8
 {% endhighlight %}
 
-For the GUI app, we need to create an _alias_ instead a symlink, because ["Spotlight":http://en.wikipedia.org/wiki/Spotlight_(software)] will not index symlinks. Yes, you could just copy __==Sshuttle VPN.app==__ directly into __/Applications__, but then you'd have to remember to copy it every time you update/rebuild sshuttle.
+For the GUI app, we need to create an _alias_ instead a symlink, because ["Spotlight":https://en.wikipedia.org/wiki/Spotlight_(software)] will not index symlinks. Yes, you could just copy __==Sshuttle VPN.app==__ directly into __/Applications__, but then you'd have to remember to copy it every time you update/rebuild sshuttle.
 
 Without getting too technical, aliases are a lot like symlinks but they use extra metadata called "resource forks" to follow a file (even when it's moved) rather then blindly pointing to a path. More importantly, Spotlight *will* index them. There's no way to create an alias from the command line, so you have to use Finder:
 
@@ -117,7 +117,7 @@ __==NOTE==: Sshuttle will honor your @~/.ssh/config@ connection settings, but yo
 $ sshuttle --dns -r username@example.com:2222 0/0
 {% endhighlight %}
 
-Run that, and all of your traffic (_including_ DNS requests) will be transparently proxied through an SSH connection to _example.com_. You can verify this by browsing to "http://ifconfig.me":http://ifconfig.me.
+Run that, and all of your traffic (_including_ DNS requests) will be transparently proxied through an SSH connection to _example.com_. You can verify this by browsing to "https://ifconfig.me":https://ifconfig.me.
 
 To stop forwarding traffic, just press @Ctrl-c@ back in the terminal. We can do a bit better though by forking the process into the background so we don't tie up our terminal session. These are the aliases I use to make setting up and tearing down the tunnel easier:
 
@@ -130,9 +130,9 @@ The __==Sshuttle VPN.app==__ GUI is pretty self-explanatory, just make sure to e
 
 h2(#bugs). Known Bugs
 
-You may see a bunch of "*warning: closed channel ...*" messages when running sshuttle (either on STDOUT or in your system.log), but these warnings are safe to ignore. The developer "knows about the issue":http://groups.google.com/group/sshuttle/browse_thread/thread/853316d8e0a90269/4febfe3136aba5df and is thinking of the best way to suppress/eliminate the condition.
+You may see a bunch of "*warning: closed channel ...*" messages when running sshuttle (either on STDOUT or in your system.log), but these warnings are safe to ignore. The developer "knows about the issue":https://groups.google.com/group/sshuttle/browse_thread/thread/853316d8e0a90269/4febfe3136aba5df and is thinking of the best way to suppress/eliminate the condition.
 
-Also, prior to version 0.60 of sshuttle, there was "a bug in the GUI application":http://groups.google.com/group/sshuttle/browse_thread/thread/6603f9d17ae8eec4 when disconnecting tunnels, where the controlling terminal would disappear before firewall rules could cleaned up. This would leave the network in an odd state and all DNS lookups would fail. It should be fixed now, but if you experience networking trouble after disconnecting a sshuttle tunnel, you can see the current firewall rules using:
+Also, prior to version 0.60 of sshuttle, there was "a bug in the GUI application":https://groups.google.com/group/sshuttle/browse_thread/thread/6603f9d17ae8eec4 when disconnecting tunnels, where the controlling terminal would disappear before firewall rules could cleaned up. This would leave the network in an odd state and all DNS lookups would fail. It should be fixed now, but if you experience networking trouble after disconnecting a sshuttle tunnel, you can see the current firewall rules using:
 
 {% highlight bash %}
 $ sudo ipfw list
@@ -160,4 +160,4 @@ h2(#conclusion). Conclusion
 
 Admittedly, sshuttle takes a bit more work than other solutions to get up and running, but the security it provides gives me peace of mind when forced to use insecure Wi-Fi networks.
 
-If you have any issues, there is an "active mailing list":http://groups.google.com/group/sshuttle for the project, or you can always "send me a note":/about/#contact and I'll see what I can do to help.
+If you have any issues, there is an "active mailing list":https://groups.google.com/group/sshuttle for the project, or you can always "send me a note":/about/#contact and I'll see what I can do to help.

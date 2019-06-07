@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>About | ElasticDog.com</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -44,18 +44,18 @@
 <div class="links">
 <ul>
 	<li><a href="https://github.com/elasticdog">GitHub</a></li>
-	<li><a href="http://www.linkedin.com/in/aaronschaefer">LinkedIn</a><br />
+	<li><a href="https://www.linkedin.com/in/aaronschaefer">LinkedIn</a><br />
 </div></li>
 </ul>
 <h2 id="contact">Contact Me</h2>
 <p><img src="/images/about/contact-qrcode.png" style="float:right;margin-right:-25px;margin-top:-2.75em;" title="MECARD Formatted QR Code" alt="MECARD Formatted QR Code" /></p>
 <p>If you&#8217;d like to reach me for any reason, send an email to <strong><a href="mailto:aaron@elasticdog.com">aaron@elasticdog.com</a></strong>. I&#8217;m also constantly checking the horizon for smoke signals and carrier pigeons, if that&#8217;s your thing. If you&#8217;d prefer a more secure means of communication, keep on reading&#8230;</p>
 <h3 id="gnupg">My GnuPG Public Key</h3>
-<p><a href="http://www.gnupg.org/"><span class="caps">GNU</span> Privacy Guard</a> (a.k.a. GnuPG or <span class="caps">GPG</span>) is <acronym title="Free and Open Source Software">F/OSS</acronym> that allows you to easily sign and encrypt your data following the OpenPGP standard. This enables you to verify people&#8217;s identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:</p>
+<p><a href="https://www.gnupg.org/"><span class="caps">GNU</span> Privacy Guard</a> (a.k.a. GnuPG or <span class="caps">GPG</span>) is <acronym title="Free and Open Source Software">F/OSS</acronym> that allows you to easily sign and encrypt your data following the OpenPGP standard. This enables you to verify people&#8217;s identities and protect your privacy when communicating online. If you would like to communicate securely with me, you will need to download my public key:</p>
 <pre>pub   4096R/C31E7946 2013-03-27
       Key fingerprint = 5FC9 160D A643 E0E9 B83A  F4BB 5E34 0427 C31E 7946
       uid                  Aaron Bull Schaefer &lt;aaron@elasticdog.com&gt;</pre>
-<p>You can import it from any keyserver, or by downloading the <a href="/code/elasticdog-pubkey.asc"><span class="caps">ASCII</span>-armored version</a> manually. <strong>DO NOT</strong> forget to verify the key against the fingerprint listed above to ensure that they are the same. For more information, see <a href="http://www.gnupg.org/gph/en/manual.html">The <span class="caps">GNU</span> Privacy Handbook</a>.</p>
+<p>You can import it from any keyserver, or by downloading the <a href="/code/elasticdog-pubkey.asc"><span class="caps">ASCII</span>-armored version</a> manually. <strong>DO NOT</strong> forget to verify the key against the fingerprint listed above to ensure that they are the same. For more information, see <a href="https://www.gnupg.org/gph/en/manual.html">The <span class="caps">GNU</span> Privacy Handbook</a>.</p>
 <p>Note that in March of 2013, I transitioned away from an older <span class="caps">DSA</span> key to the stronger <span class="caps">RSA</span> key shown above. If you had any dealings with the previous key, please read my <a href="/code/key-transition-20130326.txt">transition statement</a> for further details.</p>
 <h1 id="elasticdog">About This Site</h1>
 <p>ElasticDog.com is <strong>not</strong> a typical blog&#8230;rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I&#8217;ve chosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my <em>current</em> ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is <a href="https://github.com/elasticdog/elasticdog-com">under version control</a>, so you still have the ability to reference historical versions of the articles, if so desired.</p>
@@ -63,9 +63,9 @@
 <h2 id="retired">Retired Articles</h2>
 <p>It&#8217;s inevitable that certain topics will fall out of favor and no longer be pertinent to myself or global citizens at large, so eventually, articles will be tagged as &#8220;retired&#8221; and de-emphasized site-wide. That way people don&#8217;t have to worry about if the information they read here is applicable now, or if it was only applicable three years ago when it was first published. The distinction will be made abundantly clear.</p>
 <h2 id="colophon">Colophon</h2>
-<p>ElasticDog.com is hosted directly on <a href="http://aws.amazon.com/s3/">Amazon S3</a> utilizing their bucket&#8217;s static website hosting feature set along with some support from <a href="https://aws.amazon.com/route53/">Route53</a> for handling the special <acronym title="Domain Name System"><span class="caps">DNS</span></acronym> requirements with this setup. The site itself is completely static, but uses a combination of <a href="https://github.com/mojombo/jekyll">Jekyll</a> with <a href="http://redcloth.org/">RedCloth</a> to generate the <acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym>, and <a href="http://compass-style.org/">Compass</a> with <a href="http://sass-lang.com/">Sass</a> to generate the <acronym title="Cascading Style Sheets"><span class="caps">CSS</span></acronym>. The site&#8217;s syndication feed is also generated by Jekyll, but ultimately gets distributed via <a href="http://feedburner.google.com/">FeedBurner</a>.</p>
+<p>ElasticDog.com is hosted directly on <a href="https://aws.amazon.com/s3/">Amazon S3</a> utilizing their bucket&#8217;s static website hosting feature set along with some support from <a href="https://aws.amazon.com/route53/">Route53</a> for handling the special <acronym title="Domain Name System"><span class="caps">DNS</span></acronym> requirements with this setup. The site itself is completely static, but uses a combination of <a href="https://github.com/mojombo/jekyll">Jekyll</a> with <a href="https://redcloth.org/">RedCloth</a> to generate the <acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym>, and <a href="https://compass-style.org/">Compass</a> with <a href="https://sass-lang.com/">Sass</a> to generate the <acronym title="Cascading Style Sheets"><span class="caps">CSS</span></acronym>. The site&#8217;s syndication feed is also generated by Jekyll, but ultimately gets distributed via <a href="https://feedburner.google.com/">FeedBurner</a>.</p>
 <h2 id="design">Design</h2>
-<p>Although it wasn&#8217;t my first website, I created ElasticDog.com when I began learning about web standards back in 2003. I started off using <a href="http://www.movabletype.org/">Movable Type</a> as a blogging engine, and unfortunately neglected to convert all of my entries when I later switched to <a href="http://wordpress.org/">WordPress</a>. Over the years, I&#8217;ve updated the look of this site a number of times&#8230;click a banner below to be transported into the past.</p>
+<p>Although it wasn&#8217;t my first website, I created ElasticDog.com when I began learning about web standards back in 2003. I started off using <a href="https://www.movabletype.org/">Movable Type</a> as a blogging engine, and unfortunately neglected to convert all of my entries when I later switched to <a href="https://wordpress.org/">WordPress</a>. Over the years, I&#8217;ve updated the look of this site a number of times&#8230;click a banner below to be transported into the past.</p>
 <h3 id="2003">2003</h3>
 <p><a href="/images/about/elasticdog-2003.png"><img src="/images/about/elasticdog-2003-banner.png" title="ElasticDog.com&#39;s Design from 2003" alt="ElasticDog.com&#39;s Design from 2003" /></a></p>
 <h3 id="2004">2004</h3>
@@ -76,9 +76,9 @@
 <p><a href="/images/about/elasticdog-2007.png"><img src="/images/about/elasticdog-2007-banner.png" title="ElasticDog.com&#39;s Design from 2007" alt="ElasticDog.com&#39;s Design from 2007" /></a></p>
 <h3 id="2008">2008</h3>
 <p><a href="/images/about/elasticdog-2008.png"><img src="/images/about/elasticdog-2008-banner.png" title="ElasticDog.com&#39;s Design from 2008" alt="ElasticDog.com&#39;s Design from 2008" /></a></p>
-<p>The 2008 design of ElasticDog.com was not created by me, but was a highly-customized version of &#8220;Essay&#8221;, a <a href="http://www.plaintxt.org/themes/sandbox/">Sandbox</a> theme by <a href="http://upperfortstewart.com/">Ian Stewart</a>. The idea was that I could ignore the complexities of WordPress theme creation and get back to focusing on writing, but you can <a href="/archives/">see how that went</a>.</p>
+<p>The 2008 design of ElasticDog.com was not created by me, but was a highly-customized version of &#8220;Essay&#8221;, a <a href="https://www.plaintxt.org/themes/sandbox/">Sandbox</a> theme by <a href="https://upperfortstewart.com/">Ian Stewart</a>. The idea was that I could ignore the complexities of WordPress theme creation and get back to focusing on writing, but you can <a href="/archives/">see how that went</a>.</p>
 <h3 id="current">Current Design</h3>
-<p>The current design of ElasticDog.com (completed in October 2010) is another attempt at getting back to basics. I started with the idea of making the site look similar to output from <a href="http://lab.arc90.com/experiments/readability/">Readability</a>, but went further to enhance its typography, color palette, and structure to better represent the content I write. The design is intentionally minimal, but with close attention paid to the details.</p>
+<p>The current design of ElasticDog.com (completed in October 2010) is another attempt at getting back to basics. I started with the idea of making the site look similar to output from <a href="https://lab.arc90.com/experiments/readability/">Readability</a>, but went further to enhance its typography, color palette, and structure to better represent the content I write. The design is intentionally minimal, but with close attention paid to the details.</p>
 </div>
 <div id="footer">
 	<hr />
@@ -98,7 +98,7 @@
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2015 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

@@ -13,19 +13,19 @@ h2(#contributions). Contributions
 
 h3(#archlinux). Arch Linux
 
-!/images/projects/archlinux-banner.png(Arch Linux Distribution)!:http://archlinux.org/
+!/images/projects/archlinux-banner.png(Arch Linux Distribution)!:https://archlinux.org/
 
 I was a Trusted User for Arch Linux for almost 4 years (stepping down in Jan 2011 to free up time to work on other projects), meaning I contributed trusted binary packages to their community repository and helped with special projects. I maintained a large number of backup & security utilities, vim plugins, and web development tools. I am still active in the community, providing support on the forums and on IRC(Internet Relay Chat).
 
 h3(#factor). Factor
 
-!/images/projects/factor-banner.png(Factor Programming Language)!:http://factorcode.org/
+!/images/projects/factor-banner.png(Factor Programming Language)!:https://factorcode.org/
 
-Factor is "a general purpose, dynamically typed, stack-based programming language" that I have been experimenting with for a while now. I've had the opportunity to contribute back a decent amount of code to the project, including new math libraries, editor integration code, and numerous "Project Euler":http://projecteuler.net solutions using the language. I also wrote a "Pygments":http://pygments.org/ lexer for Factor, which is responsible for the syntax highlighting you see on this site. I keep up to date with Factor's mailing list and IRC chatroom, and have begun writing a series of blog posts entitled "Beginning Factor":/2008/11/beginning-factor-introduction/ to help others learn the language.
+Factor is "a general purpose, dynamically typed, stack-based programming language" that I have been experimenting with for a while now. I've had the opportunity to contribute back a decent amount of code to the project, including new math libraries, editor integration code, and numerous "Project Euler":https://projecteuler.net solutions using the language. I also wrote a "Pygments":https://pygments.org/ lexer for Factor, which is responsible for the syntax highlighting you see on this site. I keep up to date with Factor's mailing list and IRC chatroom, and have begun writing a series of blog posts entitled "Beginning Factor":/2008/11/beginning-factor-introduction/ to help others learn the language.
 
 h3(#wordpress). WordPress
 
-!/images/projects/wordpress-banner.png(WordPress CMS)!:http://wordpress.org/
+!/images/projects/wordpress-banner.png(WordPress CMS)!:https://wordpress.org/
 
 I've used the WordPress blogging engine for a number of years and have written various plugins that have been downloaded tens of thousands of times. I still, on occasion, write about the technical side of WordPress on this site and continually contribute to the community in some capacity.
 
@@ -35,7 +35,7 @@ h3(#beckyandaaron). Becky and Aaron
 
 !/images/projects/beckyandaaron-banner.png(Becky and Aaron's Wedding Website)!:/images/projects/beckyandaaron.png
 
-A website housing details about our engagement and wedding -- "http://beckyandaaron.com/":http://beckyandaaron.com/
+A website housing details about our engagement and wedding -- "https://beckyandaaron.com/":https://beckyandaaron.com/
 
 h3(#lightpress). LightPress
 
@@ -47,7 +47,7 @@ h3(#matrix). Matrix Communications, Inc.
 
 !/images/projects/matrix-logo-banner.png(Matrix Communications, Inc. Logo Redesign)!:/images/projects/matrix-logo.png
 
-A logo designed for Matrix Communications, Inc., a business telecommunications services company -- "http://www.utmatrix.com/":http://www.utmatrix.com/
+A logo designed for Matrix Communications, Inc., a business telecommunications services company -- "https://www.utmatrix.com/":https://www.utmatrix.com/
 
 h3(#service). Purdue University Service Learning
 
@@ -65,4 +65,4 @@ h3(#whamfan). ==WHAMFAN!==
 
 !/images/projects/whamfan-banner.png(WhamFan Web Site)!:/images/projects/whamfan.png
 
-An amazing website to go along with an amazing email address...yes, I created ==WHAMFAN!== as a joke -- "http://whamfan.com/":http://web.archive.org/web/20110527083306/http://whamfan.com/
+An amazing website to go along with an amazing email address...yes, I created ==WHAMFAN!== as a joke -- "https://whamfan.com/":https://web.archive.org/web/20110527083306/https://whamfan.com/

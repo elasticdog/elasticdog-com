@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Beginning Factor &#8211; Introduction</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -51,11 +51,11 @@
 
 <h1>Beginning Factor &#8211; Introduction</h1>
 
-<p>I&#8217;ve been involved in the <a href="http://factorcode.org/">Factor programming language</a> community for about a year now, and am constantly amazed with how productive its contributors are. Large improvements to the language and its libraries are made on a weekly (if not daily) basis, and it&#8217;s finally starting to attract some much-deserved attention from the programming community.</p>
+<p>I&#8217;ve been involved in the <a href="https://factorcode.org/">Factor programming language</a> community for about a year now, and am constantly amazed with how productive its contributors are. Large improvements to the language and its libraries are made on a weekly (if not daily) basis, and it&#8217;s finally starting to attract some much-deserved attention from the programming community.</p>
 <p>The problem is, the language is a huge departure from the norm for most developers and it can be overwhelming to someone just getting started. I would like to help ease that transition by posting on various topics that I know have been confusing to me over the past year.</p>
-<p>Note that many topics are covered in <a href="http://concatenative.org/wiki/view/Factor/FAQ">the official <span class="caps">FAQ</span></a> &#8212; which is well worth a read &#8212; and I won&#8217;t spend time covering how to install Factor on the 14 or so platforms it supports, but beyond that, I&#8217;ll try to give enough information (from basic to advanced) to get you going.</p>
+<p>Note that many topics are covered in <a href="https://concatenative.org/wiki/view/Factor/FAQ">the official <span class="caps">FAQ</span></a> &#8212; which is well worth a read &#8212; and I won&#8217;t spend time covering how to install Factor on the 14 or so platforms it supports, but beyond that, I&#8217;ll try to give enough information (from basic to advanced) to get you going.</p>
 <h2 id="basics">The Basics of the Basics</h2>
-<p>First of all, Factor is a stack-based language, which means that it uses a <a href="http://en.wikipedia.org/wiki/Stack_(data_structure)">stack</a> to store all arguments and returned values from functions (called &#8220;words&#8221; in Factor). To put that another way, Factor words don&#8217;t receive arguments in the traditional manner; all input values that your word needs are expected to already exist on the top of the stack.</p>
+<p>First of all, Factor is a stack-based language, which means that it uses a <a href="https://en.wikipedia.org/wiki/Stack_(data_structure)">stack</a> to store all arguments and returned values from functions (called &#8220;words&#8221; in Factor). To put that another way, Factor words don&#8217;t receive arguments in the traditional manner; all input values that your word needs are expected to already exist on the top of the stack.</p>
 <h3 id="what-stack">What is a Stack?</h3>
 <p>If you&#8217;re unfamiliar with the data structure called a stack, the concept is fairly simple. It centers around the idea of &#8220;Last In First Out&#8221; (<span class="caps">LIFO</span>), meaning the last item placed onto the stack is the first item that will you will get when you remove an item from the stack. You cannot get to the lower items until the all of the items above it have been removed.</p>
 <p>I like to picture a stack like a tower of LEGOs. The only thing you can do with it are add another brick to the top (&#8220;push&#8221; an item onto the stack), or take the top brick off to use it for something else (&#8220;pop&#8221; an item off the stack). That&#8217;s all there is to stacks!</p>
@@ -127,12 +127,12 @@ Hello world!
 <ol>
 <li>
 <p><strong>Postfix Notation</strong></p>
-<p>When using a stack, passing data becomes implicit and we can assume that all input needed by words already exists on the stack. This naturally lends itself to using <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">postfix notation</a> because you have to push your data onto the stack before you can use it.</p>
+<p>When using a stack, passing data becomes implicit and we can assume that all input needed by words already exists on the stack. This naturally lends itself to using <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">postfix notation</a> because you have to push your data onto the stack before you can use it.</p>
 <p>This also makes words more concise and unambiguous when compared to <em>infix</em> notation and eliminates the need for copious amounts of parentheses used by <em>prefix</em> notation languages, like Lisp or Scheme.</p>
 <pre><code>POSTFIX:  6 5 4 * +
 INFIX:    6 + 5 * 4 =
 PREFIX:   (+ (* 4 5) 6)</code></pre>
-<p>With the infix example above, you&#8217;d have to know <a href="http://en.wikipedia.org/wiki/Order_of_operations">order of operations rules</a> in order to get the correct answer (or use parentheses to force the matter). When using postfix notation, the fact that multiplication is done first becomes explicit. Prefix notation also gets rid of that ambiguity, but becomes messier and harder to type with the more nesting you add.</p>
+<p>With the infix example above, you&#8217;d have to know <a href="https://en.wikipedia.org/wiki/Order_of_operations">order of operations rules</a> in order to get the correct answer (or use parentheses to force the matter). When using postfix notation, the fact that multiplication is done first becomes explicit. Prefix notation also gets rid of that ambiguity, but becomes messier and harder to type with the more nesting you add.</p>
 </li>
 <li>
 <p><strong>Calling Words is Implicit</strong></p>
@@ -197,7 +197,7 @@ PREFIX:   (+ (* 4 5) 6)</code></pre>
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

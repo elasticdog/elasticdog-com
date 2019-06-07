@@ -2,7 +2,7 @@
 layout: retired
 title:  Comments Missing in WordPress Dashboard After 2.5.1 Upgrade
 ---
-I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments. I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet "it would not let me see them":http://elasticdog.com/images/2008/04/awaiting-moderation.png. Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.
+I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments. I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet "it would not let me see them":https://elasticdog.com/images/2008/04/awaiting-moderation.png. Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.
 
 After searching for a bit and checking my sever logs, I found that the upgrade script did not add the proper index to the "comment_date_gmt" column in the comments table for my WordPress database:
 
@@ -10,7 +10,7 @@ bc. Apr 25 18:22:17 php-cgi: WordPress database error Key 'comment_date_gmt' doe
 
 h2(#solution). The Solution
 
-If you don't want to wait until the upgrade script gets fixed in a later WordPress release, you'll have to add the missing index to the database table yourself to get things working again. I'll demonstrate how to do that using the MySQL command line interface, however, if you're more comfortable with using phpMyAdmin, see "the steps outlined here":http://wordpress.org/support/topic/167450#post-737217.
+If you don't want to wait until the upgrade script gets fixed in a later WordPress release, you'll have to add the missing index to the database table yourself to get things working again. I'll demonstrate how to do that using the MySQL command line interface, however, if you're more comfortable with using phpMyAdmin, see "the steps outlined here":https://wordpress.org/support/topic/167450#post-737217.
 
 h3(#privileges). Check for Proper Privileges
 

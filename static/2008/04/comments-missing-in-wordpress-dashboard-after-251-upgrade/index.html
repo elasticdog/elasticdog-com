@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Comments Missing in WordPress Dashboard After 2.5.1 Upgrade</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -56,11 +56,11 @@
 
 <h1>Comments Missing in WordPress Dashboard After 2.5.1 Upgrade</h1>
 
-<p>I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments. I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet <a href="http://elasticdog.com/images/2008/04/awaiting-moderation.png">it would not let me see them</a>. Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.</p>
+<p>I just upgraded the WordPress installation for ElasticDog to version 2.5.1 and noticed that the Manage Comments page in the administrative Dashboard was not displaying any comments. I only noticed there was a problem when the interface kept telling me there were 9 comments awaiting moderation, yet <a href="https://elasticdog.com/images/2008/04/awaiting-moderation.png">it would not let me see them</a>. Everything was displaying correctly on the publicly viewable blog pages, but no comments showed up when trying to access them via the Dashboard.</p>
 <p>After searching for a bit and checking my sever logs, I found that the upgrade script did not add the proper index to the &#8220;comment_date_gmt&#8221; column in the comments table for my WordPress database:</p>
 <pre><code>Apr 25 18:22:17 php-cgi: WordPress database error Key 'comment_date_gmt' doesn't exist in table 'wp_comment' for query...</code></pre>
 <h2 id="solution">The Solution</h2>
-<p>If you don&#8217;t want to wait until the upgrade script gets fixed in a later WordPress release, you&#8217;ll have to add the missing index to the database table yourself to get things working again. I&#8217;ll demonstrate how to do that using the MySQL command line interface, however, if you&#8217;re more comfortable with using phpMyAdmin, see <a href="http://wordpress.org/support/topic/167450#post-737217">the steps outlined here</a>.</p>
+<p>If you don&#8217;t want to wait until the upgrade script gets fixed in a later WordPress release, you&#8217;ll have to add the missing index to the database table yourself to get things working again. I&#8217;ll demonstrate how to do that using the MySQL command line interface, however, if you&#8217;re more comfortable with using phpMyAdmin, see <a href="https://wordpress.org/support/topic/167450#post-737217">the steps outlined here</a>.</p>
 <h3 id="privileges">Check for Proper Privileges</h3>
 <p>First of all, you must have the proper privileges on your WordPress database in order to add an index.  To check that, follow these steps:</p>
 <ol>
@@ -137,7 +137,7 @@ Records: 458  Duplicates: 0  Warnings: 0</code></pre></li>
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

@@ -83,7 +83,7 @@ img.framed {
 /* -----( HEADER )----------------------------------------------------------- */
 
 #header {
-	background:				#FFF url(http://www.designbyfire.com/images/core/bgd_wine_stain.gif) 60% 0 no-repeat;
+	background:				#FFF url(https://www.designbyfire.com/images/core/bgd_wine_stain.gif) 60% 0 no-repeat;
 	height:					180px;
 	text-align:				left;
 	}
@@ -111,7 +111,7 @@ img.framed {
 	}
 
 #header h1 :link, #header h1 :visited {
-	background:				#FFF url(http://www.designbyfire.com/images/core/logo_dxf.gif) 0 0 no-repeat;
+	background:				#FFF url(https://www.designbyfire.com/images/core/logo_dxf.gif) 0 0 no-repeat;
 	border-bottom:			none;
 	display:				block;
 	height:					76px;
@@ -140,7 +140,7 @@ img.framed {
 	}
 
 #navigation div#navcontainer {
-	background:				url(http://www.designbyfire.com/images/core/bgd_navshadow_page.gif) bottom left no-repeat;
+	background:				url(https://www.designbyfire.com/images/core/bgd_navshadow_page.gif) bottom left no-repeat;
 	height:					40px;
 	margin:					0 auto;
 	width:					790px;
@@ -355,7 +355,7 @@ img.framed {
 	}
 
 #subcontent div#archives ul li {
-	background:				url(http://www.designbyfire.com/images/icons/icn_arrow.gif) -2px -1px no-repeat;
+	background:				url(https://www.designbyfire.com/images/icons/icn_arrow.gif) -2px -1px no-repeat;
 	padding:				0 0 6px 1em;
 	}
 
@@ -369,7 +369,7 @@ img.framed {
 	}
 
 #subcontent div#categories ul li {
-	background:				url(http://www.designbyfire.com/images/icons/icn_arrow.gif) -2px -1px no-repeat;
+	background:				url(https://www.designbyfire.com/images/icons/icn_arrow.gif) -2px -1px no-repeat;
 	padding:				0 0 6px 1em;
 	}
 
@@ -383,7 +383,7 @@ img.framed {
 	}
 
 #subcontent div#miniblog ul li {
-	background:				url(http://www.designbyfire.com/images/icons/icn_arrow.gif) -2px -1px no-repeat;
+	background:				url(https://www.designbyfire.com/images/icons/icn_arrow.gif) -2px -1px no-repeat;
 	padding:				0 0 20px 1em;
 	}
 
@@ -397,7 +397,7 @@ img.framed {
 	}
 
 #subcontent div#popularposts ul li {
-	background:				url(http://www.designbyfire.com/images/icons/icn_doc.gif) 0 3px no-repeat;
+	background:				url(https://www.designbyfire.com/images/icons/icn_doc.gif) 0 3px no-repeat;
 	padding:				0 0 20px 1em;
 	}
 
@@ -437,7 +437,7 @@ img.framed {
 
 
 /* -----( LINKS )------------------------------------------------------------ */
-/* http://dbaron.org/css/1999/09/links */
+/* https://dbaron.org/css/1999/09/links */
 
 /* Global ----------------------------------------------- */
 

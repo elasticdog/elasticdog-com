@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Use sshuttle to Keep Safe on Insecure Wi-Fi</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -49,8 +49,8 @@
 
 <h1>Use sshuttle to Keep Safe on Insecure Wi-Fi</h1>
 
-<p>If you&#8217;ve ever used an insecure Wi-Fi connection in a public place (think coffee shop, airport, etc.), your personal information could be at risk. Anyone on the local network could potentially be monitoring your traffic and they could even <a href="http://codebutler.github.com/firesheep/">hijack your sessions</a> to control accounts that you&#8217;ve logged into.</p>
-<p>Every week I <a href="http://hackerbreakfast.com/">meet up with some friends</a> to work on personal projects, and the venue only offers an open wireless connection with no encryption. To mitigate the risk of leaking personal information, I&#8217;ve tried a handful of strategies and eventually settled on using <a href="https://github.com/apenwarr/sshuttle">sshuttle</a>.</p>
+<p>If you&#8217;ve ever used an insecure Wi-Fi connection in a public place (think coffee shop, airport, etc.), your personal information could be at risk. Anyone on the local network could potentially be monitoring your traffic and they could even <a href="https://codebutler.github.com/firesheep/">hijack your sessions</a> to control accounts that you&#8217;ve logged into.</p>
+<p>Every week I <a href="https://hackerbreakfast.com/">meet up with some friends</a> to work on personal projects, and the venue only offers an open wireless connection with no encryption. To mitigate the risk of leaking personal information, I&#8217;ve tried a handful of strategies and eventually settled on using <a href="https://github.com/apenwarr/sshuttle">sshuttle</a>.</p>
 <h2 id="sshuttle">What is sshuttle?</h2>
 <p>The sshuttle utility is part transparent proxy, part Virtual Private Network (<span class="caps">VPN</span>), and part <acronym title="Secure Shell"><span class="caps">SSH</span></acronym>. It solves a lot of common problems with encrypting your traffic, and it does so in a very efficient way.</p>
 <p>There&#8217;s no need for a complicated pre-existing infrastructure. All you need is Python 2.x, and a remote machine you can <span class="caps">SSH</span> to that also has Python installed. You don&#8217;t even have to be an administrator on the remote machine. The project&#8217;s <a href="https://github.com/apenwarr/sshuttle/blob/master/README.md"><span class="caps">README</span></a> has a lot more information on its theory, design, and alternate uses.</p>
@@ -58,12 +58,12 @@
 <p>As an aside, I had previously relied on creating a <span class="caps">SOCKS</span> proxy with <span class="caps">SSH</span>, and then tunneling my web traffic through it&#8230;</p>
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>ssh -fqND 1080 example.com
 </code></pre></div><p>But, you have to adjust your machine&#8217;s proxy configuration settings each time you set up the tunnel, and then tear it all down when you&#8217;re done. This method <strong>will not</strong> force absolutely all traffic over the tunnel, as things like <acronym title="Domain Name System"><span class="caps">DNS</span></acronym> lookups and a lot of command-line tools will just ignore the proxy. You&#8217;re also encapsulating <acronym title="Transmission Control Protocol"><span class="caps">TCP</span></acronym>-over-<span class="caps">TCP</span>, which can cause performance problems.</p>
-<p>I briefly messed with the <a href="http://chetansurpur.com/projects/sidestep/">Sidestep project</a> to automate these setup/teardown steps on OS X, but ran across repeated authentication issues and wasn&#8217;t overly impressed with its developer. Overall, I needed a more elegant solution.</p>
+<p>I briefly messed with the <a href="https://chetansurpur.com/projects/sidestep/">Sidestep project</a> to automate these setup/teardown steps on OS X, but ran across repeated authentication issues and wasn&#8217;t overly impressed with its developer. Overall, I needed a more elegant solution.</p>
 <h2 id="installation">Installation</h2>
-<p>I wanted to use sshuttle on OS X Lion, and even though it&#8217;s primarily a command-line utility, it also comes with a graphical user interface wrapper that will sit in the menu bar. If you just want the command-line script and already use <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, <code>brew install sshuttle</code> is the way to go. If you don&#8217;t use Homebrew and/or want the <span class="caps">GUI</span>, I&#8217;ve got your back&#8230;</p>
+<p>I wanted to use sshuttle on OS X Lion, and even though it&#8217;s primarily a command-line utility, it also comes with a graphical user interface wrapper that will sit in the menu bar. If you just want the command-line script and already use <a href="https://mxcl.github.com/homebrew/">Homebrew</a>, <code>brew install sshuttle</code> is the way to go. If you don&#8217;t use Homebrew and/or want the <span class="caps">GUI</span>, I&#8217;ve got your back&#8230;</p>
 <h3 id="building">Building sshuttle from Source</h3>
 <p>Unfortunately, pre-compiled binaries are not made available for every release, and documentation for building sshuttle is non-existent. The project uses a <a href="https://github.com/apenwarr/redo">build system called &#8216;redo&#8217;</a> instead of the more-customary &#8216;make&#8217;, so the process is a bit different than what most people are used to.</p>
-<p>Luckily, the sshuttle repository includes a shell script named &#8216;do&#8217;, which is a simplified version of redo, so you <em>won&#8217;t need to</em> install any additional build software. The only real dependencies are <a href="http://python.org/">Python</a> and two Python modules to generate the man page (feel free to use <code>pip install</code> instead of <code>easy_install</code>, if you prefer):</p>
+<p>Luckily, the sshuttle repository includes a shell script named &#8216;do&#8217;, which is a simplified version of redo, so you <em>won&#8217;t need to</em> install any additional build software. The only real dependencies are <a href="https://python.org/">Python</a> and two Python modules to generate the man page (feel free to use <code>pip install</code> instead of <code>easy_install</code>, if you prefer):</p>
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>easy_install markdown BeautifulSoup
 </code></pre></div><p>Once you&#8217;ve installed those two modules, you&#8217;re all set to build&#8230;</p>
 <p><i>NOTE: You may have to adjust paths or permissions slightly depending on your machine&#8217;s setup.</i></p>
@@ -75,7 +75,7 @@
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>ln -s /usr/local/libexec/sshuttle/sshuttle /usr/local/bin
 <span class="nv">$ </span>mkdir -p /usr/local/share/man/man8
 <span class="nv">$ </span>ln -s /usr/local/libexec/sshuttle/Documentation/sshuttle.8 /usr/local/share/man/man8
-</code></pre></div><p>For the <span class="caps">GUI</span> app, we need to create an <em>alias</em> instead a symlink, because <a href="http://en.wikipedia.org/wiki/Spotlight_(software)">Spotlight</a> will not index symlinks. Yes, you could just copy <i>Sshuttle VPN.app</i> directly into <i>/Applications</i>, but then you&#8217;d have to remember to copy it every time you update/rebuild sshuttle.</p>
+</code></pre></div><p>For the <span class="caps">GUI</span> app, we need to create an <em>alias</em> instead a symlink, because <a href="https://en.wikipedia.org/wiki/Spotlight_(software)">Spotlight</a> will not index symlinks. Yes, you could just copy <i>Sshuttle VPN.app</i> directly into <i>/Applications</i>, but then you&#8217;d have to remember to copy it every time you update/rebuild sshuttle.</p>
 <p>Without getting too technical, aliases are a lot like symlinks but they use extra metadata called &#8220;resource forks&#8221; to follow a file (even when it&#8217;s moved) rather then blindly pointing to a path. More importantly, Spotlight <strong>will</strong> index them. There&#8217;s no way to create an alias from the command line, so you have to use Finder:</p>
 <ol>
 	<li>Open Finder and press <strong>Command-Shift-G</strong> to open the &#8220;Go to the folder:&#8221; dialog box.</li>
@@ -109,14 +109,14 @@ net.inet6.ip6.scopedroute: 1
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>sshuttle --dns -r example.com 0/0
 </code></pre></div><p><i>NOTE: Sshuttle will honor your <code>~/.ssh/config</code> connection settings, but you can also manually specify a different username/port, if necessary:</i></p>
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>sshuttle --dns -r username@example.com:2222 0/0
-</code></pre></div><p>Run that, and all of your traffic (<em>including</em> <span class="caps">DNS</span> requests) will be transparently proxied through an <span class="caps">SSH</span> connection to <em>example.com</em>. You can verify this by browsing to <a href="http://ifconfig.me">http://ifconfig.me</a>.</p>
+</code></pre></div><p>Run that, and all of your traffic (<em>including</em> <span class="caps">DNS</span> requests) will be transparently proxied through an <span class="caps">SSH</span> connection to <em>example.com</em>. You can verify this by browsing to <a href="https://ifconfig.me">https://ifconfig.me</a>.</p>
 <p>To stop forwarding traffic, just press <code>Ctrl-c</code> back in the terminal. We can do a bit better though by forking the process into the background so we don&#8217;t tie up our terminal session. These are the aliases I use to make setting up and tearing down the tunnel easier:</p>
 <div class="highlight"><pre><code class="bash"><span class="nb">alias </span><span class="nv">tunnel</span><span class="o">=</span><span class="s1">&#39;sshuttle --dns --daemon --pidfile=/tmp/sshuttle.pid --remote=example.com 0/0&#39;</span>
 <span class="nb">alias </span><span class="nv">tunnelx</span><span class="o">=</span><span class="s1">&#39;[[ -f /tmp/sshuttle.pid ]] &amp;&amp; kill $(cat /tmp/sshuttle.pid) &amp;&amp; echo &quot;Disconnected.&quot;&#39;</span>
 </code></pre></div><p>The <i>Sshuttle VPN.app</i> <span class="caps">GUI</span> is pretty self-explanatory, just make sure to enable the <em>Send <span class="caps">DNS</span> requests through this server</em> checkbox, and select <em>Send all traffic through this server</em> for the &#8220;Network routes:&#8221; option.</p>
 <h2 id="bugs">Known Bugs</h2>
-<p>You may see a bunch of &#8220;<strong>warning: closed channel &#8230;</strong>&#8221; messages when running sshuttle (either on <span class="caps">STDOUT</span> or in your system.log), but these warnings are safe to ignore. The developer <a href="http://groups.google.com/group/sshuttle/browse_thread/thread/853316d8e0a90269/4febfe3136aba5df">knows about the issue</a> and is thinking of the best way to suppress/eliminate the condition.</p>
-<p>Also, prior to version 0.60 of sshuttle, there was <a href="http://groups.google.com/group/sshuttle/browse_thread/thread/6603f9d17ae8eec4">a bug in the <span class="caps">GUI</span> application</a> when disconnecting tunnels, where the controlling terminal would disappear before firewall rules could cleaned up. This would leave the network in an odd state and all <span class="caps">DNS</span> lookups would fail. It should be fixed now, but if you experience networking trouble after disconnecting a sshuttle tunnel, you can see the current firewall rules using:</p>
+<p>You may see a bunch of &#8220;<strong>warning: closed channel &#8230;</strong>&#8221; messages when running sshuttle (either on <span class="caps">STDOUT</span> or in your system.log), but these warnings are safe to ignore. The developer <a href="https://groups.google.com/group/sshuttle/browse_thread/thread/853316d8e0a90269/4febfe3136aba5df">knows about the issue</a> and is thinking of the best way to suppress/eliminate the condition.</p>
+<p>Also, prior to version 0.60 of sshuttle, there was <a href="https://groups.google.com/group/sshuttle/browse_thread/thread/6603f9d17ae8eec4">a bug in the <span class="caps">GUI</span> application</a> when disconnecting tunnels, where the controlling terminal would disappear before firewall rules could cleaned up. This would leave the network in an odd state and all <span class="caps">DNS</span> lookups would fail. It should be fixed now, but if you experience networking trouble after disconnecting a sshuttle tunnel, you can see the current firewall rules using:</p>
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>sudo ipfw list
 </code></pre></div><p>&#8230;and you can manually flush out those rules to fix connectivity by running:</p>
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>sudo ipfw -f flush
@@ -128,7 +128,7 @@ net.inet6.ip6.scopedroute: 1
 <span class="nv">$ </span>./do all
 </code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>Admittedly, sshuttle takes a bit more work than other solutions to get up and running, but the security it provides gives me peace of mind when forced to use insecure Wi-Fi networks.</p>
-<p>If you have any issues, there is an <a href="http://groups.google.com/group/sshuttle">active mailing list</a> for the project, or you can always <a href="/about/#contact">send me a note</a> and I&#8217;ll see what I can do to help.</p>
+<p>If you have any issues, there is an <a href="https://groups.google.com/group/sshuttle">active mailing list</a> for the project, or you can always <a href="/about/#contact">send me a note</a> and I&#8217;ll see what I can do to help.</p>
 
 <div class="signature"><a href="mailto:aaron@elasticdog.com?subject=Comment on Use sshuttle to Keep Safe on Insecure Wi-Fi" title="Send me your comments">&#8212; Aaron Bull Schaefer</a></div>
 
@@ -162,7 +162,7 @@ net.inet6.ip6.scopedroute: 1
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

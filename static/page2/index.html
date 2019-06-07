@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>ElasticDog.com | The ballyhoo of Aaron Bull Schaefer</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -54,15 +54,15 @@
 
 	
 
-	<p>To help teach myself <a href="http://factorcode.org/">Factor</a>, I started solving a lot of the problems at <a href="http://projecteuler.net/">Project Euler</a> and approached each one, not only as a way to learn a new language, but as a means of exploring unfamiliar programming/mathematical methods, structures, and algorithms. This article explains the process I went through to port a fairly complicated poker hand evaluation algorithm from C to Factor.</p>
+	<p>To help teach myself <a href="https://factorcode.org/">Factor</a>, I started solving a lot of the problems at <a href="https://projecteuler.net/">Project Euler</a> and approached each one, not only as a way to learn a new language, but as a means of exploring unfamiliar programming/mathematical methods, structures, and algorithms. This article explains the process I went through to port a fairly complicated poker hand evaluation algorithm from C to Factor.</p>
 <h2 id="problem54">Problem 54</h2>
-<p>In order to solve <a href="http://projecteuler.net/index.php?section=problems&amp;id=54">Problem 54</a>, I needed to come up with a way to programatically determine the winner when comparing two poker hands. I had recently read an extensive <a href="http://www.codingthewheel.com/archives/poker-hand-evaluator-roundup">blog post covering various poker hand evaluators</a>, so I knew that I didn&#8217;t want to bother with a naive solution when there were much better options out there. After reading through the different techniques, one stood out to me in particular; it was a relatively small amount of code, it didn&#8217;t require a ton of storage space, and it was plenty fast&#8230;</p>
+<p>In order to solve <a href="https://projecteuler.net/index.php?section=problems&amp;id=54">Problem 54</a>, I needed to come up with a way to programatically determine the winner when comparing two poker hands. I had recently read an extensive <a href="https://www.codingthewheel.com/archives/poker-hand-evaluator-roundup">blog post covering various poker hand evaluators</a>, so I knew that I didn&#8217;t want to bother with a naive solution when there were much better options out there. After reading through the different techniques, one stood out to me in particular; it was a relatively small amount of code, it didn&#8217;t require a ton of storage space, and it was plenty fast&#8230;</p>
 <h3 id="cactuskev">Cactus Kev&#8217;s Poker Hand Evaluator</h3>
-<p>Through the power of mathematics (<a href="https://secure.wikimedia.org/wikipedia/en/wiki/Combinatorics">combinatorics</a> in particular), you can ascertain that out of all 2,598,960 possible poker hands (52 choose 5), there are actually only <a href="http://www.suffecool.net/poker/7462.html">7462 distinct hand values</a> that you need to be concerned with. The basic idea behind <a href="http://www.suffecool.net/poker/evaluator.html">Cactus Kev&#8217;s Poker Hand Evaluator</a> is that you can take advantage of this fact by storing a card&#8217;s representation in an efficient manner, do some basic bit twiddling, some multiplication (which is computationally cheap), add in a couple lookup tables, and you can determine a hand&#8217;s equivalence class value <em>very</em> quickly.</p>
-<p>The key concept here is that each of a card&#8217;s possible 13 ranks (deuce through ace) is stored as a different prime number, and by multiplying a hand&#8217;s five prime numbers together, you&#8217;ll get a unique result that can then be used to determine that hand&#8217;s overall value. If you handle the special cases of flushes, straights, and high cards, the rest can be boiled down to a simple binary search. You can read the gory details at <a href="http://www.suffecool.net/poker/evaluator.html">Kevin Suffecool&#8217;s site</a>.</p>
+<p>Through the power of mathematics (<a href="https://secure.wikimedia.org/wikipedia/en/wiki/Combinatorics">combinatorics</a> in particular), you can ascertain that out of all 2,598,960 possible poker hands (52 choose 5), there are actually only <a href="https://www.suffecool.net/poker/7462.html">7462 distinct hand values</a> that you need to be concerned with. The basic idea behind <a href="https://www.suffecool.net/poker/evaluator.html">Cactus Kev&#8217;s Poker Hand Evaluator</a> is that you can take advantage of this fact by storing a card&#8217;s representation in an efficient manner, do some basic bit twiddling, some multiplication (which is computationally cheap), add in a couple lookup tables, and you can determine a hand&#8217;s equivalence class value <em>very</em> quickly.</p>
+<p>The key concept here is that each of a card&#8217;s possible 13 ranks (deuce through ace) is stored as a different prime number, and by multiplying a hand&#8217;s five prime numbers together, you&#8217;ll get a unique result that can then be used to determine that hand&#8217;s overall value. If you handle the special cases of flushes, straights, and high cards, the rest can be boiled down to a simple binary search. You can read the gory details at <a href="https://www.suffecool.net/poker/evaluator.html">Kevin Suffecool&#8217;s site</a>.</p>
 <h2 id="porting">The Porting Process</h2>
 <h3 id="constants">Bitfield Representation</h3>
-<p>Each card will be stored as a <a href="http://en.wikipedia.org/wiki/Bitfield">bitfield</a>, inside of an interger that&#8217;s 4-bytes long:</p>
+<p>Each card will be stored as a <a href="https://en.wikipedia.org/wiki/Bitfield">bitfield</a>, inside of an interger that&#8217;s 4-bytes long:</p>
 <p><!--
    cyan:   #339999;
    green:  #3A8D35;
@@ -225,9 +225,9 @@
 </code></pre></div><p>To use this code, you&#8217;d start with a string representing a card, like <code>"AS"</code> for the Ace of Spades or <code>"7H"</code> for the Seven of Hearts, and then pass it to <code>&gt;ckf</code> to get its integer representation. The <code>parse-cards</code> word simply does this conversion for an entire hand; given a string like <code>"7C 5D 4H 3S 2C"</code>, it will output an array of the proper integers:</p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="s2">&quot;7C 5D 4H 3S 2C&quot;</span> parse-cards .
 <span class="p">{</span> <span class="mi">2131213</span> <span class="mi">541447</span> <span class="mi">270853</span> <span class="mi">135427</span> <span class="mi">98306</span> <span class="p">}</span>
-</code></pre></div><p>Due to Factor&#8217;s concatenative nature, you tend to write a lot of small words that do one specific thing, and then tie them together. Words are expected to be defined before you reference them (unless they&#8217;ve been <a href="http://docs.factorcode.org/content/article-deferred.html">deferred</a>), so when reading code from top to bottom, you&#8217;ll see big-picture words defined after the more-focused words they use. It&#8217;s also a convention to name helper words the same as the word from which they&#8217;re called, but with parentheses around the name.</p>
-<p>One special thing to note is the use of <a href="http://docs.factorcode.org/content/word-__colon____colon__,locals.html">locals</a> in the <code>(&gt;ckf)</code> helper word&#8230;if you start a word definition with <code>::</code> instead of just <code>:</code>, Factor will bind the named inputs (from the stack declaration) to lexical variables from left to right. It&#8217;s used in this case because we need to pass these values to the <code>card-bitfield</code> word in a specific order, and <a href="/2008/12/beginning-factor-shufflers-and-combinators/#caveats">shufflers would make this a bit more confusing</a>.</p>
-<p>The last thing to explain is the <code>card-bitfield</code> word itself&#8230;it looks up the proper bit values for the different parts of our card representation, and then constructs the final 4-byte integer from those values. See the <a href="http://docs.factorcode.org/content/word-bitfield,math.bitwise.html">bitfield documentation</a> for more details on its syntax.</p>
+</code></pre></div><p>Due to Factor&#8217;s concatenative nature, you tend to write a lot of small words that do one specific thing, and then tie them together. Words are expected to be defined before you reference them (unless they&#8217;ve been <a href="https://docs.factorcode.org/content/article-deferred.html">deferred</a>), so when reading code from top to bottom, you&#8217;ll see big-picture words defined after the more-focused words they use. It&#8217;s also a convention to name helper words the same as the word from which they&#8217;re called, but with parentheses around the name.</p>
+<p>One special thing to note is the use of <a href="https://docs.factorcode.org/content/word-__colon____colon__,locals.html">locals</a> in the <code>(&gt;ckf)</code> helper word&#8230;if you start a word definition with <code>::</code> instead of just <code>:</code>, Factor will bind the named inputs (from the stack declaration) to lexical variables from left to right. It&#8217;s used in this case because we need to pass these values to the <code>card-bitfield</code> word in a specific order, and <a href="/2008/12/beginning-factor-shufflers-and-combinators/#caveats">shufflers would make this a bit more confusing</a>.</p>
+<p>The last thing to explain is the <code>card-bitfield</code> word itself&#8230;it looks up the proper bit values for the different parts of our card representation, and then constructs the final 4-byte integer from those values. See the <a href="https://docs.factorcode.org/content/word-bitfield,math.bitwise.html">bitfield documentation</a> for more details on its syntax.</p>
 <h3 id="decks">Shuffling Decks and Printing Hands</h3>
 <p>Initializing and shuffling a deck wasn&#8217;t strictly necessary for solving the Project Euler problem, but it was a useful abstraction and would be expected in a general poker library. Printing out a poker hand falls under this same category, but I&#8217;ve included it here as well since it was part of Cactus Kev&#8217;s original code. This is where the languages start to noticibly deviate in their implementations&#8230;</p>
 <h4 id="init-deck-c">Initializing a Deck In C:</h4>
@@ -303,7 +303,7 @@
 
 <span class="nf">: print-hand </span><span class="kt">( hand -- )</span>
     <span class="p">[</span> card&gt;string <span class="p">]</span> <span class="k">map </span><span class="s2">&quot; &quot;</span> <span class="k">join print </span>flush;
-</code></pre></div><p>I&#8217;m cheating a bit here with the <code>shuffle</code> word, as Factor already implements <code>randomize</code> using the <a href="http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates algorithm</a>; so rather than re-inventing the wheel, I just aliased the wheel. With Factor, you&#8217;ll also notice that count-controlled loops are much less common in comparison to using <a href="http://docs.factorcode.org/content/article-sequences.html">sequence operators</a> directly on the elements of a data structure.</p>
+</code></pre></div><p>I&#8217;m cheating a bit here with the <code>shuffle</code> word, as Factor already implements <code>randomize</code> using the <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates algorithm</a>; so rather than re-inventing the wheel, I just aliased the wheel. With Factor, you&#8217;ll also notice that count-controlled loops are much less common in comparison to using <a href="https://docs.factorcode.org/content/article-sequences.html">sequence operators</a> directly on the elements of a data structure.</p>
 <h3 id="lookup">Lookup Tables</h3>
 <p>We can almost get to the actual evaluation of hands to determine their relative value, but before that, we&#8217;ll need the proper lookup tables. These are all straight-forward arrays, and we have four to consider:</p>
 <ol>
@@ -445,7 +445,7 @@
             values-table <span class="k">nth</span>
         <span class="p">]</span> <span class="k">if</span>
     <span class="p">]</span> <span class="k">if </span><span class="nf">;</span>
-</code></pre></div><p>Each language&#8217;s implementation checks for flushes first, then for hands with five unique ranks, and if all else fails, multiplies the primes together, searches for that product in a lookup table, and then uses that index to determine the hand&#8217;s final value. The <code>findit</code> function in C is the binary search, and once again I used Factor&#8217;s built-in libraries to do the same thing with the <a href="http://docs.factorcode.org/content/word-sorted-index,binary-search.html">sorted-index</a> word.</p>
+</code></pre></div><p>Each language&#8217;s implementation checks for flushes first, then for hands with five unique ranks, and if all else fails, multiplies the primes together, searches for that product in a lookup table, and then uses that index to determine the hand&#8217;s final value. The <code>findit</code> function in C is the binary search, and once again I used Factor&#8217;s built-in libraries to do the same thing with the <a href="https://docs.factorcode.org/content/word-sorted-index,binary-search.html">sorted-index</a> word.</p>
 <h3 id="ranking">Hand Ranking</h3>
 <p>We&#8217;re basically done at this point&#8230;the hand with the lowest value (from 1 to 7462) wins. If the values are the same, the hands are tied. A simple comparison function can tell you which hand is best.</p>
 <p>One last function that&#8217;s handy though, is the ability to output what that value actually means&#8230;</p>
@@ -491,7 +491,7 @@
 (scratchpad) <span class="s2">&quot;7C 5D 4H 3S 2C&quot;</span> <span class="s2">&quot;KD QS JC TH 9S&quot;</span> <span class="p">[</span> string&gt;value <span class="p">]</span> <span class="k">bi@ </span>&gt; .
 <span class="no">t</span>
 </code></pre></div><h3 id="euler">Solving Problem 54</h3>
-<p>Getting back to our original goal of solving Project Euler&#8217;s <a href="http://projecteuler.net/index.php?section=problems&amp;id=54">Problem 54</a>, we can now quite easily determine how many times <i>Player 1</i> wins out of 1000 random hands dealt to two players&#8230;</p>
+<p>Getting back to our original goal of solving Project Euler&#8217;s <a href="https://projecteuler.net/index.php?section=problems&amp;id=54">Problem 54</a>, we can now quite easily determine how many times <i>Player 1</i> wins out of 1000 random hands dealt to two players&#8230;</p>
 <div class="highlight"><pre><code class="factor"><span class="nf">: source-054 </span><span class="kt">( -- seq )</span>
     <span class="s2">&quot;resource:extra/project-euler/054/poker.txt&quot;</span> ascii file-lines
     <span class="p">[</span> <span class="p">[</span> <span class="mi">14</span> <span class="k">head-slice </span><span class="p">]</span> <span class="p">[</span> <span class="mi">14</span> <span class="k">tail-slice* </span><span class="p">]</span> <span class="k">bi 2array </span><span class="p">]</span> <span class="k">map </span><span class="nf">;</span>
@@ -500,7 +500,7 @@
     source-054 <span class="p">[</span> <span class="p">[</span> string&gt;value <span class="p">]</span> <span class="k">map first2 </span>before? <span class="p">]</span> <span class="k">count </span><span class="nf">;</span>
 </code></pre></div><p>The <code>source-054</code> word simply converts the provided text file into the format our evaluator expects and the hand comparisons are subsequently handled by the <code>euler054</code> word and counted up! Let&#8217;s just say that <i>Player 2</i> is much better at poker :-)</p>
 <h2 id="improvements">Vocabulary Improvements</h2>
-<p>Since porting the initial version of the poker vocabulary, many improvements have been made to generalize the code for use beyond just solving Project Euler problems. I ended up dropping the binary search in favor of using the <a href="http://www.senzee5.com/2006/06/some-perfect-hash.html">Senzee Perfect Hash Optimization</a>, and other Factor contributors have added code specifically for Texas Hold&#8217;em and Omaha evaluation. I didn&#8217;t want to cover all of that here, as the focus of this article is the direct comparison between C and Factor, but you can view the <a href="https://github.com/slavapestov/factor/tree/master/extra/poker">current poker vocabulary</a> to see all of these enhancements.</p>
+<p>Since porting the initial version of the poker vocabulary, many improvements have been made to generalize the code for use beyond just solving Project Euler problems. I ended up dropping the binary search in favor of using the <a href="https://www.senzee5.com/2006/06/some-perfect-hash.html">Senzee Perfect Hash Optimization</a>, and other Factor contributors have added code specifically for Texas Hold&#8217;em and Omaha evaluation. I didn&#8217;t want to cover all of that here, as the focus of this article is the direct comparison between C and Factor, but you can view the <a href="https://github.com/slavapestov/factor/tree/master/extra/poker">current poker vocabulary</a> to see all of these enhancements.</p>
 <p>As always, feel free to <a href="/about/#contact">drop me a line</a> if you&#8217;d like to discuss things further.</p>
 	<hr />
 
@@ -567,7 +567,7 @@
 (scratchpad) <span class="mi">1</span> <span class="k">neg </span>.
 <span class="mi">-1</span>
 </code></pre></div><h3 id="caveats">Caveats</h3>
-<p>There are many more <a href="http://docs.factorcode.org/content/article-shuffle-words.html">shuffle words</a> that support intricate rearrangements and the duplication/removal of multiple items from differing locations within the stack. The problem is, <em>code that is full of stack shufflers can easily become confusing</em>. In general, you should try to minimize the use of stack shufflers to keep things understandable.</p>
+<p>There are many more <a href="https://docs.factorcode.org/content/article-shuffle-words.html">shuffle words</a> that support intricate rearrangements and the duplication/removal of multiple items from differing locations within the stack. The problem is, <em>code that is full of stack shufflers can easily become confusing</em>. In general, you should try to minimize the use of stack shufflers to keep things understandable.</p>
 <p>Of course there are exceptions to that rule, times when shufflers make the most sense, but the <em>preferred</em> alternative to complicated stack shufflers is the use of a &#8220;combinator&#8221; that fits your use case. That said, combinators will take a bit of explaining&#8230;</p>
 <h2 id="quotations">Quotations</h2>
 <p>Before we can get to the idea of combinators, we first have to discuss quotations:</p>
@@ -616,7 +616,7 @@ hello
 <span class="mi">1</span>
 <span class="mi">6</span>
 <span class="mi">4</span>
-</code></pre></div><p>These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you&#8217;re curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the &#8220;retain stack&#8221;) to temporarily store items while the supplied quotation is being executed. There are a few other <a href="http://docs.factorcode.org/content/article-dip-keep-combinators.html">preserving combinators</a> that are worth exploring as well.</p>
+</code></pre></div><p>These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you&#8217;re curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the &#8220;retain stack&#8221;) to temporarily store items while the supplied quotation is being executed. There are a few other <a href="https://docs.factorcode.org/content/article-dip-keep-combinators.html">preserving combinators</a> that are worth exploring as well.</p>
 <h3 id="cleave">Cleave, Spread, and Apply</h3>
 <p>The cleave, spread, and apply combinators are your best weapons when trying to reduce the use of stack shufflers while simultaneously expressing intent. The key point being that they <em>should</em> express intent&#8230;if you find yourself writing code where these combinators don&#8217;t fit logically, then try another option.</p>
 <ol>
@@ -634,7 +634,7 @@ hello
 <p><img src="/images/2008/12/cleave.png" alt="Cleave Combinator Demonstration" width="510" height="222" /></p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="p">{</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">[</span> <span class="k">sum </span><span class="p">]</span> <span class="p">[</span> <span class="k">length </span><span class="p">]</span> <span class="k">bi </span>/ .
 <span class="mi">2</span>
-</code></pre></div><p>The different <a href="http://docs.factorcode.org/content/article-cleave-combinators.html">cleave combinators</a> change either the number of quotations applied to your items (<code>bi</code> vs. <code>tri</code>), or the number of items used as input for your quotations (<code>bi</code> vs. <code>2bi</code>).</p>
+</code></pre></div><p>The different <a href="https://docs.factorcode.org/content/article-cleave-combinators.html">cleave combinators</a> change either the number of quotations applied to your items (<code>bi</code> vs. <code>tri</code>), or the number of items used as input for your quotations (<code>bi</code> vs. <code>2bi</code>).</p>
 </li>
 <li>
 <p><strong>Spread Combinators</strong></p>
@@ -651,7 +651,7 @@ hello
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="p">{</span> <span class="mi">1</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">{</span> <span class="mi">3</span> <span class="mi">4</span> <span class="p">}</span> <span class="p">[</span> <span class="k">first </span><span class="p">]</span> <span class="p">[</span> <span class="k">second </span><span class="p">]</span> <span class="k">bi* 2array </span>.
 <span class="p">{</span> <span class="mi">1</span> <span class="mi">4</span> <span class="p">}</span>
 </code></pre></div><p>When you want to do the same thing with more than two quotations/items, then using spread combinators eliminates the need for nested dips or shufflers and the added clarity becomes much more evident.</p>
-<p>The different <a href="http://docs.factorcode.org/content/article-spread-combinators.html">spread combinators</a> change the number of quotations applied to the corresponding number of items on the stack (<code>bi*</code> vs. <code>tri*</code>).</p>
+<p>The different <a href="https://docs.factorcode.org/content/article-spread-combinators.html">spread combinators</a> change the number of quotations applied to the corresponding number of items on the stack (<code>bi*</code> vs. <code>tri*</code>).</p>
 </li>
 <li>
 <p><strong>Apply Combinators</strong></p>
@@ -667,7 +667,7 @@ hello
 <p><img src="/images/2008/12/apply.png" alt="Apply Combinator Demonstration" width="510" height="222" /></p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="s2">&quot;john&quot;</span> <span class="s2">&quot;John&quot;</span> <span class="p">[</span> &gt;upper <span class="p">]</span> <span class="k">bi@ </span>= .
 <span class="no">t</span>
-</code></pre></div><p>The different <a href="http://docs.factorcode.org/content/article-apply-combinators.html">apply combinators</a> change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).</p>
+</code></pre></div><p>The different <a href="https://docs.factorcode.org/content/article-apply-combinators.html">apply combinators</a> change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).</p>
 </li>
 </ol>
 <p>The cleave, spread, and apply combinators are all closely related; if you&#8217;re having trouble keeping them apart, try to memorize the naming convention:</p>
@@ -676,12 +676,12 @@ hello
 	<li>If the suffix is *, it is a &#8220;spread&#8221;</li>
 	<li>If the suffix is @, it is an &#8220;apply&#8221;</li>
 </ul>
-<p>Once you learn these combinators, you should be able to express almost any pattern of complicated stack shufflers. Note that there are also <a href="http://docs.factorcode.org/content/article-combinators.html">generic forms</a> for all of these combinators that can take additional inputs from the stack. If you find that you resort to using the generic forms more often then not, that&#8217;s usually a good indication that you should rethink your approach or put your data into a more appropriate structure.</p>
+<p>Once you learn these combinators, you should be able to express almost any pattern of complicated stack shufflers. Note that there are also <a href="https://docs.factorcode.org/content/article-combinators.html">generic forms</a> for all of these combinators that can take additional inputs from the stack. If you find that you resort to using the generic forms more often then not, that&#8217;s usually a good indication that you should rethink your approach or put your data into a more appropriate structure.</p>
 <h2 id="data">Data Type Details</h2>
 <p>Before I turn you loose, I wanted to offer a few extra details about some of Factor&#8217;s basic data types&#8230;</p>
 <h3 id="sequences">Sequences</h3>
-<p>In the cleave and spread examples above, I was sneaky and used sequences without explaining them formally. A sequence is a <em>finite, ordered, collection of elements</em>. Any data type that implements the sequence mixin class (meaning a data type that knows its length and will let you set/get an element at a specific index) gains the ability to use the powerful built-in <a href="http://docs.factorcode.org/content/article-sequences.html">sequence operators</a>. Read through that documentation to get an idea on how to manipulate sequences and their elements.</p>
-<p>Factor has many sequence types that you may already be familiar with, such as <a href="http://docs.factorcode.org/content/article-arrays.html">arrays</a> (fixed-size mutable sequences) and <a href="http://docs.factorcode.org/content/article-vectors.html">vectors</a> (resizable mutable sequences), but there are also other data types that you might not expect to be sequences, such as strings. In Factor, a string is merely an array of Unicode 5.0 code points.</p>
+<p>In the cleave and spread examples above, I was sneaky and used sequences without explaining them formally. A sequence is a <em>finite, ordered, collection of elements</em>. Any data type that implements the sequence mixin class (meaning a data type that knows its length and will let you set/get an element at a specific index) gains the ability to use the powerful built-in <a href="https://docs.factorcode.org/content/article-sequences.html">sequence operators</a>. Read through that documentation to get an idea on how to manipulate sequences and their elements.</p>
+<p>Factor has many sequence types that you may already be familiar with, such as <a href="https://docs.factorcode.org/content/article-arrays.html">arrays</a> (fixed-size mutable sequences) and <a href="https://docs.factorcode.org/content/article-vectors.html">vectors</a> (resizable mutable sequences), but there are also other data types that you might not expect to be sequences, such as strings. In Factor, a string is merely an array of Unicode 5.0 code points.</p>
 <p>Using the sequence operators and combinators together, you can create all sorts of powerful abstractions that I&#8217;ll talk more about next time. Here are a couple of examples to whet your appetite:</p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="p">{</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="p">}</span> <span class="p">[</span> <span class="k">even? </span><span class="p">]</span> <span class="k">filter </span>.
 <span class="p">{</span> <span class="mi">2</span> <span class="mi">4</span> <span class="p">}</span>
@@ -695,7 +695,7 @@ hello
 <span class="no">f</span>
 </code></pre></div><p>Keep in mind that in Factor, <strong>sequences are zero-based</strong>.</p>
 <h3 id="numbers">Numbers</h3>
-<p>So far, we have only used integers, but Factor also supports <a href="http://docs.factorcode.org/content/article-rationals.html">rational numbers</a> (fractions), <a href="http://docs.factorcode.org/content/article-floats.html">floats</a> (decimal approximations of a number), and <a href="http://docs.factorcode.org/content/article-complex-numbers.html">complex numbers</a> (imaginary numbers).</p>
+<p>So far, we have only used integers, but Factor also supports <a href="https://docs.factorcode.org/content/article-rationals.html">rational numbers</a> (fractions), <a href="https://docs.factorcode.org/content/article-floats.html">floats</a> (decimal approximations of a number), and <a href="https://docs.factorcode.org/content/article-complex-numbers.html">complex numbers</a> (imaginary numbers).</p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="mi">100</span> <span class="mi">330</span> / .
 <span class="m">10/33</span>
 (scratchpad) <span class="m">5/4</span> <span class="m">1/2</span> + .
@@ -749,7 +749,7 @@ hello
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

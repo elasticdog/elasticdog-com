@@ -2,7 +2,7 @@
 layout: retired
 title:  'WP Plugin: Code Viewer'
 ---
-Code Viewer is a "WordPress":http://wordpress.org/ plugin that pulls source code from an external file and displays it, optionally adding a link to download the code directly. The plugin displays the code with proper indentation, line numbers, and automatic long-line wrapping.
+Code Viewer is a "WordPress":https://wordpress.org/ plugin that pulls source code from an external file and displays it, optionally adding a link to download the code directly. The plugin displays the code with proper indentation, line numbers, and automatic long-line wrapping.
 
 When using Code Viewer, you no longer have to worry about typing countless entity references in order to make your code "HTML(Hypertext Markup Language) friendly" or to simulate tabs...it's all done automatically with PHP(PHP: Hypertext Preprocessor) and a little CSS(Cascading Style Sheets). By inserting line numbers on your page, the plugin also eliminates the problem of long, non-breaking lines screwing up your layout. In addition, line numbers make convenient reference points when discussing code samples.
 
@@ -81,11 +81,11 @@ h2(#parameters). Parameters
 * The @link@ attribute is *optional*.
 ** &#34;display&#34; - __string__ - Should the link to the code be displayed (@"yes"@), or not be displayed (@"no"@). If the @link@ attribute is left out of the tag completely, the value defaults to @"no"@.
 
-Here are some examples of _valid syntax_ recognized by Code Viewer...note that all of these examples point to the same file (assuming the <var>$default_path</var> variable is set to &#34;@http://elasticdog.com/code/@&#34;):
+Here are some examples of _valid syntax_ recognized by Code Viewer...note that all of these examples point to the same file (assuming the <var>$default_path</var> variable is set to &#34;@https://elasticdog.com/code/@&#34;):
 
 {% highlight xml %}
-<viewcode src="http://elasticdog.com/code/example.txt" link="no" />
-<viewcode src="http://elasticdog.com/code/example.txt" />
+<viewcode src="https://elasticdog.com/code/example.txt" link="no" />
+<viewcode src="https://elasticdog.com/code/example.txt" />
 <viewcode src="/code/example.txt" />
 <viewcode src="example.txt" />
 {% endhighlight %}
@@ -100,6 +100,6 @@ h2(#version-history). Version History
 
 h2(#credits). Credits
 
-The idea to use ordered lists in XHTML to present code, originated from Simon Willison's "CSS Numbered Code Listings":http://simon.incutio.com/archive/2002/07/10/numberedCodeListing blog entry. The same idea has been used by other designers, and in particular, a fellow WP plugin author named David House...
+The idea to use ordered lists in XHTML to present code, originated from Simon Willison's "CSS Numbered Code Listings":https://simon.incutio.com/archive/2002/07/10/numberedCodeListing blog entry. The same idea has been used by other designers, and in particular, a fellow WP plugin author named David House...
 
-Looking at "David's code-snippet system":http://xmouse.ithium.net/archives/2004/07/19/implementing-a-code-snippet-system, I fell in love with the idea, but thought his implementation could be improved upon. Code Viewer should be much more efficient in comparison and has the added functionality of optional link inclusion, styling differences for every other line, and better URL & file type support. A big thanks goes out to both David and Simon for their contributions to my latest creation.
+Looking at "David's code-snippet system":https://xmouse.ithium.net/archives/2004/07/19/implementing-a-code-snippet-system, I fell in love with the idea, but thought his implementation could be improved upon. Code Viewer should be much more efficient in comparison and has the added functionality of optional link inclusion, styling differences for every other line, and better URL & file type support. A big thanks goes out to both David and Simon for their contributions to my latest creation.

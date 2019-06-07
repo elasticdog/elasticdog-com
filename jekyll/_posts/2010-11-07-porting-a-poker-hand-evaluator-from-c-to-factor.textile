@@ -2,23 +2,23 @@
 layout: post
 title:  Porting a Poker Hand Evaluator from C to Factor
 ---
-To help teach myself "Factor":http://factorcode.org/, I started solving a lot of the problems at "Project Euler":http://projecteuler.net/ and approached each one, not only as a way to learn a new language, but as a means of exploring unfamiliar programming/mathematical methods, structures, and algorithms. This article explains the process I went through to port a fairly complicated poker hand evaluation algorithm from C to Factor.
+To help teach myself "Factor":https://factorcode.org/, I started solving a lot of the problems at "Project Euler":https://projecteuler.net/ and approached each one, not only as a way to learn a new language, but as a means of exploring unfamiliar programming/mathematical methods, structures, and algorithms. This article explains the process I went through to port a fairly complicated poker hand evaluation algorithm from C to Factor.
 
 h2(#problem54). Problem 54
 
-In order to solve "Problem 54":http://projecteuler.net/index.php?section=problems&id=54, I needed to come up with a way to programatically determine the winner when comparing two poker hands. I had recently read an extensive "blog post covering various poker hand evaluators":http://www.codingthewheel.com/archives/poker-hand-evaluator-roundup, so I knew that I didn't want to bother with a naive solution when there were much better options out there. After reading through the different techniques, one stood out to me in particular; it was a relatively small amount of code, it didn't require a ton of storage space, and it was plenty fast...
+In order to solve "Problem 54":https://projecteuler.net/index.php?section=problems&id=54, I needed to come up with a way to programatically determine the winner when comparing two poker hands. I had recently read an extensive "blog post covering various poker hand evaluators":https://www.codingthewheel.com/archives/poker-hand-evaluator-roundup, so I knew that I didn't want to bother with a naive solution when there were much better options out there. After reading through the different techniques, one stood out to me in particular; it was a relatively small amount of code, it didn't require a ton of storage space, and it was plenty fast...
 
 h3(#cactuskev). Cactus Kev's Poker Hand Evaluator
 
-Through the power of mathematics ("combinatorics":https://secure.wikimedia.org/wikipedia/en/wiki/Combinatorics in particular), you can ascertain that out of all 2,598,960 possible poker hands (52 choose 5), there are actually only "7462 distinct hand values":http://www.suffecool.net/poker/7462.html that you need to be concerned with. The basic idea behind "Cactus Kev's Poker Hand Evaluator":http://www.suffecool.net/poker/evaluator.html is that you can take advantage of this fact by storing a card's representation in an efficient manner, do some basic bit twiddling, some multiplication (which is computationally cheap), add in a couple lookup tables, and you can determine a hand's equivalence class value _very_ quickly.
+Through the power of mathematics ("combinatorics":https://secure.wikimedia.org/wikipedia/en/wiki/Combinatorics in particular), you can ascertain that out of all 2,598,960 possible poker hands (52 choose 5), there are actually only "7462 distinct hand values":https://www.suffecool.net/poker/7462.html that you need to be concerned with. The basic idea behind "Cactus Kev's Poker Hand Evaluator":https://www.suffecool.net/poker/evaluator.html is that you can take advantage of this fact by storing a card's representation in an efficient manner, do some basic bit twiddling, some multiplication (which is computationally cheap), add in a couple lookup tables, and you can determine a hand's equivalence class value _very_ quickly.
 
-The key concept here is that each of a card's possible 13 ranks (deuce through ace) is stored as a different prime number, and by multiplying a hand's five prime numbers together, you'll get a unique result that can then be used to determine that hand's overall value. If you handle the special cases of flushes, straights, and high cards, the rest can be boiled down to a simple binary search. You can read the gory details at "Kevin Suffecool's site":http://www.suffecool.net/poker/evaluator.html.
+The key concept here is that each of a card's possible 13 ranks (deuce through ace) is stored as a different prime number, and by multiplying a hand's five prime numbers together, you'll get a unique result that can then be used to determine that hand's overall value. If you handle the special cases of flushes, straights, and high cards, the rest can be boiled down to a simple binary search. You can read the gory details at "Kevin Suffecool's site":https://www.suffecool.net/poker/evaluator.html.
 
 h2(#porting). The Porting Process
 
 h3(#constants). Bitfield Representation
 
-Each card will be stored as a "bitfield":http://en.wikipedia.org/wiki/Bitfield, inside of an interger that's 4-bytes long:
+Each card will be stored as a "bitfield":https://en.wikipedia.org/wiki/Bitfield, inside of an interger that's 4-bytes long:
 
 <!--
    cyan:   #339999;
@@ -218,11 +218,11 @@ To use this code, you'd start with a string representing a card, like @"AS"@ for
 { 2131213 541447 270853 135427 98306 }
 {% endhighlight %}
 
-Due to Factor's concatenative nature, you tend to write a lot of small words that do one specific thing, and then tie them together. Words are expected to be defined before you reference them (unless they've been "deferred":http://docs.factorcode.org/content/article-deferred.html), so when reading code from top to bottom, you'll see big-picture words defined after the more-focused words they use. It's also a convention to name helper words the same as the word from which they're called, but with parentheses around the name.
+Due to Factor's concatenative nature, you tend to write a lot of small words that do one specific thing, and then tie them together. Words are expected to be defined before you reference them (unless they've been "deferred":https://docs.factorcode.org/content/article-deferred.html), so when reading code from top to bottom, you'll see big-picture words defined after the more-focused words they use. It's also a convention to name helper words the same as the word from which they're called, but with parentheses around the name.
 
-One special thing to note is the use of "locals":http://docs.factorcode.org/content/word-__colon____colon__,locals.html in the @(>ckf)@ helper word...if you start a word definition with @::@ instead of just @:@, Factor will bind the named inputs (from the stack declaration) to lexical variables from left to right. It's used in this case because we need to pass these values to the @card-bitfield@ word in a specific order, and "shufflers would make this a bit more confusing":/2008/12/beginning-factor-shufflers-and-combinators/#caveats.
+One special thing to note is the use of "locals":https://docs.factorcode.org/content/word-__colon____colon__,locals.html in the @(>ckf)@ helper word...if you start a word definition with @::@ instead of just @:@, Factor will bind the named inputs (from the stack declaration) to lexical variables from left to right. It's used in this case because we need to pass these values to the @card-bitfield@ word in a specific order, and "shufflers would make this a bit more confusing":/2008/12/beginning-factor-shufflers-and-combinators/#caveats.
 
-The last thing to explain is the @card-bitfield@ word itself...it looks up the proper bit values for the different parts of our card representation, and then constructs the final 4-byte integer from those values. See the "bitfield documentation":http://docs.factorcode.org/content/word-bitfield,math.bitwise.html for more details on its syntax.
+The last thing to explain is the @card-bitfield@ word itself...it looks up the proper bit values for the different parts of our card representation, and then constructs the final 4-byte integer from those values. See the "bitfield documentation":https://docs.factorcode.org/content/word-bitfield,math.bitwise.html for more details on its syntax.
 
 h3(#decks). Shuffling Decks and Printing Hands
 
@@ -325,7 +325,7 @@ h4(#printing-factor). Printing a Hand In Factor:
     [ card>string ] map " " join print flush;
 {% endhighlight %}
 
-I'm cheating a bit here with the @shuffle@ word, as Factor already implements @randomize@ using the "Fisher-Yates algorithm":http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle; so rather than re-inventing the wheel, I just aliased the wheel. With Factor, you'll also notice that count-controlled loops are much less common in comparison to using "sequence operators":http://docs.factorcode.org/content/article-sequences.html directly on the elements of a data structure.
+I'm cheating a bit here with the @shuffle@ word, as Factor already implements @randomize@ using the "Fisher-Yates algorithm":https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle; so rather than re-inventing the wheel, I just aliased the wheel. With Factor, you'll also notice that count-controlled loops are much less common in comparison to using "sequence operators":https://docs.factorcode.org/content/article-sequences.html directly on the elements of a data structure.
 
 h3(#lookup). Lookup Tables
 
@@ -489,7 +489,7 @@ h4(#evaluation-factor). Hand Evaluation In Factor:
 
 {% endhighlight %}
 
-Each language's implementation checks for flushes first, then for hands with five unique ranks, and if all else fails, multiplies the primes together, searches for that product in a lookup table, and then uses that index to determine the hand's final value. The @findit@ function in C is the binary search, and once again I used Factor's built-in libraries to do the same thing with the "sorted-index":http://docs.factorcode.org/content/word-sorted-index,binary-search.html word.
+Each language's implementation checks for flushes first, then for hands with five unique ranks, and if all else fails, multiplies the primes together, searches for that product in a lookup table, and then uses that index to determine the hand's final value. The @findit@ function in C is the binary search, and once again I used Factor's built-in libraries to do the same thing with the "sorted-index":https://docs.factorcode.org/content/word-sorted-index,binary-search.html word.
 
 h3(#ranking). Hand Ranking
 
@@ -554,7 +554,7 @@ t
 
 h3(#euler). Solving Problem 54
 
-Getting back to our original goal of solving Project Euler's "Problem 54":http://projecteuler.net/index.php?section=problems&id=54, we can now quite easily determine how many times __Player 1__ wins out of 1000 random hands dealt to two players...
+Getting back to our original goal of solving Project Euler's "Problem 54":https://projecteuler.net/index.php?section=problems&id=54, we can now quite easily determine how many times __Player 1__ wins out of 1000 random hands dealt to two players...
 
 {% highlight factor %}
 : source-054 ( -- seq )
@@ -569,6 +569,6 @@ The @source-054@ word simply converts the provided text file into the format our
 
 h2(#improvements). Vocabulary Improvements
 
-Since porting the initial version of the poker vocabulary, many improvements have been made to generalize the code for use beyond just solving Project Euler problems. I ended up dropping the binary search in favor of using the "Senzee Perfect Hash Optimization":http://www.senzee5.com/2006/06/some-perfect-hash.html, and other Factor contributors have added code specifically for Texas Hold'em and Omaha evaluation. I didn't want to cover all of that here, as the focus of this article is the direct comparison between C and Factor, but you can view the "current poker vocabulary":https://github.com/slavapestov/factor/tree/master/extra/poker to see all of these enhancements.
+Since porting the initial version of the poker vocabulary, many improvements have been made to generalize the code for use beyond just solving Project Euler problems. I ended up dropping the binary search in favor of using the "Senzee Perfect Hash Optimization":https://www.senzee5.com/2006/06/some-perfect-hash.html, and other Factor contributors have added code specifically for Texas Hold'em and Omaha evaluation. I didn't want to cover all of that here, as the focus of this article is the direct comparison between C and Factor, but you can view the "current poker vocabulary":https://github.com/slavapestov/factor/tree/master/extra/poker to see all of these enhancements.
 
 As always, feel free to "drop me a line":/about/#contact if you'd like to discuss things further.

@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Developing Ansible Playbooks for Arch Linux with Vagrant</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -49,20 +49,20 @@
 
 <h1>Developing Ansible Playbooks for Arch Linux with Vagrant</h1>
 
-<p>I&#8217;m a big fan of automated configuration management software, and an even bigger fan of utilizing <a href="http://www.vagrantup.com/">Vagrant</a> for developing configuration modules/cookbooks/states/playbooks/whatever in a fast and easily reproducible environment. I previously created <a href="https://github.com/elasticdog/puppet-sandbox">Puppet Sandbox</a> for just this purpose, but have more recently taken an interest in using <a href="http://www.ansibleworks.com/">Ansible</a> for configuration and orchestration.</p>
-<p>I also have a long history of working with <a href="https://www.archlinux.org/">Arch Linux</a>, and wanted to develop Ansible playbooks specifically for managing Arch machines. Vagrant supports automatically <a href="http://docs.vagrantup.com/v2/provisioning/ansible.html">provisioning machines via Ansible</a> out of the box, but there were still a couple of hurdles to get over:</p>
+<p>I&#8217;m a big fan of automated configuration management software, and an even bigger fan of utilizing <a href="https://www.vagrantup.com/">Vagrant</a> for developing configuration modules/cookbooks/states/playbooks/whatever in a fast and easily reproducible environment. I previously created <a href="https://github.com/elasticdog/puppet-sandbox">Puppet Sandbox</a> for just this purpose, but have more recently taken an interest in using <a href="https://www.ansibleworks.com/">Ansible</a> for configuration and orchestration.</p>
+<p>I also have a long history of working with <a href="https://www.archlinux.org/">Arch Linux</a>, and wanted to develop Ansible playbooks specifically for managing Arch machines. Vagrant supports automatically <a href="https://docs.vagrantup.com/v2/provisioning/ansible.html">provisioning machines via Ansible</a> out of the box, but there were still a couple of hurdles to get over:</p>
 <ol>
 	<li>Up-to-date Vagrant base boxes for Arch are hard to find.</li>
 	<li>Arch Linux doesn&#8217;t have Python 2 installed by default, which is a dependency for Ansible.</li>
 </ol>
 <h2 id="packer">Packer Arch</h2>
-<p>To solve the first problem, I decided to create a generic Arch Linux base box myself. In the not too distant past, the way to do that in a repeatable fashion was <a href="https://github.com/jedi4ever/veewee">Veewee</a>, but the project has gotten progressively more complicated to set up and use. Lucky for me, there&#8217;s a new kid on the block for creating machine images named <a href="http://www.packer.io/">Packer</a>, built and maintained by the author of Vagrant, Mitchell Hashimoto.</p>
+<p>To solve the first problem, I decided to create a generic Arch Linux base box myself. In the not too distant past, the way to do that in a repeatable fashion was <a href="https://github.com/jedi4ever/veewee">Veewee</a>, but the project has gotten progressively more complicated to set up and use. Lucky for me, there&#8217;s a new kid on the block for creating machine images named <a href="https://www.packer.io/">Packer</a>, built and maintained by the author of Vagrant, Mitchell Hashimoto.</p>
 <p>To make a long story short, I wrote <a href="https://github.com/elasticdog/packer-arch">Packer Arch</a>, which is a bare bones Packer template and installation script that can be used to quickly generate Vagrant base boxes for Arch Linux. My goal with the box was to be as minimal as possible, and to roughly duplicate what you&#8217;d get when purchasing an Arch Linux <acronym title="Virtual Private Server"><span class="caps">VPS</span></acronym> from a provider like <a href="https://www.digitalocean.com/">DigitalOcean</a>. Starting from that point, I wanted to configure everything else via Ansible.</p>
 <h2 id="bootstrap">Bootstrapping the Virtual Machine</h2>
-<p>Solving the Python 2 problem was a little trickier. Ansible itself provided a possible solution with their <a href="http://ansibleworks.com/docs/modules.html#raw">raw module</a>, but Vagrant&#8217;s provisioning integration with Ansible requires Python 2 to be on the base box <em>before</em> you can run any playbooks. It&#8217;s the classic &#8220;chicken or the egg&#8221; problem.</p>
+<p>Solving the Python 2 problem was a little trickier. Ansible itself provided a possible solution with their <a href="https://ansibleworks.com/docs/modules.html#raw">raw module</a>, but Vagrant&#8217;s provisioning integration with Ansible requires Python 2 to be on the base box <em>before</em> you can run any playbooks. It&#8217;s the classic &#8220;chicken or the egg&#8221; problem.</p>
 <p>Since utilizing Ansible for configuration <em>as well as</em> orchestration tasks was desirable, but would require having a proper setup outside of Vagrant anyway, I just decided to ignore Vagrant&#8217;s provisioner altogether. Instead, I wrote a short script to handle the one-time tasks so I could interact with the <acronym title="Virtual Machine"><span class="caps">VM</span></acronym> using Ansible in the exact same fashion as I would any other server.</p>
 <h3 id="preparation">Preparation</h3>
-<p>The prerequisites for running the bootstrap script include assigning a known IP address to the machine via the <a href="http://docs.vagrantup.com/v2/vagrantfile/index.html">Vagrantfile</a>:</p>
+<p>The prerequisites for running the bootstrap script include assigning a known IP address to the machine via the <a href="https://docs.vagrantup.com/v2/vagrantfile/index.html">Vagrantfile</a>:</p>
 <div class="highlight"><pre><code class="ruby"><span class="c1"># -*- mode: ruby -*-</span>
 <span class="c1"># vi: set ft=ruby :</span>
 
@@ -73,7 +73,7 @@
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;arch&quot;</span>
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="ss">:private_network</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;192.168.111.222&quot;</span>
 <span class="k">end</span>
-</code></pre></div><p>&#8230;recording that same IP in an <a href="http://ansibleworks.com/docs/patterns.html">inventory file</a> named <code>hosts</code> for Ansible to reference:</p>
+</code></pre></div><p>&#8230;recording that same IP in an <a href="https://ansibleworks.com/docs/patterns.html">inventory file</a> named <code>hosts</code> for Ansible to reference:</p>
 <div class="highlight"><pre><code class="ini"><span class="k">[vagrant]</span>
 <span class="err">192.168.111.222</span>
 </code></pre></div><p>&#8230;and finally pointing Ansible to the correct Python binary by creating a <code>group_vars/all</code> file containing:</p>
@@ -88,7 +88,7 @@
 	<li>Add my <acronym title="Secure SHell"><span class="caps">SSH</span></acronym> public keys to the newly created account.</li>
 	<li>Download a current package <a href="https://www.archlinux.org/mirrorlist/">mirrorlist</a> based on my geography.</li>
 </ol>
-<p>The user management steps are handled by running the tasks tagged &#8220;<em>bootstrap</em>&#8221; from my regular master playbook, and the mirrorlist is downloaded and then transferred to the machine via the <a href="http://ansibleworks.com/docs/modules.html#copy">copy module</a>.</p>
+<p>The user management steps are handled by running the tasks tagged &#8220;<em>bootstrap</em>&#8221; from my regular master playbook, and the mirrorlist is downloaded and then transferred to the machine via the <a href="https://ansibleworks.com/docs/modules.html#copy">copy module</a>.</p>
 <p>Without further ado, here&#8217;s the bootstrap script:</p>
 <div class="highlight"><pre><code class="bash"><span class="c">#!/usr/bin/env bash</span>
 
@@ -126,7 +126,7 @@ ansible-playbook site.yml --tags<span class="o">=</span>bootstrap --user<span cl
     <span class="s2">&quot;changed&quot;</span>: <span class="nb">false</span>,
     <span class="s2">&quot;ping&quot;</span>: <span class="s2">&quot;pong&quot;</span>
 <span class="o">}</span>
-</code></pre></div><p>To give you an idea of the actual playbooks I&#8217;m using with this setup, take a look at my <a href="https://github.com/elasticdog/monarch">Monarch</a> project, and in particular, the <em>users.yml</em> file under the common role. As always, <a href="http://elasticdog.com/about/#contact">let me know</a> if you need any help putting all of the pieces together.</p>
+</code></pre></div><p>To give you an idea of the actual playbooks I&#8217;m using with this setup, take a look at my <a href="https://github.com/elasticdog/monarch">Monarch</a> project, and in particular, the <em>users.yml</em> file under the common role. As always, <a href="https://elasticdog.com/about/#contact">let me know</a> if you need any help putting all of the pieces together.</p>
 
 <div class="signature"><a href="mailto:aaron@elasticdog.com?subject=Comment on Developing Ansible Playbooks for Arch Linux with Vagrant" title="Send me your comments">&#8212; Aaron Bull Schaefer</a></div>
 
@@ -160,7 +160,7 @@ ansible-playbook site.yml --tags<span class="o">=</span>bootstrap --user<span cl
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

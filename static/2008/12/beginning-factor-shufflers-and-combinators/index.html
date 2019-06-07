@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Beginning Factor &#8211; Shufflers &amp; Combinators</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -92,7 +92,7 @@
 (scratchpad) <span class="mi">1</span> <span class="k">neg </span>.
 <span class="mi">-1</span>
 </code></pre></div><h3 id="caveats">Caveats</h3>
-<p>There are many more <a href="http://docs.factorcode.org/content/article-shuffle-words.html">shuffle words</a> that support intricate rearrangements and the duplication/removal of multiple items from differing locations within the stack. The problem is, <em>code that is full of stack shufflers can easily become confusing</em>. In general, you should try to minimize the use of stack shufflers to keep things understandable.</p>
+<p>There are many more <a href="https://docs.factorcode.org/content/article-shuffle-words.html">shuffle words</a> that support intricate rearrangements and the duplication/removal of multiple items from differing locations within the stack. The problem is, <em>code that is full of stack shufflers can easily become confusing</em>. In general, you should try to minimize the use of stack shufflers to keep things understandable.</p>
 <p>Of course there are exceptions to that rule, times when shufflers make the most sense, but the <em>preferred</em> alternative to complicated stack shufflers is the use of a &#8220;combinator&#8221; that fits your use case. That said, combinators will take a bit of explaining&#8230;</p>
 <h2 id="quotations">Quotations</h2>
 <p>Before we can get to the idea of combinators, we first have to discuss quotations:</p>
@@ -141,7 +141,7 @@ hello
 <span class="mi">1</span>
 <span class="mi">6</span>
 <span class="mi">4</span>
-</code></pre></div><p>These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you&#8217;re curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the &#8220;retain stack&#8221;) to temporarily store items while the supplied quotation is being executed. There are a few other <a href="http://docs.factorcode.org/content/article-dip-keep-combinators.html">preserving combinators</a> that are worth exploring as well.</p>
+</code></pre></div><p>These two combinators alone can greatly reduce the number of stack shufflers your code will need. If you&#8217;re curious about how these combinators work, they both secretly take advantage of an auxiliary stack (called the &#8220;retain stack&#8221;) to temporarily store items while the supplied quotation is being executed. There are a few other <a href="https://docs.factorcode.org/content/article-dip-keep-combinators.html">preserving combinators</a> that are worth exploring as well.</p>
 <h3 id="cleave">Cleave, Spread, and Apply</h3>
 <p>The cleave, spread, and apply combinators are your best weapons when trying to reduce the use of stack shufflers while simultaneously expressing intent. The key point being that they <em>should</em> express intent&#8230;if you find yourself writing code where these combinators don&#8217;t fit logically, then try another option.</p>
 <ol>
@@ -159,7 +159,7 @@ hello
 <p><img src="/images/2008/12/cleave.png" alt="Cleave Combinator Demonstration" width="510" height="222" /></p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="p">{</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">[</span> <span class="k">sum </span><span class="p">]</span> <span class="p">[</span> <span class="k">length </span><span class="p">]</span> <span class="k">bi </span>/ .
 <span class="mi">2</span>
-</code></pre></div><p>The different <a href="http://docs.factorcode.org/content/article-cleave-combinators.html">cleave combinators</a> change either the number of quotations applied to your items (<code>bi</code> vs. <code>tri</code>), or the number of items used as input for your quotations (<code>bi</code> vs. <code>2bi</code>).</p>
+</code></pre></div><p>The different <a href="https://docs.factorcode.org/content/article-cleave-combinators.html">cleave combinators</a> change either the number of quotations applied to your items (<code>bi</code> vs. <code>tri</code>), or the number of items used as input for your quotations (<code>bi</code> vs. <code>2bi</code>).</p>
 </li>
 <li>
 <p><strong>Spread Combinators</strong></p>
@@ -176,7 +176,7 @@ hello
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="p">{</span> <span class="mi">1</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">{</span> <span class="mi">3</span> <span class="mi">4</span> <span class="p">}</span> <span class="p">[</span> <span class="k">first </span><span class="p">]</span> <span class="p">[</span> <span class="k">second </span><span class="p">]</span> <span class="k">bi* 2array </span>.
 <span class="p">{</span> <span class="mi">1</span> <span class="mi">4</span> <span class="p">}</span>
 </code></pre></div><p>When you want to do the same thing with more than two quotations/items, then using spread combinators eliminates the need for nested dips or shufflers and the added clarity becomes much more evident.</p>
-<p>The different <a href="http://docs.factorcode.org/content/article-spread-combinators.html">spread combinators</a> change the number of quotations applied to the corresponding number of items on the stack (<code>bi*</code> vs. <code>tri*</code>).</p>
+<p>The different <a href="https://docs.factorcode.org/content/article-spread-combinators.html">spread combinators</a> change the number of quotations applied to the corresponding number of items on the stack (<code>bi*</code> vs. <code>tri*</code>).</p>
 </li>
 <li>
 <p><strong>Apply Combinators</strong></p>
@@ -192,7 +192,7 @@ hello
 <p><img src="/images/2008/12/apply.png" alt="Apply Combinator Demonstration" width="510" height="222" /></p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="s2">&quot;john&quot;</span> <span class="s2">&quot;John&quot;</span> <span class="p">[</span> &gt;upper <span class="p">]</span> <span class="k">bi@ </span>= .
 <span class="no">t</span>
-</code></pre></div><p>The different <a href="http://docs.factorcode.org/content/article-apply-combinators.html">apply combinators</a> change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).</p>
+</code></pre></div><p>The different <a href="https://docs.factorcode.org/content/article-apply-combinators.html">apply combinators</a> change the number of items on the stack your quotation is applied to  (<code>bi@</code> vs. <code>tri@</code>).</p>
 </li>
 </ol>
 <p>The cleave, spread, and apply combinators are all closely related; if you&#8217;re having trouble keeping them apart, try to memorize the naming convention:</p>
@@ -201,12 +201,12 @@ hello
 	<li>If the suffix is *, it is a &#8220;spread&#8221;</li>
 	<li>If the suffix is @, it is an &#8220;apply&#8221;</li>
 </ul>
-<p>Once you learn these combinators, you should be able to express almost any pattern of complicated stack shufflers. Note that there are also <a href="http://docs.factorcode.org/content/article-combinators.html">generic forms</a> for all of these combinators that can take additional inputs from the stack. If you find that you resort to using the generic forms more often then not, that&#8217;s usually a good indication that you should rethink your approach or put your data into a more appropriate structure.</p>
+<p>Once you learn these combinators, you should be able to express almost any pattern of complicated stack shufflers. Note that there are also <a href="https://docs.factorcode.org/content/article-combinators.html">generic forms</a> for all of these combinators that can take additional inputs from the stack. If you find that you resort to using the generic forms more often then not, that&#8217;s usually a good indication that you should rethink your approach or put your data into a more appropriate structure.</p>
 <h2 id="data">Data Type Details</h2>
 <p>Before I turn you loose, I wanted to offer a few extra details about some of Factor&#8217;s basic data types&#8230;</p>
 <h3 id="sequences">Sequences</h3>
-<p>In the cleave and spread examples above, I was sneaky and used sequences without explaining them formally. A sequence is a <em>finite, ordered, collection of elements</em>. Any data type that implements the sequence mixin class (meaning a data type that knows its length and will let you set/get an element at a specific index) gains the ability to use the powerful built-in <a href="http://docs.factorcode.org/content/article-sequences.html">sequence operators</a>. Read through that documentation to get an idea on how to manipulate sequences and their elements.</p>
-<p>Factor has many sequence types that you may already be familiar with, such as <a href="http://docs.factorcode.org/content/article-arrays.html">arrays</a> (fixed-size mutable sequences) and <a href="http://docs.factorcode.org/content/article-vectors.html">vectors</a> (resizable mutable sequences), but there are also other data types that you might not expect to be sequences, such as strings. In Factor, a string is merely an array of Unicode 5.0 code points.</p>
+<p>In the cleave and spread examples above, I was sneaky and used sequences without explaining them formally. A sequence is a <em>finite, ordered, collection of elements</em>. Any data type that implements the sequence mixin class (meaning a data type that knows its length and will let you set/get an element at a specific index) gains the ability to use the powerful built-in <a href="https://docs.factorcode.org/content/article-sequences.html">sequence operators</a>. Read through that documentation to get an idea on how to manipulate sequences and their elements.</p>
+<p>Factor has many sequence types that you may already be familiar with, such as <a href="https://docs.factorcode.org/content/article-arrays.html">arrays</a> (fixed-size mutable sequences) and <a href="https://docs.factorcode.org/content/article-vectors.html">vectors</a> (resizable mutable sequences), but there are also other data types that you might not expect to be sequences, such as strings. In Factor, a string is merely an array of Unicode 5.0 code points.</p>
 <p>Using the sequence operators and combinators together, you can create all sorts of powerful abstractions that I&#8217;ll talk more about next time. Here are a couple of examples to whet your appetite:</p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="p">{</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="p">}</span> <span class="p">[</span> <span class="k">even? </span><span class="p">]</span> <span class="k">filter </span>.
 <span class="p">{</span> <span class="mi">2</span> <span class="mi">4</span> <span class="p">}</span>
@@ -220,7 +220,7 @@ hello
 <span class="no">f</span>
 </code></pre></div><p>Keep in mind that in Factor, <strong>sequences are zero-based</strong>.</p>
 <h3 id="numbers">Numbers</h3>
-<p>So far, we have only used integers, but Factor also supports <a href="http://docs.factorcode.org/content/article-rationals.html">rational numbers</a> (fractions), <a href="http://docs.factorcode.org/content/article-floats.html">floats</a> (decimal approximations of a number), and <a href="http://docs.factorcode.org/content/article-complex-numbers.html">complex numbers</a> (imaginary numbers).</p>
+<p>So far, we have only used integers, but Factor also supports <a href="https://docs.factorcode.org/content/article-rationals.html">rational numbers</a> (fractions), <a href="https://docs.factorcode.org/content/article-floats.html">floats</a> (decimal approximations of a number), and <a href="https://docs.factorcode.org/content/article-complex-numbers.html">complex numbers</a> (imaginary numbers).</p>
 <div class="highlight"><pre><code class="factor">(scratchpad) <span class="mi">100</span> <span class="mi">330</span> / .
 <span class="m">10/33</span>
 (scratchpad) <span class="m">5/4</span> <span class="m">1/2</span> + .
@@ -275,7 +275,7 @@ hello
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

@@ -2,8 +2,8 @@
 layout: post
 title:  'HOWTO: Align SSD Partitions for Linux Using GPT and LVM'
 ---
-http://blog.aloisiojr.com/?p=28
-http://thunk.org/tytso/blog/2009/02/20/aligning-filesystems-to-an-ssds-erase-block-size/
+https://blog.aloisiojr.com/?p=28
+https://thunk.org/tytso/blog/2009/02/20/aligning-filesystems-to-an-ssds-erase-block-size/
 
 What I've got should be the same as OCZ Vertex Turbo, OCZ Agility, Patriot Torqx, G.Skill Falcon, and Super Talent UltraDrive GX (the Super Talent drive uses a slightly different PCB design).
 

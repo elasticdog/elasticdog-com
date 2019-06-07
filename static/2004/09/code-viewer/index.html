@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>WP Plugin: Code Viewer</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -56,7 +56,7 @@
 
 <h1>WP Plugin: Code Viewer</h1>
 
-<p>Code Viewer is a <a href="http://wordpress.org/">WordPress</a> plugin that pulls source code from an external file and displays it, optionally adding a link to download the code directly. The plugin displays the code with proper indentation, line numbers, and automatic long-line wrapping.</p>
+<p>Code Viewer is a <a href="https://wordpress.org/">WordPress</a> plugin that pulls source code from an external file and displays it, optionally adding a link to download the code directly. The plugin displays the code with proper indentation, line numbers, and automatic long-line wrapping.</p>
 <p>When using Code Viewer, you no longer have to worry about typing countless entity references in order to make your code &#8220;<acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym> friendly&#8221; or to simulate tabs&#8230;it&#8217;s all done automatically with <acronym title="PHP: Hypertext Preprocessor"><span class="caps">PHP</span></acronym> and a little <acronym title="Cascading Style Sheets"><span class="caps">CSS</span></acronym>. By inserting line numbers on your page, the plugin also eliminates the problem of long, non-breaking lines screwing up your layout. In addition, line numbers make convenient reference points when discussing code samples.</p>
 <p>Last, but not least&#8230;because you&#8217;re pulling the source code from an external file (rather than having it embedded directly in your entry), the same code can be repeated on numerous pages, and you only have to type it in once. This not only saves you time, but when you update the code in the centralized file, all instances of that code will be updated along with it.</p>
 <h2 id="installation">Installation</h2>
@@ -125,9 +125,9 @@
 		<li>&#34;display&#34; &#8211; <i>string</i> &#8211; Should the link to the code be displayed (<code>"yes"</code>), or not be displayed (<code>"no"</code>). If the <code>link</code> attribute is left out of the tag completely, the value defaults to <code>"no"</code>.</li>
 	</ul></li>
 </ul>
-<p>Here are some examples of <em>valid syntax</em> recognized by Code Viewer&#8230;note that all of these examples point to the same file (assuming the <var>$default_path</var> variable is set to &#34;<code>http://elasticdog.com/code/</code>&#34;):</p>
-<div class="highlight"><pre><code class="xml"><span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;http://elasticdog.com/code/example.txt&quot;</span> <span class="na">link=</span><span class="s">&quot;no&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;http://elasticdog.com/code/example.txt&quot;</span> <span class="nt">/&gt;</span>
+<p>Here are some examples of <em>valid syntax</em> recognized by Code Viewer&#8230;note that all of these examples point to the same file (assuming the <var>$default_path</var> variable is set to &#34;<code>https://elasticdog.com/code/</code>&#34;):</p>
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;https://elasticdog.com/code/example.txt&quot;</span> <span class="na">link=</span><span class="s">&quot;no&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;https://elasticdog.com/code/example.txt&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;/code/example.txt&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;example.txt&quot;</span> <span class="nt">/&gt;</span>
 </code></pre></div><p>Each attribute value <strong>must</strong> be surrounded with double quotes (&#34;), and <em>not</em> single quotes (&#39;), or the tag will not be recognized.</p>
@@ -138,8 +138,8 @@
 	<li><em>v1.0 (26 Sep 2004)</em> &#8211; Initial release to the public.</li>
 </ul>
 <h2 id="credits">Credits</h2>
-<p>The idea to use ordered lists in <span class="caps">XHTML</span> to present code, originated from Simon Willison&#8217;s <a href="http://simon.incutio.com/archive/2002/07/10/numberedCodeListing"><span class="caps">CSS</span> Numbered Code Listings</a> blog entry. The same idea has been used by other designers, and in particular, a fellow WP plugin author named David House&#8230;</p>
-<p>Looking at <a href="http://xmouse.ithium.net/archives/2004/07/19/implementing-a-code-snippet-system">David&#8217;s code-snippet system</a>, I fell in love with the idea, but thought his implementation could be improved upon. Code Viewer should be much more efficient in comparison and has the added functionality of optional link inclusion, styling differences for every other line, and better <span class="caps">URL</span> &amp; file type support. A big thanks goes out to both David and Simon for their contributions to my latest creation.</p>
+<p>The idea to use ordered lists in <span class="caps">XHTML</span> to present code, originated from Simon Willison&#8217;s <a href="https://simon.incutio.com/archive/2002/07/10/numberedCodeListing"><span class="caps">CSS</span> Numbered Code Listings</a> blog entry. The same idea has been used by other designers, and in particular, a fellow WP plugin author named David House&#8230;</p>
+<p>Looking at <a href="https://xmouse.ithium.net/archives/2004/07/19/implementing-a-code-snippet-system">David&#8217;s code-snippet system</a>, I fell in love with the idea, but thought his implementation could be improved upon. Code Viewer should be much more efficient in comparison and has the added functionality of optional link inclusion, styling differences for every other line, and better <span class="caps">URL</span> &amp; file type support. A big thanks goes out to both David and Simon for their contributions to my latest creation.</p>
 
 <h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
 
@@ -175,7 +175,7 @@
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

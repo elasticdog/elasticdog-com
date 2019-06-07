@@ -12,11 +12,11 @@ And so, I kept researching as much as I could on web design, intermittently writ
 
 h2(#repair-or-rebuild). Repair or Rebuild?
 
-To give you some background info, one of the ideas behind designing with XHTML/CSS is _forward compatibility_ --- in theory you shouldn't have to update your code in order to do a redesign because your content and style are kept completely separate. For a beautiful demonstration of this concept, just check out the "css Zen Garden":http://www.csszengarden.com/.
+To give you some background info, one of the ideas behind designing with XHTML/CSS is _forward compatibility_ --- in theory you shouldn't have to update your code in order to do a redesign because your content and style are kept completely separate. For a beautiful demonstration of this concept, just check out the "css Zen Garden":https://www.csszengarden.com/.
 
-With the first version of ElasticDog.com, I had put a lot of thought in to how my code was structured and included many unique features that I really came to like. But on the flip side, I also did some things that were out of the ordinary which prevented me from executing a redesign as easily as I had hoped. For example, instead of having a fixed-width or fluid page, I decided to try my hand at an "elastic design":http://www.alistapart.com/articles/elastic/,  which is a combination of the other two. This added unnecessary complexity to my code and limited some of my future design options. Because of limitations, and others like it, I knew that if I started over again, I could do better.
+With the first version of ElasticDog.com, I had put a lot of thought in to how my code was structured and included many unique features that I really came to like. But on the flip side, I also did some things that were out of the ordinary which prevented me from executing a redesign as easily as I had hoped. For example, instead of having a fixed-width or fluid page, I decided to try my hand at an "elastic design":https://www.alistapart.com/articles/elastic/,  which is a combination of the other two. This added unnecessary complexity to my code and limited some of my future design options. Because of limitations, and others like it, I knew that if I started over again, I could do better.
 
-Around this same time, I was experiencing some reliability issues with my hosting provider, the new licensing structure for "MovableType":http://www.movabletype.org/ (my former CMS(Content Management System)) was causing "a ruckus in the web log community":http://www.sixapart.com/log/2004/05/how_are_you_usi.shtml, and I had pretty much stopped writing entries all together. It was then that I became determined to mix things up in order to turn ElasticDog into the site that I had always envisioned.
+Around this same time, I was experiencing some reliability issues with my hosting provider, the new licensing structure for "MovableType":https://www.movabletype.org/ (my former CMS(Content Management System)) was causing "a ruckus in the web log community":https://www.sixapart.com/log/2004/05/how_are_you_usi.shtml, and I had pretty much stopped writing entries all together. It was then that I became determined to mix things up in order to turn ElasticDog into the site that I had always envisioned.
 
 h2(#stepping-back). Stepping Back to Move Forward
 
@@ -24,9 +24,9 @@ To kick off this renewal, I went back to the basics by looking at some of my fav
 
 Keeping all of those things in mind, I began creating a new design from scratch. I completely restructured my XHTML, cleaned up my CSS, and made everything more user friendly. I paid attention to the smallest of details, and made sure to insert a lot more flexibility into my code so future changes wouldn't be such a headache.
 
-Once I had an idea of how things were going to look, I went out and read reviews about hosting providers and ended up switching my site over to "ICDSoft":http://icdsoft.com/ ...a move that I've been *very* happy with.
+Once I had an idea of how things were going to look, I went out and read reviews about hosting providers and ended up switching my site over to "ICDSoft":https://icdsoft.com/ ...a move that I've been *very* happy with.
 
-Now that I had a redesigned look for my site, and a new server to put it on, I needed software to manage it all. Due to a number of reasons, I chose to leave MovableType behind and use the open-source publishing platform "WordPress":http://wordpress.org/ instead. Once the software was installed, I created templates (based on my design) that would automatically generate my entire site using WordPress...and the rest is history!
+Now that I had a redesigned look for my site, and a new server to put it on, I needed software to manage it all. Due to a number of reasons, I chose to leave MovableType behind and use the open-source publishing platform "WordPress":https://wordpress.org/ instead. Once the software was installed, I created templates (based on my design) that would automatically generate my entire site using WordPress...and the rest is history!
 
 h2(#almost-done). I Promise, I'm Almost Done
 

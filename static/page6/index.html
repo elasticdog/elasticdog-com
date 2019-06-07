@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>ElasticDog.com | The ballyhoo of Aaron Bull Schaefer</title>
@@ -18,7 +18,7 @@
 
 		(function() {
 		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		 })();
 	 </script>
@@ -55,7 +55,7 @@
 	<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
 
 
-	<p>Last week, Andrei Herasimchuk of <a href="http://www.designbyfire.com/">Design by Fire</a> announced a contest to see who could take his site&#8217;s current design and &#8220;clean it up, optimizing it for best semantic and structural architecture.&#8221; Having the final code judged by three industry bigwigs (<a href="http://www.mezzoblue.com/">Dave Shea</a>, <a href="http://www.w3.org/People/Dean/">Dean Jackson</a>, and <a href="http://www.meyerweb.com/">Eric Meyer</a>), Andrei is offering the winner their choice of any three <a href="http://www.adobe.com/products/main.html">Adobe products</a>. It&#8217;s a widely known fact that software from Adobe is like crack to designers, so I figured I&#8217;d have a go at it.</p>
+	<p>Last week, Andrei Herasimchuk of <a href="https://www.designbyfire.com/">Design by Fire</a> announced a contest to see who could take his site&#8217;s current design and &#8220;clean it up, optimizing it for best semantic and structural architecture.&#8221; Having the final code judged by three industry bigwigs (<a href="https://www.mezzoblue.com/">Dave Shea</a>, <a href="https://www.w3.org/People/Dean/">Dean Jackson</a>, and <a href="https://www.meyerweb.com/">Eric Meyer</a>), Andrei is offering the winner their choice of any three <a href="https://www.adobe.com/products/main.html">Adobe products</a>. It&#8217;s a widely known fact that software from Adobe is like crack to designers, so I figured I&#8217;d have a go at it.</p>
 <p>I by no means would consider myself an &#8220;expert&#8221; on web standards (at least not in the same league as these guys), but my anal-retentive temperament <em>has</em> provided me with the abnormal patience to sit down and scour the web for details regarding this subject matter. I&#8217;d like to think that although I may not have a lot of industry experience, I have read tons about web standards and do enough work on my own to offer advice when it&#8217;s needed.</p>
 <p>The contest consisted of cleaning up three different pages of code, and also optimizing the <acronym title="Cascading Style Sheets"><span class="caps">CSS</span></acronym> involved in creating the look of Andrei&#8217;s site. Initially underestimating the amount of time it would take to complete this cleanup, I immediately downloaded the necessary source code and began hacking away.</p>
 <p><img src="/images/2004/11/dxf-code.jpg" title="Screenshot of DxF Code" alt="Screenshot of DxF Code" /></p>
@@ -69,7 +69,7 @@
 	<li><a href="/dxf/cat_design.html">DxF Categorical Archive</a></li>
 	<li><a href="/dxf/000146.html">DxF Sample Entry</a></li>
 </ul>
-<p>I&#8217;ve also created <a href="http://elasticdog.com/dxf/contest.zip">a zip file</a> that contains all of the new code, images, <span class="caps">CSS</span>, and source files used in creating my entry. Inside the zip, you&#8217;ll also find a changelog that discusses the improvements I made in more detail.</p>
+<p>I&#8217;ve also created <a href="https://elasticdog.com/dxf/contest.zip">a zip file</a> that contains all of the new code, images, <span class="caps">CSS</span>, and source files used in creating my entry. Inside the zip, you&#8217;ll also find a changelog that discusses the improvements I made in more detail.</p>
 <p>Wish me luck!</p>
 	<hr />
 
@@ -78,12 +78,12 @@
 	<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
 
 
-	<p>One of the things that surprised me when I first switched from <a href="http://www.movabletype.org/">Movable Type</a> to <a href="http://wordpress.org/">WordPress</a> was its lack of multiple templates. In <acronym title="Movable Type"><span class="caps">MT</span></acronym> you create numerous templates which allow you to change the look of different pages on your site (i.e., the homepage, archive pages, individual entries, etc.). If you want a list of your favorite links to appear on the homepage, but not on the page for an individual entry, you just delete that section of code from the appropriate template.</p>
+	<p>One of the things that surprised me when I first switched from <a href="https://www.movabletype.org/">Movable Type</a> to <a href="https://wordpress.org/">WordPress</a> was its lack of multiple templates. In <acronym title="Movable Type"><span class="caps">MT</span></acronym> you create numerous templates which allow you to change the look of different pages on your site (i.e., the homepage, archive pages, individual entries, etc.). If you want a list of your favorite links to appear on the homepage, but not on the page for an individual entry, you just delete that section of code from the appropriate template.</p>
 <p>WordPress handles its pages a bit differently. Everything is based off of a single template, and through the magic of database queries and dynamic page generation, the right content is always shown according to which type of page you&#8217;re looking at.</p>
 <h2 id="the-problem">The Problem</h2>
 <p>By using a single template, the default installation of <acronym title="WordPress"><span class="caps">WP</span></acronym> will show the exact same sidebar on every page, and likewise, whenever you view an entry listing, it will always look the same. This one-template structure is viewed as a blessing to some, but an over-simplification to others.</p>
 <p>What if you want to show a list of just the entry titles on your archive pages, rather than the entire entry itself? What if you want to hide the sidebar&#8217;s calendar on your individual entry pages? There are countless scenarios like these that require a little more flexibility than the default <kbd>index.php</kbd> file can give you.</p>
-<p>This issue has been discussed many times on the <a href="http://wordpress.org/support/">WordPress support forums</a>, but I&#8217;ve found most of the proposed solutions to be less than ideal. It&#8217;s rumored that the functionality to control these types of things will be built into WordPress 1.3, but for the time being, it seems we&#8217;re on our own.</p>
+<p>This issue has been discussed many times on the <a href="https://wordpress.org/support/">WordPress support forums</a>, but I&#8217;ve found most of the proposed solutions to be less than ideal. It&#8217;s rumored that the functionality to control these types of things will be built into WordPress 1.3, but for the time being, it seems we&#8217;re on our own.</p>
 <h2 id="common-solution">A Common Solution</h2>
 <p>Many people suggest using <kbd>.htaccess</kbd> rules and simply forward visitors to templates other than <kbd>index.php</kbd>. I feel this method over-complicates things, and here&#8217;s why:</p>
 <ol>
@@ -179,7 +179,7 @@
 	<h1 class="retired">This article has been <a href="/about/#elasticdog"><strong>retired</strong></a> and will no longer be updated. Caveat emptor!</h1>
 
 
-	<p>Code Viewer is a <a href="http://wordpress.org/">WordPress</a> plugin that pulls source code from an external file and displays it, optionally adding a link to download the code directly. The plugin displays the code with proper indentation, line numbers, and automatic long-line wrapping.</p>
+	<p>Code Viewer is a <a href="https://wordpress.org/">WordPress</a> plugin that pulls source code from an external file and displays it, optionally adding a link to download the code directly. The plugin displays the code with proper indentation, line numbers, and automatic long-line wrapping.</p>
 <p>When using Code Viewer, you no longer have to worry about typing countless entity references in order to make your code &#8220;<acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym> friendly&#8221; or to simulate tabs&#8230;it&#8217;s all done automatically with <acronym title="PHP: Hypertext Preprocessor"><span class="caps">PHP</span></acronym> and a little <acronym title="Cascading Style Sheets"><span class="caps">CSS</span></acronym>. By inserting line numbers on your page, the plugin also eliminates the problem of long, non-breaking lines screwing up your layout. In addition, line numbers make convenient reference points when discussing code samples.</p>
 <p>Last, but not least&#8230;because you&#8217;re pulling the source code from an external file (rather than having it embedded directly in your entry), the same code can be repeated on numerous pages, and you only have to type it in once. This not only saves you time, but when you update the code in the centralized file, all instances of that code will be updated along with it.</p>
 <h2 id="installation">Installation</h2>
@@ -248,9 +248,9 @@
 		<li>&#34;display&#34; &#8211; <i>string</i> &#8211; Should the link to the code be displayed (<code>"yes"</code>), or not be displayed (<code>"no"</code>). If the <code>link</code> attribute is left out of the tag completely, the value defaults to <code>"no"</code>.</li>
 	</ul></li>
 </ul>
-<p>Here are some examples of <em>valid syntax</em> recognized by Code Viewer&#8230;note that all of these examples point to the same file (assuming the <var>$default_path</var> variable is set to &#34;<code>http://elasticdog.com/code/</code>&#34;):</p>
-<div class="highlight"><pre><code class="xml"><span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;http://elasticdog.com/code/example.txt&quot;</span> <span class="na">link=</span><span class="s">&quot;no&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;http://elasticdog.com/code/example.txt&quot;</span> <span class="nt">/&gt;</span>
+<p>Here are some examples of <em>valid syntax</em> recognized by Code Viewer&#8230;note that all of these examples point to the same file (assuming the <var>$default_path</var> variable is set to &#34;<code>https://elasticdog.com/code/</code>&#34;):</p>
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;https://elasticdog.com/code/example.txt&quot;</span> <span class="na">link=</span><span class="s">&quot;no&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;https://elasticdog.com/code/example.txt&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;/code/example.txt&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;viewcode</span> <span class="na">src=</span><span class="s">&quot;example.txt&quot;</span> <span class="nt">/&gt;</span>
 </code></pre></div><p>Each attribute value <strong>must</strong> be surrounded with double quotes (&#34;), and <em>not</em> single quotes (&#39;), or the tag will not be recognized.</p>
@@ -261,8 +261,8 @@
 	<li><em>v1.0 (26 Sep 2004)</em> &#8211; Initial release to the public.</li>
 </ul>
 <h2 id="credits">Credits</h2>
-<p>The idea to use ordered lists in <span class="caps">XHTML</span> to present code, originated from Simon Willison&#8217;s <a href="http://simon.incutio.com/archive/2002/07/10/numberedCodeListing"><span class="caps">CSS</span> Numbered Code Listings</a> blog entry. The same idea has been used by other designers, and in particular, a fellow WP plugin author named David House&#8230;</p>
-<p>Looking at <a href="http://xmouse.ithium.net/archives/2004/07/19/implementing-a-code-snippet-system">David&#8217;s code-snippet system</a>, I fell in love with the idea, but thought his implementation could be improved upon. Code Viewer should be much more efficient in comparison and has the added functionality of optional link inclusion, styling differences for every other line, and better <span class="caps">URL</span> &amp; file type support. A big thanks goes out to both David and Simon for their contributions to my latest creation.</p>
+<p>The idea to use ordered lists in <span class="caps">XHTML</span> to present code, originated from Simon Willison&#8217;s <a href="https://simon.incutio.com/archive/2002/07/10/numberedCodeListing"><span class="caps">CSS</span> Numbered Code Listings</a> blog entry. The same idea has been used by other designers, and in particular, a fellow WP plugin author named David House&#8230;</p>
+<p>Looking at <a href="https://xmouse.ithium.net/archives/2004/07/19/implementing-a-code-snippet-system">David&#8217;s code-snippet system</a>, I fell in love with the idea, but thought his implementation could be improved upon. Code Viewer should be much more efficient in comparison and has the added functionality of optional link inclusion, styling differences for every other line, and better <span class="caps">URL</span> &amp; file type support. A big thanks goes out to both David and Simon for their contributions to my latest creation.</p>
 	
 
 
@@ -297,7 +297,7 @@
 	
 	</ul>
 
-	<div id="syndication"><a href="http://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
+	<div id="syndication"><a href="https://feeds.elasticdog.com/elasticdog" title="Subscribe to ElasticDog.com's Syndication Feed"><img src="/images/feed-icon.png" alt="Syndication Feed Icon" /></a></div>
 
 	<p>Copyright &copy; 2003&#8211;2013 Aaron Bull Schaefer &#8212; All Rights Reserved.</p>
 </div>

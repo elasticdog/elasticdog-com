@@ -9,28 +9,28 @@ categories:
 - vagrant
 ---
 
-I'm a big fan of automated configuration management software, and an even bigger fan of utilizing "Vagrant":http://www.vagrantup.com/ for developing configuration modules/cookbooks/states/playbooks/whatever in a fast and easily reproducible environment. I previously created "Puppet Sandbox":https://github.com/elasticdog/puppet-sandbox for just this purpose, but have more recently taken an interest in using "Ansible":http://www.ansibleworks.com/ for configuration and orchestration.
+I'm a big fan of automated configuration management software, and an even bigger fan of utilizing "Vagrant":https://www.vagrantup.com/ for developing configuration modules/cookbooks/states/playbooks/whatever in a fast and easily reproducible environment. I previously created "Puppet Sandbox":https://github.com/elasticdog/puppet-sandbox for just this purpose, but have more recently taken an interest in using "Ansible":https://www.ansibleworks.com/ for configuration and orchestration.
 
-I also have a long history of working with "Arch Linux":https://www.archlinux.org/, and wanted to develop Ansible playbooks specifically for managing Arch machines. Vagrant supports automatically "provisioning machines via Ansible":http://docs.vagrantup.com/v2/provisioning/ansible.html out of the box, but there were still a couple of hurdles to get over:
+I also have a long history of working with "Arch Linux":https://www.archlinux.org/, and wanted to develop Ansible playbooks specifically for managing Arch machines. Vagrant supports automatically "provisioning machines via Ansible":https://docs.vagrantup.com/v2/provisioning/ansible.html out of the box, but there were still a couple of hurdles to get over:
 
 # Up-to-date Vagrant base boxes for Arch are hard to find.
 # Arch Linux doesn't have Python 2 installed by default, which is a dependency for Ansible.
 
 h2(#packer). Packer Arch
 
-To solve the first problem, I decided to create a generic Arch Linux base box myself. In the not too distant past, the way to do that in a repeatable fashion was "Veewee":https://github.com/jedi4ever/veewee, but the project has gotten progressively more complicated to set up and use. Lucky for me, there's a new kid on the block for creating machine images named "Packer":http://www.packer.io/, built and maintained by the author of Vagrant, Mitchell Hashimoto.
+To solve the first problem, I decided to create a generic Arch Linux base box myself. In the not too distant past, the way to do that in a repeatable fashion was "Veewee":https://github.com/jedi4ever/veewee, but the project has gotten progressively more complicated to set up and use. Lucky for me, there's a new kid on the block for creating machine images named "Packer":https://www.packer.io/, built and maintained by the author of Vagrant, Mitchell Hashimoto.
 
 To make a long story short, I wrote "Packer Arch":https://github.com/elasticdog/packer-arch, which is a bare bones Packer template and installation script that can be used to quickly generate Vagrant base boxes for Arch Linux. My goal with the box was to be as minimal as possible, and to roughly duplicate what you'd get when purchasing an Arch Linux VPS(Virtual Private Server) from a provider like "DigitalOcean":https://www.digitalocean.com/. Starting from that point, I wanted to configure everything else via Ansible.
 
 h2(#bootstrap). Bootstrapping the Virtual Machine
 
-Solving the Python 2 problem was a little trickier. Ansible itself provided a possible solution with their "raw module":http://ansibleworks.com/docs/modules.html#raw, but Vagrant's provisioning integration with Ansible requires Python 2 to be on the base box _before_ you can run any playbooks. It's the classic "chicken or the egg" problem.
+Solving the Python 2 problem was a little trickier. Ansible itself provided a possible solution with their "raw module":https://ansibleworks.com/docs/modules.html#raw, but Vagrant's provisioning integration with Ansible requires Python 2 to be on the base box _before_ you can run any playbooks. It's the classic "chicken or the egg" problem.
 
 Since utilizing Ansible for configuration _as well as_ orchestration tasks was desirable, but would require having a proper setup outside of Vagrant anyway, I just decided to ignore Vagrant's provisioner altogether. Instead, I wrote a short script to handle the one-time tasks so I could interact with the VM(Virtual Machine) using Ansible in the exact same fashion as I would any other server.
 
 h3(#preparation). Preparation
 
-The prerequisites for running the bootstrap script include assigning a known IP address to the machine via the "Vagrantfile":http://docs.vagrantup.com/v2/vagrantfile/index.html:
+The prerequisites for running the bootstrap script include assigning a known IP address to the machine via the "Vagrantfile":https://docs.vagrantup.com/v2/vagrantfile/index.html:
 
 {% highlight ruby %}
 # -*- mode: ruby -*-
@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 {% endhighlight %}
 
-...recording that same IP in an "inventory file":http://ansibleworks.com/docs/patterns.html named @hosts@ for Ansible to reference:
+...recording that same IP in an "inventory file":https://ansibleworks.com/docs/patterns.html named @hosts@ for Ansible to reference:
 
 {% highlight ini %}
 [vagrant]
@@ -69,7 +69,7 @@ On top of installing Python 2, I have the bootstrap script handle a few other it
 # Add my SSH(Secure SHell) public keys to the newly created account.
 # Download a current package "mirrorlist":https://www.archlinux.org/mirrorlist/ based on my geography.
 
-The user management steps are handled by running the tasks tagged "_bootstrap_" from my regular master playbook, and the mirrorlist is downloaded and then transferred to the machine via the "copy module":http://ansibleworks.com/docs/modules.html#copy.
+The user management steps are handled by running the tasks tagged "_bootstrap_" from my regular master playbook, and the mirrorlist is downloaded and then transferred to the machine via the "copy module":https://ansibleworks.com/docs/modules.html#copy.
 
 Without further ado, here's the bootstrap script:
 
@@ -118,4 +118,4 @@ $ ansible vagrant -m ping
 }
 {% endhighlight %}
 
-To give you an idea of the actual playbooks I'm using with this setup, take a look at my "Monarch":https://github.com/elasticdog/monarch project, and in particular, the _users.yml_ file under the common role. As always, "let me know":http://elasticdog.com/about/#contact if you need any help putting all of the pieces together.
+To give you an idea of the actual playbooks I'm using with this setup, take a look at my "Monarch":https://github.com/elasticdog/monarch project, and in particular, the _users.yml_ file under the common role. As always, "let me know":https://elasticdog.com/about/#contact if you need any help putting all of the pieces together.

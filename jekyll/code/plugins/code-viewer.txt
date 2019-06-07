@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: Code Viewer
-Plugin URI: http://elasticdog.com/2004/09/code-viewer/
+Plugin URI: https://elasticdog.com/2004/09/code-viewer/
 Description: Pulls source code from an external file and displays the associated code with line numbers.
 Version: 1.1
 Author: Aaron Schaefer
-Author URI: http://elasticdog.com/
+Author URI: https://elasticdog.com/
 */
 
 /* Configuration Settings */
-$default_path = "http://elasticdog.com/code/";  // the absolute path of your code folder
+$default_path = "https://elasticdog.com/code/";  // the absolute path of your code folder
 
 /* --- STOP EDITING ---  */
 
@@ -21,7 +21,7 @@ function code_viewer($text) {
 	for ($i = 0; $i < $count; $i++) {
 		// Determine if the specified path is absolute, or relative to the root path
 		// If it's neither, assume it's relative to the default path set on line 12
-		if (strpos(($matches[1][$i]), 'http://') !== false) {
+		if (strpos(($matches[1][$i]), 'https://') !== false) {
 			$path = $matches[1][$i];
 		} else if (substr(($matches[1][$i]), 0, 1) == '/') {
 			$path = $_SERVER['DOCUMENT_ROOT'] . $matches[1][$i];

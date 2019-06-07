@@ -2,7 +2,7 @@
 layout: retired
 title:  New Flat-Panel Displays using Ceramics
 ---
-While waiting for my tax refund, I've been checking out flat panel TVs and I ran across this article on a new ceramic flat panel technology in "Popular Science":http://www.popsci.com:
+While waiting for my tax refund, I've been checking out flat panel TVs and I ran across this article on a new ceramic flat panel technology in "Popular Science":https://www.popsci.com:
 
 bq.. "Researcher Steve Yando has invented a ceramic panel that converts video signals into moving pictures. Yando did not have to invent a new way to convert electricity into light; flat electroluminescent panels to do that have been on the market for years. The problem was scanning: how to switch individual points of the panel on and off very rapidly to build up the quick-changing light-and-dark pattern of the TV image. ...Yando solved the problem by pulling a very cute trick with piezoelectric crystals, which are old and long-used electric devices.
 
@@ -22,4 +22,4 @@ If anybody has any more info on ceramic flat panel TV technology, please drop me
 
 h2(#update). Update
 
-Whew...talk about an April Fools Day-spurred adrenaline rush! I think we duped literally **TENS** of people with that one (not much response from "Digg":http://www.digg.com/, "Fark":http://www.fark.com/, or "Shacknews":http://www.shacknews.com/). This entry was the brain-child of my diabolical work friend James whom found this article in a 1961 version of Popular Science. Here are scans of the original article: "page one":/images/2007/04/page1.jpg and "page two":http://elasticdog.com/images/2007/04/page2.jpg. Hopefully next year we can get more traffic coming our way if we want to pull a successful prank on the internets. Live and learn...
+Whew...talk about an April Fools Day-spurred adrenaline rush! I think we duped literally **TENS** of people with that one (not much response from "Digg":https://www.digg.com/, "Fark":https://www.fark.com/, or "Shacknews":https://www.shacknews.com/). This entry was the brain-child of my diabolical work friend James whom found this article in a 1961 version of Popular Science. Here are scans of the original article: "page one":/images/2007/04/page1.jpg and "page two":https://elasticdog.com/images/2007/04/page2.jpg. Hopefully next year we can get more traffic coming our way if we want to pull a successful prank on the internets. Live and learn...

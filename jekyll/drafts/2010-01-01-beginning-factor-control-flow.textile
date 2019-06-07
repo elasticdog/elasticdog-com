@@ -3,13 +3,13 @@ layout:    post
 published: false
 title:     Beginning Factor - Control Flow
 ---
-In the <a href="http://elasticdog.com/2008/12/beginning-factor-shufflers-and-combinators/">previous installment</a> of Beginning Factor, we discussed stack shufflers, quotations & combinators, and specific details about some basic data types. Today I'd like to cover a <em>bunch</em> of words for control flow and then give an example of solving the same basic problem using different common idioms...let's get to it!
+In the <a href="https://elasticdog.com/2008/12/beginning-factor-shufflers-and-combinators/">previous installment</a> of Beginning Factor, we discussed stack shufflers, quotations & combinators, and specific details about some basic data types. Today I'd like to cover a <em>bunch</em> of words for control flow and then give an example of solving the same basic problem using different common idioms...let's get to it!
 
 <h2 id="controlflow">Control Flow</h2>
 
 Control flow is a computer science term referring to the manipulation of the order in which statements are executed. That would encompass conditional statements, looping, and iteration in general. Control flow words give you the ability to change what your program does depending on the input given.
 
-In Factor, most control flow words are just <a href="http://elasticdog.com/2008/12/beginning-factor-shufflers-and-combinators/#combinators">combinators</a> that call the supplied quotations in differing ways. The trick is, finding the right combinator for your problem domain. But before we can explore control flow words, it's important to understand booleans and comparisons...
+In Factor, most control flow words are just <a href="https://elasticdog.com/2008/12/beginning-factor-shufflers-and-combinators/#combinators">combinators</a> that call the supplied quotations in differing ways. The trick is, finding the right combinator for your problem domain. But before we can explore control flow words, it's important to understand booleans and comparisons...
 
 <h2 id="booleans">Booleans</h2>
 
@@ -80,7 +80,7 @@ Note that no word is explicitly defined for <em>in</em>equality, instead, you ju
 
 <h2 id="conditionals">Conditionals</h2>
 
-Finally, we can talk about conditionals! A <a href="http://docs.factorcode.org/content/article-conditionals.html">conditional combinator</a> is a word that performs a different action depending on whether a specified condition evaluates to true or false.
+Finally, we can talk about conditionals! A <a href="https://docs.factorcode.org/content/article-conditionals.html">conditional combinator</a> is a word that performs a different action depending on whether a specified condition evaluates to true or false.
 
 <h3 id="if">If</h3>
 
