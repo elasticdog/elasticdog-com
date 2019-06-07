@@ -134,7 +134,7 @@ CONSTANT: VALUE_STR { "Straight Flush" "Four of a Kind" "Full House" "Flush"
     "Straight" "Three of a Kind" "Two Pair" "One Pair" "High Card" }
 {% endhighlight %}
 
-Here, the only difference I made in the Factor version was to start the hand value types at 0 instead of 1 to eliminate the empty string at index 0...it's unneccessary.
+Here, the only difference I made in the Factor version was to start the hand value types at 0 instead of 1 to eliminate the empty string at index 0...it's unnecessary.
 
 h3(#prime). Prime Number Representations
 

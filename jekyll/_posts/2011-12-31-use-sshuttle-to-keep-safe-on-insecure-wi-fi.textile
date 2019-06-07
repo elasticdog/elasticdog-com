@@ -19,7 +19,7 @@ There's no need for a complicated pre-existing infrastructure. All you need is P
 
 h3(#previous). Previous Method
 
-As an aside, I had previously relied on creating a SOCKS proxy with SSH, and then tunnelling my web traffic through it...
+As an aside, I had previously relied on creating a SOCKS proxy with SSH, and then tunneling my web traffic through it...
 
 {% highlight bash %}
 $ ssh -fqND 1080 example.com

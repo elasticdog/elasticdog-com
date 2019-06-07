@@ -36,7 +36,7 @@ This creates a first partition of 256 MB, with the second taking up the remainde
 # parted -s $dev toggle 1 boot
 # parted -s $dev unit B print
 
-That one takes some explaining...BASH does integer division by default, so I'm dividing the total bytes available on the drive by 512KB, which is actually not evenly divisible, but since BASH only deals with integer division and not floating point division, all of the numbers after the decimal point get dropped. Then I multiply that integer by 512KB (and then minus one byte) to get where the final end boundry should be.
+That one takes some explaining...BASH does integer division by default, so I'm dividing the total bytes available on the drive by 512KB, which is actually not evenly divisible, but since BASH only deals with integer division and not floating point division, all of the numbers after the decimal point get dropped. Then I multiply that integer by 512KB (and then minus one byte) to get where the final end boundary should be.
 
 
 # pvcreate --dataalignment 512k ${dev}2

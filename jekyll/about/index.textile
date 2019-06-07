@@ -38,7 +38,7 @@ Note that in March of 2013, I transitioned away from an older DSA key to the str
 
 h1(#elasticdog). About This Site
 
-ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've choosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":https://github.com/elasticdog/elasticdog-com, so you still have the ability to reference historical versions of the articles, if so desired.
+ElasticDog.com is *not* a typical blog...rather than taking a snapshot of my ideas on a particular date and leaving the entries to grow stale over time, I've chosen to produce a site that is always up-to-date and can evolve right along with rest of the world. The information you read here will always be an accurate reflection of my _current_ ideas on various topics covering technology, standards-based web design, personal finance, photography, programming, unicorns, pirates, whatever. Everything I write is "under version control":https://github.com/elasticdog/elasticdog-com, so you still have the ability to reference historical versions of the articles, if so desired.
 
 I _highly_ encourage participation through "email correspondence":#contact and writing thought-out responses published via your own chosen platform; but the ability to leave comments here directly has been turned off. If you get in touch and our conversation generates any interesting dialog, there's a good chance that I'll add more details to the appropriate article or write something entirely new. We'll see how this experiment goes!
 
@@ -78,4 +78,4 @@ The 2008 design of ElasticDog.com was not created by me, but was a highly-custom
 
 h3(#current). Current Design
 
-The current design of ElasticDog.com (completed in October 2010) is another attempt at getting back to basics. I started with the idea of making the site look similar to output from "Readability":http://lab.arc90.com/experiments/readability/, but went further to enhance its typography, color palette, and structure to better represent the content I write. The design is intentially minimal, but with close attention paid to the details.
+The current design of ElasticDog.com (completed in October 2010) is another attempt at getting back to basics. I started with the idea of making the site look similar to output from "Readability":http://lab.arc90.com/experiments/readability/, but went further to enhance its typography, color palette, and structure to better represent the content I write. The design is intentionally minimal, but with close attention paid to the details.

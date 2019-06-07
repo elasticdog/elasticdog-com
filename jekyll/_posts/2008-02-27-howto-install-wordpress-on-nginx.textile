@@ -24,7 +24,7 @@ $ make
 $ sudo make install
 {% endhighlight %}
 
-__==NOTE==: If you're following the steps above verbatim, you will need to have root privileges in order to perform the final instalation step...everything else should work fine as a normal user. To gain root privileges, the program @sudo@ was used in the example above; you may or may not have access to @sudo@ on your machine.__
+__==NOTE==: If you're following the steps above verbatim, you will need to have root privileges in order to perform the final installation step...everything else should work fine as a normal user. To gain root privileges, the program @sudo@ was used in the example above; you may or may not have access to @sudo@ on your machine.__
 
 After @spawn-fcgi@ has been installed, you can safely remove the build directory and original source file:
 
