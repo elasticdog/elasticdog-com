@@ -1,8 +1,0 @@
-destination: ./_site
-lsi:         false
-port:        4000
-highlighter: pygments
-permalink:   /:year/:month/:title
-exclude:     [config.rb]
-plugins:     [jekyll-paginate]
-paginate:    3
