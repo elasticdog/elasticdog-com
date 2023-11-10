@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/jackyzha0/quartz.git
+	branch = v4
+	commit = 2a6b9a9ea01e8e6a80fe51d01dc865595b67a612
+	parent = 781140206c86179f82a871196d3fa7387c9ca745
+	method = merge
+	cmdver = 0.4.6
