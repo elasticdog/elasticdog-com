@@ -4,8 +4,16 @@ html {
   font-size: 18px;
 }
 
+footer,
 .sidebar {
   font-size: 0.8rem;
+}
+
+pre {
+  & > code {
+    font-size: 0.95rem;
+    line-height: 1.2rem;
+  }
 }
 
 .center h1 {

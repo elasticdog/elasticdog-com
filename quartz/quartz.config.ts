@@ -14,7 +14,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Fira Sans Condensed",
         body: "Literata",
-        code: "JetBrains Mono",
+        code: "Inconsolata",
       },
       colors: {
         lightMode: {
