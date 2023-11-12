@@ -9,15 +9,6 @@ html {
   }
 }
 
-a[href^="http://"],
-a[href^="https://"]
-{
-  &::after {
-    content: "↗";
-    color: var(--gray);
-  }
-}
-
 footer,
 .sidebar {
   font-size: 0.8rem;
@@ -32,4 +23,17 @@ pre {
 
 .center h1 {
   font-style: italic;
+}
+
+// style external links differently
+a[href*="//"]:not([href*="www.elasticdog.com"])::after
+{
+  content: "";
+  background: url("/static/external-link.svg") no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0 0.1em;
+  padding-bottom: 0.2em;
 }
