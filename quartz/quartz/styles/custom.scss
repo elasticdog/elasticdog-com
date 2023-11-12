@@ -1,7 +1,12 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
 html {
   font-size: 18px;
+
+  @media all and (max-width: $mobileBreakpoint) {
+    font-size: revert;
+  }
 }
 
 footer,
