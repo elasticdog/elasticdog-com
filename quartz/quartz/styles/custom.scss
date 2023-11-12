@@ -14,6 +14,15 @@ footer,
   font-size: 0.8rem;
 }
 
+footer {
+  background: url("/static/elasticdog-sticker.png") no-repeat 0px bottom;
+
+  p,
+  ul {
+    padding-left: 80px;
+  }
+}
+
 pre {
   & > code {
     font-size: 0.95rem;
