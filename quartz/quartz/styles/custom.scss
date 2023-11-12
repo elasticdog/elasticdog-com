@@ -9,6 +9,15 @@ html {
   }
 }
 
+a[href^="http://"],
+a[href^="https://"]
+{
+  &::after {
+    content: "↗";
+    color: var(--gray);
+  }
+}
+
 footer,
 .sidebar {
   font-size: 0.8rem;
