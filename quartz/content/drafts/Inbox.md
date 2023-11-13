@@ -1,3 +1,5 @@
+- all knowledge in $\pi$
+
 - apex domains, www vs bare
 
 - longevity of thought: how long does knowledge last or hold up? any such thing
