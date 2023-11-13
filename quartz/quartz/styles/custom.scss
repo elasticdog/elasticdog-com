@@ -15,11 +15,18 @@ footer,
 }
 
 footer {
-  background: url("/static/elasticdog-sticker.png") no-repeat 0px bottom;
+  background: url("/static/elasticdog.png") no-repeat 0px bottom;
+  background-size: 5.2em;
+  margin-bottom: 2.25rem;
+
+  hr {
+    margin-left: 6.5em;
+    width: auto;
+  }
 
   p,
   ul {
-    padding-left: 80px;
+    padding-left: 5.5em;
   }
 }
 

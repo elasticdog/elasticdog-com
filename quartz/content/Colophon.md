@@ -1,4 +1,4 @@
-The ElasticDog.com website has been written and produced by Aaron Bull Schaefer since 2003. 
+ElasticDog has been written and produced by Aaron Bull Schaefer since 2003. 
 ## Tools and Workflow
 
 Notes are written locally as [Markdown](https://en.wikipedia.org/wiki/Markdown) files using [Obsidian](https://obsidian.md/), and are automatically backed up into version control using the [obsdian-git plugin](https://github.com/denolehov/obsidian-git).  When any changes are pushed to [GitHub](https://github.com/elasticdog/elasticdog-com), an automated process is triggered to convert the Markdown files into HTML using the static-site generator [Quartz](https://quartz.jzhao.xyz/). That generated output is then deployed into production and hosted by [Cloudflare Pages](https://pages.cloudflare.com/).
