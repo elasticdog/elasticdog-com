@@ -17,6 +17,7 @@ footer,
 footer {
   background: url("/static/elasticdog.png") no-repeat 0px bottom;
   background-size: 5.2em;
+  opacity: 0.9;
   margin-bottom: 2.25rem;
 
   hr {
@@ -27,6 +28,7 @@ footer {
   p,
   ul {
     padding-left: 5.5em;
+    opacity: 0.7;
   }
 }
 
