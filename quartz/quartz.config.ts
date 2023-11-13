@@ -8,7 +8,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     baseUrl: "www.elasticdog.com",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["drafts", "private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       typography: {
