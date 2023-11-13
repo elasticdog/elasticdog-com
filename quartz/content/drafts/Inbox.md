@@ -231,3 +231,5 @@
   my attention and I'm misunderstanding. Is there anything considered universal
   language with animals, maybe kindness? The Universal Greeting. Or just an
   idiot. What about other universal language (nuclear waste, space probes).
+
+* Is [[Learning Through Mistakes]] related to work organization and autonomy? We need the freedom to be creative, but the structure in how we work and the process can be more organized to make it efficient.
