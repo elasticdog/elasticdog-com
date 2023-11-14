@@ -1,6 +1,7 @@
 > [!INFO]
 > This file is tracked by Git, but ignored by Quartz.
 
+- Why am I drawn to words like "kaizen" and "ikigai" to summarize concepts that may or may not directly translate into English? Is it purely length? Can I truly understand the concept as a non-native speaker, or am I misrepresenting something by not knowing the cultural context? Does it matter?
 
 - ChatGPT as the ultimate rubber duck. Any time with no delay or ego, infinite patience, with the ability to ask for clarification and dive deeper into questions, be a sanity check.
 
