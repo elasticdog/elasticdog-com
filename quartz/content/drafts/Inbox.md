@@ -1,3 +1,8 @@
+> [!INFO]
+> This file is tracked by Git, but ignored by Quartz.
+
+- the benefits of progress are not always evenly distributed
+
 - all knowledge in $\pi$
 
 - apex domains, www vs bare
