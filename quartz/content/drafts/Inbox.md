@@ -1,7 +1,14 @@
 > [!INFO]
 > This file is tracked by Git, but ignored by Quartz.
 
-- the benefits of progress are not always evenly distributed
+
+- ChatGPT as the ultimate rubber duck. Any time with no delay or ego, infinite patience, with the ability to ask for clarification and dive deeper into questions, be a sanity check.
+
+- in code, every dependency can be viewed as a liability...this ties to trust, packaging ecosystems, reliability of access, open source, security, supply chain attacks, not invented here syndrome, but also to sharing reliable implementations.
+
+- the problem of reinventing the wheel and it's relation to lost knowledge. also tied to the idea of standing on the shoulders of giants, but how do we know those giants are there? we don't know what we don't know, so if some knowledge is gained, how do we distribute it most broadly to prevent others from making the same mistakes?
+
+- the benefits of progress through disruptive technology are not always evenly distributed
 
 - all knowledge in $\pi$
 
