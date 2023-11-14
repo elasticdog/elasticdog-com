@@ -70,7 +70,7 @@ _Dec 2013 to Jul 2015_ | 1 yr 8 mos in New York City, NY (Remote)
 
 - Wrote Ansible configuration management playbooks for multiple product teams to manage their development, staging, and production environments along with their supporting infrastructure
 
-- Created the open source project "transcrypt" to transparently encrypt files within a Git repository
+- Created the open source project [transcrypt](https://github.com/elasticdog/transcrypt) to transparently encrypt files within a Git repository
 
 - Researched, tested, and documented new hardware and software technologies in order to formulate reliable technological recommendations and enable continual innovation
 
@@ -164,7 +164,7 @@ _Jul 2002 to Dec 2002_ | 6 mos in Bluffdale, UT
 
 **Bachelor of Science (B.S.) with Highest Distinction** at [Purdue University](https://purdue.edu/)
 
-_2003 to 2009_ | 6 yrs in West Lafayette, IN
+_May 2009_ in West Lafayette, IN
 
 Major: _Computer & Information Technology_
 
