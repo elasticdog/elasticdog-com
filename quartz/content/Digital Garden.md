@@ -9,7 +9,7 @@ The format itself is not new, and many similar concepts exist:
 
 ...but for whatever reason, the garden metaphor clicks with me personally. The main difference in my mind from the other formats, is the emphasis on [[Learn in Public|learning in public]].
 
-The publication of raw thoughts, uncertainties, and half-finished ideas in their raw state allows for [[Feedback Loops]] and further learning by yourself and others. I appreciate that there is inherent value to community engagement and shared experience. This mindset also helps me to alleviate the self-imposed [[Perfectionism|pressure to perfect]] a piece of writing before making it public, and offers a more [[Work With the Garage Door Open|authentic representation of my process]].
+The publication of nascent thoughts, uncertainties, and half-finished ideas in their raw state allows for [[Feedback Loops]] and further learning by yourself and others. I appreciate that there is inherent value to community engagement and shared experience. This mindset also helps me to alleviate the self-imposed [[Perfectionism|pressure to perfect]] a piece of writing before making it public, and offers a more [[Work With the Garage Door Open|authentic representation of my process]].
 
 ## Applying the Metaphor
 
