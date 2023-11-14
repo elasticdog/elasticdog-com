@@ -21,10 +21,12 @@ In this digital garden, I use a tagging system to categorize and reflect on the 
 
 ## Further Reading
 
-* [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history) by [[Maggie Appleton]]
+- [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history) by [[Maggie Appleton]]
+
+- [My blog is a digital garden, not a blog](https://joelhooks.com/digital-garden) by [[Joel Hooks]]
 
 - [How the Blog Broke the Web](https://stackingthebricks.com/how-blogs-broke-the-web/) by [[Amy Hoy]]
 
-* [Differentiating online variations of the Commonplace Book: Digital Gardens, Wikis, Zettlekasten, Waste Books, Florilegia, and Second Brains](https://boffosocko.com/2021/07/03/differentiating-online-variations-of-the-commonplace-book-digital-gardens-wikis-zettlekasten-waste-books-florilegia-and-second-brains/) by [[Chris Aldrich]]
+- [Differentiating online variations of the Commonplace Book: Digital Gardens, Wikis, Zettlekasten, Waste Books, Florilegia, and Second Brains](https://boffosocko.com/2021/07/03/differentiating-online-variations-of-the-commonplace-book-digital-gardens-wikis-zettlekasten-waste-books-florilegia-and-second-brains/) by [[Chris Aldrich]]
 
 - [Epistemic statuses are lazy, and that is a good thing](https://devonzuegel.com/post/epistemic-statuses-are-lazy-and-that-is-a-good-thing) by [[Devon Zuegel]]
