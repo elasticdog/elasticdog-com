@@ -2,3 +2,4 @@
 tags:
   - seed
 ---
+[[Benjamin Franklin]]

@@ -1,6 +1,8 @@
 > [!INFO]
 > This file is tracked by Git, but ignored by Quartz.
 
+- Learning at the right level of difficulty to push yourself; connection to progressive overloading for progress in exercise. Related to deliberate practice?
+
 - The frequency of checking in on investments and the correlation with happiness. Conversation with Scott after a book, but I forget which one. Figure this out.
 
 - Why am I drawn to words like "kaizen" and "ikigai" to summarize concepts that may or may not directly translate into English? Is it purely length? Can I truly understand the concept as a non-native speaker, or am I misrepresenting something by not knowing the cultural context? Does it matter?
