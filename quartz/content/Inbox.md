@@ -1,5 +1,13 @@
+
+![[pepe-silvia.jpg]]
+
 > [!INFO]
-> This file is tracked by Git, but ignored by Quartz.
+> 
+> This is where I brain dump any fleeting thought to make sure that I don't forget it. They're a glimpse of a [[Digital Garden#Applying the Metaphor|seeds]] until I can process them into coherent thoughts. I used to keep this list private, but decided that it's useful to be [[Work With the Garage Door Open|fully transparent]].
+
+---
+
+- The sunblock article and conspiracy theories.
 
 - Learning at the right level of difficulty to push yourself; connection to progressive overloading for progress in exercise. Related to deliberate practice?
 
