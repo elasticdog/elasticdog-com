@@ -45,12 +45,15 @@ pre {
 
 .sidebar {
   li {
-    line-height: 1.2em;
+    line-height: 1.3em;
   }
 
-  // li:not(:last-child):not(:has(ul)) {
   li:not(:last-child) {
     margin-bottom: 0.8em;
+  }
+
+  li div.folder-container {
+    margin-bottom: -0.8em;
   }
 }
 
