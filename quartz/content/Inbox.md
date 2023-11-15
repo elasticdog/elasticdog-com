@@ -53,7 +53,7 @@
 
 - learn in public, even though it's for me, not commercializing, chronological
   organization killed curated creativity and exploration (Amy Hoy's How the Blog
-  Broke the Web; Stop Giving af and Start Writing More)
+  Broke the Web; Stop Giving af and Start Writing More). Does the consistent structure imposed by a new tool halt innovation?
 
 - summarize references of garden vs stream
 
