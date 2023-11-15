@@ -1,11 +1,15 @@
 
 ![[pepe-silvia.jpg]]
 
-> [!INFO]
+> [!warning]
 > 
-> This is where I brain dump any fleeting thought to make sure that I don't forget it. They're a glimpse of a [[Digital Garden#Applying the Metaphor|seeds]] until I can process them into coherent thoughts. I used to keep this list private, but decided that it's useful to be [[Work With the Garage Door Open|fully transparent]].
+> This is where I brain dump any fleeting thought to make sure that I don't forget it. They're a glimpse of a [[Digital Garden#Applying the Metaphor|seeds]] until I can process them into something coherent. I used to keep this list private, but decided that it's useful to be [[Work With the Garage Door Open|fully transparent]].
 
 ---
+
+- Fascination with precision and measurement being about relation to other things. Re-watch Adam Savage's gauge block video, he touched on a lot of interesting points. Part of my appreciation of watchmaking and complex mechanical systems.
+
+- Modern day life vs speed of evolution. Instincts regarding food, relation to The Comfort Crisis.
 
 - The sunblock article and conspiracy theories.
 
@@ -71,8 +75,6 @@
   path. you can't plan everything out perfectly ahead of time, you have to make
   adjustments as you go. related to perfectionism/analysis paralysis/best
   practices.
-
-- kaizen
 
 - even following pattern languages, you can't do it blindly without
   understanding the intent behind the rules.

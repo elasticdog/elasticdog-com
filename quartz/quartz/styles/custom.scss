@@ -43,6 +43,17 @@ pre {
   font-style: italic;
 }
 
+.sidebar {
+  li {
+    line-height: 1.2em;
+  }
+
+  // li:not(:last-child):not(:has(ul)) {
+  li:not(:last-child) {
+    margin-bottom: 0.8em;
+  }
+}
+
 // style external links differently
 a[href*="//"]:not([href*="www.elasticdog.com"])::after
 {
