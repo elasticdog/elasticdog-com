@@ -1,6 +1,8 @@
 > [!INFO]
 > This file is tracked by Git, but ignored by Quartz.
 
+- The frequency of checking in on investments and the correlation with happiness. Conversation with Scott after a book, but I forget which one. Figure this out.
+
 - Why am I drawn to words like "kaizen" and "ikigai" to summarize concepts that may or may not directly translate into English? Is it purely length? Can I truly understand the concept as a non-native speaker, or am I misrepresenting something by not knowing the cultural context? Does it matter?
 
 - ChatGPT as the ultimate rubber duck. Any time with no delay or ego, infinite patience, with the ability to ask for clarification and dive deeper into questions, be a sanity check.
@@ -39,11 +41,6 @@
   organization killed curated creativity and exploration (Amy Hoy's How the Blog
   Broke the Web; Stop Giving af and Start Writing More)
 
-- gardening metaphor; seeds -> saplings -> fruit, much more intuitive compared
-  to Zettlekasten. Not sure if I should lean more into the metaphor or leave it
-  at that and use more obvious naming forthings like "Inbox" "Further Reading"
-  "Inspiration", etc.
-
 - summarize references of garden vs stream
 
 - An "Inbox" is a mixed metaphor, but commonly understood. I think this can just
@@ -58,9 +55,6 @@
 - How do people logistically research history and collate facts? Recent example:
   Amy How's How the Blog Broke the Web, but there are lots. Deep Work's
   references, etc.
-
-- "Commonplace Book" being the historical origin of a digital
-  garden/zettlekasten/second brains (see article by Chris Aldrich).
 
 - timeless way of building, a place must be lived in and adapted over time to
   reflect it's actual usage before it can become "alive". similar to a desire
@@ -85,7 +79,7 @@
   posted about court case
   https://therecord.media/class-action-lawsuit-cars-text-messages-privacy
 
-- learning in public at odds with privacy? cancel culture, acknoledgement that
+- learning in public at odds with privacy? cancel culture, acknowledgment that
   I'm probably wrong, but open to hearing about it. scientific process is
   adapting understanding based on new information.
 
@@ -118,14 +112,7 @@
   What is the dataview plugin for querying, would that help to maintain things
   automatically?
 
-- how should I organize external references? zotero/citekeys for everything
-  seems like a lot of overhead; not sure how aliases work in practice, but I
-  think I need dedicated pages to notice patterns in the graph (like if I
-  mention Deep Work in multiple contexts, that should be discoverable and not
-  just a bunch of outbound links)
-
-- terminology for external references? inspiration, pollenators, further
-  reading, ???. Something may be thought provoking, not necessarily something I
+-  Something may be thought provoking, not necessarily something I
   agree with.
 
 - what's lacking is the federated aspect of easily sharing these ideas?
@@ -153,7 +140,7 @@
 - resonsibility to reduce bias vs accurate reflection of cultural biases
 
 - ai replacement of jobs. universal income, collaborate to increase
-  productivity, or adapt to better uses of human's natural abilities?
+  productivity, or adapt to better uses of human's natural abilities? Link to "Wirth's law" to explain the steady state of increasing our ambitions toward hard tasks by becoming more efficient?
 
 - HOWTO Publish an Obsidian Vault for Free; this would be a typical old-me blog
   post, but I do need to write up what I've done for my own reference. Maybe it
@@ -163,7 +150,7 @@
   out of context, but can still be great. "Sucking at something is the first
   step towards being sorta good at something."
 
-- statistics are unintuitive; tied to interesting paradoxes
+- statistics are counter-intuitive; tied to interesting paradoxes, inability to assess risk
 
 - algorithms for life; practical applications for some mathematical rules of
   thumb.
@@ -203,7 +190,7 @@
 
 - any concepts tied to hobbies, photography, watchmaking, drawing, exercise
 
-- value of personal metrics; are they actionable
+- value of personal metrics; are they actionable, a curiosity, or a waste of time
 
 - the case for optimism...another book and Scott discussion.
 
@@ -245,4 +232,4 @@
   language with animals, maybe kindness? The Universal Greeting. Or just an
   idiot. What about other universal language (nuclear waste, space probes).
 
-* Is [[Learning Through Mistakes]] related to work organization and autonomy? We need the freedom to be creative, but the structure in how we work and the process can be more organized to make it efficient.
+* Is [[We Learn Through Mistakes]] related to work organization and autonomy? We need the freedom to be creative, but the structure in how we work and the process can be more organized to make it efficient.
