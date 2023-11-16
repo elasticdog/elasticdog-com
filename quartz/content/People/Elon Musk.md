@@ -2,6 +2,8 @@
 tags:
   - person
 ---
+## Quotes
+
 > [!quote] Elon Musk
 > _"I do think there is a good framework for thinking. It is physics – you know the sort of first principles reasoning. … What I mean by that is boil things down to their fundamental truths and reason up from there as opposed to reasoning by analogy._
 >

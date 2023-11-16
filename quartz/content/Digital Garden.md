@@ -19,6 +19,7 @@ In this digital garden, I use a tagging system to categorize and reflect on the 
 2. 🌿 #sapling: Saplings are ideas that have been refined beyond the initial seed stage. They've received some nurturing and are starting to take shape, but are still flexible and growing, potentially in unexpected ways.
 3. 🍏 #fruit: Fruit are ideas that have matured and been thoroughly developed. They should offer a more rounded and comprehensive understanding of a topic. These represent the culmination of the growth process and have reached the stage of relative completion.
 
+---
 ## Further Reading
 
 - [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history) by [[Maggie Appleton]]

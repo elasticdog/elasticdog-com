@@ -6,6 +6,7 @@ Writing things down not only means structuring your thinking, but also provides 
 
 Writing is thinking within an externalized structure.
 
+---
 ## Further Reading
 
 * [Writing is a thinking tool](https://nesslabs.com/writing-thinking-tool) by [[Anne-Laure Le Cunff]]
