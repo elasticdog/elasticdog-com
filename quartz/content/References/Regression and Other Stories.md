@@ -5,4 +5,4 @@ tags:
 ---
 by [[Andrew Gelman]], [[Jennifer Hill]], and [[Aki Vehtari]]
 
-- 📚 [Book](https://avehtari.github.io/ROS-Examples/)
+Website: https://avehtari.github.io/ROS-Examples/

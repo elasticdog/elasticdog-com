@@ -1,6 +1,7 @@
 ---
 tags:
   - book
+  - stats-sdl
 ---
 by [[Allen B. Downey]]
 

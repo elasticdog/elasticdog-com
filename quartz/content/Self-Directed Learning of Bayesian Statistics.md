@@ -37,19 +37,13 @@ Committed to this path, I will be translating and adapting reference materials o
 
 The following resources have been selected for their structured approach and practical insights into Bayesian statistics. The sequence builds a strong foundational knowledge before progressing to more complex applications.
 
-1. [[Statistics 110 - Probability|Statistics 110: Probability]] by [[Joe Blitzstein]]
-2. [[Think Bayes 2]] by [[Allen B. Downey]]
-3. [[Statistical Rethinking]] by [[Richard McElreath]]
-4. [[Regression and Other Stories]] by [[Andrew Gelman]], [[Jennifer Hill]], and [[Aki Vehtari]]
+1. [[Introduction to Probability]]
+2. [[Think Bayes 2]]
+3. [[Statistical Rethinking]]
+4. [[Regression and Other Stories]]
 
 ### Supplemental Resources
 
 These resources dive deeper into the mathematical underpinnings of Bayesian statistics and are recommended for further exploration:
 
-- _Probability Theory: The Logic of Science_ by E.T. Jaynes
-
-  - 📚
-    [Book](http://www.med.mcgill.ca/epidemiology/hanley/bios601/GaussianModel/JaynesProbabilityTheory.pdf)
-    (PDF)
-  - 🎥
-    [Video Lectures](https://www.youtube.com/playlist?list=PL9v9IXDsJkktefQzX39wC2YG07vw7DsQ_)
+* [[Probability Theory|Probability Theory: The Logic of Science]]

@@ -247,3 +247,4 @@
 - Why I prefer a Digital Garden over a Zettelkasten...too much polish, the term "permanent notes" implies static and unchanging where I think having seed/sapling/fruit together is all fine.
 - Keep a flat structure without hierarchy...promotes serendipity, less cognitive overhead in trying to apply and maintain a taxonomy. Tags can be useful, in moderation.
 - Decision making...even smart people make terrible mistakes: https://fs.blog/smart-decisions/#smart_people_make_terrible_decisions
+- Importance of boredom
