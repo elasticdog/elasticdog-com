@@ -174,11 +174,7 @@
   automating a process, beauty in the simplicity which ends up being more
   optimal. kind of like index funds versus actively managed funds.
 
-- capturing pure HOWTO references or facts, like my copyright notices gist that
-  I look up regularly. is that even important to document anymore, considering
-  chatgpt might be faster? Is it faster to search the broader internet than my
-  own notes? Maybe if it's a resource that I wish existed and couldn't easily
-  find?
+- Where to capture pure HOWTO references or facts, like my copyright notices gist that I look up regularly. Things that I'd find useful to store as a personal knowledge base, but not necessarily original thoughts to expand upon. Is that even important to document anymore, considering chatgpt might be faster? Is it faster to search the broader internet than my own notes? Maybe if it's a resource that I wish existed and couldn't easily find?
 
 - should index show list of recently touched pages? what about the pages that
   haven't been updated in the longest? is there an ability to show a random page
@@ -247,3 +243,7 @@
   idiot. What about other universal language (nuclear waste, space probes).
 
 * Is [[We Learn Through Mistakes]] related to work organization and autonomy? We need the freedom to be creative, but the structure in how we work and the process can be more organized to make it efficient.
+
+- Why I prefer a Digital Garden over a Zettelkasten...too much polish, the term "permanent notes" implies static and unchanging where I think having seed/sapling/fruit together is all fine.
+- Keep a flat structure without hierarchy...promotes serendipity, less cognitive overhead in trying to apply and maintain a taxonomy. Tags can be useful, in moderation.
+- Decision making...even smart people make terrible mistakes: https://fs.blog/smart-decisions/#smart_people_make_terrible_decisions

@@ -2,7 +2,7 @@
 tags:
   - seed
 ---
-I tend to write like I talk. I'm not big on flowery language or deep symbolism, but can appreciate [[Perfect Meeting Notes|those that have that gift]].
+I tend to write like I talk. I'm not big on imagery, flowery language, or deep symbolism, but can appreciate [[Perfect Meeting Notes|those that have the gift]].
 ## ChatGPT's Analysis
 
 After providing [ChatGPT](https://chat.openai.com/) (v4 in April 2023) roughly a dozen samples of my own writing from different sources, I asked it to distill my writing style into a short description that I could use in a prompt later for generating additional writing. This is what it came up with:
