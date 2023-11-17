@@ -1,7 +1,7 @@
 ---
 title: "Probability Theory: The Logic of Science"
 tags:
-  - book
+  - reference/book
   - stats-sdl
 ---
 by [[E.T. Jaynes]]

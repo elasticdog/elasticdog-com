@@ -1,6 +1,6 @@
 ---
 tags:
-  - book
+  - reference/book
   - stats-sdl
 ---
 by [[Joe Blitzstein]] and [[Jessica Hwang]]

@@ -1,6 +1,6 @@
 ---
 tags:
-  - book
+  - reference/book
 ---
 by [[Sonke Ahrens|Sönke Ahrens]]
 

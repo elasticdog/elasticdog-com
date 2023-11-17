@@ -1,5 +1,5 @@
 ---
 tags:
-  - book
+  - reference/book
 ---
 by [[Christopher Alexander]]

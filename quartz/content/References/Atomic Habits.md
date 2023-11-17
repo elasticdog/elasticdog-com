@@ -1,7 +1,7 @@
 ---
 title: "Atomic Habits: Tiny Changes, Remarkable Results"
 tags:
-  - book
+  - reference/book
 ---
 by [[James Clear]]
 

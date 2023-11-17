@@ -1,6 +1,6 @@
 ---
 title: "The Pyramid Principle: Logic in Writing and Thinking"
 tags:
-  - book
+  - reference/book
 ---
 by [[Barbara Minto]]

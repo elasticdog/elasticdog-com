@@ -1,7 +1,7 @@
 ---
 title: "Code: The Hidden Language of Computer Hardware and Software"
 tags:
-  - book
+  - reference/book
 ---
 by [[Charles Petzold]]
 

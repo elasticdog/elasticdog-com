@@ -1,3 +1,7 @@
+When you encounter a news article covering a topic that you're a subject matter expert in, and you notice a lot of errors or misunderstandings, but then read another article by the same publisher and just assume that it is accurate.
+
+
+
 > [!quote] ChatGPT 4 on 2023-11-16
 > Q: What's the name of the concept when reading news where you're a subject matter expert, you notice a lot of errors, but then move on to other topics and assume that what you're reading is accurate?
 >

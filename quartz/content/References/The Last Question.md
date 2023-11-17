@@ -1,6 +1,6 @@
 ---
 tags:
-  - short-story
+  - reference/short-story
 ---
 by [[Isaac Asimov]]
 
