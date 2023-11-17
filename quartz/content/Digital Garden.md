@@ -1,3 +1,7 @@
+---
+tags:
+  - sapling
+---
 A digital garden represents a fresh perspective about gaining knowledge and sharing it online. It's a way of [[Writing Forces Clarity of Thought|writing to think]], and reflects the organic cycle of intellectual exploration. Unlike a traditional blog that offers polished, chronological articles, a digital garden is a living, breathing collection of evolving thoughts and interconnected pathways. It's akin to an open journal, where ideas are continuously nurtured, pruned, and allowed to grow in new directions.
 
 The format itself is not new, and many similar concepts exist:
@@ -15,9 +19,9 @@ The publication of nascent thoughts, uncertainties, and half-finished ideas in t
 
 In this digital garden, I use a tagging system to categorize and reflect on the maturity and development of each thought:
 
-1. 🌱 #seed: Seeds are initial unrefined ideas that are just sprouting. They represent the beginning of a concept, capturing the moment of inception or a sudden burst of inspiration. They are the potential for growth, awaiting further nurturing and development.
-2. 🌿 #sapling: Saplings are ideas that have been refined beyond the initial seed stage. They've received some nurturing and are starting to take shape, but are still flexible and growing, potentially in unexpected ways.
-3. 🍏 #fruit: Fruit are ideas that have matured and been thoroughly developed. They should offer a more rounded and comprehensive understanding of a topic. These represent the culmination of the growth process and have reached the stage of relative completion.
+1. 🌱 [#&hairsp;seed](/tags/seed): Seeds are initial unrefined ideas that are just sprouting. They represent the beginning of a concept, capturing the moment of inception or a sudden burst of inspiration. They are the potential for growth, awaiting further nurturing and development.
+2. 🌿 [#&hairsp;sapling](/tags/sapling): Saplings are ideas that have been refined beyond the initial seed stage. They've received some nurturing and are starting to take shape, but are still flexible and growing, potentially in unexpected ways.
+3. 🍏 [#&hairsp;fruit](/tags/fruit): Fruit are ideas that have matured and been thoroughly developed. They should offer a more rounded and comprehensive understanding of a topic. These represent the culmination of the growth process and have reached the stage of relative completion.
 
 ---
 ## Further Reading
