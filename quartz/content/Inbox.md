@@ -248,3 +248,4 @@
 - Keep a flat structure without hierarchy...promotes serendipity, less cognitive overhead in trying to apply and maintain a taxonomy. Tags can be useful, in moderation.
 - Decision making...even smart people make terrible mistakes: https://fs.blog/smart-decisions/#smart_people_make_terrible_decisions
 - Importance of boredom
+- I don't know where this link belongs...it's similar to the point of using the seed/sapling/fruit tagging system, but more explicit. [Epistemic statuses are lazy, and that is a good thing](https://devonzuegel.com/post/epistemic-statuses-are-lazy-and-that-is-a-good-thing) by [[Devon Zuegel]]

@@ -4,7 +4,7 @@ tags:
 ---
 A digital garden represents a fresh perspective about gaining knowledge and sharing it online. It's a way of [[Writing Forces Clarity of Thought|writing to think]], and reflects the organic cycle of intellectual exploration. Unlike a traditional blog that offers polished, chronological articles, a digital garden is a living, breathing collection of evolving thoughts and interconnected pathways. It's akin to an open journal, where ideas are continuously nurtured, pruned, and allowed to grow in new directions.
 
-The format itself is not new, and many similar concepts exist:
+The format itself is not new, and [many similar concepts](https://boffosocko.com/2021/07/03/differentiating-online-variations-of-the-commonplace-book-digital-gardens-wikis-zettlekasten-waste-books-florilegia-and-second-brains/) exist:
 
 - Commonplace Book
 - Zettelkasten
@@ -28,10 +28,8 @@ In this digital garden, I use a tagging system to categorize and reflect on the 
 
 - [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history) by [[Maggie Appleton]]
 
+- [Networked Thought](https://jzhao.xyz/posts/networked-thought) by [[Jacky Zhao]]
+
 - [My blog is a digital garden, not a blog](https://joelhooks.com/digital-garden) by [[Joel Hooks]]
 
 - [How the Blog Broke the Web](https://stackingthebricks.com/how-blogs-broke-the-web/) by [[Amy Hoy]]
-
-- [Differentiating online variations of the Commonplace Book: Digital Gardens, Wikis, Zettlekasten, Waste Books, Florilegia, and Second Brains](https://boffosocko.com/2021/07/03/differentiating-online-variations-of-the-commonplace-book-digital-gardens-wikis-zettlekasten-waste-books-florilegia-and-second-brains/) by [[Chris Aldrich]]
-
-- [Epistemic statuses are lazy, and that is a good thing](https://devonzuegel.com/post/epistemic-statuses-are-lazy-and-that-is-a-good-thing) by [[Devon Zuegel]]
