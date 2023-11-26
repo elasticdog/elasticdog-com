@@ -31,8 +31,18 @@ class ExpoBackoffDecorr(Backoff):
 ```
 
 ---
+
+To follow a common client library from Google, they chose 0.5 seconds for the initial delay and the multiplier of 1.5 for each next interval backoff. Jitter is set at 50%, so 50% higher or lower than the actual retry interval. (0.5 seconds, + or - 0.25 seconds).
+
+Adding jitter to the first request can be beneficial to prevent thundering herd problems.
+
+Also look at circuit breakers, [token buckets](https://en.m.wikipedia.org/wiki/Token_bucket), and  [TCP slow start](https://en.wikipedia.org/wiki/TCP_congestion_control#Slow_start) related to congestion control (via https://www.schneems.com/2020/07/08/a-fast-car-needs-good-brakes-how-we-added-client-rate-throttling-to-the-platform-api-gem/). Some people advocate that anything more than the single retry might be wasteful, but that seems extreme to me.
+
+The client should also account for explicit server/load balancer push-back like HTTP 429 errors (too many requests).
 ## Further Reading
 
 - [https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/)
 - The Synchronization of Periodic Routing Messages by Sally Floyd and Van Jacobson [https://ee.lbl.gov/papers/sync_94.pdf](https://ee.lbl.gov/papers/sync_94.pdf)
 - [https://cloud.google.com/storage/docs/retry-strategy#exponential-backoff](https://cloud.google.com/storage/docs/retry-strategy#exponential-backoff)
+- [Fixing retries with token buckets and circuit breakers](https://brooker.co.za/blog/2022/02/28/retries.html)
+- Google SRE book discusses this as well.
