@@ -36,7 +36,9 @@ To follow a common client library from Google, they chose 0.5 seconds for the in
 
 Adding jitter to the first request can be beneficial to prevent thundering herd problems.
 
-Also look at circuit breakers, [token buckets](https://en.m.wikipedia.org/wiki/Token_bucket), and  [TCP slow start](https://en.wikipedia.org/wiki/TCP_congestion_control#Slow_start) related to congestion control (via https://www.schneems.com/2020/07/08/a-fast-car-needs-good-brakes-how-we-added-client-rate-throttling-to-the-platform-api-gem/). Some people advocate that anything more than the single retry might be wasteful, but that seems extreme to me.
+Also look at circuit breakers, [token buckets](https://en.m.wikipedia.org/wiki/Token_bucket), and  [TCP slow start](https://en.wikipedia.org/wiki/TCP_congestion_control#Slow_start) related to congestion control (via https://www.schneems.com/2020/07/08/a-fast-car-needs-good-brakes-how-we-added-client-rate-throttling-to-the-platform-api-gem/). With these though, what level of failure do you set things to? Is there an optimal percentage where you'd trigger a circuit breaker, or would it depend on the whole environment?
+
+Some people advocate that anything more than the single retry might be wasteful, but that seems extreme to me.
 
 The client should also account for explicit server/load balancer push-back like HTTP 429 errors (too many requests).
 ## Further Reading
