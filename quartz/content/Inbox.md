@@ -7,6 +7,12 @@
 
 ---
 
+- Three interrelated topics on spelling alphabets, mnemonic encoding (pgp, signal fingerprints), and word lists. Clarity of communication (password character ambiguity), related to encoding schemes (Code book), cultures, internationalization. Licensing as well (Lexibomb word list).
+
+- Preservation of knowledge or work (word lists), how do you make an archive discoverable? Related to lost knowledge, bit rot, and what is important to retain from history?
+
+- Important design goals with CI surrounding spellout. Related to journey of using CUE, then reusable workflows, not needing local dependencies for a release process, etc.
+
 - Fascination with precision and measurement being about relation to other things. Re-watch Adam Savage's gauge block video, he touched on a lot of interesting points. Part of my appreciation of watchmaking and complex mechanical systems.
 
 - Modern day life vs speed of evolution. Instincts regarding food, relation to The Comfort Crisis.
