@@ -7,6 +7,8 @@
 
 ---
 
+- Distilling of information into something intuitive is important for teaching (and learning?). Makes me think of Steve Mould's videos like "You can't bounce a ball under a table" where he uses a simplified discrete demonstration to explain a continuous more complex interaction (like Newton used for calculating orbits), and relates to first principle's thinking. Jacky also wrote something about this.
+
 - Story of quality and the goal of making 100 of something in a month versus making 1 of something in a month that is a representation of your "best work".
 
 - xkcd Ten Thousand https://xkcd.com/1053/ and taking things for granted as "common knowledge". Too many things to learn and always new info. How else can we quantify added knowledge and how much we don't actual know (or ever will)? Also related to importance of lifelong learning.
