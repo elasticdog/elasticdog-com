@@ -7,6 +7,8 @@
 
 ---
 
+- iconology, radiation symbol for warning, universal understanding, simplicity of language, space probes
+
 - anthropomorphism of ChatGPT, gender, politeness, actual effect on results
 
 - My learning style, breadth vs depth, hobbies, just enough to be dangerous
