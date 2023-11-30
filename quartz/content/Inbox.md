@@ -7,6 +7,8 @@
 
 ---
 
+- Allure of Tensegrity Structures. I'm curious if there are applications in disciplines outside of a physical field (like in graph theory or network optimization). Interestingly the term was coined by Buckminster Fuller, who also pioneered the field of Synergetics.
+
 - Distilling of information into something intuitive is important for teaching (and learning?). Makes me think of Steve Mould's videos like "You can't bounce a ball under a table" where he uses a simplified discrete demonstration to explain a continuous more complex interaction (like Newton used for calculating orbits), and relates to first principle's thinking. Jacky also wrote something about this.
 
 - Story of quality and the goal of making 100 of something in a month versus making 1 of something in a month that is a representation of your "best work".
