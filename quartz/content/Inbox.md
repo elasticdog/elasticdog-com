@@ -7,7 +7,23 @@
 
 ---
 
-- Allure of Tensegrity Structures. I'm curious if there are applications in disciplines outside of a physical field (like in graph theory or network optimization). Interestingly the term was coined by Buckminster Fuller, who also pioneered the field of Synergetics.
+- anthropomorphism of ChatGPT, gender, politeness, actual effect on results
+
+- My learning style, breadth vs depth, hobbies, just enough to be dangerous
+
+- Inbox Zero (clearly I need work for this inbox)
+
+- Allure of Tensegrity Structures. I'm curious if there are applications in disciplines outside of a physical field (like in graph theory or network optimization). Interestingly the term was coined by Buckminster Fuller, who also pioneered the field of Synergetics. Also tied to cellular automata and how simple elements can lead to complex outcomes. 
+
+- Jobs I've done...vanity, doc, smiths, customer service, telephone.
+
+- Wolfram Research, AnyBot, remote work
+
+- Why I'm an engineer?
+
+- Serendipity and luck.
+
+- Story of Dad's half-brother, genealogy, Evergreen Cemetery in Troy Center
 
 - Distilling of information into something intuitive is important for teaching (and learning?). Makes me think of Steve Mould's videos like "You can't bounce a ball under a table" where he uses a simplified discrete demonstration to explain a continuous more complex interaction (like Newton used for calculating orbits), and relates to first principle's thinking. Jacky also wrote something about this.
 
@@ -198,6 +214,8 @@
 
 - a second brain; I've Googled for answers before, found them, realized that I
   wrote the answer and just don't remember.
+
+- How my memory works (figuring things out from my own perspective).
 
 - following news is harmful; sensationalist, clickbait, made to stir up
   controversy and/or keep you in an echo chamber, overwhelming. people can't
