@@ -48,3 +48,4 @@ The client should also account for explicit server/load balancer push-back like 
 - [https://cloud.google.com/storage/docs/retry-strategy#exponential-backoff](https://cloud.google.com/storage/docs/retry-strategy#exponential-backoff)
 - [Fixing retries with token buckets and circuit breakers](https://brooker.co.za/blog/2022/02/28/retries.html)
 - Google SRE book discusses this as well.
+- [Backpressure](https://www.tedinski.com/2019/03/05/backpressure.html) by [[Ted Kaminski]]

@@ -13,3 +13,4 @@ That said, does this idea conflict with the idea that we should take copious not
 Many people have discussed the lasting impact of our education, long after we've forgotten the details of what we've learned:
 
 ![[E.D. Battle#^3f6785]]
+

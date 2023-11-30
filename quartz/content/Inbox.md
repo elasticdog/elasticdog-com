@@ -7,6 +7,10 @@
 
 ---
 
+- Story of quality and the goal of making 100 of something in a month versus making 1 of something in a month that is a representation of your "best work".
+
+- xkcd Ten Thousand https://xkcd.com/1053/ and taking things for granted as "common knowledge". Too many things to learn and always new info. How else can we quantify added knowledge and how much we don't actual know (or ever will)? Also related to importance of lifelong learning.
+
 - Three interrelated topics on spelling alphabets, mnemonic encoding (pgp, signal fingerprints), and word lists. Clarity of communication (password character ambiguity), related to encoding schemes (Code book), cultures, internationalization. Licensing as well (Lexibomb word list).
 
 - Preservation of knowledge or work (word lists), how do you make an archive discoverable? Related to lost knowledge, bit rot, and what is important to retain from history?
@@ -170,7 +174,7 @@
   out of context, but can still be great. "Sucking at something is the first
   step towards being sorta good at something."
 
-- statistics are counter-intuitive; tied to interesting paradoxes, inability to assess risk
+- statistics are counter-intuitive; tied to interesting paradoxes, inability to assess risk, errors in conventional wisdom
 
 - algorithms for life; practical applications for some mathematical rules of
   thumb.
