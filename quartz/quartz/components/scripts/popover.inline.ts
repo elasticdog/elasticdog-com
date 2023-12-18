@@ -1,20 +1,5 @@
 import { computePosition, flip, inline, shift } from "@floating-ui/dom"
-
-// from micromorph/src/utils.ts
-// https://github.com/natemoo-re/micromorph/blob/main/src/utils.ts#L5
-export function normalizeRelativeURLs(el: Element | Document, destination: string | URL) {
-  const rebase = (el: Element, attr: string, newBase: string | URL) => {
-    const rebased = new URL(el.getAttribute(attr)!, newBase)
-    el.setAttribute(attr, rebased.pathname + rebased.hash)
-  }
-
-  el.querySelectorAll('[href^="./"], [href^="../"]').forEach((item) =>
-    rebase(item, "href", destination),
-  )
-  el.querySelectorAll('[src^="./"], [src^="../"]').forEach((item) =>
-    rebase(item, "src", destination),
-  )
-}
+import { normalizeRelativeURLs } from "../../util/path"
 
 const p = new DOMParser()
 async function mouseEnterHandler(
@@ -22,6 +7,10 @@ async function mouseEnterHandler(
   { clientX, clientY }: { clientX: number; clientY: number },
 ) {
   const link = this
+  if (link.dataset.noPopover === "true") {
+    return
+  }
+
   async function setPosition(popoverElement: HTMLElement) {
     const { x, y } = await computePosition(link, popoverElement, {
       middleware: [inline({ x: clientX, y: clientY }), shift(), flip()],
@@ -47,8 +36,6 @@ async function mouseEnterHandler(
   const hash = targetUrl.hash
   targetUrl.hash = ""
   targetUrl.search = ""
-  // prevent hover of the same page
-  if (thisUrl.toString() === targetUrl.toString()) return
 
   const contents = await fetch(`${targetUrl}`)
     .then((res) => res.text())
