@@ -51,7 +51,7 @@
 
 - The frequency of checking in on investments and the correlation with happiness. Conversation with Scott after a book, but I forget which one. Figure this out.
 
-- Why am I drawn to words like "kaizen" and "ikigai" to summarize concepts that may or may not directly translate into English? Is it purely length? Can I truly understand the concept as a non-native speaker, or am I misrepresenting something by not knowing the cultural context? Does it matter?
+- Why am I drawn to words like "kaizen", "ikigai", and "wabi-sabi" to summarize concepts that may or may not directly translate into English? Is it purely length? Can I truly understand the concept as a non-native speaker, or am I misrepresenting something by not knowing the cultural context? Does it matter?
 
 - ChatGPT as the ultimate rubber duck. Any time with no delay or ego, infinite patience, with the ability to ask for clarification and dive deeper into questions, be a sanity check.
 
@@ -79,7 +79,7 @@
 - perfectionism being a problem, self-pressure, the idea of good enough, 80/20
   rule, tied to personal finance journey as well, productivity, 4000 weeks book,
   the simple thing unintitively be more optimal (referenced in Algorithms for
-  Life book), find recent YouTube video on doing the most things.
+  Life book), perfectionism = procrastination (related to wabi-sabi), find recent YouTube video on doing the most things.
 
 - why static asset allocation for life. find recent article about research
   suggesting you should't change asset allocation in retirement to be more
