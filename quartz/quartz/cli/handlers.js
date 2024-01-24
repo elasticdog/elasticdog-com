@@ -113,7 +113,10 @@ export async function handleCreate(argv) {
     }
   }
 
-  await fs.promises.unlink(path.join(contentFolder, ".gitkeep"))
+  const gitkeepPath = path.join(contentFolder, ".gitkeep")
+  if (fs.existsSync(gitkeepPath)) {
+    await fs.promises.unlink(gitkeepPath)
+  }
   if (setupStrategy === "copy" || setupStrategy === "symlink") {
     let originalFolder = sourceDirectory
 
@@ -447,7 +450,7 @@ export async function handleUpdate(argv) {
   try {
     gitPull(UPSTREAM_NAME, QUARTZ_SOURCE_BRANCH)
   } catch {
-    console.log(chalk.red("An error occured above while pulling updates."))
+    console.log(chalk.red("An error occurred above while pulling updates."))
     await popContentFolder(contentFolder)
     return
   }
@@ -519,7 +522,7 @@ export async function handleSync(argv) {
     try {
       gitPull(ORIGIN_NAME, QUARTZ_SOURCE_BRANCH)
     } catch {
-      console.log(chalk.red("An error occured above while pulling updates."))
+      console.log(chalk.red("An error occurred above while pulling updates."))
       await popContentFolder(contentFolder)
       return
     }

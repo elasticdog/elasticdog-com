@@ -69,11 +69,21 @@ a {
     background-color: var(--highlight);
     padding: 0 0.1rem;
     border-radius: 5px;
+    line-height: 1.4rem;
 
     &:has(> img) {
       background-color: none;
       border-radius: 0;
       padding: 0;
+    }
+  }
+
+  &.external .external-icon {
+    height: 1ex;
+    margin: 0 0.15em;
+
+    > path {
+      fill: var(--dark);
     }
   }
 }
@@ -304,11 +314,13 @@ h6 {
   margin-bottom: 1rem;
 }
 
-div[data-rehype-pretty-code-fragment] {
+figure[data-rehype-pretty-code-figure] {
+  margin: 0;
+  position: relative;
   line-height: 1.6rem;
   position: relative;
 
-  & > div[data-rehype-pretty-code-title] {
+  & > [data-rehype-pretty-code-title] {
     font-family: var(--codeFont);
     font-size: 0.9rem;
     padding: 0.1rem 0.5rem;
@@ -320,16 +332,17 @@ div[data-rehype-pretty-code-fragment] {
   }
 
   & > pre {
-    padding: 0.5rem 0;
+    padding: 0;
   }
 }
 
 pre {
   font-family: var(--codeFont);
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   border-radius: 5px;
   overflow-x: auto;
   border: 1px solid var(--lightgray);
+  position: relative;
 
   &:has(> code.mermaid) {
     border: none;
@@ -342,6 +355,7 @@ pre {
     counter-reset: line;
     counter-increment: line 0;
     display: grid;
+    padding: 0.5rem 0;
 
     & [data-highlighted-chars] {
       background-color: var(--highlight);

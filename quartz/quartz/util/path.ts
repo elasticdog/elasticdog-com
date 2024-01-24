@@ -1,5 +1,9 @@
 import { slug as slugAnchor } from "github-slugger"
 import type { Element as HastElement } from "hast"
+import rfdc from "rfdc"
+
+export const clone = rfdc()
+
 // this file must be isomorphic so it can't use node libs (e.g. path)
 
 export const QUARTZ = "quartz"
@@ -46,7 +50,9 @@ export function getFullSlug(window: Window): FullSlug {
 function sluggify(s: string): string {
   return s
     .split("/")
-    .map((segment) => segment.replace(/\s/g, "-").replace(/%/g, "-percent").replace(/\?/g, "-q")) // slugify all segments
+    .map((segment) =>
+      segment.replace(/\s/g, "-").replace(/%/g, "-percent").replace(/\?/g, "-q").replace(/#/g, ""),
+    ) // slugify all segments
     .join("/") // always use / as sep
     .replace(/\/$/, "")
 }
@@ -121,7 +127,8 @@ const _rebaseHastElement = (
   }
 }
 
-export function normalizeHastElement(el: HastElement, curBase: FullSlug, newBase: FullSlug) {
+export function normalizeHastElement(rawEl: HastElement, curBase: FullSlug, newBase: FullSlug) {
+  const el = clone(rawEl) // clone so we dont modify the original page
   _rebaseHastElement(el, "src", curBase, newBase)
   _rebaseHastElement(el, "href", curBase, newBase)
   if (el.children) {
