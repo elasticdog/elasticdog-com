@@ -32,40 +32,28 @@ footer {
   }
 }
 
-pre {
-  & > code {
-    font-size: 0.95rem;
-    line-height: 1.2rem;
+.sidebar li {
+  line-height: 1rem;
+  margin-bottom: 0.6rem;
+
+  & div.folder-outer {
+    margin-bottom: -0.6rem;
   }
+}
+
+pre > code {
+  font-size: 0.95rem;
+  line-height: 1.2rem;
+}
+
+a.external .external-icon > path {
+  fill: var(--gray);
+}
+
+.backlinks a {
+  line-height: 1rem;
 }
 
 .center h1 {
   font-style: italic;
-}
-
-.sidebar {
-  li {
-    line-height: 1.3em;
-  }
-
-  li:not(:last-child) {
-    margin-bottom: 0.8em;
-  }
-
-  li div.folder-container {
-    margin-bottom: -0.8em;
-  }
-}
-
-// style external links differently
-a[href*="//"]:not([href*="www.elasticdog.com"])::after
-{
-  content: "";
-  background: url("/static/external-link.svg") no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 0.7em;
-  height: 0.7em;
-  margin: 0 0.1em;
-  padding-bottom: 0.2em;
 }
