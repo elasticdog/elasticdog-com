@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/jackyzha0/quartz.git
 	branch = v4
-	commit = b22bcd17b4301c6ef398124eec11f6dff0c2d37d
+	commit = a8e1c4abc2f5a76d0ff0d582b5c1cbfb81ddbe2f
 	parent = a373833b56a5215d07207d30895834d5e936614c
 	method = merge
 	cmdver = 0.4.6

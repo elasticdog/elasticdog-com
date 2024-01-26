@@ -64,7 +64,7 @@ a {
     color: var(--tertiary) !important;
   }
 
-  &.internal:not(:has(> img)) {
+  &.internal {
     text-decoration: none;
     background-color: var(--highlight);
     padding: 0 0.1rem;
@@ -356,6 +356,7 @@ pre {
     counter-increment: line 0;
     display: grid;
     padding: 0.5rem 0;
+    overflow-x: scroll;
 
     & [data-highlighted-chars] {
       background-color: var(--highlight);
