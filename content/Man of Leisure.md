@@ -1,0 +1,5 @@
+---
+tags:
+  - seed
+---
+[[Benjamin Franklin]]
