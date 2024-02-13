@@ -1,3 +1,53 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+div.center {
+  font-size: 1.15rem;
+
+  h1 {
+    font-style: italic;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+}
+
+a.external .external-icon > path {
+  fill: var(--gray);
+}
+
+li {
+  margin-bottom: 0.6rem;
+
+  & div.folder-outer {
+    margin-bottom: -0.6rem;
+  }
+}
+
+.sidebar li,
+.backlinks li a {
+  line-height: 1.3rem;
+}
+
+pre > code {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+footer {
+  background: url("/static/elasticdog.png") no-repeat 0px top;
+  background-size: 4.8em;
+  opacity: 0.9;
+  padding-bottom: 2.25em;
+
+  hr {
+    margin-left: 4.5em;
+    width: auto;
+  }
+
+  p,
+  ul {
+    padding-left: 5.5em;
+    opacity: 0.7;
+  }
+}
