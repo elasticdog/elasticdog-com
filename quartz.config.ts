@@ -12,7 +12,7 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      cdnCaching: false,
+      cdnCaching: true,
       typography: {
         header: "Fira Sans Condensed",
         body: "Literata",
