@@ -26,7 +26,8 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: string[] = []
 
       if (fileData.dates) {
-        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+        const displayedDate = "Last updated " + formatDate(getDate(cfg, fileData)!, cfg.locale)
+        segments.push(displayedDate)
       }
 
       // Display reading time if enabled
