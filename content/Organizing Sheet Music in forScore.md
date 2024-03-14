@@ -21,10 +21,10 @@ Bookmarks in forScore, applied _after_ importing a PDF file for a score, are piv
 > [!tip]
 > You can use forScore's [rearrange](https://forscore.co/documentation/rearrange/) feature to make structural changes to your documents by merging several PDF files together or by splitting one into individual parts, even after they've been imported.
 
-The dual advantage of using bookmarks lies in preserving the natural groupings of pieces, as they are often found in physical collections, while also enhancing digital navigation. This method maintains the contextual integrity of related scores and simplifies finding individual pieces through 'virtual' bookmarks, effectively creating a more navigable and intuitive library.
+The dual advantage of using bookmarks lies in preserving the natural groupings of pieces, as they are often found in physical collections, while also enhancing digital navigation. This approach not only preserves the contextual relationships among related scores but also facilitates the discovery of individual pieces by generating "virtual items" through bookmarks, in turn making the library more intuitive.
 
 For example, to catalog Bach's ["Cello Suite No. 1 in G major"](https://en.wikipedia.org/wiki/Cello_Suites_(Bach)), I would ensure that all six movements are contained within a single document for holistic access. Then, each movement—Prelude, Allemande, and so forth—would be individually bookmarked, making it trivial to jump to a specific section as needed.
-## Properties
+## Score Properties
 
 - Title
 - Composers
@@ -37,3 +37,5 @@ For example, to catalog Bach's ["Cello Suite No. 1 in G major"](https://en.wikip
 - Time
 - Key
 ## Setlists
+
+event in time, order matters
