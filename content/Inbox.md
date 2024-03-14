@@ -7,6 +7,12 @@
 
 ---
 
+- Mathematical perfection, attractiveness of symmetry, golden ratio, but not always a universal appeal, for instance, with piano tuning (see [jacob’s piano is out of tune](https://www.youtube.com/watch?v=xCUlippF2sg))
+
+- Piano tuning, asmr, and synergy of the strings
+
+- If it takes more time to sort a collection of items compared to the amount of time it takes to search through the whole thing, it's not worth doing, because that's not an optimization. My sock drawer made me think of the concept from Algorithms for Life book, but I need to look up exactly what it said again about the tradeoff. There was practical advice surrounding closet organization and has changed my habits to prefer LRU.
+
 - iconology, radiation symbol for warning, universal understanding, simplicity of language, space probes
 
 - anthropomorphism of ChatGPT, gender, politeness, actual effect on results

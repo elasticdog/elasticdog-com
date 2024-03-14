@@ -1,6 +1,6 @@
 ---
 tags:
-  - seed
+  - sapling
 ---
 [forScore](https://forscore.co/), a widely used application for cataloging and viewing sheet music, offers a sophisticated yet flexible way to manage your personal library. However, the app's extensive metadata fields can be overwhelming without a clear strategy; it can take some experimentation to sort out how to navigate effectively. After exploring various approaches, I've established a set of organizational guidelines that have streamlined the way I categorize and access my sheet music.
 ## Libraries
