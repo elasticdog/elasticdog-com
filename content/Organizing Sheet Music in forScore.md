@@ -26,16 +26,40 @@ The dual advantage of using bookmarks lies in preserving the natural groupings o
 For example, to catalog Bach's ["Cello Suite No. 1 in G major"](https://en.wikipedia.org/wiki/Cello_Suites_(Bach)), I would ensure that all six movements are contained within a single document for holistic access. Then, each movement—Prelude, Allemande, and so forth—would be individually bookmarked, making it trivial to jump to a specific section as needed.
 ## Score Properties
 
-- Title
-- Composers
-- Genres
-- Tags
-- Labels
-- Reference
-- Rating
-- Difficulty
-- Time
-- Key
+Score properties within forScore serve as metadata fields tailored to each document or bookmark, encompassing a variety of free-form text entries. These fields support multiple values, separated by commas, offering a flexible space for detailed information. However, the open-ended nature of these entries can sometimes make it challenging to decide how best to categorize less obvious data. Below, I outline my strategy for effectively organizing this information.
+
+- **Title**
+  - Use just the piece's title, without any subtitle, for clarity and ease of search.
+  - When housing multiple versions of the same piece, I distinguish between them by appending a descriptive label in square brackets at the end of the title, such as "\[Easy]". The version without any additional label is considered the default or primary version that I would typically refer to first.
+
+- **Composers**
+  - For classical pieces, input just the composer(s) as traditionally expected.
+  - For modern popular music, consider listing the primary performing artist instead of the actual songwriter, if that's whom you'd typically search for. For instance, for "What a Wonderful World", use "Louis Armstrong" instead of the songwriters "George Douglas" and "George David Weiss".
+  - If the document is a compilation book containing pieces from multiple composers, use "Compilation" to reflect the diverse authorship.
+
+- **Genres**
+  - I often rely on the default classifications provided through the Musicnotes integration for consistency. For pieces outside of this integration, I ensure the field is filled but do not adhere to a strict classification system. This casual method suits my search habits, as I typically do not rely heavily on genre for locating music in my library.
+
+- **Tags**
+  - This field serves as the catch-all for additional information that lacks a designated place elsewhere in the metadata. Notable entries include the arranger's name (particularly for arrangers I follow), the publication source (such as Faber,  Henle, IMSLP, Musicnotes, etc.), and the title of any larger series the piece is part of, like "Adult Piano Adventures". I also tag the origin of pieces from specific video games or movie series, ensuring all relevant and miscellaneous details are captured.
+
+- **Labels**
+  - 
+
+- **Reference**
+  - 
+
+- **Rating**
+  - 
+
+- **Difficulty**
+  - 
+
+- **Time**
+  - 
+
+- **Key**
+  - 
 ## Setlists
 
 event in time, order matters
