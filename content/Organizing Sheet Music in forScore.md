@@ -34,32 +34,36 @@ Score properties within forScore serve as metadata fields tailored to each docum
 
 - **Composers**
   - For classical pieces, input just the composer(s) as traditionally expected.
-  - For modern popular music, consider listing the primary performing artist instead of the actual songwriter, if that's whom you'd typically search for. For instance, for "What a Wonderful World", use "Louis Armstrong" instead of the songwriters "George Douglas" and "George David Weiss".
+  - For modern popular music, consider listing the primary performing artist or band instead of the actual songwriter, if that's whom you'd typically search for. For instance, for "What a Wonderful World", use "Louis Armstrong" instead of the songwriters "George Douglas" and "George David Weiss".
   - If the document is a compilation book containing pieces from multiple composers, use "Compilation" to reflect the diverse authorship.
 
 - **Genres**
-  - I often rely on the default classifications provided through the Musicnotes integration for consistency. For pieces outside of this integration, I ensure the field is filled but do not adhere to a strict classification system. This casual method suits my search habits, as I typically do not rely heavily on genre for locating music in my library.
+  - I rely on the upstream genre classifications provided by default through forScore's [content provider](https://forscore.co/content-providers/) integrations. For pieces outside of the supported content providers, I ensure the field is filled but do not adhere to a strict classification system. This casual method suits my search habits, as I typically do not rely heavily on genre for locating music in my library.
 
 - **Tags**
   - This field serves as the catch-all for additional information that lacks a designated place elsewhere in the metadata. Notable entries include the arranger's name (particularly for arrangers I follow), the publication source (such as Faber,  Henle, IMSLP, Musicnotes, etc.), and the title of any larger series the piece is part of, like "Adult Piano Adventures". I also tag the origin of pieces from specific video games or movie series, ensuring all relevant and miscellaneous details are captured.
 
 - **Labels**
-  - 
+  - I'm not currently using this field.
 
 - **Reference**
-  - 
+  - In this field, I employ the [classical catalog numbering systems ](https://en.wikipedia.org/wiki/Catalogues_of_classical_compositions) to reference specific pieces, aligning with established conventions for classical compositions. For example, I use "BWV 1007" to denote Bach's _Cello Suite No. 1 in G major_.
 
 - **Rating**
-  - 
+  - I use this field to indicate a piece's "performance readiness", a subjective measure of how prepared I feel to perform the piece confidently. A new piece starts at _1 star_, signifying the initial learning phase. As I practice and polish the piece, the rating increases:
+   - _2 stars_ might indicate basic familiarity, where I can play through the piece with some hesitations.
+   - _3 stars_ could represent a moderate level of comfort, with fewer mistakes and more consistent tempo.
+   - _4 stars_ would imply a high level of proficiency, where I can play expressively and with only minor errors.
+   - _5 stars_ denotes full polish and performance readiness, meaning I can perform the piece confidently and with musicality.
 
 - **Difficulty**
-  - 
+  - This field isn't free-form but rather offers three distinct ratings represented by 1, 2, or 3 circles. Given the subjective nature of difficulty levels, which can vary widely depending on systems like RCM, ABRSM, or Henle, I categorize pieces into broad skill levels: beginner (1 circle), intermediate (2 circles), and advanced (3 circles). This simplification helps me quickly gauge a piece's relative complexity at a glance, even within the subjective landscape of musical difficulty.
 
 - **Time**
-  - 
+  - The duration of a piece in minutes and seconds. I try to find reference performances of each piece and attach the audio to them and then just copy the measured length of a playthrough.
 
 - **Key**
-  - 
+  - The [key signature](https://en.wikipedia.org/wiki/Key_signature) that the piece is written in.
 ## Setlists
 
 event in time, order matters
