@@ -18,7 +18,7 @@ If I played multiple instruments or was a member of a band/choir/orchestra, I wo
 Bookmarks  allow me to cluster related pieces together, reflecting how they would be found in physical collections. Bookmarks create "virtual" scores in the library, each with separate metadata from the original compilation.
 
 > [!tip]
-> You can use forScore's [rearrange](https://forscore.co/documentation/rearrange/) feature to make > structural changes to your documents by merging several PDF files together or > by splitting one into individual parts.
+> You can use forScore's [rearrange](https://forscore.co/documentation/rearrange/) feature to make structural changes to your documents by merging several PDF files together or by splitting one into individual parts.
 
 For example, to catalog Bach's ["Cello Suite No. 1 in G major"](<https://en.wikipedia.org/wiki/Cello_Suites_(Bach)>), I would ensure that all six movements are contained within a single document for holistic access. Then, each movement—Prelude, Allemande, and so forth—would be individually bookmarked, making it trivial to jump to a specific section as needed.
 
