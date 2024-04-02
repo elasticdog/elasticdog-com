@@ -64,7 +64,7 @@ Score properties serve as metadata fields tailored to each document or bookmark.
 - **Difficulty**
 
   - Simplify difficulty assessment into three levels: beginner, intermediate, and advanced, using the number of circles to represent each.
-  - The [Level Guidelines](https://www.sheetmusicplus.com/en/help/about-us/level-guidelines.html) used by SheetMusicPlus have some explicit rules to help clarify my own thinking on a piece's difficulty, as I don't strictly follow systems like RCM, ABRSM, or Henle.
+  - The [Level Guidelines](https://www.sheetmusicplus.com/en/help/about-us/level-guidelines.html) used by SheetMusicPlus have some explicit rules to help clarify my own thinking on a piece's difficulty, as I don't strictly follow systems like [RCM](https://rcmusic-kentico-cdn.s3.amazonaws.com/rcm/media/main/about%20us/rcm%20publishing/piano-syllabus-2022-edition.pdf), ABRSM, or Henle.
 
 - **Time**
 
