@@ -87,4 +87,5 @@ I like using even smaller margins for display on an iPad. LilyPond's default mar
 
 - [Music Notation Style Guide](https://blogs.iu.edu/jsomcomposition/music-notation-style-guide/)  from the Indiana University Composition Department
 - [Standard Music Notation Practice](https://mpa.org/wp-content/uploads/2018/06/standard-practice-engraving.pdf)  from the MPA
+- [Essay on Automated Music Engraving](https://lilypond.org/doc/v2.24/Documentation/essay.pdf) from the LilyPond developers
 
