@@ -13,7 +13,6 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <hr />
         <p>
           Copyright &copy; 2003&ndash;{year} <a href="/ABS">Aaron Bull Schaefer</a>
         </p>
