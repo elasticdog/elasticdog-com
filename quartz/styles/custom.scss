@@ -11,6 +11,10 @@ div.center {
   > hr:last-of-type {
     margin-left: 5em;
     width: auto;
+
+    @media all and (max-width: $mobileBreakpoint) {
+      margin-left: 0em;
+    }
   }
 
   p {
