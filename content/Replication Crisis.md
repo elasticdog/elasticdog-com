@@ -23,6 +23,7 @@ All boils down to a question of incentives?
 
 How do we spot issues proactively?
 
+---
 ## Further Reading
 
 - https://examine.com/guides/how-to-read-a-study/

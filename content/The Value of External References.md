@@ -8,6 +8,8 @@ Q: Is it possible that adding references decreases the local value? Just throwin
 
 Q: What about the external network effect?
 
-See also:
+---
+## See Also
+
 - [[Rewording Common Ideas]]
 - [[Inspiration Does Not Mean Endorsement]]

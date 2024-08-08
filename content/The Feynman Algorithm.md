@@ -8,6 +8,7 @@ tags:
 
 Facetiously suggested by [[Murray Gell-Mann]], a colleague of [[Richard Feynman]], in a New York Times interview.
 
+---
 ## See Also
 
 - [[The Feynman Technique]]
