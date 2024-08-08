@@ -7,6 +7,8 @@
 
 ---
 
+- Interconnectedness of attribution, identity, reputation, trademarks, importance of a name.
+
 - Photographic memory considered a curse, but you don't want to not remember things either. Related to this site and thinking outside of my brain, it's okay to forget things as it's your brain's way of compressing information, but also the halting problem...when does learning things at a deeper level become a bad idea for forward progress. Also related to "collector's fallacy"?
 
 - Mathematical perfection, attractiveness of symmetry, golden ratio, but not always a universal appeal, for instance, with piano tuning (see [jacob’s piano is out of tune](https://www.youtube.com/watch?v=xCUlippF2sg))
