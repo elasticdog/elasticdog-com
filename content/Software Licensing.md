@@ -12,6 +12,7 @@ My philosophy for licensing personal software projects is to **allow for the wid
 Based on the above, I default to using the [Zero Clause BSD License](https://opensource.org/license/0bsd) (0BSD) as the most simple approximation of _public domain_ that's legally viable. Directly releasing software into the public domain is problematic, as it's a [labyrinthine mess](https://guides.library.cornell.edu/copyright/publicdomain) in the United States and an inconsistent concept globally.
 
 Actual compliance with license obligations is far more complex than most developers anticipate, particularly in modern ecosystems where projects can incorporate hundreds or even thousands of transitive dependencies. This complexity has spawned entire industries specializing in license compliance tools, policy enforcement, and generating comprehensive audit reports. The non-trivial effort required for proper license management just diverts time and resources away from improving your actual project. Using 0BSD can help bypass all of that.
+
 ## Comparisons to Other Licenses
 
 - MIT/BSD/ISC: Good, but require attribution

@@ -4,7 +4,7 @@ tags:
 ---
 Simple processes and solutions can often be the most elegant and effective compared to their more complex counterparts.
 
-- Investment ([[One-Fund Portfolio]])
+- Investment ([[Investor Policy Statement#One-Fund Portfolio|One-Fund Portfolio]])
 - Note taking
    > Reason 3. in the book [[How to Take Smart Notes]] ... Page 17 of 171
 - Cellular automata

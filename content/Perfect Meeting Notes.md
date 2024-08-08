@@ -6,7 +6,7 @@ Written by a former co-worker of mine in a style that I could only ever dream of
 > 
 > I arrived late, having barely had time to pull my ceremonial robes on. The others were already there, discussing the whithertos and wherefores of waffles. A discussion too far beyond my ken for me to contribute to.
 > 
-> And then our leader-that-was, ABS, communicated to us those messages from the depths of historic space-time, linking our minds with those of our kindred, unseen.
+> And then our leader-that-was, [[ABS]], communicated to us those messages from the depths of historic space-time, linking our minds with those of our kindred, unseen.
 > 
 > The importance of securing our work areas, that we may be safe from unfriendly daemons.
 >
