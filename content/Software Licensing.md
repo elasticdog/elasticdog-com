@@ -44,6 +44,6 @@ Related to
 - AI model training
 - https://copyfree.org/policy/why
 
-Inspired by a burntsushi's take and further discussion on HN https://news.ycombinator.com/item?id=24939162
+Inspired by a BurntSushi's take and further discussion on HN https://news.ycombinator.com/item?id=24939162
 
 Explicitly allow AI training on my data is also an advocacy thing.
