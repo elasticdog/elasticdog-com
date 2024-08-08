@@ -7,7 +7,11 @@
 
 ---
 
+- Reputation systems, ranking algorithms, social media, gamification, eternal September
+
 - Interconnectedness of attribution, identity, reputation, trademarks, importance of a name.
+
+- The burdens of open source, entitlement, expectations, pressure, https://xkcd.com/2347/
 
 - Photographic memory considered a curse, but you don't want to not remember things either. Related to this site and thinking outside of my brain, it's okay to forget things as it's your brain's way of compressing information, but also the halting problem...when does learning things at a deeper level become a bad idea for forward progress. Also related to "collector's fallacy"?
 

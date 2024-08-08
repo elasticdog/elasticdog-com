@@ -8,6 +8,7 @@ Note that this wouldn't apply to discovered algorithmic methodologies that impro
 
 Related to [[Landauer's Principle]].
 
+---
 ## Further Reading
 
 - https://news.ycombinator.com/item?id=38274848

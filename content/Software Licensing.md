@@ -2,7 +2,7 @@
 tags:
   - sapling
 ---
-My philosophy for licensing personal software projects is to **allow for the widest adoption with the least amount of hassle** for downstream users.
+My philosophy for licensing personal software projects is to **allow for the widest adoption with the least amount of friction** for downstream users.
 
 - Permissive > Copyleft
 - Sharing knowledge takes priority over personal profit
@@ -25,9 +25,9 @@ Actual compliance with license obligations is far more complex than most develop
 
 I don't have as clear of a stance on what's the best approach in the world of commercial software. If you want to make money from the software you write, what are good options?
 
-Need to think through ["Fair Source"](https://fair.io/) and it's implications. I'm not 100% convinced that it would be the direction I'd choose starting a software business now. I do think some of the pushback comes from projects that start as Open Source and later switch to being less open. Would there be as much of a feeling of betrayal if a company started as Fair Source from the beginning?
+Need to think through ["Fair Source"](https://fair.io/) and it's implications. Delayed Open Source Publication (DOSP) is a similar term. I'm not 100% convinced that it would be the direction I'd choose starting a software business now. I do think some of the pushback comes from projects that start as Open Source and later switch to being less open. Would there be as much of a feeling of betrayal if a company started as Fair Source from the beginning?
 
-Note, I was directly involved in the internal discussions surrounding the [Elastic License](https://www.elastic.co/licensing/elastic-license) and am very familiar with the motivations and eventual impact.
+Note, I was directly involved in the internal discussions surrounding the [Elastic License](https://www.elastic.co/licensing/elastic-license) and am very familiar with the motivations and eventual impact. This GitHub blog post has a decent summary on why many [single source projects](https://github.blog/open-source/whats-up-with-these-new-not-open-source-licenses/) have decided to tighten up their licensing. 
 
 Related to
 - [[Intellectual Property]]
@@ -41,6 +41,7 @@ Related to
 - [[Overton Window]]
 - Legal vs Ethical ([[Heinz Dilemma]])
 - AI model training
+- https://copyfree.org/policy/why
 
 Inspired by a burntsushi's take and further discussion on HN https://news.ycombinator.com/item?id=24939162
 

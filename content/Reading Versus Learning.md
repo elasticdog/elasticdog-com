@@ -7,7 +7,6 @@ Consumption of information through reading doesn't mean that you will retain tha
 Learning takes reflection and eventual application of knowledge. Writing things [[Rewording Common Ideas|in our own words]] helps to solidify the ideas.
 
 ---
-
 ## Further Reading
 
 - [The Collector's Fallacy](https://zettelkasten.de/posts/collectors-fallacy/) by [[Christian Tietze]]

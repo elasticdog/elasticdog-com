@@ -20,6 +20,7 @@ Modern Notation Practices (urtext is not the primary goal?),
 
 I do wish there were a good mechanism for community collaboration and feedback. That could exist in a LilyPond workflow published to GitHub (similar to what the [Mutopia Project](https://www.mutopiaproject.org/) did), but I had too many small manual tweaks where continuing its use didn't seem like the best path forward. Will have to think about that.
 
+---
 ## Further Reading
 
 - https://forum.pianoworld.com/ubbthreads.php/topics/1943808/re-henle-vs-schirmer.html

@@ -27,9 +27,6 @@ In this digital garden, I use a tagging system to categorize and reflect on the 
 ## Further Reading
 
 - [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history) by [[Maggie Appleton]]
-
 - [Networked Thought](https://jzhao.xyz/posts/networked-thought) by [[Jacky Zhao]]
-
 - [My blog is a digital garden, not a blog](https://joelhooks.com/digital-garden) by [[Joel Hooks]]
-
 - [How the Blog Broke the Web](https://stackingthebricks.com/how-blogs-broke-the-web/) by [[Amy Hoy]]
