@@ -13,4 +13,4 @@ Notes are written locally as [Markdown](https://en.wikipedia.org/wiki/Markdown) 
 
 ## Color Scheme
 
-The light and dark mode themes are currently using the upstream default colors from [Quartz](https://quartz.jzhao.xyz/). Source code syntax highlighting is handled via [Rehype Pretty Code](https://rehype-pretty-code.netlify.app/), and uses the _GitHub Light_ and _GitHub Dark_ themes converted from the [Shiki](https://github.com/shikijs/shiki) project.
+The light and dark mode themes are currently using the upstream default colors from [Quartz](https://quartz.jzhao.xyz/). Source code syntax highlighting is handled via [Rehype Pretty Code](https://rehype-pretty.pages.dev/), and uses the _GitHub Light_ and _GitHub Dark_ themes converted from the [Shiki](https://github.com/shikijs/shiki) project.
