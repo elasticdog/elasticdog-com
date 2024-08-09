@@ -32,6 +32,8 @@ Note, I was directly involved in the internal discussions surrounding the [Elast
 
 Related to
 - [[Intellectual Property]]
+- [Contributor License Agreement (CLA)](https://en.wikipedia.org/wiki/Contributor_License_Agreement)
+- [Developer Certificate of Origin (DCO)](https://developercertificate.org/)
 - Trademark protections
 - Government Funded Research
 - [All the Music](http://allthemusic.info/faqs/)
