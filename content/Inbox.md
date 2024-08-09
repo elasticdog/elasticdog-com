@@ -7,6 +7,8 @@
 
 ---
 
+- John Ousterhout's mention of "coherent systems are inherently unstable", but I'm thinking more about security and stability in computer systems and not just biological systems. Homogeneous issues like CrowdStrike's impact. Think about the relationships here and rephrase.
+
 - Reputation systems, ranking algorithms, social media, gamification, eternal September
 
 - Interconnectedness of attribution, identity, reputation, trademarks, importance of a name.
