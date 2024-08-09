@@ -64,7 +64,7 @@ $ rm initial_key{,.pub}
 For posterity, this is the hardware I ran the above commands on:
 
 ```text
-$ system_profiler -detailLevel mini SPHardwareDataType
+$ system_profiler -detailLevel mini SPHardwareDataType SPSoftwareDataType
 Hardware:
 
     Hardware Overview:
@@ -77,6 +77,17 @@ Hardware:
       Memory: 16 GB
       System Firmware Version: 10151.140.19
       OS Loader Version: 10151.140.19
+
+Software:
+
+    System Software Overview:
+
+      System Version: macOS 14.6 (23G80)
+      Kernel Version: Darwin 23.6.0
+      Time since boot: 3 days, 3 hours, 35 minutes
+
+$ ssh -V
+OpenSSH_9.7p1, LibreSSL 3.3.6
 
 $ date -Ru
 Fri, 09 Aug 2024 16:29:11 +0000
