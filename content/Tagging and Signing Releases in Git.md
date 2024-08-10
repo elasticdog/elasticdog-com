@@ -31,5 +31,5 @@ $ git show v0.9.4
 Push your annotated tags to the remote repo with:
 
 ```
-$ git push –tags
+$ git push –-tags
 ```
