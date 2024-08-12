@@ -49,3 +49,14 @@ Related to
 Inspired by a BurntSushi's take and further discussion on HN https://news.ycombinator.com/item?id=24939162
 
 Explicitly allow AI training on my data is also an advocacy thing.
+
+
+---
+## See Also
+
+- [[Intellectual Property]]
+
+## Further Reading
+
+-  [Why Public Domain](https://github.com/nothings/stb/blob/master/docs/why_public_domain.md) by [Sean Barrett a.k.a. @nothings](https://nothings.org/)
+- [Software licensing and my opposition to copyleft](https://github.com/BurntSushi/notes/blob/master/2020-10-29_licensing-and-copyleft.md) (and [HN discussion](https://news.ycombinator.com/item?id=24939162)) by [Andrew Gallant a.k.a @burntsushi](https://blog.burntsushi.net/about/)
