@@ -5,7 +5,7 @@ tags:
 Download  an mp3 with an embedded thumbnail image:
 
 ```
-youtube-dl -x --audio-format mp3 --embed-thumbnail 'https://www.youtube.com/watch?v=-n4BR0vUB80'
+yt-dlp -x --audio-format mp3 --embed-thumbnail 'https://www.youtube.com/watch?v=-n4BR0vUB80'
 ```
 
 Trim the beginning:
