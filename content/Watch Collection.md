@@ -12,4 +12,6 @@
 ## Owned
 
 - [Archimede Pilot 42 H](https://www.archimede-watches.com/pilot-42-h.-s.-lhb)
-- Seiko 5 SNK807
+- [Orient Bambino AC00009N](https://orient-watch.com/Collections/ORIENT/Classic/ORIENT%3A-Mechanical-Classic-Watch/p/AC00009N)
+- [Orient Kamasu RA-AA0001B19B](https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B)
+- [Seiko 5 SNK807](https://www.amazon.com/gp/product/B006CHML4I)
