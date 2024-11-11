@@ -1,0 +1,13 @@
+- One-Dip can ruin your bench mat
+- mainspring winding
+- stuck casebacks
+- rusted stem, smooshed crown
+- sheared screw
+- flying jewels and crushed replacements
+- ineffective crystal presses
+- let the power out, broken gear
+- case cushion bent hands
+- screwdrivers aren't pry bars (dressing)
+- bent pivot broken pivot
+- look with a loupe or you'll miss the goop
+- 
