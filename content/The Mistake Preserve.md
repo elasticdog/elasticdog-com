@@ -1,13 +1,47 @@
-- One-Dip can ruin your bench mat
+- the unspoken dangers of One-Dip
 - mainspring winding
+	- pay attention to winding direction
+	- proper staple size
+	- only one of the exit holes is angled
 - stuck casebacks
 - rusted stem, smooshed crown
 - sheared screw
-- flying jewels and crushed replacements
+- the case of the vanishing jewel
+- I crushed my jewels
 - ineffective crystal presses
 - let the power out, broken gear
 - case cushion bent hands
 - screwdrivers aren't pry bars (dressing)
 - bent pivot broken pivot
 - look with a loupe or you'll miss the goop
-- 
+- slipping seconds on 7S26C Seiko 5
+- cap jewels are directional
+- straps are three dimensional
+- us supplier showdown
+	- watchmaterial
+	- cousins
+	- otto frei
+	- esslinger
+	- cas-ker
+	- maccaw?
+	- crystal times?
+	- (some places are for industry only and not hobbyists, like Jules Borel and Star Time Supply)
+- barrel / mainspring alignment
+- uncoordinated casing of pocket watch
+- plastic jaws on calipers
+- precaution with radium dials
+- wound mainspring wrong direction
+
+Categories / Playlists
+
+- tool talk
+	- oil pots
+	- crystal press
+	- mainspring winders
+	- cleaning solution
+	- timegrapher (apps vs weishi)
+- collector's dozen
+- quite time / commentary
+- finding keepers
+- help needed
+- budget breakdown
