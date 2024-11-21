@@ -31,6 +31,10 @@
 - plastic jaws on calipers
 - precaution with radium dials
 - wound mainspring wrong direction
+- don't wear fuzzy sweaters
+- ebay frankenwatches (bullhead)
+- screws can be too tight
+- keep track of screw shapes and locations
 
 Categories / Playlists
 
