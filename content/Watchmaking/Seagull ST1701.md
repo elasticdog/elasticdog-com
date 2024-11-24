@@ -1,0 +1,4 @@
+- automatic
+- 21,600 bph
+- 20 jewels
+- 42 hrs power reserve
