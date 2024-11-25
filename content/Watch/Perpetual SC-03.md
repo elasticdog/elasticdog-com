@@ -1,6 +1,10 @@
 ---
-watch/movement: Seagul ST1701
+brand: "[[Perpetual Watch Co.]]"
+model: SC-03
+year: 
+movement: "[[Seagull ST1701]]"
 ---
+## Features
 
 * 316L stainless steel case
 * 41 mm case diameter
