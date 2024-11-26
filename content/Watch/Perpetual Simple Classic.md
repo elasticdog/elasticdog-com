@@ -17,7 +17,7 @@
 * Domed sapphire crystal with anti-reflection coating
 * Exhibition caseback
 * White enamel dial
-* Blued steel hands
+* Thermally blued steel hands
 
 ## Specifications
 
