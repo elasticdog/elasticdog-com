@@ -8,15 +8,6 @@ div.center {
     font-style: italic;
   }
 
-  > hr:last-of-type {
-    margin-left: 5em;
-    width: auto;
-
-    @media all and ($mobile) {
-      margin-left: 0em;
-    }
-  }
-
   p {
     line-height: 1.8rem;
   }
@@ -32,14 +23,6 @@ a.external .external-icon > path {
 
 li {
   margin-bottom: 0.6rem;
-
-  & div.folder-outer {
-    margin-bottom: -0.6rem;
-  }
-}
-
-.sidebar {
-  margin-bottom: 3em;
 }
 
 .sidebar li,
@@ -58,7 +41,6 @@ footer {
   height: 6em;
   font-size: 0.9rem;
   margin-bottom: 0.8em;
-  margin-top: -3em;
   padding-top: 1.25em;
   padding-bottom: 1em;
   opacity: 0.9;
