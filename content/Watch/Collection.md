@@ -1,3 +1,8 @@
+---
+title: My Watch Collection
+aliases:
+  - My Watch Collection
+---
 I like a watch with a story. I'm drawn to vintage aesthetics, but appreciate all kinds of watches.
 ## Current Collection
 
@@ -42,3 +47,10 @@ junghans max bill
 - [Seagull 1963 Chronograph](https://seagullwatches.com/products/seagull-1963-aviation-pilots-watch-times-edition) (38mm w/acrylic dome crystal and swan neck regulator)
 
 
+## Dataview
+
+```dataview
+TABLE year, brand, model, movement
+FROM "Watch"
+WHERE brand
+```
