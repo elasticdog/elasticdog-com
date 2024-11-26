@@ -15,13 +15,14 @@ These are the watches I wear regularly. To keep myself from getting carried away
 1. [Orient Bambino AC00009N](https://orient-watch.com/Collections/ORIENT/Classic/ORIENT%3A-Mechanical-Classic-Watch/p/AC00009N)
 1. [Orient Kamasu RA-AA0001B19B](https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B)
 1. [Seiko 5 SNK807](https://www.amazon.com/gp/product/B006CHML4I)
-1. Rado DiaStar
-1. [Perpetual SC-03](https://www.perpetual-watch.com/SC.html)
+1. [[Perpetual Simple Classic]]
 1. 1961 Omega "Gentleman's" BK 14713
 
 ## Upcoming Projects
 
 These are watches I’ve acquired to work on. They may or may not become part of my personal collection.
+
+- Rado DiaStar
 
 ## Wishlist
 
