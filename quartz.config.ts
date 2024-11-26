@@ -9,6 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "ElasticDog",
+    pageTitleSuffix: "ElasticDog",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,
@@ -16,6 +17,7 @@ const config: QuartzConfig = {
     baseUrl: "www.elasticdog.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
+    generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
