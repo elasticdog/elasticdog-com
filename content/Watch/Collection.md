@@ -3,45 +3,62 @@ title: My Watch Collection
 aliases:
   - My Watch Collection
 ---
+
 I like a watch with a story. I'm drawn to vintage aesthetics, but appreciate all kinds of watches.
-## Current Collection
 
-- 2013 [Archimede Pilot 42 H](https://www.archimede-watches.com/pilot-42-h.-s.-lhb)
-- ~1960 Ernest Borel Cocktail Kaleidoscope
-- [Orient Bambino AC00009N](https://orient-watch.com/Collections/ORIENT/Classic/ORIENT%3A-Mechanical-Classic-Watch/p/AC00009N)
-- [Orient Kamasu RA-AA0001B19B](https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B)
-- [Seiko 5 SNK807](https://www.amazon.com/gp/product/B006CHML4I)
-- Rado DiaStar
-- [Perpetual SC-03](https://www.perpetual-watch.com/SC.html)
-- 1961 Omega "Gentleman's" BK 14713
+## Personal Collection
 
-## My Wishlist
+These are the watches I wear regularly. To keep myself from getting carried away, I’ve set a self-imposed hard limit of 12 watches (the number that fits in my watch box).
+
+1. 2013 [Archimede Pilot 42 H](https://www.archimede-watches.com/pilot-42-h.-s.-lhb)
+1. ~1960 Ernest Borel Cocktail Kaleidoscope
+1. [Orient Bambino AC00009N](https://orient-watch.com/Collections/ORIENT/Classic/ORIENT%3A-Mechanical-Classic-Watch/p/AC00009N)
+1. [Orient Kamasu RA-AA0001B19B](https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B)
+1. [Seiko 5 SNK807](https://www.amazon.com/gp/product/B006CHML4I)
+1. Rado DiaStar
+1. [Perpetual SC-03](https://www.perpetual-watch.com/SC.html)
+1. 1961 Omega "Gentleman's" BK 14713
+
+## Upcoming Projects
+
+These are watches I’ve acquired to work on. They may or may not become part of my personal collection.
+
+## Wishlist
+
+These are watches I’d like to acquire at some point in the future.
 
 - [Seiko Prospex "Alpinist" SPB121](https://www.seikowatches.com/us-en/products/prospex/spb121j1)
 - Junghans Max Bill (Bauhaus)
 - Vulcain Cricket (alarm)
 - Oris Big Crown
 
-## Bought & Sold
+## Archive
+
+These are watches I’ve owned and worked on in the past, but have since sold or given them away.
 
 ## Dozen
 
 chronograph
+
 diver
+
 ernest borel cocktail kaleidoscope
+
 grand seiko
+
 omega seamaster
+
 oris big crown
+
 pilot
+
 seiko alpinist
+
 trench
+
 vulcain cricket
+
 rado diastar
+
 junghans max bill
 
-## Honorable Mentions
-
-- [Hamilton Khaki Field Murph 38mm](https://www.hamiltonwatch.com/en-us/murph-38)
-- [Tissot PRX Powermatic 80 Forged Carbon](https://www.tissotwatches.com/en-us/T1379079720100.html) (the [light blue dial](https://www.tissotwatches.com/en-us/T1374071135100.html) regular version is also nice)
-- [Seiko 5 Sport "DressKX" SRPE51 ](https://www.seikowatches.com/us-en/products/5sports/srpe51)
-- [Seagull 1963 Chronograph](https://seagullwatches.com/products/seagull-1963-aviation-pilots-watch-times-edition) (38mm w/acrylic dome crystal and swan neck regulator)
