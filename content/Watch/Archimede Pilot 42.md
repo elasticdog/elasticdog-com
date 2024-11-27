@@ -3,11 +3,13 @@
 |          |                |
 | -------: | -------------- |
 |    Brand | [[Archimede]]  |
+|   Series | Pilot          |
 |    Model | Pilot 42 H     |
 |     Year | 2013           |
+| Serial # | _(none)_       |
 |   Origin | Germany        |
 | Movement | [[ETA 2824-2]] |
-This watch is.
+This watch is a classic "Type A" Flieger-style watch with a historically inspired design. It features a clean, unbranded dial, staying true to the minimalist aesthetic of traditional pilot's watches.
 
 |          |                         |
 | -------: | ----------------------- |

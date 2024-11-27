@@ -3,8 +3,10 @@
 |          |                             |
 | -------: | --------------------------- |
 |    Brand | [[PerpetuaL Watch Company]] |
-|    Model | SC-03 ("Simple Classic")    |
+|   Series | Simple Classic              |
+|    Model | SC-03                       |
 |     Year | ~2021                       |
+| Serial # | _(none)_                    |
 |   Origin | China                       |
 | Movement | [[Seagull ST1701]]          |
 This watch reminds me of historical trench watches from WWI, but uses a contemporary case size (not too large like marriage watches, not too small like wristlets).
@@ -29,7 +31,7 @@ This watch reminds me of historical trench watches from WWI, but uses a contempo
 |   Diameter | 41 mm   |
 |  Thickness | 12 mm   |
 | Lug-to-Lug | 47.5 mm |
-|  Lug Width | 20 mmm  |
+|  Lug Width | 20 mm   |
 
 ## Resources
 

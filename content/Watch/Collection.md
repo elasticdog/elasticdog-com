@@ -10,30 +10,24 @@ I like a watch with a story. I'm drawn to vintage aesthetics, but [[Appreciation
 
 These are the watches I wear regularly. To keep myself from getting carried away, I’ve set a self-imposed hard limit of 12 watches (the number that fits in my watch box).
 
-![[archimede-pilot-42.webp|110]]  ![[benrus-series-3021.webp|110]] ![[perpetual-sc-03.webp|110]] ![[omega-gentlemans-watch.webp|110]] ![[orient-bambino.webp|110]] ![[orient-kamasu.webp|110]]
+![[archimede-pilot-42.webp|110]]  ![[benrus-series-3021.webp|110]] ![[omega-gentlemans-watch.webp|110]] ![[orient-bambino.webp|110]] ![[orient-kamasu.webp|110]]  ![[perpetual-sc-03.webp|110]] 
 ![[seiko-5.webp|110]]
 
 1. [[Archimede Pilot 42]]
 2. [[Benrus Series 3021]]
-3. [[PerpetuaL SC-03]]
-4. [[Omega "Gentleman's Watch"]]
-5. [[Orient Bambino]]
-6. [[Orient Kamasu]]
-7. [[Seiko 5]]
-
----
-
-9. [Orient Bambino AC00009N](https://orient-watch.com/Collections/ORIENT/Classic/ORIENT%3A-Mechanical-Classic-Watch/p/AC00009N)
-10. [Orient Kamasu RA-AA0001B19B](https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B)
-11. [Seiko 5 SNK807](https://www.amazon.com/gp/product/B006CHML4I)
-
-12. Omega "Gentleman's Watch" BK 14713
+3. [[Omega "Gentleman's Watch"]]
+4. [[Orient Bambino]]
+5. [[Orient Kamasu]]
+6. [[PerpetuaL SC-03]]
+7. [[Seiko SNK807]]
 
 ## Upcoming Projects
 
 These are watches I’ve acquired to work on. They may or may not become part of my personal collection.
 
 - Ernest Borel Cocktail Kaleidoscope
+- 1946 Omega Automatic Bumper
+- 1941 Omega Seamaster
 - Rado DiaStar
 
 ## Wishlist
@@ -49,4 +43,6 @@ These are watches I’d like to acquire at some point in the future.
 
 ## Archive
 
-These are watches I’ve owned and worked on in the past, but have since sold or given them away.
+These are watches I’ve owned and worked on in the past, but have since sold or given away.
+
+- 1971 Timex Marlin

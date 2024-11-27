@@ -1,9 +1,9 @@
-|              |           |
-| -----------: | --------- |
-| Manufacturer | Seagull   |
-|      Caliber | ST1701    |
-|         Type | Automatic |
-|       Origin | China     |
+|              |             |
+| -----------: | ----------- |
+| Manufacturer | [[Seagull]] |
+|      Caliber | ST1701      |
+|         Type | Automatic   |
+|       Origin | China       |
 
 ## Features
 
