@@ -5,6 +5,7 @@
 |    Brand | [[Archimede]]  |
 |    Model | Pilot 42 H     |
 |     Year | 2013           |
+|   Origin | Germany        |
 | Movement | [[ETA 2824-2]] |
 This watch is.
 
@@ -28,8 +29,8 @@ This watch is.
 |   Diameter | 41.8 mm |
 |  Thickness | 9.5 mm  |
 | Lug-to-Lug | 48.5 mm |
-|  Lug Width | 20 mmm  |
+|  Lug Width | 20 mm   |
 
 ## Resources
 
-- https://www.perpetual-watch.com/SC.html
+- https://www.archimede-watches.com/pilot/pilot-42/

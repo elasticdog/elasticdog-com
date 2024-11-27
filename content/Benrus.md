@@ -1,0 +1,1 @@
+Founded by [[Benjamin Lazarus]] as an NYC repair shop in 1921, the Benrus watch company built timepieces under several brand tiers throughout its existence. The company was sold off in 1967 and ultimately filed for bankruptcy in 1977, ending the original firm as we know it.

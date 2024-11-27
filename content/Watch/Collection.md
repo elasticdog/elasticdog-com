@@ -4,28 +4,30 @@ aliases:
   - My Watch Collection
 ---
 
-I like a watch with a story. I'm drawn to vintage aesthetics, but appreciate all kinds of watches.
+I like a watch with a story. I'm drawn to vintage aesthetics, but [[Appreciation|appreciate]] _all kinds_ of watches.
 
 ## Personal Collection
 
 These are the watches I wear regularly. To keep myself from getting carried away, I’ve set a self-imposed hard limit of 12 watches (the number that fits in my watch box).
 
-![[archimede-pilot-42.webp|100]] 
-![[perpetual-sc-03.webp|100]]
+![[archimede-pilot-42.webp|110]]  ![[benrus-series-3021.webp|110]] ![[perpetual-sc-03.webp|110]] ![[omega-gentlemans-watch.webp|110]] ![[orient-bambino.webp|110]] ![[orient-kamasu.webp|110]]
+![[seiko-5.webp|110]]
 
 1. [[Archimede Pilot 42]]
-2. [[Benrus "Gentleman's Watch"]]
+2. [[Benrus Series 3021]]
 3. [[PerpetuaL SC-03]]
 4. [[Omega "Gentleman's Watch"]]
 5. [[Orient Bambino]]
 6. [[Orient Kamasu]]
 7. [[Seiko 5]]
 
-8. [Orient Bambino AC00009N](https://orient-watch.com/Collections/ORIENT/Classic/ORIENT%3A-Mechanical-Classic-Watch/p/AC00009N)
-9. [Orient Kamasu RA-AA0001B19B](https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B)
-10. [Seiko 5 SNK807](https://www.amazon.com/gp/product/B006CHML4I)
+---
 
-11. Omega "Gentleman's Watch" BK 14713
+9. [Orient Bambino AC00009N](https://orient-watch.com/Collections/ORIENT/Classic/ORIENT%3A-Mechanical-Classic-Watch/p/AC00009N)
+10. [Orient Kamasu RA-AA0001B19B](https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B)
+11. [Seiko 5 SNK807](https://www.amazon.com/gp/product/B006CHML4I)
+
+12. Omega "Gentleman's Watch" BK 14713
 
 ## Upcoming Projects
 
@@ -42,34 +44,9 @@ These are watches I’d like to acquire at some point in the future.
 - Junghans Max Bill (Bauhaus)
 - Vulcain Cricket (alarm)
 - Oris Big Crown
+- Grand Seiko
+- Chronograph
 
 ## Archive
 
 These are watches I’ve owned and worked on in the past, but have since sold or given them away.
-
-## Dozen
-
-chronograph
-
-diver
-
-ernest borel cocktail kaleidoscope
-
-grand seiko
-
-omega seamaster
-
-oris big crown
-
-pilot
-
-seiko alpinist
-
-trench
-
-vulcain cricket
-
-rado diastar
-
-junghans max bill
-

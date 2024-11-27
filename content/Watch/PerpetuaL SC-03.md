@@ -5,6 +5,7 @@
 |    Brand | [[PerpetuaL Watch Company]] |
 |    Model | SC-03 ("Simple Classic")    |
 |     Year | ~2021                       |
+|   Origin | China                       |
 | Movement | [[Seagull ST1701]]          |
 This watch reminds me of historical trench watches from WWI, but uses a contemporary case size (not too large like marriage watches, not too small like wristlets).
 
@@ -33,3 +34,4 @@ This watch reminds me of historical trench watches from WWI, but uses a contempo
 ## Resources
 
 - https://www.perpetual-watch.com/SC.html
+- https://12and60.com/perpetual-watch-sc-03-watch-review/

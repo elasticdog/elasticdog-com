@@ -11,11 +11,11 @@
 
 ## Specifications
 
-|               |             |
-| ------------: | ----------- |
-|        Jewels | 20          |
-|          Rate | 21,600      |
-| Power Reserve | 40 hours    |
-|    Lift Angle | _(unknown)_ |
-|       Hacking | no          |
-|       Winding | yes         |
+|                |             |
+| -------------: | ----------- |
+|         Jewels | 20          |
+|           Rate | 21,600      |
+|  Power Reserve | 40 hours    |
+|     Lift Angle | _(unknown)_ |
+|        Hacking | no          |
+| Manual Winding | yes         |
