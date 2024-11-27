@@ -1,0 +1,1 @@
+Founded in 1917. Known as the "Master of Materials" for their pioneering work in ceramic case material and early adoption of sapphire crystals.
