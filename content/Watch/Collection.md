@@ -21,14 +21,23 @@ These are the watches I wear regularly. To keep myself from getting carried away
 6. [[PerpetuaL SC-03]]
 7. [[Seiko SNK807]]
 
+### Family Heirloom Pocket Watches
+
+- 1911 Illinois
+- 1927 Elgin
 ## Upcoming Projects
 
 These are watches I’ve acquired to work on. They may or may not become part of my personal collection.
 
 - Ernest Borel Cocktail Kaleidoscope
-- 1946 Omega Automatic Bumper
-- 1941 Omega Seamaster
+- Omega Automatic Bumper
+- Omega Seamaster
 - Rado DiaStar
+- Longines 11L
+- Croton Sports Club Commemorative
+- Helbros Self-Winding 25
+- Duval Deauville
+- Wittnauer Genève
 
 ## Wishlist
 
