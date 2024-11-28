@@ -9,8 +9,8 @@ I like a watch with a story. I'm drawn to vintage aesthetics, but [[Appreciation
 
 These are the watches I wear regularly. To keep myself from getting carried away, I've set a self-imposed hard limit of 12 watches (the number that fits in my watch box).
 
-[![[archimede-pilot-42.webp|120]]](Archimede%20Pilot%2042) [![[benrus-series-3021.webp|120]]](Benrus%20Series%203021) [![[omega-gentlemans-watch.webp|120]]](Omega%20%22Gentleman%27s%20Watch%22) [![[orient-bambino.webp|120]]](Orient%20Bambino) [![[orient-kamasu.webp|120]]](Orient%20Kamasu) [![[perpetual-sc-03.webp|120]]](PerpetuaL%20SC-03) \
-[![[seiko-5.webp|120]]](Seiko%20SNK807)
+[![[archimede-pilot-42.webp|115]]](Archimede%20Pilot%2042) [![[benrus-series-3021.webp|115]]](Benrus%20Series%203021) [![[omega-gentlemans-watch.webp|115]]](Omega%20%22Gentleman%27s%20Watch%22) [![[orient-bambino.webp|115]]](Orient%20Bambino) [![[orient-kamasu.webp|115]]](Orient%20Kamasu) [![[perpetual-sc-03.webp|115]]](PerpetuaL%20SC-03) \
+[![[seiko-5.webp|115]]](Seiko%20SNK807)
 
 1. [[Archimede Pilot 42]]
 2. [[Benrus Series 3021]]
