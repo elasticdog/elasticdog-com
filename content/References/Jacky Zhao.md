@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://jzhao.xyz/
+
+Website: <https://jzhao.xyz/>

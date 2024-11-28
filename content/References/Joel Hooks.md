@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://joelhooks.com/
+
+Website: <https://joelhooks.com/>

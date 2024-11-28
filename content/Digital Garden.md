@@ -1,7 +1,7 @@
 ---
-tags:
-  - sapling
+tags: sapling
 ---
+
 A digital garden represents a fresh perspective about gaining knowledge and sharing it online. It's a way of [[Writing Forces Clarity of Thought|writing to think]], and reflects the organic cycle of intellectual exploration. Unlike a traditional blog that offers polished, chronological articles, a digital garden is a living, breathing collection of evolving thoughts and interconnected pathways. It's akin to an open journal, where ideas are continuously nurtured, pruned, and allowed to grow in new directions.
 
 The format itself is not new, and [many similar concepts](https://boffosocko.com/2021/07/03/differentiating-online-variations-of-the-commonplace-book-digital-gardens-wikis-zettlekasten-waste-books-florilegia-and-second-brains/) exist:
@@ -24,6 +24,7 @@ In this digital garden, I use a tagging system to categorize and reflect on the 
 3. 🍏 [#&hairsp;fruit](/tags/fruit): Fruit are ideas that have matured and been thoroughly developed. They should offer a more rounded and comprehensive understanding of a topic. These represent the culmination of the growth process and have reached the stage of relative completion.
 
 ---
+
 ## Further Reading
 
 - [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history) by [[Maggie Appleton]]

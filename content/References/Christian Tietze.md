@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://christiantietze.de/
+
+Website: <https://christiantietze.de/>

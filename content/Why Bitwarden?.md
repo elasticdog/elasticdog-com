@@ -1,5 +1,5 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 Related to [[Vendor Lockin]]

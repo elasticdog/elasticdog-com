@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 Focusing _solely on piano music_, not choral or orchestral scores, which have differing concerns.
 
 ## Staff Sizes
@@ -34,7 +34,7 @@ Too loose and it can create page turn problems, inhibits smooth reading by forci
 
 Too dense and rhythm becomes harder to read, accidentals severely impact note spacing, etc..
 
-Needs to have balance, but keep in mind that it can also be genre-specific. Musical theater and lead sheets tend to use 4 bars/system even if that means very wide spacing. 
+Needs to have balance, but keep in mind that it can also be genre-specific. Musical theater and lead sheets tend to use 4 bars/system even if that means very wide spacing.
 
 ## Staves per Page
 
@@ -83,9 +83,9 @@ I like using even smaller margins for display on an iPad. LilyPond's default mar
 - Dynamics applying to both staves should be vertically centered in the grand staff unless nudged, but still on a horizontal line for the entire system.
 - Dynamics and expression text should be aligned to the same baseline.
 - Composer and lyricist credits should be exactly aligned vertically and spaced evenly from horizontal margins respectively (composer on right, lyricist on left).
+
 ## Further Reading
 
-- [Music Notation Style Guide](https://blogs.iu.edu/jsomcomposition/music-notation-style-guide/)  from the Indiana University Composition Department
-- [Standard Music Notation Practice](https://mpa.org/wp-content/uploads/2018/06/standard-practice-engraving.pdf)  from the MPA
+- [Music Notation Style Guide](https://blogs.iu.edu/jsomcomposition/music-notation-style-guide/) from the Indiana University Composition Department
+- [Standard Music Notation Practice](https://mpa.org/wp-content/uploads/2018/06/standard-practice-engraving.pdf) from the MPA
 - [Essay on Automated Music Engraving](https://lilypond.org/doc/v2.24/Documentation/essay.pdf) from the LilyPond developers
-

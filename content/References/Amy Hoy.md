@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://stackingthebricks.com/
+
+Website: <https://stackingthebricks.com/>

@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://www.tedinski.com/
+
+Website: <https://www.tedinski.com/>

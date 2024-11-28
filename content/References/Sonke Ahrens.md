@@ -1,5 +1,4 @@
 ---
 title: Sönke Ahrens
-tags:
-  - reference/person
+tags: reference/person
 ---

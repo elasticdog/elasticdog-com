@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://danluu.com/
+
+Website: <https://danluu.com/>

@@ -1,6 +1,6 @@
 |              |             |
 | -----------: | ----------- |
-| Manufacturer | Omega       |
+| Manufacturer | [[Omega]]   |
 |      Caliber | 268         |
 |         Type | Manual      |
 |       Origin | Switzerland |

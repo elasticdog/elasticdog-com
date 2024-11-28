@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://devonzuegel.com/
+
+Website: <https://devonzuegel.com/>

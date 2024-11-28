@@ -1,7 +1,7 @@
 ---
-tags:
-  - sapling
+tags: sapling
 ---
+
 My philosophy for licensing personal software projects is to **allow for the widest adoption with the least amount of friction** for downstream users.
 
 - Permissive > Copyleft
@@ -30,9 +30,10 @@ There's so much disagreement and arguing over license terms and rights, most of 
 
 I need to think through ["Fair Source"](https://fair.io/) and it's implications more deeply. Delayed Open Source Publication (DOSP) is a similar term. I'm not 100% convinced that it would be the direction I'd choose starting a software business now. I do think some of the pushback comes from projects that start as Open Source and later switch to being less open. Would there be as much of a feeling of betrayal if a company started as Fair Source from the beginning?
 
-Note, I was directly involved in the internal discussions surrounding the [Elastic License](https://www.elastic.co/licensing/elastic-license) and am very familiar with the motivations and eventual impact. This GitHub blog post has a decent summary on why many [single source projects](https://github.blog/open-source/whats-up-with-these-new-not-open-source-licenses/) have decided to tighten up their licensing. 
+Note, I was directly involved in the internal discussions surrounding the [Elastic License](https://www.elastic.co/licensing/elastic-license) and am very familiar with the motivations and eventual impact. This GitHub blog post has a decent summary on why many [single source projects](https://github.blog/open-source/whats-up-with-these-new-not-open-source-licenses/) have decided to tighten up their licensing.
 
 Related to
+
 - [[Intellectual Property]]
 - [Contributor License Agreement (CLA)](https://en.wikipedia.org/wiki/Contributor_License_Agreement)
 - [Developer Certificate of Origin (DCO)](https://developercertificate.org/)
@@ -46,19 +47,19 @@ Related to
 - [[Overton Window]]
 - Legal vs Ethical ([[Heinz Dilemma]])
 - AI model training
-- https://copyfree.org/policy/why
+- <https://copyfree.org/policy/why>
 
-Inspired by a BurntSushi's take and further discussion on HN https://news.ycombinator.com/item?id=24939162
+Inspired by a BurntSushi's take and further discussion on HN <https://news.ycombinator.com/item?id=24939162>
 
 Explicitly allow AI training on my data is also an advocacy thing.
 
-
 ---
+
 ## See Also
 
 - [[Intellectual Property]]
 
 ## Further Reading
 
--  [Why Public Domain](https://github.com/nothings/stb/blob/master/docs/why_public_domain.md) by [Sean Barrett a.k.a. @nothings](https://nothings.org/)
+- [Why Public Domain](https://github.com/nothings/stb/blob/master/docs/why_public_domain.md) by [Sean Barrett a.k.a. @nothings](https://nothings.org/)
 - [Software licensing and my opposition to copyleft](https://github.com/BurntSushi/notes/blob/master/2020-10-29_licensing-and-copyleft.md) (and [HN discussion](https://news.ycombinator.com/item?id=24939162)) by [Andrew Gallant a.k.a @burntsushi](https://blog.burntsushi.net/about/)

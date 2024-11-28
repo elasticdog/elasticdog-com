@@ -1,7 +1,7 @@
 ---
-tags:
-  - sapling
+tags: sapling
 ---
+
 ## TL;DR
 
 ```
@@ -17,7 +17,7 @@ ssh-keygen -a 120 -C "sign@aarons-mac-mini" -f ~/.ssh/id_ed25519_sign
   - sign (signing)
 - Key generation and storage:
   - Prefer secure enclave if available (no passphrase needed)
-  - Otherwise, use Ed25519 keys on the local filesystem *with a strong passphrase*
+  - Otherwise, use Ed25519 keys on the local filesystem _with a strong passphrase_
 - Increase [key derivation function (KDF) rounds](https://flak.tedunangst.com/post/new-openssh-key-format-and-bcrypt-pbkdf) to `120` for enhanced security
 - Comment format:
   - Desktop devices: `<PURPOSE>@<HOSTNAME>` (e.g., `auth@aarons-mac-mini`)
@@ -25,9 +25,10 @@ ssh-keygen -a 120 -C "sign@aarons-mac-mini" -f ~/.ssh/id_ed25519_sign
 - File naming convention:
   - `~/.ssh/id_ed25519` for auth key (default lookup location)
   - `~/.ssh/id_ed25519_sign` for sign key (must be explicitly referenced)
-- When adding a key into your  SSH agent via [`ssh-add`](https://www.ssh.com/academy/ssh/add-command):
+- When adding a key into your SSH agent via [`ssh-add`](https://www.ssh.com/academy/ssh/add-command):
   - Set a maximum lifetime with `-t <LIFE>` to expire your credentials and force a passphrase prompt after the given amount of time.
   - Store the passphrase in a password manager ([[Memorize Only Two Passwords|you should not need to memorize it]]). I personally use the script [`bw-ssh-add`](https://github.com/elasticdog/bw-ssh-add) to automate pulling it from [[Why Bitwarden?|Bitwarden]].
+
 ## KDF Rounds Benchmark
 
 The upstream [default for KDF rounds](https://github.com/openssh/openssh-portable/commit/999a2886ca1844a7a74b905e5f2c8c701f9838cd) is currently `24` (it's only `16` on macOS). Higher numbers increase resistance to brute-force attacks but slow down passphrase verification. Choose the highest number you can tolerate.

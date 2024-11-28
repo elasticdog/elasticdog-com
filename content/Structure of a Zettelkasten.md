@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 Three different types of notes:
 
 1. Fleeting notes - the "inbox" to collect any small thought so it doesn't get lost. These notes will be expanded into full permanent notes after review, thought, and expansion (or be discarded). Processing should ideally be done within a day or two, and then these notes can be destroyed or archived.

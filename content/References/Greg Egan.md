@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://www.gregegan.net/
+
+Website: <https://www.gregegan.net/>

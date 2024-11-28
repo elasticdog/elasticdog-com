@@ -1,5 +1,3 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-

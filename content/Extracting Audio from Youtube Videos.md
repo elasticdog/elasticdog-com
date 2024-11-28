@@ -1,8 +1,8 @@
 ---
-tags:
-  - "#seed"
+tags: seed
 ---
-Download  an mp3 with an embedded thumbnail image:
+
+Download an mp3 with an embedded thumbnail image:
 
 ```
 yt-dlp -x --audio-format mp3 --embed-thumbnail 'https://www.youtube.com/watch?v=-n4BR0vUB80'

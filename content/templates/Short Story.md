@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/short-story
+tags: reference/short-story
 ---
+
 by [[author]]

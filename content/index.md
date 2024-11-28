@@ -10,9 +10,9 @@ Being "wrong" is part of the journey; [[Hanlon's Razor|don't assume malice]]. My
 
 To navigate this space:
 
-1. Click the icon in the corner of the *Graph View* to see a global overview of all notes and their connections.
+1. Click the icon in the corner of the _Graph View_ to see a global overview of all notes and their connections.
 2. Examine the graph on each page to visualize local connections.
-3. Review the *Backlinks* section for notes that directly link to the current topic.
+3. Review the _Backlinks_ section for notes that directly link to the current topic.
 
 To help you on your way, here are a few topics that I've been thinking about recently:
 

@@ -1,10 +1,12 @@
 ---
-tags:
-  - stats-sdl
+tags: stats-sdl
 ---
+
 The probability $P$ of an [[Statistics Glossary#Event|event]] $A$ is:
 
-$$P(A) = {\text{\# favorable outcomes} \over \text{\# possible outcomes}}$$
+$$
+P(A) = {\text{\# favorable outcomes} \over \text{\# possible outcomes}}
+$$
 
 > [!warning]
 > This assumes that _all outcomes are equally likely_ and that you've got a _finite [[Statistics Glossary#Sample Space|sample space]]_.

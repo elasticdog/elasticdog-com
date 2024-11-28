@@ -1,8 +1,7 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://example.com/
+
+Website: <https://example.com/>
 
 ## Quotes
-

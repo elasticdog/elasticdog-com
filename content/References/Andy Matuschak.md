@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://andymatuschak.org/
+
+Website: <https://andymatuschak.org/>

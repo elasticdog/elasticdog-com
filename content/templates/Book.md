@@ -1,7 +1,7 @@
 ---
-tags:
-  - reference/book
+tags: reference/book
 ---
+
 by [[author]]
 
-Website: https://example.com/
+Website: <https://example.com/>

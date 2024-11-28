@@ -1,5 +1,5 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 ...and unreliable (reconstructive memory theory)

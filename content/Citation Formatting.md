@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 Need to explore how to maintain citation references.
 
 Links with page numbers for actual print articles, for example: (pp 55–56, 1) p. is used to denote 1 page, pp. to denote a range of pages. This form of citation is used when you are using brief/in text citations.

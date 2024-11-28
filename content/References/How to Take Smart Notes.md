@@ -1,7 +1,7 @@
 ---
-tags:
-  - reference/book
+tags: reference/book
 ---
+
 by [[Sonke Ahrens|Sönke Ahrens]]
 
 > [!quote] p26 of 171

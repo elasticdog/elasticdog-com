@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 Commonly called the "root of all evil", stemming from [[Donald Knuth|Donald Knuth's]] famous quote:
 
 ...but [[John Ousterhout]] also makes a good point about abstraction and thinking through design early in his book [[A Philosophy of Software Design]]. Re-read his take, but note he also mentions performance and optimizing the wrong things on his [favorite sayings](https://web.stanford.edu/~ouster/cgi-bin/sayings.php) page.

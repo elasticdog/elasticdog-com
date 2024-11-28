@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://maggieappleton.com/
+
+Website: <https://maggieappleton.com/>

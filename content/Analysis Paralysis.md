@@ -1,8 +1,9 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 ---
+
 ## Further Reading
 
-- https://wiki.c2.com/?StakeInTheQuicksand
+- <https://wiki.c2.com/?StakeInTheQuicksand>

@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://hapgood.us/
+
+Website: <https://hapgood.us/>

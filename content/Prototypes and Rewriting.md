@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 [[John Ousterhout]]'s discussion of "The most important component of evolution is death", makes me think of projects like Toybox vs Busybox.
 
 Many people advocate for prototyping a project, and the deleting and rewriting as you will have learned much more about the problem space and will get to a better design.

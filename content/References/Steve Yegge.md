@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://sites.google.com/site/steveyegge2/home
+
+Website: <https://sites.google.com/site/steveyegge2/home>

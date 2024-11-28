@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://boffosocko.com/
+
+Website: <https://boffosocko.com/>

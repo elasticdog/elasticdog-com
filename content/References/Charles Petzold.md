@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://www.charlespetzold.com/
+
+Website: <https://www.charlespetzold.com/>

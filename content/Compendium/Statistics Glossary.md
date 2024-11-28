@@ -1,7 +1,7 @@
 ---
-tags:
-  - stats-sdl
+tags: stats-sdl
 ---
+
 ## Event
 
 An **event** is a _subset_ of a [[#sample-space|sample space]].

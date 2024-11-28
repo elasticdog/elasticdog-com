@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 Do all rabbit holes of knowledge eventually just lead to material science and physics? At the lowest levels of understanding, someone had to make a decision on what works best.
 
 Computers -> high level programming language -> low level programming language -> assembly and processor instruction sets -> chip design -> circuit board design -> electricity, speed of light, quantum mechanics

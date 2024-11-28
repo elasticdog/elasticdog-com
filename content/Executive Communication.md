@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 S = Situation
 
 State of affairs, fact-based, unambiguous, non-controversial
@@ -20,6 +20,6 @@ Answer-first, pyramid-shaped, evidence-based, resolves C 100%
 
 ## References
 
-https://www.heavybit.com/library/video/executive-communication/ presentation by [[Michael Dearing]]
+<https://www.heavybit.com/library/video/executive-communication/> presentation by [[Michael Dearing]]
 
 [[The Pyramid Principle]] by [[Barbara Minto]]

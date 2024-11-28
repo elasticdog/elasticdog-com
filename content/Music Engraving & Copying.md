@@ -1,7 +1,7 @@
 ---
-tags:
-  - seed
+tags: seed
 ---
+
 As a beginner piano player who has a desire for a completely digital library of sheet music, I have benefited greatly from the process of copying music into notation software. Rather than simply scanning paper books or relying on the various providers for digital copies, creating my own engravings allows complete control over the editing and styling for the output documents. Re-engraving music has helped me to develop my skills in reading music, learning vocabulary, understanding music theory and the structure of pieces, as well as familiarizing myself with different composers.
 
 IMSLP is a great resource as well, but not a source for clean copies.
@@ -16,14 +16,14 @@ Readability, typography matters...historically drawn to LaTeX, engraved a lot in
 
 House Style for Consistency
 
-Modern Notation Practices (urtext is not the primary goal?), 
+Modern Notation Practices (urtext is not the primary goal?),
 
 I do wish there were a good mechanism for community collaboration and feedback. That could exist in a LilyPond workflow published to GitHub (similar to what the [Mutopia Project](https://www.mutopiaproject.org/) did), but I had too many small manual tweaks where continuing its use didn't seem like the best path forward. Will have to think about that.
 
 ---
+
 ## Further Reading
 
-- https://forum.pianoworld.com/ubbthreads.php/topics/1943808/re-henle-vs-schirmer.html
-- https://yuriyleonovich.com/blogs/musings/posts/6553097/reviews-of-major-publishers
-- https://old.reddit.com/r/piano/comments/f5zc3c/are_schirmer_copies_good_and_are_henle_editions/
-
+- <https://forum.pianoworld.com/ubbthreads.php/topics/1943808/re-henle-vs-schirmer.html>
+- <https://yuriyleonovich.com/blogs/musings/posts/6553097/reviews-of-major-publishers>
+- <https://old.reddit.com/r/piano/comments/f5zc3c/are_schirmer_copies_good_and_are_henle_editions/>

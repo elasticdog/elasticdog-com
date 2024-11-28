@@ -1,4 +1,3 @@
 ---
-tags:
-  - seed
+tags: seed
 ---

@@ -1,5 +1,5 @@
 ---
-tags:
-  - reference/person
+tags: reference/person
 ---
-Website: https://fs.blog/
+
+Website: <https://fs.blog/>
