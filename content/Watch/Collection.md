@@ -1,6 +1,6 @@
 ---
 title: My Watch Collection
-aliases: [My Watch Collection]
+aliases: My Watch Collection
 ---
 
 I like a watch with a story. I'm drawn to vintage aesthetics, but [[Appreciation|appreciate]] _all kinds_ of watches.

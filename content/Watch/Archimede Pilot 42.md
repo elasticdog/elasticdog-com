@@ -9,6 +9,7 @@
 | Serial # | _(none)_       |
 |   Origin | Germany        |
 | Movement | [[ETA 2824-2]] |
+
 This watch is a classic "Type A" Flieger-style watch with a historically inspired design. It features a clean, unbranded dial, staying true to the minimalist aesthetic of traditional pilot's watches.
 
 |          |                         |
@@ -18,11 +19,11 @@ This watch is a classic "Type A" Flieger-style watch with a historically inspire
 
 ## Features
 
-* Stainless steel case
-* Flat sapphire crystal
-* Exhibition caseback
-* Thermally blued steel hands
-* 50 m water resistance
+- Stainless steel case
+- Flat sapphire crystal
+- Exhibition caseback
+- Thermally blued steel hands
+- 50 m water resistance
 
 ## Specifications
 
@@ -35,4 +36,4 @@ This watch is a classic "Type A" Flieger-style watch with a historically inspire
 
 ## Resources
 
-- https://www.archimede-watches.com/pilot/pilot-42/
+- <https://www.archimede-watches.com/pilot/pilot-42/>

@@ -9,6 +9,7 @@
 | Serial # |                |
 |   Origin | Japan          |
 | Movement | [[Seiko 7S26]] |
+
 This watch features a blue dial with day/date windows at 3 o'clock, luminous sword-shape hands, and a textured off-center crown.
 
 |          |                         |
@@ -18,9 +19,9 @@ This watch features a blue dial with day/date windows at 3 o'clock, luminous swo
 
 ## Features
 
-* Stainless steel case
-* Flat "Hardlex" crystal
-* Exhibition caseback
+- Stainless steel case
+- Flat "Hardlex" crystal
+- Exhibition caseback
 - 30 m water resistance
 
 ## Specifications
@@ -29,9 +30,7 @@ This watch features a blue dial with day/date windows at 3 o'clock, luminous swo
 | ---------: | ----- |
 |   Diameter | 37 mm |
 |  Thickness | 11 mm |
-| Lug-to-Lug | ?? mm |
+| Lug-to-Lug |?? mm |
 |  Lug Width | 18 mm |
 
 ## Resources
-
-- 

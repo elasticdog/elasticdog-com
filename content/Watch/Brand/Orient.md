@@ -2,4 +2,4 @@ Orient watch spans as far back as 1950. In 2017, Orient officially became part o
 
 Unlike Seiko, Orient is not as transparent when it comes to the technical details of their movements. Epson does not even list mechanical movements in their catalog.
 
-Website: https://orient-watch.com/
+Website: <https://orient-watch.com/>

@@ -9,6 +9,7 @@
 | Serial # | _(none)_                    |
 |   Origin | China                       |
 | Movement | [[Seagull ST1701]]          |
+
 This watch reminds me of historical trench watches from WWI, but uses a contemporary case size (not too large like marriage watches, not too small like wristlets).
 
 |          |                         |
@@ -18,11 +19,11 @@ This watch reminds me of historical trench watches from WWI, but uses a contempo
 
 ## Features
 
-* 316L stainless steel case
-* Domed sapphire crystal with anti-reflection coating
-* Exhibition caseback
-* White enamel dial
-* Thermally blued steel hands
+- 316L stainless steel case
+- Domed sapphire crystal with anti-reflection coating
+- Exhibition caseback
+- White enamel dial
+- Thermally blued steel hands
 
 ## Specifications
 
@@ -35,5 +36,5 @@ This watch reminds me of historical trench watches from WWI, but uses a contempo
 
 ## Resources
 
-- https://www.perpetual-watch.com/SC.html
-- https://12and60.com/perpetual-watch-sc-03-watch-review/
+- <https://www.perpetual-watch.com/SC.html>
+- <https://12and60.com/perpetual-watch-sc-03-watch-review/>

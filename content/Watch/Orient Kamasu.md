@@ -9,6 +9,7 @@
 | Serial # |                  |
 |   Origin | Japan            |
 | Movement | [[Orient F6922]] |
+
 This watch is a diver style watch that features a screw-down crown, a uni-directional rotating bezel with lumed Arabic numerals, silvered hands with luminous accents, a date aperture, and lumed white hour markers.
 
 |          |                         |
@@ -18,8 +19,8 @@ This watch is a diver style watch that features a screw-down crown, a uni-direct
 
 ## Features
 
-* Stainless steel case
-* Flat sapphire crystal
+- Stainless steel case
+- Flat sapphire crystal
 - 200 m water resistance
 
 ## Specifications
@@ -28,9 +29,9 @@ This watch is a diver style watch that features a screw-down crown, a uni-direct
 | ---------: | ------- |
 |   Diameter | 41.8 mm |
 |  Thickness | 13 mm   |
-| Lug-to-Lug | ?? mm   |
+| Lug-to-Lug |?? mm   |
 |  Lug Width | 22 mm   |
 
 ## Resources
 
-- https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B
+- <https://orient-watch.com/Collections/ORIENT/Sports/ORIENT%3A-Mechanical-Sports-Watch/p/RA-AA0001B>

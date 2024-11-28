@@ -9,6 +9,7 @@
 | Serial # | 18952177      |
 |   Origin | Switzerland   |
 | Movement | [[Omega 268]] |
+
 This watch is a classic "gentleman's watch" without a specific model collection name.
 
 |          |                         |
@@ -18,17 +19,17 @@ This watch is a classic "gentleman's watch" without a specific model collection 
 
 ## Features
 
-* Gold plated (20 microns)
+- Gold plated (20 microns)
 
 ## Specifications
 
 |            |       |
 | ---------: | ----- |
-|   Diameter | ?? mm |
-|  Thickness | ?? mm |
-| Lug-to-Lug | ?? mm |
+|   Diameter |?? mm |
+|  Thickness |?? mm |
+| Lug-to-Lug |?? mm |
 |  Lug Width | 18 mm |
 
 ## Resources
 
-- https://www.omegawatches.com/watch-omega-other-omega-ck-14713 shows a similar model from 1960.
+- <https://www.omegawatches.com/watch-omega-other-omega-ck-14713> shows a similar model from 1960.
