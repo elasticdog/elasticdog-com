@@ -1,16 +1,16 @@
 ---
 title: My Watch Collection
-aliases:
-  - My Watch Collection
+aliases: [My Watch Collection]
 ---
 
 I like a watch with a story. I'm drawn to vintage aesthetics, but [[Appreciation|appreciate]] _all kinds_ of watches.
 
 ## Personal Collection
 
-These are the watches I wear regularly. To keep myself from getting carried away, I’ve set a self-imposed hard limit of 12 watches (the number that fits in my watch box).
+These are the watches I wear regularly. To keep myself from getting carried away, I've set a self-imposed hard limit of 12 watches (the number that fits in my watch box).
 
-![[archimede-pilot-42.webp|110]]  ![[benrus-series-3021.webp|110]] ![[omega-gentlemans-watch.webp|110]] ![[orient-bambino.webp|110]] ![[orient-kamasu.webp|110]]  ![[perpetual-sc-03.webp|110]] 
+![[archimede-pilot-42.webp|110]] ![[benrus-series-3021.webp|110]] ![[omega-gentlemans-watch.webp|110]] ![[orient-bambino.webp|110]] ![[orient-kamasu.webp|110]] ![[perpetual-sc-03.webp|110]]
+
 ![[seiko-5.webp|110]]
 
 1. [[Archimede Pilot 42]]
@@ -25,9 +25,10 @@ These are the watches I wear regularly. To keep myself from getting carried away
 
 - 1911 Illinois
 - 1927 Elgin
+
 ## Upcoming Projects
 
-These are watches I’ve acquired to work on. They may or may not become part of my personal collection.
+These are watches I've acquired to work on. They may or may not become part of my personal collection.
 
 - Ernest Borel Cocktail Kaleidoscope
 - Omega Automatic Bumper
@@ -41,7 +42,7 @@ These are watches I’ve acquired to work on. They may or may not become part of
 
 ## Wishlist
 
-These are watches I’d like to acquire at some point in the future.
+These are watches I'd like to acquire at some point in the future.
 
 - [Seiko Prospex "Alpinist" SPB121](https://www.seikowatches.com/us-en/products/prospex/spb121j1)
 - Junghans Max Bill (Bauhaus)
@@ -52,6 +53,6 @@ These are watches I’d like to acquire at some point in the future.
 
 ## Archive
 
-These are watches I’ve owned and worked on in the past, but have since sold or given away.
+These are watches I've owned and worked on in the past, but have since sold or given away.
 
 - 1971 Timex Marlin
