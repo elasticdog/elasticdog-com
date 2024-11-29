@@ -7,7 +7,7 @@
 |    Model | Kaleidoscope     |
 |     Year | ~1960s           |
 | Serial # | _(none)_         |
-|   Origin | USA              |
+|   Origin | Switzerland      |
 | Movement | [[ETA 1311]]     |
 
 This watch.
@@ -21,11 +21,11 @@ This watch.
 
 ## Specifications
 
-|            |       |
-| ---------: | ----- |
-|   Diameter | 32 mm |
-|  Thickness |?? mm |
-| Lug-to-Lug |?? mm |
-|  Lug Width | 17 mm |
+|                |       |
+| -------------: | ----- |
+|  Case Diameter | 32 mm |
+| Case Thickness |?? mm |
+|     Lug-to-Lug |?? mm |
+|      Lug Width | 17 mm |
 
 ## Resources

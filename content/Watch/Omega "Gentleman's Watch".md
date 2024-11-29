@@ -23,12 +23,12 @@ This watch is a classic "gentleman's watch" without a specific model collection 
 
 ## Specifications
 
-|            |       |
-| ---------: | ----- |
-|   Diameter |?? mm |
-|  Thickness |?? mm |
-| Lug-to-Lug |?? mm |
-|  Lug Width | 18 mm |
+|                |       |
+| -------------: | ----- |
+|  Case Diameter |?? mm |
+| Case Thickness |?? mm |
+|     Lug-to-Lug |?? mm |
+|      Lug Width | 18 mm |
 
 ## Resources
 

@@ -26,11 +26,11 @@ This watch features a blue dial with day/date windows at 3 o'clock, luminous swo
 
 ## Specifications
 
-|            |       |
-| ---------: | ----- |
-|   Diameter | 37 mm |
-|  Thickness | 11 mm |
-| Lug-to-Lug |?? mm |
-|  Lug Width | 18 mm |
+|                |       |
+| -------------: | ----- |
+|  Case Diameter | 37 mm |
+| Case Thickness | 11 mm |
+|     Lug-to-Lug |?? mm |
+|      Lug Width | 18 mm |
 
 ## Resources

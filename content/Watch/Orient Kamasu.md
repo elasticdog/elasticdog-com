@@ -25,12 +25,12 @@ This watch is a diver style watch that features a screw-down crown, a uni-direct
 
 ## Specifications
 
-|            |         |
-| ---------: | ------- |
-|   Diameter | 41.8 mm |
-|  Thickness | 13 mm   |
-| Lug-to-Lug |?? mm   |
-|  Lug Width | 22 mm   |
+|                |         |
+| -------------: | ------- |
+|  Case Diameter | 41.8 mm |
+| Case Thickness | 13 mm   |
+|     Lug-to-Lug |?? mm   |
+|      Lug Width | 22 mm   |
 
 ## Resources
 

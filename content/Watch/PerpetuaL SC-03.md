@@ -27,12 +27,12 @@ This watch reminds me of historical trench watches from WWI, but uses a contempo
 
 ## Specifications
 
-|            |         |
-| ---------: | ------- |
-|   Diameter | 41 mm   |
-|  Thickness | 12 mm   |
-| Lug-to-Lug | 47.5 mm |
-|  Lug Width | 20 mm   |
+|                |         |
+| -------------: | ------- |
+|  Case Diameter | 41 mm   |
+| Case Thickness | 12 mm   |
+|     Lug-to-Lug | 47.5 mm |
+|      Lug Width | 20 mm   |
 
 ## Resources
 

@@ -54,4 +54,4 @@ These are watches I'd like to acquire at some point in the future.
 
 These are watches I've owned and worked on in the past, but have since sold or given away.
 
-- 1971 Timex Marlin
+- [[Timex Marlin|1971 Timex Marlin]]

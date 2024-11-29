@@ -25,13 +25,13 @@ This watch's dial features a light, metallic sunburst that's offset by polished 
 
 ## Specifications
 
-|            |         |
-| ---------: | ------- |
-|   Diameter | 40.5 mm |
-|  Thickness | 12 mm   |
-| Lug-to-Lug |?? mm   |
-|  Lug Width | 21 mm   |
-|            |         |
+|                |         |
+| -------------: | ------- |
+|  Case Diameter | 40.5 mm |
+| Case Thickness | 12 mm   |
+|     Lug-to-Lug |?? mm   |
+|      Lug Width | 21 mm   |
+|                |         |
 
 ## Resources
 

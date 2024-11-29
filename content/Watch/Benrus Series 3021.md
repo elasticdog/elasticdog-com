@@ -21,12 +21,12 @@ This watch is a classic "gentleman's watch" with an unspecified production date.
 
 ## Specifications
 
-|            |       |
-| ---------: | ----- |
-|   Diameter |?? mm |
-|  Thickness |?? mm |
-| Lug-to-Lug |?? mm |
-|  Lug Width | 17 mm |
+|                |       |
+| -------------: | ----- |
+|  Case Diameter |?? mm |
+| Case Thickness |?? mm |
+|     Lug-to-Lug |?? mm |
+|      Lug Width | 17 mm |
 
 ## Resources
 

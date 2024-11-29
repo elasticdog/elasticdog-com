@@ -27,12 +27,12 @@ This watch is a classic "Type A" Flieger-style watch with a historically inspire
 
 ## Specifications
 
-|            |         |
-| ---------: | ------- |
-|   Diameter | 41.8 mm |
-|  Thickness | 9.5 mm  |
-| Lug-to-Lug | 48.5 mm |
-|  Lug Width | 20 mm   |
+|                |         |
+| -------------: | ------- |
+|  Case Diameter | 41.8 mm |
+| Case Thickness | 9.5 mm  |
+|     Lug-to-Lug | 48.5 mm |
+|      Lug Width | 20 mm   |
 
 ## Resources
 
