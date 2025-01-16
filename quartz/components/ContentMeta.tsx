@@ -30,7 +30,10 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates) {
-        const displayedDate = "Last updated " + <Date date={getDate(cfg, fileData)!} locale={cfg.locale} />
+        const displayedDate = [
+          "Last updated ",
+          <Date key="date" date={getDate(cfg, fileData)!} locale={cfg.locale} />,
+        ];
         segments.push(displayedDate)
       }
 
