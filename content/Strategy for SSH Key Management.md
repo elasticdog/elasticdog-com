@@ -36,7 +36,7 @@ The upstream [default for KDF rounds](https://github.com/openssh/openssh-portabl
 To benchmark KDF rounds using [hyperfine](https://github.com/sharkdp/hyperfine) on your own hardware, use the following commands:
 
 ```text
-$ ssh-keygen -q -f ./intial_key -N ""
+$ ssh-keygen -q -f ./initial_key -N ""
 
 $ hyperfine -L rounds 24,48,96,120 --prepare "cp initial_key test_key" --cleanup "rm test_key" "yes | ssh-keygen -p -a {rounds} -f test_key -N 'password' -P ''"
 Benchmark 1: yes | ssh-keygen -p -a 24 -f test_key -N 'password' -P ''

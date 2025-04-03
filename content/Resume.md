@@ -101,12 +101,11 @@ _Jun 2009 to Feb 2012_ | 2 yrs 9 mos in Champaign, IL (Remote)
 
 _Apr 2003 to May 2009_ | 6 yrs 2 mos in West Lafayette, IN
 
-- Initiated a centralized infrastructure for automated configuration management of all Linux machines
-- Acted as project lead on migration of legacy mail / calendaring systems to a modern groupware suite
-- Established consistent and streamlined software imaging procedures, which increased the efficiency of provisioning and deployment of Apple-based systems by over 800%
-- Designed and built an internal private cloud architecture to improve resource utilization, and contributed pertinent code improvements to upstream projects
-- Operated as the primary administrator of all user access rights across company machines and intranet services via OpenLDAP, custom scripts, and diverse web tools
-- Implemented a secure, cross-platform, rsync-based backup solution for internal employee machines
+- Coordinated with a team to install, monitor, manage, and maintain roughly 3,000 computers, 100 printers, and several servers in a large-scale enterprise environment
+- Provided first-tier technical support for over 40,000 students, faculty, and staff campus-wide
+- Planned biweekly work schedules for all shift Site Operators and moderated daily time clock transactions and scheduling logistics (check in/out, excusals, transfers, etc.) for 200+ other employees
+- Interviewed candidates for parallel Site Operator positions along with other administrative duties related to participation on hiring committees
+- Trained employees on operational procedures, customer service, and technical problem solving
 
 ---
 
@@ -117,7 +116,7 @@ _Apr 2003 to May 2009_ | 6 yrs 2 mos in West Lafayette, IN
 _Sep 2005 to Apr 2007_ | 1 yr 8 mos in Lafayette, IN
 
 - Administered numerous Linux and Windows boxes running various mission critical services such as Apache, MySQL, Subversion, VMware, and Bind DNS
-- Instituted numerous policy changes regarding organizational infrastructure (security, revision control software, backup policies, off-site hosting, etc.)
+- Instituted multiple policy changes regarding organizational infrastructure (security, revision control software, backup policies, off-site hosting, etc.)
 - Mentored developers on standards-based web design and best practices for XHTML, CSS, JavaScript, the Document Object Model (DOM), usability, and accessibility guidelines (Section 508 and WCAG)
 
 ---
