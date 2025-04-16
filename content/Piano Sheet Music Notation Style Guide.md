@@ -18,7 +18,7 @@ Note that LilyPond sets the staff sizes in points (defaulting to 20), and one po
 #(set-global-staff-size 20)
 ```
 
-In MuseScore, this is set by the staff space configuration under the Page Settings, which would be multiplied by four to reach the total size.
+In MuseScore, this is set by the staff space configuration under the Page Settings, which would be multiplied by four to reach the total size (ignoring that line thickness also [adds a small amount](https://musescore.org/en/node/362733)).
 
 | Total Staff Size (mm) | Points   | Staff Space (mm) |
 | --------------------- | -------- | ---------------- |
@@ -92,6 +92,12 @@ I like using even smaller margins for display on an iPad. LilyPond's default mar
 - Composer and lyricist credits should be exactly aligned vertically and spaced evenly from horizontal margins respectively (composer on right, lyricist on left).
 
 ## Measure Numbers
+
+Measure numbers should appear at the beginning of **every system** except the first, which is understood to start at measure 1. The older convention of labelling every 5th or 10th measure is outdated and offers little value for modern use.
+
+**All measures** are counted sequentially, starting with 1. The only exception is a pickup measure (anacrusis), which is considered measure 0.
+
+In some historical contexts, repeated music with alternative endings (e.g. first and second endings with volta brackets) may reuse the same measure numbers. This practice undermines the core purpose of measure numbering: to provide _clear and consistent reference points_ for rehearsal, instruction, and discussion. Their utility lies in navigation, not in representing the total measure count. I fully acknowledge that [not everyone](https://sourceforge.net/p/testlilyissues/issues/2059/) agrees with that perspective.
 
 ## Further Reading
 
