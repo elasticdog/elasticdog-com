@@ -33,7 +33,7 @@ The iPad has a 3:4 aspect ratio.
 >
 > While the iPad's native resolution is 2752-by-2064 (landscape, 4:3), we're working in portrait orientation here, so the aspect ratio becomes 3:4.
 
-Let's solve for width and height using the diagonal.
+We'll use the **Pythagorean theorem** to calculate the physical width and height from the diagonal and aspect ratio.
 
 $$
 \begin{aligned}
@@ -51,6 +51,15 @@ $$
 \begin{aligned}
 \text{Width} &= 3x = 7.818~\text{inches} \\
 \text{Height} &= 4x = 10.424~\text{inches}
+\end{aligned}
+$$
+
+These dimensions can be easily confirmed using the screen resolution and pixel density directly:
+
+$$
+\begin{aligned}
+\text{Width} &= \frac{2064}{264} \approx 7.818~\text{inches} \\[0.75em]
+\text{Height} &= \frac{2752}{264} \approx 10.424~\text{inches}
 \end{aligned}
 $$
 
