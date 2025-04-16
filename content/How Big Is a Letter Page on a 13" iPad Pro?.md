@@ -1,8 +1,8 @@
-When viewing a U.S. letter-sized document (8.5" × 11") on a 13" iPad Pro in portrait mode, the entire page is scaled down to fit the **width** of the screen. Here's the math behind how much smaller it appears.
+When viewing a U.S. letter-sized document (8.5" &times; 11") on a 13" iPad Pro in portrait mode, the entire page is scaled down to fit the **width** of the screen. Here's the math behind how much smaller it appears.
 
 ## Step 1: iPad Screen Diagonal Dimension
 
-To get the physical display size (diagonal in inches), use the formula:
+To get the physical display size (diagonal in inches), we'll use the formula:
 
 $$
 \text{diagonal} = \frac{\sqrt{\text{width}^2 + \text{height}^2}}{\text{ppi}}
@@ -81,4 +81,4 @@ $$
 - Linear scaling: **~8.0% smaller**
 - Area reduction: **~15.5% smaller**
 
-So when you view a full 8.5" × 11" page on a 13" iPad Pro in portrait mode, it looks about 15.5% smaller by area compared to the real paper version.
+So when you view a full 8.5" &times; 11" page on a 13" iPad Pro in portrait mode, **everything appears about 8% smaller** linearly, and the **total visible area is reduced by roughly 15.5%** compared to a real paper page.
