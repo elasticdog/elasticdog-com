@@ -37,7 +37,7 @@ $$
 \text{Linear reduction} = 1 - 0.920 = 0.080 = 8.0\%
 $$
 
-We can also estimate the **area reduction** using the square of the scale factor:
+Since area scales with the square of linear dimensions, we estimate the **area reduction** as:
 
 $$
 \text{Area reduction} = 1 - (0.920)^2 \approx 1 - 0.846 = 0.154 = 15.4\%

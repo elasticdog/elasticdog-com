@@ -18,18 +18,20 @@ Note that LilyPond sets the staff sizes in points (defaulting to 20), and one po
 #(set-global-staff-size 20)
 ```
 
-| Points   | mm        | Staff Space (mm) |
-| -------- | --------- | ---------------- |
-| 21.06    | 7.4       | 1.850            |
-| _**20**_ | _**7.0**_ | 1.750            |
-| 19.06    | 6.7       | 1.675            |
-| 18.5     | 6.5       | 1.625            |
-| 18.41    | 6.4       | 1.600            |
-| 17.07    | 6.0       | 1.500            |
-
 In MuseScore, this is set by the staff space configuration under the Page Settings, which would be multiplied by four to reach the total size.
 
-For my purposes of viewing letter-sized pages on a 13" iPad, the ideal range is 7.0 mm to 6.4 mm, which effectively looks like 6.7 mm to 6.0 mm.
+| Total Staff Size (mm) | Points   | Staff Space (mm) |
+| --------------------- | -------- | ---------------- |
+| 7.4                   | 21.06    | 1.850            |
+| _**7.0**_             | _**20**_ | _**1.750**_      |
+| 6.7                   | 19.06    | 1.675            |
+| 6.5                   | 18.5     | 1.625            |
+| 6.4                   | 18.41    | 1.600            |
+| 6.0                   | 17.07    | 1.500            |
+
+> [!note]
+>
+> When viewing [[How Big Does a Letter-Sized Document Look on an iPad?|letter-sized pages on a 13" iPad Pro]], everything is effectively 8% smaller, so the default value of 7.0 mm is actually scaled down to 6.44 mm.
 
 ## Bars per System
 
@@ -89,8 +91,11 @@ I like using even smaller margins for display on an iPad. LilyPond's default mar
 - Dynamics and expression text should be aligned to the same baseline.
 - Composer and lyricist credits should be exactly aligned vertically and spaced evenly from horizontal margins respectively (composer on right, lyricist on left).
 
+## Measure Numbers
+
 ## Further Reading
 
 - [Music Notation Style Guide](https://blogs.iu.edu/jsomcomposition/music-notation-style-guide/) from the Indiana University Composition Department
 - [Standard Music Notation Practice](https://mpa.org/wp-content/uploads/2018/06/standard-practice-engraving.pdf) from the MPA
 - [Essay on Automated Music Engraving](https://lilypond.org/doc/v2.24/Documentation/essay.pdf) from the LilyPond developers
+- [IMSLP Music Typsetting Guidelines](https://imslp.org/wiki/IMSLP:Typesetting_Guidelines)
