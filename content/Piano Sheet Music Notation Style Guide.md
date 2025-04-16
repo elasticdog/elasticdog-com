@@ -18,14 +18,17 @@ Note that LilyPond sets the staff sizes in points (defaulting to 20), and one po
 #(set-global-staff-size 20)
 ```
 
-| Points   | mm        |
-| -------- | --------- |
-| 21.06    | 7.4       |
-| _**20**_ | _**7.0**_ |
-| 19.06    | 6.7       |
-| 18.5     | 6.5       |
-| 17.07    | 6.0       |
+| Points   | mm        | Staff Space (mm) |
+| -------- | --------- | ---------------- |
+| 21.06    | 7.4       | 1.850            |
+| _**20**_ | _**7.0**_ | 1.750            |
+| 19.06    | 6.7       | 1.675            |
+| 18.5     | 6.5       | 1.625            |
+| 18.41    | 6.4       | 1.600            |
+| 17.07    | 6.0       | 1.500            |
+In MuseScore, this is set by the staff space configuration under the Page Settings, which would be multiplied by four to reach the total size.
 
+For my purposes of viewing letter-sized pages on a 13" iPad, the ideal range is 7.0 mm to 6.4 mm, which effectively looks like 6.7 mm to 6.0 mm.
 ## Bars per System
 
 This...is...tricky! Try a minimum of 4, as a starting point.
