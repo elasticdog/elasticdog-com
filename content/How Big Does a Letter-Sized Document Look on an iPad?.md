@@ -49,3 +49,16 @@ So when you view a full 8.5" &times; 11" document on a 13" iPad Pro in portrait 
 
 - It appears **about 8% smaller** in width and height than the real size.
 - The total **visible area is reduced by roughly 15.4%** compared to holding the same page on paper.
+
+### Current iPad Models
+
+Here are the results for all iPad models that are currently for sale (as of 2025-04-16), with dimensions shown in portrait mode:
+
+| iPad Model           | Display Size |  Resolution (px)  | PPI | Screen Dimensions      | Letter Page Scale |
+| -------------------- |:----------: |:---------------: |:-: |:--------------------: | ----------------: |
+| **iPad Pro 13-inch** |     13"      | 2752 &times; 2064 | 264 | 7.818" &times; 10.424" |             92.0% |
+| **iPad Pro 11-inch** |    11.1"     | 2420 &times; 1668 | 264 |  6.318" &times; 9.167" |             74.3% |
+| **iPad Air 13-inch** |    12.9"     | 2732 &times; 2048 | 264 | 7.758" &times; 10.348" |             91.3% |
+| **iPad Air 11-inch** |    10.86"    | 2360 &times; 1640 | 264 |  6.212" &times; 8.939" |             73.1% |
+| **iPad**             |    10.86"    | 2360 &times; 1640 | 264 |  6.212" &times; 8.939" |             73.1% |
+| **iPad mini**        |     8.3"     | 2266 &times; 1448 | 326 |  4.442" &times; 6.951" |             52.3% |
