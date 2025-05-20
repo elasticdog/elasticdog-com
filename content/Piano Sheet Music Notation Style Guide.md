@@ -97,7 +97,9 @@ Measure numbers should appear at the beginning of **every system** except the fi
 
 **All measures** are counted sequentially, starting with 1. The only exception is a pickup measure (anacrusis), which is considered measure 0.
 
-In some historical contexts, repeated music with alternative endings (e.g. first and second endings with volta brackets) may reuse the same measure numbers. This practice undermines the core purpose of measure numbering: to provide _clear and consistent reference points_ for rehearsal, instruction, and discussion. Their utility lies in navigation, not in representing the total measure count. I fully acknowledge that [not everyone](https://sourceforge.net/p/testlilyissues/issues/2059/) agrees with that perspective.
+> [!info]
+>
+> In some historical contexts, repeated music with alternative endings (e.g. first and second endings with volta brackets) may reuse the same measure numbers to emphasize formal structure. To me, this practice undermines the core purpose of measure numbering: to provide _clear and consistent reference points_ for rehearsal, instruction, and discussion. Their utility lies in navigation, not in representing the total measure count. I fully acknowledge that [not everyone](https://sourceforge.net/p/testlilyissues/issues/2059/) agrees with that perspective.
 
 ## Further Reading
 
