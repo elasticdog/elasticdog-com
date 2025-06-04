@@ -6,7 +6,7 @@ Interesting analysis on cryptographic key sizes and how long it would take to _b
 
 Note that this wouldn't apply to discovered algorithmic methodologies that improve factorization techniques and/or narrow the bounds of the search space.
 
-Related to [[Landauer's Principle]].
+Related to [[Landauer's Principle]]. Also reminds me of the [Bekenstein bound](https://en.wikipedia.org/wiki/Bekenstein_bound).
 
 ---
 

@@ -9,3 +9,7 @@ I _completely disagree_ with that assessment, and would contend that best practi
 Best practices are admittedly not absolute, and if you're blindly following them without experimentation, you can't expect to be pushing the envelope forward on what is state of the art. But I'd argue that you'd still be well above average.
 
 How best practices get defined though, is another topic, and they're are not necessarily the same thing as [[Community Standards]].
+
+I found [another comment on HN](https://news.ycombinator.com/item?id=44128775) that reminds me of this in the context of using AI (LLMs) for coding, but again, I'm not sure I agree with the assertion:
+
+> Most of the times, people are led astray by following average advice on exceptional circumstances.
