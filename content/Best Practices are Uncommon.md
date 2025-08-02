@@ -13,3 +13,5 @@ How best practices get defined though, is another topic, and they're are not nec
 I found [another comment on HN](https://news.ycombinator.com/item?id=44128775) that reminds me of this in the context of using AI (LLMs) for coding, but again, I'm not sure I agree with the assertion:
 
 > Most of the times, people are led astray by following average advice on exceptional circumstances.
+
+...and the same idea came up yet again in a [HN comment thread](https://news.ycombinator.com/item?id=44362234) about how using AI will be "a race to the median." Perhaps the context of AI turns this thinking into a separate topic?
