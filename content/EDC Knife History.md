@@ -11,3 +11,7 @@ These days, I've come to realize that I appreciate a locking knife with the abil
 7. Leatherman Skeletool CX
 8. Civivi Baby Banter 2 (Nitro V)
 9. Knafs Lander 3 Clip Point (S35VN) with a Lynch Northwest pocket clip
+
+Under 3 inches, under 3 oz. Talk about desire to save weight. Maybe I should do a breakdown of each knife and what I liked/disliked about it?
+
+The crossbar locking mechanism is secure and has a usability advantage if you need to loan someone your knife: [Knives You DO Hand to People! | Can Non-Knife People Open And Close Pocket Knives?](https://youtu.be/Q4oExiIrhmA)
