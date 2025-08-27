@@ -5,13 +5,13 @@ Highly personal reflection of usage and personality. I'm not a collector, but ha
 These days, I've come to realize that I appreciate a locking knife with the ability to open and close it easily with one hand. I gravitate toward simple knives on the smaller side, as I find that they aren't as intimidating for non-knife people and are more than capable of handling my light duty needs. I dig a good vintage aesthetic, but love that you can find options using modern materials and tech. 
 
 1. SAK Tinker
-2. CRKT K.I.S.S.
+2. CRKT K.I.S.S. (3Cr13)
 3. Kershaw Ken Onion Blur
-4. SAK Tinker
+4. SAK Super Tinker
 5. Spyderco Ladybug 3 (ZDP-189)
 6. Enrique Peña X Series Apache Flipper (M390)
-7. Leatherman Skeletool CX
-8. Civivi Baby Banter 2 (Nitro V)
+7. Leatherman Skeletool CX (154CM)
+8. Civivi Baby Banter 2 (Nitro-V)
 9. Knafs Lander 3 Clip Point (S35VN) with a Lynch Northwest pocket clip
 
 Under 3 inches, under 3 oz. Talk about desire to save weight. Maybe I should do a breakdown of each knife and what I liked/disliked about it?
