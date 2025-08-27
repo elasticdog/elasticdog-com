@@ -18,4 +18,6 @@ Under 3 inches, under 3 oz. Talk about desire to save weight. Maybe I should do 
 
 I do miss having a bottle opener, but more for convenience than necessity. That said, I do have a titanium The James Brand [The Halifax](https://thejamesbrand.com/products/the-halifax?variant=20472851234886) that I have clipped inside my one bag travel backpack ([Minaal Carry-On 2.0](https://www.minaal.com/products/carry-on-bag-2?variant=12494163140)), but not something I use for EDC. I also have a titanium KeyShark by Crankee Monkey attached to my car's key fob.
 
+I used to carry a flashlight as well, but hate having too much stuff in my pockets and have never been in a situation where my phone's light wouldn't suffice.
+
 The crossbar locking mechanism is secure and has a usability advantage if you need to loan someone your knife: [Knives You DO Hand to People! | Can Non-Knife People Open And Close Pocket Knives?](https://youtu.be/Q4oExiIrhmA)
