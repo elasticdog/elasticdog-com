@@ -1,5 +1,7 @@
 Ever since I was 10 years old, I have carried a pocket knife. Both my father and grandfather always had a Swiss Army Knife on them, which is where I also got my start. Growing up watching MacGyver helped.
 
+Highly personal reflection of usage and personality. I'm not a collector, but have owned numerous knives in my lifetime.
+
 These days, I've come to realize that I appreciate a locking knife with the ability to open and close it easily with one hand. I gravitate toward simple knives on the smaller side, as I find that they aren't as intimidating for non-knife people and are more than capable of handling my light duty needs. I dig a good vintage aesthetic, but love that you can find options using modern materials and tech. 
 
 1. SAK Tinker
