@@ -20,7 +20,7 @@ const config: QuartzConfig = {
     generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
-      cdnCaching: true,
+      cdnCaching: false,
       typography: {
         header: "Fira Sans Condensed",
         body: "Literata",
