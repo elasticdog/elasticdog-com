@@ -2,9 +2,11 @@
 tags: sapling
 ---
 
-Our goal is to create a secure Android-based phone that maintains as much personal privacy as possible while still providing a straightforward, reliable everyday experience.
+_Our goal is to create a secure Android-based phone that maintains as much personal privacy as possible while still providing a straightforward, reliable everyday experience._
 
-To reduce complexity and avoid frustration, this guide begins with the **Owner** profile only, without introducing secondary user profiles. We will also configure the sandboxed Google Play Store to enable secure access to mainstream applications and push notifications while retaining GrapheneOS's strong isolation model. This mirrors upstream recommendations and offers a balanced mix of security and usability.
+This guide does not provide specific app recommendations or deep settings walkthroughs, since those are individual workflow choices and can change frequently; instead, it focuses on the order of operations and the privacy-critical decisions that are easy to overlook during initial setup.
+
+To reduce complexity and avoid frustration, the process begins with the **Owner** profile only, without introducing secondary user profiles. We will also configure the sandboxed Google Play Store to enable secure access to mainstream apps and push notifications while retaining GrapheneOS's strong isolation model. This mirrors upstream recommendations and offers a balanced mix of security and usability.
 
 Once you're comfortable with the platform, you can explore more advanced setups using Private Space, isolated profiles, and selective app sharing.
 
@@ -12,9 +14,9 @@ Once you're comfortable with the platform, you can explore more advanced setups 
 
 - You'll need a laptop with a Chromium-based browser installed (Firefox won't work, as it does not support WebUSB). I recommend [Brave](https://brave.com/). Have your password manager ready for storing new credentials.
 - Consider how you want to handle payments associated with your device or apps. Some privacy-preserving options include:
-  - Paying with cash when purchasing hardware (where practical).
-  - Using retail gift cards for app store credit or subscription top-ups. Always keep the receipt until the gift card has been successfully redeemed.
-  - Using a virtual credit card provider like <https://www.privacy.com/> with single-use or merchant-locked cards.
+  - Paying with **cash** when purchasing hardware (where practical).
+  - Using retail **gift cards** for app store credit or subscription top-ups. Always keep the receipt until the gift card has been successfully redeemed.
+  - Using a **virtual credit card** provider like <https://www.privacy.com/> with single-use or merchant-locked cards.
 
   These approaches reduce the personal information exposed during transactions while still working within standard payment workflows.
 
@@ -46,18 +48,18 @@ Establishing a privacy-respecting network path (a Virtual Private Network) befor
 - In the _App Store_, install _Accrescent_, a security-focused third-party app store.
 - Open _Accrescent_ and install _AppVerifier_, which allows you to verify APK signing keys for manually downloaded applications.
 - Open the _Vanadium_ web browser and visit: <https://mullvad.net/en/download/vpn/android>
-- Download the **.apk** directly instead of using an app store.
-- After downloading, open _AppVerifier_, verify the APK, and confirm a green "SUCCESS" under _Internal Database Status_. (Manual key verification is available but not required here.)
+- Download the APK directly instead of using an app store.
+- After downloading, open _AppVerifier_, verify the APK, and confirm a green "SUCCESS" message under _Internal Database Status_ (manual key verification is available but not required in this case).
 - Once verified, install the APK via the _Files_ app.
 - Open _Mullvad VPN_ and create a new account. Mullvad requires no personal information; your account number serves as your login. Store it in your password manager.
 - Use your preferred privacy-preserving payment method to purchase a month of service.
 - In the GrapheneOS VPN settings, enable **Always-on VPN** and **Block connections without VPN**.
 
-Once Mullvad is active, you can safely connect to any network (cellular or Wi-Fi) because all traffic is routed through the encrypted tunnel. The _Mullvad VPN_ app will update itself automatically when new upstream releases become available.
+Once Mullvad is active, you can safely connect to any network (cellular or Wi-Fi) because all traffic is forced through the encrypted tunnel. The _Mullvad VPN_ app will update itself automatically when new upstream releases become available.
 
 ## Set Up the Sandboxed Google Play Store
 
-Adding the sandboxed Google Play Store after the VPN is active ensures all Google traffic flows through your privacy configuration.
+Adding the sandboxed Play Store after the VPN is active ensures your Google traffic blends into a shared network pool rather than standing out from the crowd.
 
 - Install _Google Play Store_ from the _App Store_ application. It will automatically add the sandboxed _Google Play services_ dependency.
 - Open the _Google Play Store_ application to begin the initial setup.
@@ -76,7 +78,7 @@ Google may require a phone number for the _initial_ account verification process
 
 - You can use **any active mobile number** you already have, including one you plan to later port to this device.
 - If your main number is not yet active on the phone, using a standard **prepaid SIM** from your preferred carrier is also an option.
-- Once the SIM is active and able to receive text messages, it can be used for the verification step just like any regular phone number.
+- You can remove the SIM after verification if you do not want that number tied to ongoing Google activity.
 
 ## Minimize Google Telemetry
 
@@ -92,28 +94,29 @@ Adjusting Google account privacy settings reduces optional data collection while
 
 ## App Installation Precedence
 
-Below is the recommended source hierarchy to follow when installing apps, ordered by trust level.
+Before installing an app, first consider whether the service works well in Vanadium. Web access runs inside Vanadium's hardened sandbox, exposes far less attack surface, and avoids granting apps long-term permissions. Whenever a website provides the functionality you need, it's the most private and secure option
 
-1. **Vanadium** (web access)
-  - Use when the service works well in a browser.
-  - Websites run inside Vanadium's hardened sandbox and generally expose far less data and attack surface than installing a dedicated app.
-  - Prefer browser access over app installations whenever practical.
-2. **App Store** (GrapheneOS)
-  - Use for system apps and core security components.
-  - These apps are built and signed by the project and receive updates fastest.
-3. **Accrescent**
-  - Use for security-audited, reproducibly built third-party apps.
-  - Choose this source whenever the desired app is available here.
-4. **Google Play Store**
-- Use when applications require:
-  - Google Play Services APIs
-  - Firebase Cloud Messaging (FCM) push notifications
-  - commercial ecosystem availability
-- Apps run inside GrapheneOS's compatibility layer and cannot gain privileged access.
-5. **Obtainium**
-  - Use only when the app is unavailable from the sources above.
-  - Tracks upstream project releases from GitHub, GitLab, F-Droid repos, etc.
-  - Verify APK signing keys via _AppVerifier_ when possible.
+If you do need to install an app, use the following source hierarchy, ordered by trust level:
+
+1. **App Store** (GrapheneOS)
+   - Use for system apps and core security components.
+   - These apps are built and signed by the project and receive updates fastest.
+
+2. **Accrescent**
+   - Use for security-audited, reproducibly built third-party apps.
+   - Currently offers a limited selection of apps, but the ecosystem is expanding.
+
+3. **Google Play Store**
+   - Use when applications require:
+     - Google Play Services APIs
+     - Firebase Cloud Messaging (FCM) push notifications
+     - general commercial ecosystem support
+   - Apps run inside GrapheneOS's compatibility layer and cannot gain privileged access.
+
+4. **Obtainium**
+   - Use only when the app is not available from higher-trust sources.
+   - Use to automatically follow upstream project releases across GitHub, GitLab, and similar repos.
+   - Verify APK signing keys via _AppVerifier_ when possible.
 
 This guide intentionally excludes F-Droid and Aurora Store because their distribution models do not align with GrapheneOS's security assumptions.
 
@@ -121,7 +124,7 @@ This guide intentionally excludes F-Droid and Aurora Store because their distrib
 
 - Open the _Vanadium_ web browser and visit: <https://obtainium.imranr.dev/>
 - Download the **Universal APK**.
-- After downloading, open _AppVerifier_, verify the APK, and confirm a green "SUCCESS" under _Internal Database Status_. (Manual key verification is available but not required here.)
+- After downloading, open _AppVerifier_, verify the APK, and confirm a green "SUCCESS" message under _Internal Database Status_ (manual key verification is available but not required in this case).
 - Once verified, install the APK via the _Files_ app.
 
 The Obtainium app will update itself automatically when new upstream releases become available.
