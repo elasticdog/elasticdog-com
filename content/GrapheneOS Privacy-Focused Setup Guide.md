@@ -13,7 +13,7 @@ Once you're comfortable with the platform, you can explore more advanced setups 
 - You'll need a laptop with a Chromium-based browser installed (Firefox won't work, as it does not support WebUSB). I recommend [Brave](https://brave.com/). Have your password manager ready for storing new credentials.
 - Consider how you want to handle payments associated with your device or apps. Some privacy-preserving options include:
   - Paying with cash when purchasing hardware (where practical).
-  - Using retail gift cards for app store credit or subscription top-ups. Always keep the receipt until the gift card is successfully redeemed.
+  - Using retail gift cards for app store credit or subscription top-ups. Always keep the receipt until the gift card has been successfully redeemed.
   - Using a virtual credit card provider like <https://www.privacy.com/> with single-use or merchant-locked cards.
 
   These approaches reduce the personal information exposed during transactions while still working within standard payment workflows.
@@ -23,8 +23,6 @@ Once you're comfortable with the platform, you can explore more advanced setups 
 - Obtain a new [supported Pixel device](https://grapheneos.org/faq#supported-devices) that is factory-unlocked (not carrier-locked). Avoid purchasing a used phone to ensure a clean history and supply-chain integrity.
 
 ## Install GrapheneOS
-
-Installing and updating GrapheneOS provides a clean, trusted baseline for all later steps.
 
 - Bring the unopened phone and your laptop to a location with public Wi-Fi (e.g., a coffee shop). This reduces any direct association between your home network and the new device.
 - Unbox and power on the phone. Skip all onboarding steps except connecting to the public Wi-Fi. **Do not** sign in to any Google account. Run all System Updates and reboot as needed (this could take a while). Repeat until no further updates are shown in the stock operating system.
@@ -74,7 +72,7 @@ Use this Google account only inside the sandboxed Play environment on GrapheneOS
 
 ### If a Phone Number Is Required
 
-Google may require a phone number for the initial account verification process. Avoid using any number already associated with another Google account, since that can create internal linkages and undermine compartmentalization.
+Google may require a phone number for the _initial_ account verification process. Avoid using any number already associated with another Google account, since that can create internal linkages and undermine compartmentalization.
 
 - You can use **any active mobile number** you already have, including one you plan to later port to this device.
 - If your main number is not yet active on the phone, using a standard **prepaid SIM** from your preferred carrier is also an option.
@@ -88,36 +86,36 @@ Adjusting Google account privacy settings reduces optional data collection while
 - Pause the history settings for Web & App Activity, Timeline, and YouTube History.
 - Turn off all personalized ads.
 - Restrict personal profile visibility and disable unnecessary location sharing.
-- Review and remove any unnecessary connected apps or services.
+- Review and remove any unnecessary connected apps or services (this list is
+  usually empty on a new account).
 - Unsubscribe from Google service newsletters and product-tip emails.
 
 ## App Installation Precedence
 
 Below is the recommended source hierarchy to follow when installing apps, ordered by trust level.
 
-1. App Store (GrapheneOS)
-
-- Use for system apps and core security components.
-- These apps are built and signed by the project and receive updates fastest.
-
-1. Accrescent
-
-- Use for security-audited, reproducibly built third-party apps.
-- Choose this source whenever the desired app is available here.
-
-1. Google Play Store
-
+1. **Vanadium** (web access)
+  - Use when the service works well in a browser.
+  - Websites run inside Vanadium's hardened sandbox and generally expose far less data and attack surface than installing a dedicated app.
+  - Prefer browser access over app installations whenever practical.
+2. **App Store** (GrapheneOS)
+  - Use for system apps and core security components.
+  - These apps are built and signed by the project and receive updates fastest.
+3. **Accrescent**
+  - Use for security-audited, reproducibly built third-party apps.
+  - Choose this source whenever the desired app is available here.
+4. **Google Play Store**
 - Use when applications require:
   - Google Play Services APIs
   - Firebase Cloud Messaging (FCM) push notifications
   - commercial ecosystem availability
 - Apps run inside GrapheneOS's compatibility layer and cannot gain privileged access.
+5. **Obtainium**
+  - Use only when the app is unavailable from the sources above.
+  - Tracks upstream project releases from GitHub, GitLab, F-Droid repos, etc.
+  - Verify APK signing keys via _AppVerifier_ when possible.
 
-1. Obtainium
-
-- Use only when the app is unavailable from the sources above.
-- Tracks upstream project releases from GitHub, GitLab, F-Droid repos, etc.
-- Verify APK signing keys via _AppVerifier_ when possible.
+This guide intentionally excludes F-Droid and Aurora Store because their distribution models do not align with GrapheneOS's security assumptions.
 
 ### Install Obtainium
 
