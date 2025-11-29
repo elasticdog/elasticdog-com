@@ -6,7 +6,7 @@ _Our goal is to create a secure Android-based phone that maintains as much perso
 
 This guide does not provide specific app recommendations or deep settings walkthroughs, since those are individual workflow choices and can change frequently; instead, it focuses on the order of operations and the privacy-critical decisions that are easy to overlook during initial setup.
 
-To reduce complexity and avoid frustration, the process begins with the **Owner** profile only, without introducing secondary user profiles. We will also configure the sandboxed Google Play Store to enable secure access to mainstream apps and push notifications while retaining GrapheneOS's strong isolation model. This mirrors upstream recommendations and offers a balanced mix of security and usability.
+To reduce complexity and avoid frustration, we'll stick to using only the **Owner** profile and won't introduce secondary user profiles. We will also configure the sandboxed Google Play Store to enable secure access to mainstream apps and push notifications while retaining GrapheneOS's strong isolation model. This mirrors upstream recommendations and offers a balanced mix of security and usability.
 
 Once you're comfortable with the platform, you can explore more advanced setups using Private Space, isolated profiles, and selective app sharing.
 
