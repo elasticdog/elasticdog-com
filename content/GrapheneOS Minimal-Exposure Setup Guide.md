@@ -12,7 +12,7 @@ Once you're comfortable with the platform, you can explore more advanced setups 
 
 ## Prerequisites
 
-- You'll need a laptop with a Chromium-based browser installed (Firefox won't work, as it does not support WebUSB). I recommend [Brave](https://brave.com/). Have your password manager ready for storing new credentials.
+- You'll need a laptop with a Chromium-based browser installed (Gecko-based browsers like Firefox won't work, as they do not support WebUSB). I recommend [Brave](https://brave.com/). Have your password manager ready for storing new credentials.
 - Consider how you want to handle payments associated with your device or apps. Some privacy-preserving options include:
   - Paying with **cash** when purchasing hardware (where practical).
   - Using retail **gift cards** for app store credit or subscription top-ups. Always keep the receipt until the gift card has been successfully redeemed.
@@ -43,7 +43,7 @@ Verifying the device early ensures you're building on trusted hardware with no s
 
 ## Route All Traffic Through a VPN
 
-Establishing a privacy-respecting network path (a Virtual Private Network) before adding accounts or apps helps reduce the amount of identifying metadata exposed during setup. These steps use [Mullvad VPN](https://mullvad.net/) as an example, but other reputable VPN providers (such as [Proton VPN](https://protonvpn.com/)) follow a similar installation and configuration process.
+Establishing a privacy-respecting network path (using a Virtual Private Network) before adding accounts or apps helps reduce the amount of identifying metadata exposed during setup. These steps use [Mullvad VPN](https://mullvad.net/) as an example, but other reputable VPN providers (such as [Proton VPN](https://protonvpn.com/)) follow a similar installation and configuration process.
 
 - In the _App Store_, install _Accrescent_, a security-focused third-party app store.
 - Open _Accrescent_ and install _AppVerifier_, which allows you to verify APK signing keys for manually downloaded applications.
