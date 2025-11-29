@@ -43,7 +43,7 @@ Verifying the device early ensures you're building on trusted hardware with no s
 
 ## Route All Traffic Through a VPN
 
-Establishing a privacy-respecting network path (using a Virtual Private Network) before adding accounts or apps helps reduce the amount of identifying metadata exposed during setup. These steps use [Mullvad VPN](https://mullvad.net/) as an example, but other reputable VPN providers (such as [Proton VPN](https://protonvpn.com/)) follow a similar installation and configuration process.
+Establishing a privacy-respecting network path (using a Virtual Private Network) before adding accounts or apps helps reduce the amount of identifying metadata exposed during setup. These steps use [Mullvad VPN](https://mullvad.net/) as an example, but other reputable VPN providers (such as [Proton VPN](https://protonvpn.com/)) would follow a similar installation and configuration process.
 
 - In the _App Store_, install _Accrescent_, a security-focused third-party app store.
 - Open _Accrescent_ and install _AppVerifier_, which allows you to verify APK signing keys for manually downloaded applications.
@@ -70,7 +70,7 @@ Adding the sandboxed Play Store after the VPN is active ensures your Google traf
 - Enable TOTP-based multi-factor authentication and save your backup codes securely.
 - Avoid adding a recovery phone number unless you explicitly want it associated with this account.
 
-Use this Google account only inside the sandboxed Play environment on GrapheneOS.
+Use this Google account only inside the sandboxed Play Store environment.
 
 ### If a Phone Number Is Required
 
@@ -94,7 +94,7 @@ Adjusting Google account privacy settings reduces optional data collection while
 
 ## App Installation Precedence
 
-Before installing an app, first consider whether the service works well in Vanadium. Web access runs inside Vanadium's hardened sandbox, exposes far less attack surface, and avoids granting apps long-term permissions. Whenever a website provides the functionality you need, it's the most private and secure option
+Before installing an app, first consider whether the service works well in Vanadium. Web access runs inside Vanadium's hardened sandbox, exposes far less attack surface, and avoids granting apps long-term permissions. Whenever a website provides the functionality you need, it's the most private and secure option.
 
 If you do need to install an app, use the following source hierarchy, ordered by trust level:
 
@@ -103,7 +103,7 @@ If you do need to install an app, use the following source hierarchy, ordered by
    - These apps are built and signed by the project and receive updates fastest.
 
 2. **Accrescent**
-   - Use for security-audited, reproducibly built third-party apps.
+   - Use for security-audited third-party apps built from verified source code.
    - Currently offers a limited selection of apps, but the ecosystem is expanding.
 
 3. **Google Play Store**
@@ -118,7 +118,7 @@ If you do need to install an app, use the following source hierarchy, ordered by
    - Use to automatically follow upstream project releases across GitHub, GitLab, and similar repos.
    - Verify APK signing keys via _AppVerifier_ when possible.
 
-This guide intentionally excludes F-Droid and Aurora Store because their distribution models do not align with GrapheneOS's security assumptions.
+This guide intentionally excludes F-Droid and Aurora Store because their distribution models fall short of GrapheneOS's security expectations.
 
 ### Install Obtainium
 
