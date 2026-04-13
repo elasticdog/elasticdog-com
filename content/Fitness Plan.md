@@ -30,7 +30,7 @@ Strength + Mobility
 - Half-kneeling KB press - 3x5-8/side
 - Step-ups - 3x8-10/leg
 
-### Optional Finisher
+### Optional Cardio Finisher
 
 - 5 rounds:
 - 1 min moderate
@@ -123,7 +123,7 @@ Strength + Carries
 
 - Split squat - 3x5-8/leg
 - KB deadlift - 3x5-8
-- Assisted pull-ups - 3x5-8
+- Assisted chin-ups - 3x5-8
 - KB rows - 3x8-12
 
 ### Carries
