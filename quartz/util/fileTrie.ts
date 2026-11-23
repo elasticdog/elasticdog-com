@@ -1,4 +1,4 @@
-import { ContentDetails } from "../plugins/emitters/contentIndex"
+import type { ContentDetails } from "../plugins/types"
 import { FullSlug, joinSegments } from "./path"
 
 interface FileTrieData {
@@ -69,7 +69,12 @@ export class FileTrieNode<T extends FileTrieData = ContentDetails> {
     if (path.length === 1) {
       // base case, we are at the end of the path
       if (segment === "index") {
-        this.data ??= file
+        // Last-insert-wins on collision. Matches the emitter's last-write-wins
+        // semantics at plugins/emitters/helpers.ts so the trie's data and the
+        // file on disk agree on which source file "owns" a colliding slug.
+        // Collision detection happens upstream in build.ts; this assignment is
+        // the fallback for any duplicates that still reach the trie.
+        this.data = file
       } else {
         this.makeChild(path, file)
       }
@@ -85,8 +90,13 @@ export class FileTrieNode<T extends FileTrieData = ContentDetails> {
   }
 
   // Add new file to trie
-  add(file: T) {
-    this.insert(file.slug.split("/"), file)
+  /**
+   * Add a page at `position` (its slug by default). The build passes the page's slugified file
+   * path, so a note with a permalink stays in its folder for navigation (explorer, folder pages,
+   * breadcrumbs) while `data.slug` — what links point at — is its permalink.
+   */
+  add(file: T, position: string = file.slug) {
+    this.insert(position.split("/"), file)
   }
 
   findNode(path: string[]): FileTrieNode<T> | undefined {

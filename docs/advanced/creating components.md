@@ -1,5 +1,5 @@
 ---
-title: Creating your own Quartz components
+title: Creating Component Plugins
 ---
 
 > [!warning]
@@ -20,229 +20,341 @@ However, HTML doesn't let you create reusable templates. If you wanted to create
 
 In effect, components allow you to write a JavaScript function that takes some data and produces HTML as an output. **While Quartz doesn't use React, it uses the same component concept to allow you to easily express layout templates in your Quartz site.**
 
-## An Example Component
+## Community Component Plugins
 
-### Constructor
+In v5, most components are community plugins — standalone repositories that export a `QuartzComponent`. These plugins are decoupled from the core Quartz repository, allowing for easier maintenance and sharing.
 
-Component files are written in `.tsx` files that live in the `quartz/components` folder. These are re-exported in `quartz/components/index.ts` so you can use them in layouts and other components more easily.
+### Getting Started
 
-Each component file should have a default export that satisfies the `QuartzComponentConstructor` function signature. It's a function that takes in a single optional parameter `opts` and returns a Quartz Component. The type of the parameters `opts` is defined by the interface `Options` which you as the component creator also decide.
+To create a new component plugin, you can use the official plugin template:
 
-In your component, you can use the values from the configuration option to change the rendering behaviour inside of your component. For example, the component in the code snippet below will not render if the `favouriteNumber` option is below 0.
+```shell
+git clone https://github.com/quartz-community/plugin-template.git my-component
+cd my-component
+npm install
+```
 
-```tsx {11-17}
-interface Options {
+### Plugin Structure
+
+A component is a constructor: a function that takes the user's options and returns a `QuartzComponent`. Put it in `src/components/`:
+
+```tsx title="src/components/MyComponent.tsx"
+import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-community/types"
+
+export interface MyComponentOptions {
   favouriteNumber: number
 }
 
-const defaultOptions: Options = {
+const defaultOptions: MyComponentOptions = {
   favouriteNumber: 42,
 }
 
-export default ((userOpts?: Options) => {
-  const opts = { ...userOpts, ...defaultOpts }
-  function YourComponent(props: QuartzComponentProps) {
-    if (opts.favouriteNumber < 0) {
-      return null
-    }
+export default ((userOpts?: Partial<MyComponentOptions>) => {
+  const opts = { ...defaultOptions, ...userOpts }
 
-    return <p>My favourite number is {opts.favouriteNumber}</p>
+  const Component: QuartzComponent = () => {
+    if (opts.favouriteNumber < 0) return null
+    return <p class="my-component">My favourite number is {opts.favouriteNumber}</p>
   }
 
-  return YourComponent
-}) satisfies QuartzComponentConstructor
+  return Component
+}) satisfies QuartzComponentConstructor<Partial<MyComponentOptions>>
+```
+
+Quartz loads components from the package's **`./components`** export, by the names listed in the manifest — not from the entry module, and not from a `default` export:
+
+```ts title="src/components/index.ts"
+export { default as MyComponent } from "./MyComponent"
+export type { MyComponentOptions } from "./MyComponent"
+```
+
+```json title="package.json"
+{
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    }
+  },
+  "quartz": {
+    "category": "component",
+    "components": {
+      "MyComponent": {
+        "displayName": "My Component",
+        "defaultPosition": "right",
+        "defaultPriority": 50
+      }
+    }
+  }
+}
+```
+
+The key in `quartz.components` must match the export name in `src/components/index.ts`; `defaultPosition` and `defaultPriority` place the component when the user's config doesn't (see [[plugin manifest#components]]). The plugin template's `tsup.config.ts` already builds the `components/index` entry.
+
+Also re-export the constructor by name from the entry module, so users can call it in `quartz.ts` overrides (`ExternalPlugin.MyComponent(…)`, see [[#Installing Your Component]]). The generated `.quartz/plugins/index.ts` re-exports your entry module's named exports; `default` exports are left out.
+
+```ts title="src/index.ts"
+export { MyComponent } from "./components"
+export type { MyComponentOptions } from "./components"
 ```
 
 ### Props
 
-The Quartz component itself (lines 11-17 highlighted above) looks like a React component. It takes in properties (sometimes called [props](https://react.dev/learn/passing-props-to-a-component)) and returns JSX.
-
 All Quartz components accept the same set of props:
 
-```tsx title="quartz/components/types.ts"
-// simplified for sake of demonstration
+```tsx
 export type QuartzComponentProps = {
-  fileData: QuartzPluginData
+  ctx: unknown
+  externalResources: StaticResources
+  fileData: QuartzPluginData & Record<string, unknown>
   cfg: GlobalConfiguration
-  tree: Node<QuartzPluginData>
-  allFiles: QuartzPluginData[]
+  children: unknown
+  tree: unknown
+  allFiles: (QuartzPluginData & Record<string, unknown>)[]
   displayClass?: "mobile-only" | "desktop-only"
+  [key: string]: unknown
 }
 ```
 
-- `fileData`: Any metadata [[making plugins|plugins]] may have added to the current page.
+- `ctx`: the [[making plugins|`BuildCtx`]] of the build (typed `unknown`; cast it to `BuildCtx` to read it).
+- `externalResources`: the page's CSS, scripts and head elements.
+- `fileData`: Any metadata plugins may have added to the current page.
   - `fileData.slug`: slug of the current page.
   - `fileData.frontmatter`: any frontmatter parsed.
-- `cfg`: The `configuration` field in `quartz.config.ts`.
-- `tree`: the resulting [HTML AST](https://github.com/syntax-tree/hast) after processing and transforming the file. This is useful if you'd like to render the content using [hast-util-to-jsx-runtime](https://github.com/syntax-tree/hast-util-to-jsx-runtime) (you can find an example of this in `quartz/components/pages/Content.tsx`).
-- `allFiles`: Metadata for all files that have been parsed. Useful for doing page listings or figuring out the overall site structure.
-- `displayClass`: a utility class that indicates a preference from the user about how to render it in a mobile or desktop setting. Helpful if you want to conditionally hide a component on mobile or desktop.
+- `cfg`: The `configuration` field in `quartz.config.yaml`.
+- `children`: child components, for components that wrap others (e.g. `Flex`).
+- `tree`: the resulting [HTML AST](https://github.com/syntax-tree/hast) (a hast `Root`) after processing and transforming the file.
+- `allFiles`: Metadata for all published pages, virtual pages included. Useful for doing page listings or figuring out the overall site structure.
+- `displayClass`: a utility class that indicates a preference from the user about how to render it in a mobile or desktop setting.
 
 ### Styling
 
-Quartz components can also define a `.css` property on the actual function component which will get picked up by Quartz. This is expected to be a CSS string which can either be inlined or imported from a `.scss` file.
+In community plugins, styles are bundled with the plugin. You can define styles using the `.css` property on the component:
 
-Note that inlined styles **must** be plain vanilla CSS:
-
-```tsx {6-10} title="quartz/components/YourComponent.tsx"
-export default (() => {
-  function YourComponent() {
-    return <p class="red-text">Example Component</p>
-  }
-
-  YourComponent.css = `
-  p.red-text {
-    color: red;
-  }
-  `
-
-  return YourComponent
-}) satisfies QuartzComponentConstructor
+```tsx
+Component.css = `
+  .my-component { color: red; }
+`
 ```
 
-Imported styles, however, can be from SCSS files:
+For SCSS, you can import it and assign it to the `.css` property. The build system will handle the transformation:
 
-```tsx {1-2,9} title="quartz/components/YourComponent.tsx"
-// assuming your stylesheet is in quartz/components/styles/YourComponent.scss
-import styles from "./styles/YourComponent.scss"
-
-export default (() => {
-  function YourComponent() {
-    return <p>Example Component</p>
-  }
-
-  YourComponent.css = styles
-  return YourComponent
-}) satisfies QuartzComponentConstructor
+```tsx
+import styles from "./styles.scss"
+Component.css = styles
 ```
 
 > [!warning]
 > Quartz does not use CSS modules so any styles you declare here apply _globally_. If you only want it to apply to your component, make sure you use specific class names and selectors.
 
-### Scripts and Interactivity
+Quartz puts component CSS in the `quartz-base` [cascade layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer), like its own base styles, so a site's `custom.scss` (unlayered) overrides it without needing more specific selectors.
 
-What about interactivity? Suppose you want to add an-click handler for example. Like the `.css` property on the component, you can also declare `.beforeDOMLoaded` and `.afterDOMLoaded` properties that are strings that contain the script.
+#### Source attributes
 
-```tsx title="quartz/components/YourComponent.tsx"
-export default (() => {
-  function YourComponent() {
-    return <button id="btn">Click me</button>
-  }
+When Quartz renders a component provided by a plugin, it adds two attributes to the component's root element:
 
-  YourComponent.beforeDOMLoaded = `
-  console.log("hello from before the page loads!")
-  `
-
-  YourComponent.afterDOMLoaded = `
-  document.getElementById('btn').onclick = () => {
-    alert('button clicked!')
-  }
-  `
-  return YourComponent
-}) satisfies QuartzComponentConstructor
+```html
+<div class="graph" data-quartz-plugin="graph" data-quartz-component="Graph">…</div>
 ```
 
-> [!hint]
-> For those coming from React, Quartz components are different from React components in that it only uses JSX for templating and layout. Hooks like `useEffect`, `useState`, etc. are not rendered and other properties that accept functions like `onClick` handlers will not work. Instead, do it using a regular JS script that modifies the DOM element directly.
+They let site owners and theme authors find out which plugin produced a part of the page (use your browser's inspector) and give a stable hook for styling, e.g. `[data-quartz-plugin="graph"] { … }`. The attributes are only added when your component returns a single HTML element; components returning `null`, text, a fragment or another component are rendered unchanged. Existing attributes are never modified.
 
-As the names suggest, the `.beforeDOMLoaded` scripts are executed _before_ the page is done loading so it doesn't have access to any elements on the page. This is mostly used to prefetch any critical data.
+### Internationalization
 
-The `.afterDOMLoaded` script executes once the page has been completely loaded. This is a good place to setup anything that should last for the duration of a site visit (e.g. getting something saved from local storage).
+Component plugins should use the i18n pattern for any user-facing strings. See [[making plugins#Internationalization (i18n)]] for the full setup guide.
 
-If you need to create an `afterDOMLoaded` script that depends on _page specific_ elements that may change when navigating to a new page, you can listen for the `"nav"` event that gets fired whenever a page loads (which may happen on navigation if [[SPA Routing]] is enabled).
+Quick reference:
+
+```tsx
+import { i18n } from "../i18n"
+
+const MyComponent: QuartzComponent = ({ cfg }) => {
+  const t = i18n(cfg.locale ?? "en-US").components.myComponent
+  return <h2>{t.title}</h2>
+}
+```
+
+Always provide at least an `en-US` locale as the fallback. Additional locales are optional but encouraged for international reach.
+
+### Scripts and Interactivity
+
+For interactivity, you can declare `.beforeDOMLoaded` and `.afterDOMLoaded` properties on the component. These should be strings containing the JavaScript to be executed in the browser.
+
+- `.beforeDOMLoaded`: Executed _before_ the page is done loading (from `<head>`), for early initialization such as applying a saved theme before the page is painted.
+- `.afterDOMLoaded`: Executed once the page has been completely loaded.
+
+Each script runs once per full page load, not on every SPA navigation. Don't rely on scripts sharing a scope or running in a particular order:
+
+- In a production build, each `afterDOMLoaded` script is a separate ES module, and all of them are imported in parallel; only the SPA router (which dispatches the first `nav`) is imported after them.
+- In `quartz build --serve`, all `afterDOMLoaded` scripts are bundled into one file, each wrapped in its own function.
+
+Share state between components through `window` or DOM attributes, and do page setup in a `nav` listener rather than at the top level.
+
+If you need to create an `afterDOMLoaded` script that depends on page-specific elements that may change when navigating, listen for the `"nav"` event:
 
 ```ts
 document.addEventListener("nav", () => {
   // do page specific logic here
-  // e.g. attach event listeners
   const toggleSwitch = document.querySelector("#switch") as HTMLInputElement
-  toggleSwitch.addEventListener("change", switchTheme)
-  window.addCleanup(() => toggleSwitch.removeEventListener("change", switchTheme))
+  if (toggleSwitch) {
+    toggleSwitch.addEventListener("change", switchTheme)
+    window.addCleanup(() => toggleSwitch.removeEventListener("change", switchTheme))
+  }
 })
 ```
 
-You can also add the equivalent of a `beforeunload` event for [[SPA Routing]] via the `prenav` event.
+You can also use the `"prenav"` event, which fires before the page is replaced during SPA navigation.
+
+The `"render"` event fires when the DOM has been updated in-place without a full navigation — for example, after content decryption or dynamic DOM modifications by other plugins. If your component attaches event listeners to content elements, listen for `"render"` in addition to `"nav"` to ensure re-initialization:
 
 ```ts
-document.addEventListener("prenav", () => {
-  // executed after an SPA navigation is triggered but
-  // before the page is replaced
-  // one usage pattern is to store things in sessionStorage
-  // in the prenav and then conditionally load then in the consequent
-  // nav
-})
+function setupMyComponent() {
+  const elements = document.querySelectorAll(".my-interactive")
+  for (const el of elements) {
+    el.addEventListener("click", handleClick)
+    window.addCleanup(() => el.removeEventListener("click", handleClick))
+  }
+}
+
+document.addEventListener("nav", setupMyComponent)
+document.addEventListener("render", setupMyComponent)
 ```
 
-It is best practice to track any event handlers via `window.addCleanup` to prevent memory leaks.
-This will get called on page navigation.
+It is best practice to track any event handlers via `window.addCleanup` to prevent memory leaks during SPA navigation.
+
+Quartz itself never dispatches `"render"`; plugins that change the page do (e.g. encrypted pages after decryption). Since other components re-run their setup on it, make your `render` handler safe to run more than once.
+
+#### Links your script adds
+
+[[prefetching|Prefetching]] and [[popover previews]] look for links on `nav`, and again on `render`. If your script inserts links after `nav` (lists built from `contentIndex.json`, content fetched later), dispatch `render` once they are in the page so they are prefetched and get popovers. Mark links with
+
+- `data-no-prefetch` to keep them from being prefetched,
+- `data-router-ignore` to make them full page loads instead of SPA navigations (they aren't prefetched either),
+- `data-no-popover="true"` to give them no popover.
+
+When your script needs another page's HTML, get it through the prefetch cache with `window.quartzPrefetch?.load(url)` (set unless prefetching is off; declared in the globals of `@quartz-community/types` 1.3.1+), so a page the reader is about to open is fetched once:
+
+```ts title="related.inline.ts"
+import { normalizeRelativeURLs } from "@quartz-community/utils/dom"
+
+async function pageHtml(url: URL): Promise<string | undefined> {
+  // with prefetching on, use its cache (or fetch through it, so the page is fetched once)
+  if (window.quartzPrefetch) return (await window.quartzPrefetch.load(url))?.text
+  const res = await fetch(url)
+  return res.ok ? await res.text() : undefined
+}
+
+document.addEventListener("nav", async () => {
+  const container = document.querySelector<HTMLElement>(".my-related")
+  if (!container?.dataset.src) return
+  const url = new URL(container.dataset.src, window.location.href)
+  const html = await pageHtml(url)
+  if (!html) return
+  const doc = new DOMParser().parseFromString(html, "text/html")
+  normalizeRelativeURLs(doc, url.toString()) // its links are relative to that page
+  container.replaceChildren(...doc.querySelectorAll("article a.internal"))
+  // the links were added after `nav`: let prefetching and popovers pick them up
+  document.dispatchEvent(new CustomEvent("render", { detail: {} }))
+})
+```
 
 #### Importing Code
 
-Of course, it isn't always practical (nor desired!) to write your code as a string literal in the component.
+In community plugins, TypeScript scripts should be transpiled at build time. The plugin template includes an `inlineScriptPlugin` in `tsup.config.ts` that automatically transpiles `.inline.ts` files imported as text:
 
-Quartz supports importing component code through `.inline.ts` files.
+```tsx title="src/index.ts"
+import script from "./script.inline.ts"
 
-```tsx title="quartz/components/YourComponent.tsx"
-// @ts-ignore: typescript doesn't know about our inline bundling system
-// so we need to silence the error
-import script from "./scripts/graph.inline"
-
-export default (() => {
-  function YourComponent() {
-    return <button id="btn">Click me</button>
-  }
-
-  YourComponent.afterDOMLoaded = script
-  return YourComponent
-}) satisfies QuartzComponentConstructor
+const Component: QuartzComponent = (props) => {
+  return <button id="btn">Click me</button>
+}
+Component.afterDOMLoaded = script
 ```
 
-```ts title="quartz/components/scripts/graph.inline.ts"
-// any imports here are bundled for the browser
-import * as d3 from "d3"
+The `inlineScriptPlugin` handles transpiling TypeScript to browser-compatible JavaScript during the build step, allowing you to write type-safe client-side code.
 
-document.getElementById("btn").onclick = () => {
-  alert("button clicked!")
+### Installing Your Component
+
+Once your component is published (e.g., to GitHub or npm), users can install it using the Quartz CLI:
+
+```shell
+npx quartz plugin add github:your-username/my-component
+```
+
+Then, they can add it to their `quartz.config.yaml`:
+
+```yaml title="quartz.config.yaml"
+plugins:
+  - source: github:your-username/my-component
+    enabled: true
+    options:
+      favouriteNumber: 42
+    layout:
+      position: left
+      priority: 60
+```
+
+For advanced usage via the TS override in `quartz.ts`:
+
+```ts title="quartz.ts (override)"
+import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
+import * as ExternalPlugin from "./.quartz/plugins"
+
+const config = await loadQuartzConfig()
+export default config
+export const layout = await loadQuartzLayout({
+  byPageType: {
+    content: {
+      left: [ExternalPlugin.MyComponent({ favouriteNumber: 42 })],
+    },
+  },
+})
+```
+
+### Receiving YAML Options in Component-Only Plugins
+
+Component plugins that also belong to a processing category (transformer, filter, emitter, page type) receive options through their factory function automatically. However, **component-only plugins** — those whose manifest declares only `"category": ["component"]` — are loaded via side-effect import and don't go through the factory path.
+
+To receive YAML options in a component-only plugin, export an `init` function from your entry point:
+
+```ts title="src/index.ts"
+export function init(options?: Record<string, unknown>): void {
+  // options contains merged defaultOptions + user's YAML options
+  const myFlag = (options?.myFlag as boolean) ?? false
+  // Use options to configure registrations, global state, etc.
 }
 ```
 
-Additionally, like what is shown in the example above, you can import packages in `.inline.ts` files. This will be bundled by Quartz and included in the actual script.
+Quartz's config-loader calls `init()` after importing the module, passing the merged result of your manifest's `defaultOptions` and the user's `options` from `quartz.config.yaml`. The merge follows the same `{ ...defaultOptions, ...userOptions }` pattern used for processing plugins — user values take precedence.
 
-### Using a Component
+Declare your defaults in `package.json`:
 
-After creating your custom component, re-export it in `quartz/components/index.ts`:
-
-```ts title="quartz/components/index.ts" {4,10}
-import ArticleTitle from "./ArticleTitle"
-import Content from "./pages/Content"
-import Darkmode from "./Darkmode"
-import YourComponent from "./YourComponent"
-
-export { ArticleTitle, Content, Darkmode, YourComponent }
-```
-
-Then, you can use it like any other component in `quartz.layout.ts` via `Component.YourComponent()`. See the [[configuration#Layout|layout]] section for more details.
-
-As Quartz components are just functions that return React components, you can compositionally use them in other Quartz components.
-
-```tsx title="quartz/components/AnotherComponent.tsx"
-import YourComponentConstructor from "./YourComponent"
-
-export default (() => {
-  const YourComponent = YourComponentConstructor()
-
-  function AnotherComponent(props: QuartzComponentProps) {
-    return (
-      <div>
-        <p>It's nested!</p>
-        <YourComponent {...props} />
-      </div>
-    )
+```json title="package.json"
+{
+  "quartz": {
+    "category": ["component"],
+    "defaultOptions": {
+      "myFlag": false
+    }
   }
-
-  return AnotherComponent
-}) satisfies QuartzComponentConstructor
+}
 ```
+
+If your plugin does not export `init`, it continues to work as a pure side-effect import — this is fully backward compatible.
+
+## Internal Components
+
+Quartz also has internal components that provide layout utilities. These live in `quartz/components/` and are primarily used for structural purposes:
+
+- `Component.Head()` — renders the `<head>` tag
+- `Component.Spacer()` — adds flexible space
+- `Component.Flex()` — flexible layout container
+- `Component.MobileOnly()` — shows component only on mobile
+- `Component.DesktopOnly()` — shows component only on desktop
+- `Component.ConditionalRender()` — conditionally renders based on page data
+
+See [[layout-components]] for more details on these utilities.
 
 > [!hint]
-> Look in `quartz/components` for more examples of components in Quartz as reference for your own components!
+> Look at existing community plugins like [Explorer](https://github.com/quartz-community/explorer) or [Darkmode](https://github.com/quartz-community/darkmode) for real-world examples.

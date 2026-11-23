@@ -30,11 +30,14 @@ async function mouseEnterHandler(
     setPosition(popoverElement as HTMLElement)
 
     if (hash !== "") {
-      const targetAnchor = `#popover-internal-${hash.slice(1)}`
-      const heading = popoverInner.querySelector(targetAnchor) as HTMLElement | null
-      if (heading) {
-        // leave ~12px of buffer when scrolling to a heading
-        popoverInner.scroll({ top: heading.offsetTop - 12, behavior: "instant" })
+      const inner = popoverElement.querySelector(".popover-inner") as HTMLElement | null
+      if (inner) {
+        const targetAnchor = `#popover-internal-${hash.slice(1)}`
+        const heading = inner.querySelector(targetAnchor) as HTMLElement | null
+        if (heading) {
+          // leave ~12px of buffer when scrolling to a heading
+          inner.scroll({ top: heading.offsetTop - 12, behavior: "instant" })
+        }
       }
     }
   }
@@ -52,19 +55,26 @@ async function mouseEnterHandler(
     return
   }
 
-  const response = await fetchCanonical(targetUrl).catch((err) => {
-    console.error(err)
-  })
+  // A page fetched ahead (prefetch.inline.ts) is used as is, instead of fetching it again.
+  const prefetched = await window.quartzPrefetch?.load(targetUrl)
+  const response = prefetched
+    ? undefined
+    : await fetchCanonical(targetUrl).catch((err) => {
+        console.error(err)
+      })
 
-  if (!response) return
-  const [contentType] = response.headers.get("Content-Type")!.split(";")
+  if (!prefetched && !response) return
+  const rawContentType = prefetched?.contentType ?? response?.headers.get("Content-Type")
+  if (!rawContentType) return
+  const [contentType] = rawContentType.split(";")
   const [contentTypeCategory, typeInfo] = contentType.split("/")
 
   const popoverElement = document.createElement("div")
   popoverElement.id = popoverId
-  popoverElement.classList.add("popover")
+  // `hover-popover` / `markdown-embed` mirror Obsidian's popover markup so Obsidian themes apply.
+  popoverElement.classList.add("popover", "hover-popover")
   const popoverInner = document.createElement("div")
-  popoverInner.classList.add("popover-inner")
+  popoverInner.classList.add("popover-inner", "markdown-embed")
   popoverInner.dataset.contentType = contentType ?? undefined
   popoverElement.appendChild(popoverInner)
 
@@ -88,7 +98,7 @@ async function mouseEnterHandler(
       }
       break
     default:
-      const contents = await response.text()
+      const contents = prefetched ? (prefetched.text ?? "") : await response!.text()
       const html = p.parseFromString(contents, "text/html")
       normalizeRelativeURLs(html, targetUrl)
       // prepend all IDs inside popovers to prevent duplicates
@@ -120,7 +130,7 @@ function clearActivePopover() {
   allPopoverElements.forEach((popoverElement) => popoverElement.classList.remove("active-popover"))
 }
 
-document.addEventListener("nav", () => {
+function setupPopovers() {
   const links = [...document.querySelectorAll("a.internal")] as HTMLAnchorElement[]
   for (const link of links) {
     link.addEventListener("mouseenter", mouseEnterHandler)
@@ -130,4 +140,12 @@ document.addEventListener("nav", () => {
       link.removeEventListener("mouseleave", clearActivePopover)
     })
   }
+}
+
+document.addEventListener("nav", setupPopovers)
+document.addEventListener("render", setupPopovers)
+window.addEventListener("pageshow", (event) => {
+  if (!event.persisted) return
+  activeAnchor = null
+  document.querySelectorAll(".popover").forEach((popover) => popover.remove())
 })

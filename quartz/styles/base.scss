@@ -4,6 +4,28 @@
 @use "./syntax.scss";
 @use "./callouts.scss";
 
+// layout.sidebars — how a sidebar handles content taller than the screen. `fit` (the default,
+// no rules here) keeps it exactly one screen tall: its components shrink and scroll themselves.
+@mixin sidebar-modes {
+  // stays in view, scrolls itself; components take their natural height
+  &[data-sidebar-mode="scroll"] {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+  // scrolls away with the page
+  &[data-sidebar-mode="static"] {
+    position: static;
+    height: auto;
+    align-self: start;
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+}
+
 html {
   scroll-behavior: smooth;
   text-size-adjust: none;
@@ -63,15 +85,16 @@ path[class~="typst-shape"] {
 }
 
 article {
+  // callouts are <div class="callout"> since obsidian-flavored-markdown 2.3, <blockquote> before
   > mjx-container.MathJax,
-  blockquote > div > mjx-container.MathJax {
+  :is(blockquote, .callout) > div > mjx-container.MathJax {
     display: flex;
     > svg {
       margin-left: auto;
       margin-right: auto;
     }
   }
-  blockquote > div > mjx-container.MathJax > svg {
+  :is(blockquote, .callout) > div > mjx-container.MathJax > svg {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -134,7 +157,7 @@ a {
 }
 
 .desktop-only {
-  display: initial;
+  display: contents;
   &.flex-component {
     display: flex;
   }
@@ -155,7 +178,7 @@ a {
     &.flex-component {
       display: flex;
     }
-    display: initial;
+    display: contents;
   }
 }
 
@@ -241,6 +264,12 @@ a {
         flex-direction: row;
         padding: 0;
         padding-top: 2rem;
+        // text in the header row (a long page title) may break anywhere, so the row fits the
+        // screen; the buttons keep their size. Links set their own overflow-wrap.
+        & > *,
+        & > * a {
+          overflow-wrap: anywhere;
+        }
       }
     }
 
@@ -257,6 +286,10 @@ a {
         height: unset;
         width: 100%;
         flex-direction: row;
+        // Wrap what does not fit side by side: on a phone the graph and backlinks are each about
+        // 180px at their narrowest, and a row that cannot wrap pushed the page wider than the
+        // screen (horizontal scroll).
+        flex-wrap: wrap;
         padding: 0;
         & > * {
           flex: 1;
@@ -267,6 +300,19 @@ a {
         }
       }
     }
+    // sidebar modes apply where a sidebar is a column: the left one above mobile width, the
+    // right one on desktop (narrower layouts turn them into rows)
+    & .sidebar.left {
+      @media all and not ($mobile) {
+        @include sidebar-modes;
+      }
+    }
+    & .sidebar.right {
+      @media all and ($desktop) {
+        @include sidebar-modes;
+      }
+    }
+
     & .page-header,
     & .page-footer {
       margin-top: 1rem;
@@ -309,6 +355,48 @@ a {
   }
 }
 
+// ============================================================================
+// Page Frame Overrides
+// ============================================================================
+
+// Full-width frame: no sidebars, center content spans full width
+.page[data-frame="full-width"] > #quartz-body {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "grid-header"
+    "grid-center"
+    "grid-footer";
+
+  @media all and ($tablet) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  & .center.full-width {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+// Minimal frame: no sidebars, no header/footer chrome, body content only + footer
+.page[data-frame="minimal"] > #quartz-body {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "grid-center"
+    "grid-footer";
+
+  @media all and ($tablet) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  & .center.minimal {
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0;
+  }
+}
+
 .footnotes {
   margin-top: 2rem;
   border-top: 1px solid var(--lightgray);
@@ -346,7 +434,8 @@ input[type="checkbox"] {
   }
 }
 
-blockquote {
+blockquote,
+.transclude {
   margin: 1rem 0;
   border-left: 3px solid var(--secondary);
   padding-left: 1rem;
@@ -506,9 +595,27 @@ code {
   font-size: 0.9em;
   color: var(--dark);
   font-family: var(--codeFont);
+  font-variant-ligatures: none;
   border-radius: 5px;
   padding: 0.1rem 0.2rem;
   background: var(--lightgray);
+}
+
+// Long words break only where they would not fit, so a phone does not scroll sideways: a page
+// title such as "ObsidianFlavoredMarkdown", or `configuration.links.disableBrokenWikilinks` in a
+// callout. Inline code takes `anywhere`, which also lets the box around it shrink (with
+// `break-word` the callout widened to the identifier instead). Code blocks keep scrolling.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:not(pre) > code {
+  overflow-wrap: anywhere;
 }
 
 tbody,

@@ -11,10 +11,21 @@ export const CommonArgv = {
     default: false,
     describe: "print out extra logging information",
   },
+  concurrency: {
+    number: true,
+    alias: ["c"],
+    describe: "max parallel operations (default: number of CPU cores)",
+  },
 }
 
 export const CreateArgv = {
   ...CommonArgv,
+  template: {
+    string: true,
+    alias: ["t"],
+    choices: ["default", "obsidian", "ttrpg", "blog", "docs"],
+    describe: "template to use for initial configuration",
+  },
   source: {
     string: true,
     alias: ["s"],
@@ -25,6 +36,11 @@ export const CreateArgv = {
     alias: ["X"],
     choices: ["new", "copy", "symlink"],
     describe: "strategy for content folder setup",
+  },
+  baseUrl: {
+    string: true,
+    alias: ["b"],
+    describe: "base URL for your Quartz site (e.g. mysite.github.io/quartz)",
   },
   links: {
     string: true,
@@ -60,6 +76,11 @@ export const SyncArgv = {
 
 export const BuildArgv = {
   ...CommonArgv,
+  config: {
+    string: true,
+    alias: ["C"],
+    describe: "path to the config file (default: ./quartz.config.yaml)",
+  },
   output: {
     string: true,
     alias: ["o"],
@@ -94,15 +115,12 @@ export const BuildArgv = {
   remoteDevHost: {
     string: true,
     default: "",
-    describe: "A URL override for the websocket connection if you are not developing on localhost",
+    describe:
+      "hostname to use for the hot-reload WebSocket connection if you are not developing on localhost",
   },
   bundleInfo: {
     boolean: true,
     default: false,
     describe: "show detailed bundle information",
-  },
-  concurrency: {
-    number: true,
-    describe: "how many threads to use to parse notes",
   },
 }

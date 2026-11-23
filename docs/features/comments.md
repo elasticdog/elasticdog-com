@@ -4,7 +4,10 @@ tags:
   - component
 ---
 
-Quartz also has the ability to hook into various providers to enable readers to leave comments on your site.
+Quartz can add a comment section to your pages with the [[plugins/Comments|Comments]] plugin, so readers can leave comments on your site.
+
+> [!note]
+> For information on how to add, remove or configure plugins, see the [[configuration#Plugins|Configuration]] page.
 
 ![[giscus-example.png]]
 
@@ -30,27 +33,54 @@ After entering both your repository and selecting the discussion category, Giscu
 
 ![[giscus-results.png]]
 
-Finally, in `quartz.layout.ts`, edit the `afterBody` field of `sharedPageComponents` to include the following options but with the values you got from above:
+Finally, in `quartz.config.yaml`, enable the comments plugin (it is in the default configuration but disabled) and fill in the values you got from above:
 
-```ts title="quartz.layout.ts"
-afterBody: [
-  Component.Comments({
-    provider: 'giscus',
-    options: {
-      // from data-repo
-      repo: 'jackyzha0/quartz',
-      // from data-repo-id
-      repoId: 'MDEwOlJlcG9zaXRvcnkzODcyMTMyMDg',
-      // from data-category
-      category: 'Announcements',
-      // from data-category-id
-      categoryId: 'DIC_kwDOFxRnmM4B-Xg6',
-      // from data-lang
-      lang: 'en'
-    }
-  }),
-],
+```yaml title="quartz.config.yaml"
+plugins:
+  - source: "@quartz-community/comments"
+    enabled: true
+    options:
+      provider: giscus
+      options:
+        repo: jackyzha0/quartz
+        repoId: MDEwOlJlcG9zaXRvcnkzODcyMTMyMDg
+        category: Announcements
+        categoryId: DIC_kwDOFxRnmM4B-Xg6
+        lang: en
+    layout:
+      position: afterBody
+      priority: 10
 ```
+
+For the TS override approach:
+
+```ts title="quartz.ts (override)"
+// If using quartz.ts overrides instead of YAML:
+import * as ExternalPlugin from "./.quartz/plugins"
+import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
+
+const config = await loadQuartzConfig()
+export default config
+export const layout = await loadQuartzLayout({
+  defaults: {
+    afterBody: [
+      ExternalPlugin.Comments({
+        provider: "giscus",
+        options: {
+          repo: "jackyzha0/quartz",
+          repoId: "MDEwOlJlcG9zaXRvcnkzODcyMTMyMDg",
+          category: "Announcements",
+          categoryId: "DIC_kwDOFxRnmM4B-Xg6",
+          lang: "en",
+        },
+      }),
+    ],
+  },
+})
+```
+
+> [!note]
+> If the plugin is not in your configuration, install it first: `npx quartz plugin add @quartz-community/comments`
 
 ### Customization
 
@@ -66,7 +96,7 @@ type Options = {
     categoryId: string
 
     // Url to folder with custom themes
-    // defaults to 'https://${cfg.baseUrl}/static/giscus'
+    // defaults to 'https://${baseUrl}/static/giscus'
     themeUrl?: string
 
     // filename for light theme .css file
@@ -102,23 +132,44 @@ type Options = {
 
 #### Custom CSS theme
 
-Quartz supports custom theme for Giscus. To use a custom CSS theme, place the `.css` file inside the `quartz/static` folder and set the configuration values.
+Quartz supports custom themes for Giscus. By default Giscus loads `light.css` and `dark.css` from `https://<baseUrl>/static/giscus`, which Quartz ships in `quartz/static/giscus/` (this needs `baseUrl` to be set to your real domain). To use a custom CSS theme, place the `.css` file inside the `quartz/static/giscus` folder and set the configuration values.
 
 For example, if you have a light theme `light-theme.css`, a dark theme `dark-theme.css`, and your Quartz site is hosted at `https://example.com/`:
 
-```ts
-afterBody: [
-  Component.Comments({
-    provider: 'giscus',
-    options: {
-      // Other options
+```yaml title="quartz.config.yaml"
+plugins:
+  - source: "@quartz-community/comments"
+    enabled: true
+    options:
+      provider: giscus
+      options:
+        # Other options...
+        themeUrl: "https://example.com/static/giscus" # corresponds to quartz/static/giscus/
+        lightTheme: light-theme # corresponds to light-theme.css in quartz/static/giscus/
+        darkTheme: dark-theme # corresponds to dark-theme.css in quartz/static/giscus/
+```
 
-      themeUrl: "https://example.com/static/giscus", // corresponds to quartz/static/giscus/
-      lightTheme: "light-theme", // corresponds to light-theme.css in quartz/static/giscus/
-      darkTheme: "dark-theme", // corresponds to dark-theme.css quartz/static/giscus/
-    }
-  }),
-],
+```ts title="quartz.ts (override)"
+import * as ExternalPlugin from "./.quartz/plugins"
+import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
+
+const config = await loadQuartzConfig()
+export default config
+export const layout = await loadQuartzLayout({
+  defaults: {
+    afterBody: [
+      ExternalPlugin.Comments({
+        provider: "giscus",
+        options: {
+          // Other options...
+          themeUrl: "https://example.com/static/giscus",
+          lightTheme: "light-theme",
+          darkTheme: "dark-theme",
+        },
+      }),
+    ],
+  },
+})
 ```
 
 #### Conditionally display comments

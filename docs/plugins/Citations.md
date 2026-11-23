@@ -1,7 +1,12 @@
 ---
-title: "Citations"
+title: Citations
+description: Academic citation and bibliography support via BibTeX.
 tags:
   - plugin/transformer
+image: https://images.unsplash.com/photo-1582079133805-43655f026448
+repository: "[quartz-community/citations](https://github.com/quartz-community/citations)"
+enabled: false
+required: false
 ---
 
 This plugin adds Citation support to Quartz.
@@ -15,10 +20,10 @@ This plugin accepts the following configuration options:
 - `suppressBibliography`: whether to suppress the bibliography at the end of the document. Defaults to `false`.
 - `linkCitations`: whether to link citations to the bibliography. Defaults to `false`.
 - `csl`: the citation style to use. Defaults to `apa`. Reference [rehype-citation](https://rehype-citation.netlify.app/custom-csl) for more options.
-- `prettyLink`: whether to use pretty links for citations. Defaults to `true`.
 
 ## API
 
 - Category: Transformer
-- Function name: `Plugin.Citations()`.
-- Source: [`quartz/plugins/transformers/citations.ts`](https://github.com/jackyzha0/quartz/blob/v4/quartz/plugins/transformers/citations.ts).
+- Function name: `ExternalPlugin.Citations()`.
+- Source: [`quartz-community/citations`](https://github.com/quartz-community/citations)
+- Install: `npx quartz plugin add @quartz-community/citations`
