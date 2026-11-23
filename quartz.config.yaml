@@ -172,7 +172,6 @@ plugins:
   - source: "@quartz-community/footer"
     enabled: true
     options:
-      message: Copyright &copy; 2003&ndash;present &nbsp;<a href="/abs">Aaron Bull Schaefer</a>
       links:
         About: /
         Colophon: /colophon
